@@ -1,0 +1,845 @@
+# --- Agendas ---
+[agenda.beast]
+emoji_id = 1353597630474879097
+items = [ "Get into a fight", "Hold Back" ]
+abilities = [
+    [ "Insects!!!", "You have +1D when inflicting harm or violence against human opponents." ],
+    [ "I’ll take you down with me", "Regain 1d3 psyche burst when you take an injury or affliction." ],
+    [ "Rule of Nature", "When you inflict violence with an action, if you roll 6, 6 or better the action inflicts 1 more slash on any talismans and you regain 1 psyche burst." ],
+    [ "Red Muscle", "You can take 2 nonlethal stress to gain +1D on any violent or forceful roll." ],
+    [ "Bare Teeth", "While you have two or more injuries or afflictions, it is not longer hard to use human capabilities against supernatural forces and your human abilities are at 1/2 CAT instead of CAT 0." ],
+]
+
+[agenda.doomed]
+emoji_id = 1353597710045024337
+items = [ "Demonstrate your humanity", "Demonstrate your distance from humanity" ]
+abilities = [
+    [ "Xenoflesh", "Discard ‘1’s rolled for gaining Sin." ],
+    [ "Humanity’s Last Breath", "Pick a sin mark you have. Evolve that Sin mark. It no longer modifies resistance rolls." ],
+    [ "Quickening", "When you gain 2 or more Sin as part of an action, your action also gains +1D." ],
+    [ "Sympathetic Mutation", "You may take 1d3 sin to grant an ally the benefits of any sin mark ability you have for one scene. Their body is infected by a lesser version of it that dissipates when the scene is over." ],
+    [ "Metamorphosis", "Between missions or when resting, you can gain 1 sin to re-roll the ability of one of your sin marks. If you gain an ability you already have, choose one instead." ],
+]
+extra = "You may only pick this agenda if you have a sin mark. If it's your first agenda, you may start with a sin mark of your choice (still roll 1d6 for ability)."
+
+[agenda.firebug]
+emoji_id = 1353597739065278495
+items = [
+    "Solve Problemsatively", "Take the simple solution" ]
+abilities = [
+    [ "Jack!", "At the start of a mission, choose a skill you have at 0. You can improve it to 1 for the duration of this mission only." ],
+    [ "Always a way", "If there isn’t an entrance or exit into a place, you can find one. You can always get through, but (Admin picks one): it’s dangerous or risky, it’ll only fit one person, you’ll have to leave something or someone behind." ],
+    [ "Oilfinger", "You start a mission with 1d3+1 extra Kit Points." ],
+    [ "Extra Parts", "You can mark 1 KP for +1D on any roll that involves fixing, crafting, breaking, or modifying devices or machines." ],
+    [ "Weak Spot", "When an ally performs violent or forceful action, you can grant them +1D on their action, and +1 slash on any talismans on success. You have one use of this ability, which resets when you rest, and a roll can only benefit from this once." ],
+]
+
+[agenda.guardian]
+emoji_id = 1353597749400178688
+items = [
+    "Protect youople", "Leave nobody behind" ]
+abilities = [
+    [ "Iron Wall", "When you defend someone close to you in a conflict scene, you can choose to divert any consequences taken by your target on to you instead of its usual effects. The second time or more you use this in the same scene, you take 1d3 nonlethal stress first." ],
+    [ "The Excessive Agony of Moving Forward", "Erase 1 stress when the hour passes if you have more than 3." ],
+    [ "Castle", "While any ally takes an injury, you erase 1 stress and gain +1D on your next action." ],
+    [ "Centerweight", "When resting, allies that spend resting dice can use the results of your resting dice (but still spend their own dice)." ],
+    [ "Painkiller", "Your maximum stress is no longer reduced by taking injuries." ],
+]
+
+[agenda.loner]
+emoji_id = 1353597774427459615
+items = [
+    "Demonstrate youperior skill", "Let the mask slip" ]
+abilities = [
+    [ "Dust to Dust", "When you take 3 or more stress from a single source, roll 1d6. On a 4+, ignore it." ],
+    [ "Silent Strike", "Gain +1D on forceful actions taken against targets who are unaware of your presence." ],
+    [ "I’ll do it myself", "Once a scene, when someone fails a roll, you can step in to help them, as long as you are able. You gain 1d3+1 stress, but roll 1D and add it to the total roll, which could cause it to succeed. This stress cannot cause an injury." ],
+    [ "Rook", "When you successfully set up an ally, you can take 1 nonlethal stress to set up another ally of your choice with the same action." ],
+    [ "It’s Nothing", "You can ignore taking an injury by saying ‘It’s Nothing’. Gain a hook ‘It’s Nothing’. This hook fills up any time you say ‘It’s Nothing’ as well as the normal ways (taking this hook again, time passing, rolling a ‘1’). Segments on the hook can’t be erased in any way. When the hook fills out, you collapse and suffer instant death, which you cannot ignore. If you end a mission with this hook, you gain a permanent cosmetic scar." ],
+]
+extra = "You don't get pay or XP for the dead."
+
+[agenda.hardline]
+emoji_id = 1353597757406842910
+items = [ "Follow Orders", "Disobey Orders" ]
+abilities = [
+    [ "Black Suit", "Gain +1D on actions to lead, intimidate, or give orders to mundane humans." ],
+    [ "Mea Culpa", "The first time in a hunt you take an injury or an affliction, relieve 1d3+1 sin." ],
+    [ "Eliminate the Stain", "Gain +1D on all actions against sins that have half or less of their execution clock remaining." ],
+    [ "Single Minded", "You can only be affected by one affliction maximum (you can choose which to discard and keep)." ],
+    [ "By the Book", "Once a hunt, when you witness or find evidence of a sin’s Domain, you can force the Admin to show you the exact rules text of that Domain." ],
+]
+
+[agenda.machine]
+emoji_id = 1353597789304655912
+items = [
+    "Put tork before your own needs", "Take a break" ]
+abilities = [
+    [ "The Work", "You can choose to gain +1D on any roll. If you do, take 1 stress for each time you’ve used this ability this mission (including this one). You can’t use this ability for the remainder of the hunt if you rest." ],
+    [ "Brain Burst", "When investigating or researching something, you can take 1 nonlethal stress to re-roll one die on your action roll. The re-roll is final." ],
+    [ "Second Wind", "The first time pressure fills up over half, relieve all stress." ],
+    [ "Overtime", "You can gain +1D on all actions to investigate, analyze, or gather information for the duration of a scene, but you lose the use of this ability and all other activities are hard until you rest." ],
+    [ "Neat Little Universe", "Twice a hunt, you can tick any talisman on your sheet or an ally’s up or down by 1." ],
+]
+extra = "If your group rests, you can choose to exclude yourself from resting."
+
+[agenda.moth]
+emoji_id = 1353597793180319775
+items = [
+    "Uncover en or uncomfortable truths about the world.", "Uncover hidden or uncomfortable truths about yourself." ]
+abilities = [
+    [ "Psyche Jewel", "When you or an ally answers a Sin’s trauma question, regain 1 psyche burst, recover 1 sin, and erase 1 stress." ],
+    [ "Alienation", "Your sin overflow cap increases by +3." ],
+    [ "Rapture", "You erase 1d3 stress when afflicted." ],
+    [ "Larval", "If you end a mission at 7 or higher sin, gain 1 xp. If you suffer sin overflow, gain 1 xp." ],
+    [ "Unveil", "You can ask the Admin about a character present ‘What is this person afraid of?’. Gain +1D when you act on the answers for the rest of the scene, then lose the use of this ability until you rest." ],
+]
+
+[agenda.temperance]
+emoji_id = 1353597888063737857
+items = [ "Put people before the mission", "Harm someone intentionally" ]
+abilities = [
+    [ "Healer", "When you rest, gain an extra resting die. This die can only be spent by an ally." ],
+    [ "Focused", "You can use a blasphemy that affects only you or your allies without spending psyche burst, and it gains +1 CAT. Then lose the use of this ability until you rest." ],
+    [ "Savior Complex", "Gain +1D on actions to directly prevent or avoid harm to humans." ],
+    [ "Care", "Twice a hunt, you can roll and apply a resting die to yourself or another nearby ally without resting." ],
+    [ "Gentleness", "For one scene, you may take 1 less stress when you take stress. This ability breaks if you take any forceful or harmful action. Then lose the use of this ability until you rest." ],
+]
+
+[agenda.torch]
+emoji_id = 1353597913325895680
+items = [ "Lead from the front", "Let another take the lead" ]
+abilities = [
+    [ "Joy Luck Wind Thrower", "When you roll 0d for any action, it's never hard." ],
+    [ "Hot Blooded", "Your first action in a conflict gains +1D and inflicts +1 more slash on any talismans" ],
+    [ "Font of Power", "Once a hunt, you may gain 1d3 psyche bursts, whih could put you over the maximum. Until rest, you can no longer spend psyche bursts, but allies can spend your psyche bursts their own." ],
+    [ "Recollect", "At the end of the session, you can describe something another character did that impressed you during that session, and give that character 1 xp. Character can only gain this xp once if targeted by this ability multiple times." ],
+    [ "Strive", "Once a hunt, you can make a complete re-roll of any action you or an ally just took, taking the second result as final." ],
+]
+
+[agenda.departed]
+emoji_id = 1353597695381737552
+items = [ "...", "..." ]
+abilities = [[
+    "That Terrible Weight",
+    "Once a session, the dead character can chip in when an ally makes a roll to let them re-roll the entire roll after they see the result, taking the second roll as final.",
+]]
+extra = "A character can only take this agenda if they are well and truly dead. You get its ability for free."
+
+[agenda.shadow]
+emoji_id = 1353597802227175424
+items = [ "Outshine your rival", "Let your rival outshine you" ]
+abilities = [
+    [ "Catch Up", "If your rival has less stress than you when pressure increases, erase 1 stress. If they have more psyche bursts, regain 1 psyche burst." ],
+    [ "Synchronize", "When you set up your rival, you take 1 nonlethal stress and +1D on the action to set up." ],
+    [ "You Can’t Die Now", "If your rival would take an injury or suffer instant death, you can take 2d3 stress to allow them to ignore it. Then, lose the use of this ability until you rest." ],
+    [ "Shadow Seed", "Choose a blasphemy power your rival has. You can use that power this hunt, but only at CAT 0." ],
+    [ "Pincer Technique", "When you participate in teamwork with your rival, you take 1 nonlethal stress, but can also re-roll one of the dice once, taking the second result as final." ],
+]
+
+[agenda.sorcerer]
+emoji_id = 1353597823060279306
+items = [ "Demonstrate flashy display of power", "Invite catastrophe" ]
+abilities = [
+    [ "Perfect Technique", "Pick a blasphemy. Once a hunt, you can increase the CAT of that blasphemy by +1 temporarily for an entire scene, or for two rounds if it’s a conflict scene." ],
+    [ "Cantrip", "Pick a blasphemy ability. You can use it three times a hunt without spending a psyche burst, but all parameters are at a max of CAT 0 if used this way." ],
+    [ "Finishing Move", "Pick a blasphemy. You can willingly increase the dice and CAT of that power by +1 when you use a power from that blasphemy, but you then cannot use any blasphemies again and all actions are hard. Both these effects end when you rest." ],
+    [ "Mimic technique", "Pick a power from any Blasphemy, without having taken that blasphemy. It doesn’t change your xp or sin overflow caps." ],
+    [ "Weave", "When you use a blasphemy, you may increase the CAT of the next blasphemy used by an ally by +1, and grant it +1D on any rolls. Then lose the use of this ability until you rest." ],
+]
+
+[agenda.songbird]
+emoji_id = 1353597887447302207
+items = [ "Get someone to do your bidding", "Do something selfless" ]
+abilities = [
+    [ "Codependency", "When someone sets you up, you can trade 1 stress around (from you to them, or vice versa)." ],
+    [ "Spiral", "You can always tell if someone is lying to you, though not the nature of the lie." ],
+    [ "Strings", "When you rest with a consenting partner, you can spend quality time with them (the nature of which is up to them). If they choose to do so, you both add +1 to all your resting results. However, until you next rest, you can force them to participate in teamwork with you or set you up once." ],
+    [ "White Fiber", "You can take 2 nonlethal stress to gain +1D on any roll to lie or manipulate someone. This stress cannot inflict an injury on you." ],
+    [ "Fascination", "You can declare your fascination with another character in the group at the start of any hunt. When that character rolls a 6 on risk, you lose 1 stress. When they roll a 1, you gain 1 nonlethal stress." ],
+]
+
+[agenda.demon]
+emoji_id = 1353597655413952565
+items = [ "Enrich yourself", "Give something valuable away" ]
+abilities = [
+    [ "Black Market Stims", "You can spend up to 3 scrip a mission as psyche burst" ],
+    [ "Supplier Connections", "You gain a 1 script discount on all items, to a minimum of 1. This discount increases to 2 if you have survived 5 or more missions." ],
+    [ "Shady Lender", "Between missions, you can choose to gain 1d3 scrip one but start the next mission at 1 injury" ],
+    [ "Scrounger", "You gain +1 scrip for completing missions no matter what. You never get docked scrip for failing missions." ],
+    [ "Splotless", "Once a mission, you can destroy an aesthetic kit expansion you own worth 3 or more scrip instead of suffering an injury." ],
+]
+extra = "You can spend scrip as kit points"
+
+[agenda.survivor]
+emoji_id = 1353597835920277547
+items = [ "...", "Survive" ]
+abilities = [[
+    "Will to Live",
+    "+1 max stress. 1 in 6 chance of ignoring instant death (roll 1d6)",
+]]
+extra = "Once taken, a character can only swap out of this agenda by spending two advances. Get its ability for free."
+
+# --- Blasphemies ---
+[blasphemy.tension]
+description = "Project powerful fields of force to block, cut, or entrap."
+emoji_id = 1353597857667616831
+passive = [ "Iron Soul", "When you would lose your last point of stress, roll 1d6. On a 4+, you don’t lose any stress and instead remain at 1 stress." ]
+abilities = [
+    [
+    "Aegis",
+    "Instant, Short",
+    """
+Once a scene, when you or a visible ally in short range of you would mark stress from external harm, you can intervene by answering the following questions:
+- Can you reach your target in time?
+- Is there any part of the environment you can use to shield your target?
+- Is your heart in this?
+You create a flash tension force of incredible strength, blocking damage. For each ‘yes’ answer, roll 1d6. For every 2+ rolled reduce stress suffered by 1, and for every 6 rolled reduce it by 2. This could reduce stress suffered to 0.
+If you or an ally gain an injury in the same scene, regain the use of this power.""",
+    ],
+    [
+    "Stasis",
+    "Curse, 1 scene, Adjacent",
+    """
+With a touch, you can lock yourself, a human, or a willing ally in a tension cage that covers them like a second skin, paralyzing them. If a human is hostile or unwilling, roll PSYCHE, and only spend the burst on success.
+Once trapped, your target is locked in, unable to move or act for the scene, and is immune to all harm and effects from the outside. The effect only ends once the scene passes and you cannot end it earlier. They can be moved around normally like an object.""",
+    ],
+    [
+    "Severance",
+    "Instant, Short",
+    """
+You can project a tension force of incredible strength over any edge, as obvious as a blade and as subtle as a fingernail, and use it as a cutting implement. Roll PSYCHE to cut an object or opponent up to CAT size with a clean and decisive blow, only spending a psyche burst on success.
+-Gain +1D if you are striking to protect another person
+-Gain +1D against immobile objects or opponents""",
+    ],
+    [
+    "Malleate",
+    "Transmute, Until rest, Adjacent",
+    """
+You can invert and infuse a tension field to make an area of nonliving matter incredibly pliable and soft. The size of this block of matter you can affect is affected by CAT. Choose one of the following effects, then you may gain or grant +1D when you or any ally next acts to take advantage of this power:
+-Rubber: The matter becomes bouncy and springy
+-Mud: The matter melts into a thick mud. It becomes pliable and sticky and difficult to move through
+-Liquid: The matter melts into liquid
+This power may easily effect the parameters of rolls, such as difficulty and risk. When the effect expires, the matter slowly reverts to its original state and form.""",
+    ],
+    [
+    "Fortress",
+    "Summon, Until rest, Short",
+    "Once a scene, you can create a spot tension field with a size determined by CAT that appears as a large plane of shimmering force, invisible to humans. It can only exist as a flat plane (no bends or curves), and intersect or overlap any nonliving material, but otherwise is as hard as a solid object and prevents all living and nonliving matter and energy from crossing it. It has a 3 talisman for its durability, which can take damage and be ticked up like an execution talisman by opponents. The field lasts until used again or until rest.",
+  ],
+]
+
+[blasphemy.ardence]
+description = "Manipulate potential energy into furious destruction"
+emoji_id = 1353597616272838686
+passive = [ "Inner Furnace", "You can take an Unstable Power hook as part of using any Ardence power to increase the CAT of the power up to +2. When the hook fills up, you burn up from the inside, gaining an injury and ending the hook. If this injury would kill you, you explode in an area equal to your CAT, annihilating yourself and everything inside in a massive explosion. Nothing can survive this." ]
+abilities = [
+    [
+    "Fury",
+    "Instant, Long",
+    """
+You can create a fierce blast of destructive energy at a location in range with a blast area up to CAT. When you use this power, roll PSYCHE and answer the following questions, gaining +1D for each ‘yes’ answer, only spending a Psyche Burst on success.
+- Are you willing to cause indiscriminate harm, not caring what you destroy, burn, or incinerate?
+-Are you willing to let your anger control the outcome?
+Whatever question you answer ‘yes’ on, it affects the outcome of the action - no matter the roll.""",
+],
+    [
+    "Void",
+    "Instant, Short",
+    """
+You create a flash vacuum by burning the air away. The void creates a loud thunderclap, affecting an area up to CAT. It affects everyone in the area except you. Choose one of the following effects, then you may gain or grant +1D when you or any ally next acts to take advantage of this power:
+-Weak: Sucks in loose objects not held, worn, or bolted down.
+- Medium: All humans and exorcists in the area are thrown off their feet and pulled in, excluding you.
+- Strong: Sins and vehicles up to CAT size are thrown off balance or pulled depending on their size. Glass is shattered. The thunderclap is momentarily deafening.
+This power may affect the parameters of rolls, such as difficulty and risk.""",
+],
+    [
+    "Hell",
+    "Transmute, Adjacent, Until Rest",
+    """
+You may dump energy into the ground and anything touching the ground in an area determined by CAT+2, choosing hot or cold. Choose one of the following effects, which lasts until you rest. You may gain or grant +1D when you or any ally next acts to take advantage of this power:
+- Simmer: Discomfort for humans, lowered or raised temperature, hot or cold surfaces, etc.
+- Poach: Major discomfort for humans, who cannot remain in the area, and discomfort for sins and exorcists. Freeze or boil water, pipes, crack glass, etc.
+- Boil: Deadly to humans, sins and exorcists take 2 stress if they remain in the area for longer than a scene. Light fires or freeze the air in rooms, melt windows or burn doors, or freeze objects.
+This power may affect the parameters of rolls, such as difficulty and risk.""",
+],
+    [
+    "Storm",
+    "Transmute, Extreme, Whole Mission",
+    """
+You can spend any number of psyche bursts to send potential energy into the atmosphere, affecting the a microclimate in an area equal to CAT+2, with a maximum of CAT 7. Choose one of the below, plus one more per psyche burst spent. The chosen effects last for the whole mission or until dismissed. You may gain or grant +1D when you or any ally next acts to take advantage of this power:
+- Clear: Clear the skies in the area, canceling any weather (including the below).
+- Rain: Rain drenches the area for the duration of an intensity you choose (drizzle, pouring, torrential).
+- Cold: The air freezes, freezing water and icing over roads and paths. Any precipitation becomes snow.
+- Fog: Thick fog rolls in, limiting visibility.
+- Gale: Whipping wind rolls through the area, blowing away fog, smoke, or dust, and making it hard to hear or be outside.
+This power may easily affect the parameters of rolls, such as difficulty and risk.""",
+],
+    [
+    "Sabre",
+    "Instant, CAT range",
+    """
+Release a blast of energy in a highly destructive beam. The beam goes in a straight line a range equal to CAT, piercing through walls, doors, and obstructions effortlessly. It is extremely loud and bright. Roll PSYCHE for its effects, only spending a psyche burst on success.
+The very first time you use this power in a mission, it gains +1D for every tick on the pressure clock (it still cannot exceed +3 advantage die). For every ‘6’ result you roll, this ability inflicts 1 extra slash on a talisman, but you also take 1 stress, which could kill you or cause an injury. This stress cannot be reduced or ignored in any way.""",
+],
+]
+
+[blasphemy.flux]
+description = "Tap into the ebb and flow of time."
+emoji_id = 1353597739656679424
+passive = [ "Steal Time", "Once a mission, you can re-roll all your resting dice for yourself or an ally, taking the second result as final." ]
+abilities = [
+    [
+    "Reversal",
+    "Adjacent, Instant",
+    """
+By touching an object up to CAT size, you can reverse its passage through time for the last hour.
+- This could physically move the object, revert damage on an object, etc.
+- It can still affect the physical world, so anything in a reversing object’s way would get hit, and anything placed on it will move with it.
+- If it would cause damage or impact, roll PSYCHE for it
+- It cannot reverse life on non-living matter, such as corpses, but can move them and revert damage.
+You can stop this effect by willing it, but to resume it requires using this power again.""",
+],
+    [
+    "Stop",
+    "Transmute, Instant, Self",
+    """
+You spend up to three psyche bursts to stop local time in an area around you equal to CAT.
+Roll 1d6 per psyche burst spent and add them together - that is how many seconds you have.
+Anything that enters this area is immediately affected (including anything put into or out of the area), but time flows normally outside the area. In this stopped time, you are unaffected and:
+- you cannot use psychic powers, but neither can you be affected by them. Any power currently active from you or affecting you other than this one dissipates.
+- you can perform one activity or course of action that fits in the duration. After you would make an action roll for anything, the effect ends no matter what.
+Then, gain temporal instability""",
+],
+    [
+    "Schism",
+    "Transmute, Instant, 1 scene",
+    """
+You can create a bubble of altered time equal to CAT area. Inside the bubble, you open a window into one day in the past or future from the moment the bubble was created. Gain or grant +1D when you or any ally next acts to take advantage of this power:
+- The state of the area inside the bubble is confined only to the bubble and includes objects or people inside. You and allies can enter or exit the bubble at will.
+- Supernatural beings, including exorcists, in the present timeline caught in the bubble when it is created are unaffected. Humans and the ‘present’ timeline world caught in the bubble are ‘paused’, cease existing for its duration, and have no memory of the incident.
+- Things removed from the bubble from the past or future timeline, including living beings, simply disappear until they move back into the bubble. The bubble represents an ‘alternate’ timeline, so anything altered inside of it will not show up in the present or future timeline (ie leaving an object in a past timeline will not have it show up in the present).""",
+],
+    [
+    "Quickening",
+    "Instant, Adjacent",
+    """
+You can accelerate the natural healing of your body or those of others, giving you the following benefits:
+- Immediately heal 1d3 stress on yourself or another target
+- You may heal another dying human or exorcist on the brink of death. Injured humans are stabilized and no longer in danger of expiring and exorcists are brought off the brink of death until they take stress again, even if they have three injuries.
+Then, gain temporal instability""",
+],
+    [
+    "Stutter",
+    "Short",
+    """
+You can briefly reverse time in order to alter causality for any event that happened as a result of an action roll made by you or an ally, instantly after you see the result. Re-roll the action roll completely, taking the second result as final.
+When you use this power, gain temporal instability. If you use it again in the same scene, gain 1d3 temporal instability instead.""",
+  ],
+]
+extra = """
+# Temporal Instability
+Many of your powers give you this hook. When you gain this hook, roll 1d6. On a 1, also slash the hook out once. When the hook resolves, roll 1d6: 
+1. Permanently add to your agenda ‘Prove that you are the real you.” If you gain this result again, you immediately suffer sin overflow. 
+2. Mysterious injuries open up. You go unconscious from pain, putting you out of the current scene, and take an injury.
+3. You disappear until rest. You return if there’s a conflict scene. You have no memory of where you were. When you return, you take 2 stress. 
+4. You find you are wearing someone else’s clothes. Erase your entire kit this mission, but regain any spent kit points.
+5. Your body is different. For the remainder of this mission, pick a skill you have 1 or more dice in. It now rolls 0d. After the mission, you have time to train and get used to this, reverting this effect, though keeping any physical changes.
+6. Your face looks a little different. The changes are permanent.
+"""
+
+
+[blasphemy.vector]
+description = "Imbue anything you touch with a strong burst of velocity."
+emoji_id = 1353597860829986896
+passive = [ "Brake", "Automatically remove velocity from all projectiles that would hit you, taking -1 stress from them." ]
+abilities = [
+    [
+    "Fling",
+    "Adjacent, Instant",
+    "With a touch, you can imbue velocity into yourself or another object or living being and send it flying. The combined size of the object or being and the range you send them must equal your CAT+1 or less. Once sent flying, the direction of your target cannot be changed. Roll PSYCHE for its effects, including any harm inflicted, and only spend a psyche burst on at least one success.",
+],
+    [
+    "Lift",
+    "Charm, Self, 1 scene",
+    """
+You reverse gravity’s effect on yourself with a low but constant Vector effect. For this scene, you gain the following benefits:
+- you can run, walk, or climb up vertical surfaces.
+- you can slow your fall at will, and you cannot take harm from falling
+- you can glide a distance equal to CAT range.
+you must start at height to gain this benefit
+This power may easily effect the parameters of rolls, such as difficulty and risk.""",
+],
+    [
+    "Current",
+    "Transmute, Until rest, CAT range",
+    """
+You create a weaker, but persistent Vector force in an area that lasts until you rest. It creates a line that goes about CAT range in length and covers about the width of a street. It pushes constantly in one direction (including up or down) like a strong wind.
+Allies moving in that direction gain +1D on actions to move with the current. Anything moving against that direction struggles. It becomes hard for allies, and actions taken against anyone trying to struggle against the current gain +1D. You can dismiss this effect at will.""",
+],
+    [
+    "Bullet",
+    "Instant, CAT+1 range",
+    """
+You can imbue strong bursts of velocity into the air at your fingertips, creating pressurized air bullets that hit with extreme force. Roll PSYCHE for its effects, only spending a psyche burst on success.
+- Gain +1D when making shots from an elevated position
+- Gain +1D when making shots to disarm, distract, or disable""",
+],
+    [
+    "Finesse",
+    "Instant, CAT range",
+    """
+You may use this power to finely manipulate threads of force to perform fine motor skills you could perform with your hands at CAT range, such as opening doors, picking up objects, or even skills like typing on a keyboard, etc. Roll PSYCHE for this, only spending a psyche burst on success, and gain +1D on the action.
+- You have to be able to see your target, even if it’s far away. However, you can perform this manipulation even if your path to the target is blocked, such as if you could see it through a window, etc.
+- You can pick up objects and move them around through the air but they cannot be any bigger or heavier than a laptop or a full briefcase.""",
+],
+]
+
+[blasphemy.gate]
+description = "Manipulate space as a sculptor works with clay"
+emoji_id = 1353597745700667393
+passive = [
+    "Pocket",
+    """
+You can fit a compressed tear in space into a piece of clothing that you are wearing.
+- You gain +1 KP
+- You can stow or retrieve items inside your pocket, which can hold a combined total of items worth up to 3 KP.
+Once inside, the items are stored in an extra-dimensional space and hidden and safe, no matter their size. The pocket is attached to your clothes and if they are destroyed, items inside pop out.""",
+]
+abilities = [
+    [
+    "Tear",
+    "Summon, Until rest",
+    """
+You create a point in CAT range, and another point within the same range, though you have to be able to see both points when you use this ability. The two points are connected by a slash in the fabric of reality, a portal that can be moved through and connects the two points as though they were right next to each other.
+Human size objects, beings, and forces can freely move through the tear for the duration, and momentum is preserved.""",
+],
+    [
+    "Pinch",
+    "Instant, CAT range",
+    """
+You can choose a single living being or object in CAT range of human size or less. Roll PSYCHE if your target is unwilling, only spending a psyche burst on success. As long as you can see your target, on at least one success, you can pinch space between the two of you to move your target right next to you. From the target's perspective, they don’t appear to move at all, but the world smears around them. They ignore all physical obstructions between them and you - as long as you can see your target, they simply appear next to you.
+You may gain or grant +1D when you or any ally next acts to take advantage of this power.""",
+],
+    [
+    "Bloom",
+    "Summon, Short, 1 scene",
+    """
+By splitting space in creative ways, you create three controllable duplicates of any of your limbs or hands on any surfaces in short range from you, emerging from a tear in space. They are stuck in place and cannot move. Gain or grant +1D when you or any ally next acts to take advantage of this power:
+- You can control them like your normal limbs, making action rolls through them and you have normal sensation with them.
+- They can be placed on any surface, including moving surfaces or living beings.
+- You take any stress they would take from your actions made through them.""",
+],
+    [
+    "Transmission",
+    "Instant, CAT+2 range",
+    """
+Instantly move to any other area in CAT+2 range.
+However, the Admin asks you the following questions and rolls 1d6 per ‘no’ answer.
+- Are you familiar with your destination?
+- Can you see where you are going?
+- Are you calm and concentrated?
+On at least one ‘1’, you end up in a different location nearby your destination, but the Admin chooses where. On a double 1, you end up somewhere else briefly before arriving. Not only are you off target, but you also take 2d3 stress.""",
+],
+    [
+    "Maze",
+    "Transmute, Self, CAT area",
+    """
+You rearrange an area equal to CAT around you, causing the rearrangement of human-built structures in the area. Pick any of the following, then gain or grant +1D when you or any ally next acts to take advantage of this power:
+- Create or remove doors and windows, or change the existing arrangement of doors and windows
+- Add corridors, or rearrange the floor plan of rooms
+- Change the direction of gravity inside of a room. For example, you could make a wall the ‘floor’
+- make a room larger or smaller
+- Arrange or remove the furniture inside a room any way you like
+You cannot remove rooms entirely, make any room smaller than a closet or larger than a ballroom, or add anything that does not already exist in a building other than corridors. This could cause a structure to be bigger on the inside than outside.
+For each choice, the Admin rolls 1d6. If they roll at least one ‘1’ the Admin gains one use of this power against you at your current CAT and can activate it any time they like.""",
+],
+]
+
+[blasphemy.smother]
+description = "Suppress innate properties of things, like friction, sound, or light."
+emoji_id = 1353597816483745792
+passive = [ "Absentia", "You can improve the CAT of any of your Smother powers by +2 when you use them, to a max CAT of 7. However, when you do, gain the Absentia Hook." ]
+abilities = [
+    [
+    "Hollow",
+    "Charm, Adjacent, Until rest",
+    """
+You temporarily remove weight from an object, human, or exorcist, giving them the total weight of 1 lb if heavier. The size of the object must be CAT or lower, and you can end this modification any time, though you must use this power again to regain its effects. Roll PSYCHE for any creative uses of this power.
+- Gain or grant +1D when you or any ally next acts to take advantage of this power.
+- This power ends on its previous target if used again.
+This power may easily effect the parameters of rolls, such as difficulty and risk.""",
+],
+    [
+    "Abstract",
+    "Transmute, Short, 1 scene",
+    """
+With a gesture, you remove recognizable properties of CAT+1 tools, vehicles, windows, doors, or any other objects that can be held or worn. The chosen objects can no longer be used for their intended purpose and no human, sin, or exorcist (including you!) can recognize them - staring at them for too long causes extreme discomfort, even for exorcists. For example, weapons can no longer fire, doors can no longer open, or windows can no longer be looked through.
+Gain or grant +1D when you or any ally next acts to take advantage of this power. It may also affect the parameters of rolls while active.""",
+],
+    [
+    "Dark Age",
+    "Charm, Self, Until Rest",
+    """
+You produce a strong field from your body disabling even the simplest human advancements from working in CAT area. The effect moves with you. You can choose up to three of the following to suppress, ceasing their operation, then gain or grant +1D when you or any ally next acts to take advantage of this power:
+- Electricity
+- Internet
+- Combustion engines
+- Running Water
+- Door handles, window latches, zippers, catches
+- Open fires
+These things stop working even if it would not make sense, ie suppressing running water would mean water pressure simply stops working. You can end this effect willingly, but must end all effects at once.""",
+],
+    [
+    "Smooth",
+    "Transmute, Short, 1 scene",
+    """
+You temporarily remove almost all friction from a human, exorcist, or an area up to CAT. The area or target becomes incredibly slippery. If targeting an area, it becomes hard for anyone to stand, climb, or move normally in the area, though people are able to slide around.
+- Roll PSYCHE to affect hostile targets with this power, only spending a psyche burst on success.
+- You can sculpt this area if you wish to affect just part of it, or sculpt a path.
+Gain or grant +1D when you or any ally next acts to take advantage of this power. This power may also easily effect the parameters of rolls, such as difficulty and risk.""",
+],
+    [
+    "Blind",
+    "Transmute, Adjacent, 1 scene",
+    """
+An object, living being, or location you touch up ceases producing sound, reflecting light, or both for the scene. Gain or grant +1D when you or any ally next acts to take advantage of this power:
+- Targeting a persona allows the effect to move with them for the scene.
+- Targeting a location affects an area about the size of a small room, removing all sound and/or light.
+You can ‘filter’ this effect by allowing light or sound inside the location to operate normally, but not enter or exit the area.
+This power may easily effect the parameters of rolls, such as difficulty and risk.""",
+  ],
+]
+extra = """
+# Absentia
+You can gain this hook with your passive. If this hook fills up, you take an injury and black out for a few moments. When you wake up, you are missing a body part (roll 1d6). It simply disappears (cleanly) as though it had never existed, leaving a stump or hole. It doesnt come back, even if you heal the injury If you have no body part left to lose (when you roll), reduce the result by 1. If the result is 0, you lose your head and suffer (gruesome) instant death instead. Missing body parts might make some rolls hard or risky, dependent on the situation. You adjust to any disability after the mission, and it has no further effect.
+
+1. Eye      4. Finger
+2. Nose     5. Toe
+3. Ear      6. Nothing
+"""
+
+[blasphemy.whisper]
+description = "Your shadow talks to you. It knows the future."
+emoji_id = 1353597864026177647
+passive = [ "Shadow", "You harbor a separate being that follows you everywhere, even when you sleep. The rules for it are in the bottom left of this sheet." ]
+abilities = [
+    [
+    "Omen",
+    "Instant, Self",
+    """
+Ask your shadow ‘What will happen if I X’, where X is a simple course of activity you plan to take in the next hour or so (open this door, attend the meeting, attack this person, go down this street). The shadow gives you a brief impression of the future:
+- Gain +1D when you or an ally next acts on the answer.
+- Pre-roll the risk die before you take the action. You can decide to back out of the action if you like, but if you follow the same course of activity in the future, use the pre-rolled risk die.""",
+],
+    [
+    "Shiver",
+    "Charm, Self, 1 scene",
+    "When you are looking for a human, sin, exorcist, location, or object, you can declare ‘I feel a shiver’. In this scene, if your target is close enough to be in short range from you, you feel a strong, instantly sense of cold and discomfort. You can home in on this feeling easily, and it’s never hard to track your target while this is active. Additionally, you gain +1D to track your target for the duration, even if they’re not nearby.",
+],
+    [
+    "Precognition",
+    "Instant, Self",
+    """
+When the Admin is describing a scene or you are about to take a course of action, you can ‘flash back’. Make an action roll or play a scene out in the past, where you had a vision of the present moment. This cannot completely alter the established facts of the present (you can’t have knocked someone out in the past if you just finished having a conversation with them in the present, for example), but could change the situation or alter present details, or it could set up yourself or any ally. For example you could have made preparations for the current moment (locked or unlocked a door, stowed some gear, made a phone call, etc).
+If the situation is complicated, also take 1 stress. If it’s convoluted or far fetched, take 3 stress.""",
+],
+    [
+    "Dissect",
+    "Instant, Short",
+    """
+Examine a human or exorcist in short range, roll PSYCHE, and ask your shadow one of the following questions, plus one more per success. They answer truthfully, but can use a maximum of three words to answer each.
+- Is this person lying?
+- What is the main emotion this person is feeling?
+- Where has this person just come from?
+- Where are they planning to go next?
+Gain or grant +1D when you or any ally next acts to take advantage of each answer.""",
+],
+    [
+    "Omnipresence",
+    "Instant, CAT+2 range",
+    """
+When an ally is in a scene, you are not present in that scene, and your ally is in CAT+2 range, you can use this power to walk in on the scene, having already predicted that this course of events would happen. Roll PSYCHE, and choose one of the following per success:
+- Nobody is following you
+- You are hidden
+- You are able to enter your ally’s location without distraction or harm
+- You have a useful tool or object on you for the present situation (a key, a weapon, a wrench, etc)
+You may gain or grant +1D when you or any ally next acts to take advantage of this power.""",
+],
+]
+
+[blasphemy.edit]
+description = "Change yourself, the world, or others by pulling from different possible realities"
+emoji_id = 1353597721688408064
+passive = [
+    "Mimic",
+    """
+You can alter minor things about your appearance. You can change any of the following about yourself when resting, within a variation of your original body:
+- body features such as height and weight
+- aesthetics such as facial features, skin color, hair, gender presentation
+- age, down to 13 and up to 88
+You always look faintly similar, like a distant relative of yourself. Your clothes always change to fit you, though you cannot alter them. This doesn’t change anything about your skills or general ability, and also cannot restore missing body parts or hide sin marks or scars.""",
+]
+abilities = [
+    [
+    "Uniform",
+    "Charm, Self, Until Rest",
+    "You make a brief edit of yourself. You can’t do this in public (you need privacy, no matter how tenuous). This power makes you officially part of any profession or group with more than 5 members, with any necessary uniform, equipment, ID cards, memberships, etc, and alters reality to make it so. Even if people don’t particularly remember you being part of a group, they may get a vague sense that you were a member. You don’t actually gain any particular skills and any changes you may have to be to your own person must include things you could wear or carry in one or both hands. Gain or grant +1D when you or any ally next acts to take advantage of this power.",
+],
+    [
+    "Absurd",
+    "Curse, Short, 1 scene",
+    """
+You swap CAT amount of different versions of humans or exorcists with a timeline. You must roll PSYCHE to affect burst on hostile targets. This can change:
+- physical appearance
+- what the target is holding
+- objects or items they are using.
+This swap disorients the targets, as their reality adapts to accommodate the changes, which can be unsettling for them. Gain or grant +1D when you or any ally next acts to take advantage of this power.""",
+],
+    [
+    "Utility",
+    "Until Rest, short",
+    "When an item appears dangerous, rare, or mundane, you can alter it to look worn or scuffed. The item can change to appear as if it were a knockoff or poorly made, or it could be an item that is absent, appearing to someone nearby. The item takes on a spongey or cheap look that isn’t representative of its original purpose. After the scene ends or you leave the area, the item disappears.",
+],
+    [
+    "Filter",
+    "Transmute, Adjacent, 1 scene",
+    """
+You create a field around a small area, affecting all matter in it. The effects of this include:
+- making matter transparent or opaque
+- changing lighting or snuffing out any light sources
+- causing objects to float or pin them in space
+- safely dissecting or reassembling broken objects as long as parts are present
+This effect expires when the scene ends, or if you leave the area for any reason.""",
+],
+    [
+    "Copy",
+    "Summon, Adjacent, 1 scene",
+    """
+You create a temporary, exact copy of a human or exorcist. This clone:
+- mimics the original's appearance and basic actions
+- can follow simple instructions to the best of its ability
+- dissolves if touched by anyone except you or when it takes harm
+The copy is not capable of using psychic abilities or the powers of the original. The clone's abilities are purely physical and limited to mimicry.""",
+],
+]
+
+[blasphemy.bind]
+description = "Bind weak sins to your service and use them as servants or weapons."
+emoji_id = 1353597645603602503
+passive = [ "Sin Binding", "You have the forbidden ability to bind Sins. You have the obedient essence of a minor sin bound to you, under your control. The rules for it are on the bottom left of this sheet." ]
+abilities = [
+    [
+    "Horde",
+    "Self, 1 scene, SPIRIT",
+    """
+You can spend a psyche burst to empower your sin for one scene. The next time it takes action for traversal or movement, it gains +1D. As part of this action:
+- You can transform it into the form of a vehicle or ride-able creature for one scene. It can go about CAT speed, becomes partly visible to humans and has room for two passengers.
+- It can glide a short distance while in vehicle form, with or without passengers.""",
+],
+    [
+    "Forbidden",
+    "SPIRIT, Self, 1 scene",
+    """
+You can spend a psyche burst to empower your sin for one scene. The next time it takes action for violence or physical force, it gains +1D. As part of this action:
+- Once this scene, it can ignore any stress taken
+- You can lift limiters on your spirit temporarily for a scene, causing it to undergo a monstrous transformation similar to its original form. It becomes a size equal to CAT and can easily move, lift, or throw objects of an equal size.""",
+],
+    [
+    "Hunter",
+    "Self, 1 scene, SPIRIT",
+    """
+You can spend a psyche burst to empower your sin for one scene. The next time it takes action for tracking or observation, it gains +1D. As part of this action:
+- It can now separate from you up to extreme range when released
+- It gains the ability to fly and see and smell extremely well - it can also see in the dark and in the thermal spectrum, and clearly up to long range.
+- You can concentrate, dissociating from your body, and becoming extremely vulnerable. While concentrating this way, however, you can use your sin’s senses instead of your own. You can engage and disengage this effect at will for the scene.""",
+],
+    [
+    "Surrender",
+    "Charm, Self, until rest",
+    """
+You can temporarily fuse your sin to your body. Your body mutates slightly to accommodate this change, and you lose the use of your bound sin for the duration. Immediately manifest a temporary sin mark and roll for the ability, which you gain until you end this ability early or rest. You may gain 1 sin to re-roll the mark ability, any number of times, any time while this power is active.
+If you hit sin overflow while this effect is active and successfully resist, you manifest the chosen sin mark permanently instead of rolling for it.""",
+],
+    [
+    "Prison",
+    "Summon, adjacent, Until Rest",
+    """
+You create an area drawn as a large circle, up to CAT area, choosing either to draw a regular prison or inverse prison. The prison takes a few minutes to activate and lasts until you rest
+- A regular prison makes it impossible for Sins to leave while active. An inverted prison prevents sins from entering while active.
+- Humans and exorcists can freely enter.
+The prison can be broken by a determined sin, but has a 3 talisman for durability, taking stress like an execution talisman.""",
+],
+]
+
+[blasphemy.palace]
+description = "The contents of your mind are a tangible place you can visit"
+emoji_id = 1353597886398468156
+passive = [
+    "Sanctum",
+    """
+You and allies you rest with can enter your psychic palace while resting. This improves the resting rolls of yourself and up to one ally of your choice resting with you by +1.
+- The palace is a mental projection, a dream space that takes the form of a large home, residence, or mansion in a locale of your choosing. Walking off the premises merely returns to you the locale, and as a purely psychic phenomena, you can control its appearance and decor.
+- Taking harm in a palace instantly shunts a person out of it, waking them up, instead of dealing them real harm. Visitors can leave any time.
+- Entering the palace mentally requires only closing your eyes and concentrating, leaving your outside body defenseless and insensate. It can be done by you any time, and by your allies by resting with you, or with your powers.""",
+]
+abilities = [
+    [
+    "Cellar",
+    "Charm, Short, Instant",
+    "You can simulate situations inside your palace before putting them into practice in reality. You can use this power and roll to set up allies even if you are not physically present by describing the way in which you trained or prepared with them, or a psychic copy of them. Gain +1D on the setup roll.",
+],
+    [
+    "Library",
+    "Instant, Self",
+    """
+This power does not take a psyche burst. Your palace has a library of information from the psychic gestalt. When you wish to gather information on or investigate any subject, you can gain +1D on the roll by accessing this library. However, afterwards the Admin rolls 1d6 for each of the following:
+- Is the information rare?
+- Is the information forbidden in some way?
+- Is the information pertinent to a powerful group?
+For each ‘1’, you take 1 stress as you read something disturbing in the library.""",
+],
+    [
+    "Foyer",
+    "Summon",
+    """
+Your palace has a tulpa, a psychic being that takes the form of a servant or butler. They are loyal to you, you can determine their personality and appearance. Though they are casually around the palace whenever you wish even without the use of this power, you can summon them with this power, choosing one:
+- Have your tulpa aid you on a task related to research, crafting, or investigation, granting +1D on your next roll.
+- Briefly manifest your tulpa outside your palace in short range as a real person, a mirror of their appearance inside your palace but dressed any way you like. They have roughly the capabilities of an average person (cat 0) and roll 2d for activities that a typical servant or butler could do and 0d for everything else. Any harm taken by them banishes them back to the palace.""",
+],
+    [
+    "Bar",
+    "Self, 1 per scene",
+    """
+This power does not take a psyche burst. You have expanded facilities inside your palace for resting. If you describe how you let people who are resting with you take a load off, you can roll 1d3+1, and do one of the following, spending charges of the die you have just rolled per option:
+- 1 charge: Erase 1 stress on one person
+- 2 charges: Untick 1 tick on all hooks for a person
+- 3 charges: Remove an injury
+For each, describe a drink, snack, meal, or other form of relaxation or healing you are preparing for your guest.""",
+],
+    [
+    "Parlor",
+    "CAT range, 1 scene",
+    """
+Choose a person in CAT range of you and speak their (real) name. You can bring yourself and their psychic shadow inside your palace, no matter where they are.
+If that person is willing, you can choose to bring their actual psychic consciousness inside your palace, making them aware and remember what is going on while inside, as though in a dream. Their real body becomes unconscious and vulnerable. They can leave willingly.
+You can instead bring a psychic double of a willing or unwilling person into your palace. They are not affected, but the double is a copy of their mind at the time of summoning. Any memories formed by the double will not transfer over. The double cannot leave until the scene ends.
+A person or double summoned this way is not obligated in any way to behave differently than their original.
+Gain or grant +1D on the next roll by yourself or an ally taking advantage of this power.""",
+],
+]
+
+[blasphemy.jaunt]
+description = "Separate body and soul, perception and flesh"
+emoji_id = 1353597766617530369
+passive = [ "Ghostwire", "You can join your mind telepathically with one other willing person you touch. While within long distance of each other, you can talk telepathically, and sense each other’s ambient emotional state. This effect lasts until you use it again, until the other person becomes unconscious, or until you or the other person close the connection." ]
+abilities = [
+    [
+    "Possession",
+    "Curse, Short, 1 scene",
+    """
+You can shunt your perception out of your body to possess a human, animal, or corpse (in good condition) you can see in range for a scene. Supernatural beings are immune to this effect. Unwilling humans might require a rolling PSYCHE to possess successfully.
+- While possessing another, your real body is insensate and defenseless
+- For humans and animals, you cannot force a target to harm itself or take action that would indirectly cause it to come to harm
+- Actions that the target takes use your skills, but the target’s body or equipment, which might change the circumstances.
+You are kicked out of the body if it takes stress.""",
+],
+    [
+    "Geist",
+    "Self, 1 scene",
+    """
+You can shunt your perception out of your body and roam for CAT+1 range, becoming a being made of purely psychic energy.
+- While practicing this power, your real body is insensate and defenseless
+- You can fly slowly, are invisible to those not psychically sensitive, and may pass through walls, floors, and objects easily while in this form.
+- You cannot interact with or be affected by the physical world. You cannot use or benefit from your own psychic powers, but psychic powers or effects from others can still affect you.
+If your form is destroyed somehow (by a supernatural force), you take 1 stress, this power ends, and you can’t use this power again until the scene passes.
+This power may easily affect the parameters of rolls, such as difficulty and risk.""",
+],
+    [
+    "Threads",
+    "Charm, Self, Until rest",
+    """
+You can sense the unseen world of traces of grace. Upon using this power, you close your eyes and can see through your eyelids the patterns the soul leaves in the environment.
+- You gain the ability to see living beings, even through walls, for CAT range
+- You can see the traces a sin or someone strong in grace such an exorcist leaves, like a faint trail of light through the air.
+- You gain +1D on actions to track or locate living beings or traces of sins in the area.
+However, you cannot see any living matter (you are effectively blind) while maintaining this power, and find actions that rely on sight hard.
+This power ends when you open your eyes or when you rest.""",
+],
+    [
+    "Passenger",
+    "Curse, CAT range, 1 scene",
+    """
+You choose a willing target in CAT range, who must be able to either hear you (even telepathically) or see you. You pull that target’s psychic presence into your body for the duration. Their body becomes limp, vulnerable and insensate. However:
+- They now share control of your body with you, including all senses.
+- You can surrender control of your body to them to allow them to make action rolls using their skills or abilities, but your body (gear, access, etc).
+- You can set them up as normal or aid them on these skills.
+They cannot use psychic powers while possessing you this way, and you suffer any harm or consequences from their actions.""",
+],
+    [
+    "Desecrate",
+    "Summon, Adjacent, Instant",
+    """
+You can force a semblance of life into a corpse by touching it on the eyes. You may ask the corpse three questions, after which the effect ends and it becomes dead again. It also expires if the hour passes.
+- You can’t use this power on the same corpse more than once
+- The power does not return life to the body, but accesses the body’s memories. If the head or brain is missing, or the body lacks a tongue, etc, this power will not work as well.
+- The corpse is obligated to answer truthfully, but can only speak to the realm of its knowledge and memories before it died. It may have only partial knowledge of a situation or may speak according to its own viewpoint.
+Gain or grant +1D when you or an ally next acts on the answers.""",
+],
+]
+
+[blasphemy.sympathy]
+description = "Pull on the innate connections to human tools or objects"
+emoji_id = 1353597836721258518
+passive = [ "Resonance", "At the start of the mission, roll on the resonance table. When you make this roll, 1d3, then 1d6, then check the resonance tables after this blasphemy entry. When you are making an action roll and you are using an item you are resonant with, you gain a +1D bonus. You can spend a psyche burst any time to roll an additional resonance. You can keep up to three at a time, and only benefit from one at a time." ]
+abilities = [
+    [
+    "Amplify",
+    "Summon, Adjacent, 1 scene",
+    """
+You can expand the mundane properties of a regular non-weapon item to extreme levels. You touch a mundane object up to CAT size. For the scene, you automatically have resonance with it, and its properties are enhanced to extreme levels, as if they were up to your CAT in scale. For example:
+- A car’s speed, handling, and resilience
+- A light’s brightness and intensity, and the area it illuminates
+- A door’s ability to lock and withstand force
+This can easily affect the difficulty and risk of rolls.""",
+    ],
+    [
+    "Bond",
+    "Self, 1 scene",
+    """
+For the scene, you can bond incredibly tightly with an item you are holding in one or both hands.
+- You are now resonant with that item
+- You can now use it as a cutting or bludgeoning weapon even if it wouldn’t normally be a weapon. It has about the power of a regular mundane melee weapon, like a bat, baton, or sword.
+- The item becomes virtually indestructible
+- You can cause the item to recall to your hand, flying through the air, from within short distance""",
+],
+    [
+    "Diplomacy",
+    "Instant, Short",
+    """
+You make a simple request of an object as if it was a person, or ask it a simple yes or no question.
+For example, you can ask a door to open or hold shut (even if it couldn’t normally lock, or you don’t have the key), a computer to turn off or find information for you, or a car to turn on without a key or drive by itself.
+If you need to make a roll for this, roll PSYCHE or use a social action, such as negotiation or authority.
+You can affect objects up to CAT size with this.
+Objects asked questions can answer only with yes or no answers and can’t actually vocalize.""",
+],
+    [
+    "Psychometry",
+    "Instant, Adjacent",
+    """
+You can touch objects to remotely view their memories. You can view back a number of days equal to your CAT. Roll PSYCHE, then ask a question plus an additional question per success. Gain +1D when next acting on the answers.
+- Where has this object been?
+- Who has touched this object?
+- What has this object been used for?
+- What else is this object connected to?
+Memories of an object are impressionist and imprecise, and they are only usually ‘aware’ of their very immediate surroundings.""",
+],
+    [
+    "Alliance",
+    "Summon, Short, 1 scene",
+    """
+An object up to CAT size in short range can now take action to set up an ally, rolling 1d6, or PSYCHE if you are resonant with that object. The object can take or cause consequences as normal from these actions.
+Allies have to be able to interact with it or use the object to gain its benefits. The object doesn’t gain the ability to actually move or animate in any way, but fortune simply bends around it.""",
+],
+]
+
