@@ -5,14 +5,19 @@ import tomllib
 from pprint import pprint
 from discord import Attachment, Client, File, Intents, app_commands, Interaction, guild
 
+from globals import TEST_GUILD, data
 from helpers import blasphemy, agenda
 from ui import ExorcistView
 
-with open("./assets/data.toml", "rb") as f:
-    data = tomllib.load(f)
+
+# TODO: 
+"""
+1. finish autocompletes in helper
+    - add fuzzywuzzy and use `process.extract()`
+    - implement the funcs in helper
 
 
-TEST_GUILD = discord.Object(int(environ["test_guild"]))
+"""
 
 
 class CainClient(Client):
@@ -37,7 +42,6 @@ client = CainClient(owner_ids=[409745317114937346, 406243848554151937])
 async def register(
     interaction: Interaction, name: str, category: int, profile: Optional[Attachment]
 ):
-    # await interaction.response.send_modal(ExorcistModal())
     await interaction.response.send_message("ok")
 
 
@@ -46,14 +50,16 @@ async def register(
 async def cmd_blasphemy(
     interaction: Interaction, name: Optional[str], ability: Optional[str]
 ):
-    e = blasphemy(data, name, ability)
+    e = blasphemy(name, ability)
     await interaction.response.send_message(embed=e, ephemeral=True)
 
 
 @client.tree.command(name="agenda", guild=TEST_GUILD)
 async def cmd_agenda(interaction: Interaction, name: Optional[str]):
-    e = agenda(data, name)
+    e = agenda(name)
     await interaction.response.send_message(embed=e)
 
 
 client.run(environ["discord_token"])
+
+

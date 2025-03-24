@@ -1,34 +1,14 @@
 from typing import Optional
-from discord import Embed, Emoji, PartialEmoji
+from discord import Embed, Emoji, PartialEmoji 
 
-# HACK: temporary
-ICON_URL = "https://cdn.discordapp.com/attachments/1112259815905951780/1353591695446380555/image.png?ex=67e23600&is=67e0e480&hm=3b0bfd5961a10f1c8a60418606f66b374286cdcdb48597fcacf0660ec9da63d0&"
+from globals import ICON_URL, data, agenda_choices,blasphemy_choices
 
 
 def emote(name: str, d: dict):
     return f"<:{name.lower()}:{d['emoji_id']}>"
 
 
-# TODO: add views
-def blasphemy(data: dict, name: Optional[str], ability: Optional[str]) -> Embed:
-    e = Embed()
-
-    if name == None:
-        e.set_author(name="Blasphemies", icon_url=ICON_URL)
-
-        for k, v in data["blasphemy"].items():
-            title = f"{emote(k,v)} **{k.upper()}**"
-            desc = f'{v["description"]}'
-            e.add_field(name=title, value=desc)
-
-    elif ability == None:
-        # TODO
-        pass
-
-    return e
-
-
-def agenda(data: dict, name: Optional[str]):
+def agenda(name: Optional[str]):
     d = data["agenda"]
     if name == None:
         e = Embed()
@@ -36,7 +16,7 @@ def agenda(data: dict, name: Optional[str]):
 
         for k, v in d.items():
             title = f"{emote(k,v)} **{k.upper()}**"
-            desc = f'-{v["items"][0]}\n- **{v["items"][1]}**'
+            desc = f'- {v["items"][0]}\n- **{v["items"][1]}**'
             e.add_field(name=title, value=desc)
         return e
 
@@ -53,3 +33,22 @@ def agenda(data: dict, name: Optional[str]):
             e.add_field(name=i[0], value=i[1], inline=False)
 
         return e
+
+# TODO: add views
+def blasphemy( name: blasphemy_choices, ability: blasphemy_autocomplete) -> Embed:
+    e = Embed()
+
+    if name == None:
+        e.set_author(name="Blasphemies", icon_url=ICON_URL)
+
+        for k, v in data["blasphemy"].items():
+            title = f"{emote(k,v)} **{k.upper()}**"
+            desc = f'{v["description"]}'
+            e.add_field(name=title, value=desc)
+
+    elif ability == None:
+        # TODO
+        pass
+
+    return e
+
