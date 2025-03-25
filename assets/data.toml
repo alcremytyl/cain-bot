@@ -281,8 +281,12 @@ This power may easily affect the parameters of rolls, such as difficulty and ris
     """
 Release a blast of energy in a highly destructive beam. The beam goes in a straight line a range equal to CAT, piercing through walls, doors, and obstructions effortlessly. It is extremely loud and bright. Roll PSYCHE for its effects, only spending a psyche burst on success.
 The very first time you use this power in a mission, it gains +1D for every tick on the pressure clock (it still cannot exceed +3 advantage die). For every ‘6’ result you roll, this ability inflicts 1 extra slash on a talisman, but you also take 1 stress, which could kill you or cause an injury. This stress cannot be reduced or ignored in any way.""",
-],
+  ],
 ]
+extra = ["Unstable Power",
+"""
+The Raw power of your  psyche gathers and swells inside of you. Causing an unstable flux of energy inside of your body. Treat this hook as a normal hook when slashed via normal hook methods or reuses of Inner Furnance. If the hook is filled out, gain one injury. If this injury kills you, you explode in an explosion up to CAT size. Nothing survives this.
+"""]
 
 [blasphemy.flux]
 description = "Tap into the ebb and flow of time."
@@ -337,8 +341,8 @@ You can briefly reverse time in order to alter causality for any event that happ
 When you use this power, gain temporal instability. If you use it again in the same scene, gain 1d3 temporal instability instead.""",
   ],
 ]
-extra = """
-# Temporal Instability
+extra = ["Temporal Instability",
+"""
 Many of your powers give you this hook. When you gain this hook, roll 1d6. On a 1, also slash the hook out once. When the hook resolves, roll 1d6: 
 1. Permanently add to your agenda ‘Prove that you are the real you.” If you gain this result again, you immediately suffer sin overflow. 
 2. Mysterious injuries open up. You go unconscious from pain, putting you out of the current scene, and take an injury.
@@ -346,7 +350,7 @@ Many of your powers give you this hook. When you gain this hook, roll 1d6. On a 
 4. You find you are wearing someone else’s clothes. Erase your entire kit this mission, but regain any spent kit points.
 5. Your body is different. For the remainder of this mission, pick a skill you have 1 or more dice in. It now rolls 0d. After the mission, you have time to train and get used to this, reverting this effect, though keeping any physical changes.
 6. Your face looks a little different. The changes are permanent.
-"""
+"""]
 
 
 [blasphemy.vector]
@@ -510,14 +514,14 @@ You can ‘filter’ this effect by allowing light or sound inside the location 
 This power may easily effect the parameters of rolls, such as difficulty and risk.""",
   ],
 ]
-extra = """
-# Absentia
+extra = ["Absentia",
+"""
 You can gain this hook with your passive. If this hook fills up, you take an injury and black out for a few moments. When you wake up, you are missing a body part (roll 1d6). It simply disappears (cleanly) as though it had never existed, leaving a stump or hole. It doesnt come back, even if you heal the injury If you have no body part left to lose (when you roll), reduce the result by 1. If the result is 0, you lose your head and suffer (gruesome) instant death instead. Missing body parts might make some rolls hard or risky, dependent on the situation. You adjust to any disability after the mission, and it has no further effect.
 
 1. Eye      4. Finger
 2. Nose     5. Toe
 3. Ear      6. Nothing
-"""
+"""]
 
 [blasphemy.whisper]
 description = "Your shadow talks to you. It knows the future."

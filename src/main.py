@@ -1,23 +1,15 @@
 from typing import List, Optional
 import discord
 from os import environ
-import tomllib
 from pprint import pprint
 from discord import Attachment, Client, File, Intents, app_commands, Interaction, guild
 
-from globals import TEST_GUILD, data
-from helpers import blasphemy, agenda
-from ui import ExorcistView
-
-
-# TODO: 
-"""
-1. finish autocompletes in helper
-    - add fuzzywuzzy and use `process.extract()`
-    - implement the funcs in helper
-
-
-"""
+from globals import (
+    TEST_GUILD,
+    blasphemy_choices,
+    agenda_choices,
+)
+from helpers import autocomplete, blasphemy, agenda, blasphemy_autocomplete
 
 
 class CainClient(Client):
@@ -45,8 +37,9 @@ async def register(
     await interaction.response.send_message("ok")
 
 
-# TODO: transformers
 @client.tree.command(name="blasphemy", guild=TEST_GUILD)
+@app_commands.autocomplete(name=autocomplete(blasphemy_choices))
+@app_commands.autocomplete(ability=blasphemy_autocomplete)
 async def cmd_blasphemy(
     interaction: Interaction, name: Optional[str], ability: Optional[str]
 ):
@@ -55,11 +48,10 @@ async def cmd_blasphemy(
 
 
 @client.tree.command(name="agenda", guild=TEST_GUILD)
+@app_commands.autocomplete(name=autocomplete(agenda_choices))
 async def cmd_agenda(interaction: Interaction, name: Optional[str]):
     e = agenda(name)
     await interaction.response.send_message(embed=e)
 
 
 client.run(environ["discord_token"])
-
-
