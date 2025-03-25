@@ -1,24 +1,8 @@
 cull user-specifics from the list if feb no like in the end
 
-
-
-
-
-
-
-
-# the user-specifics in question
-/inventory (shows list of inventory)
-/add inventory (adds stuff to inventory, just type to add)
-/weapon (shows current cat of weapon)
-/weapon add (add a weapon)
-/weapon upgrade (increase cat)
-/skills (shows stats) 
-/advance skill (add to stats)
-
 /advancement (shows the advancement description)
 /rest (shows rest description)
-/blasphemies name: powers (list of items), 
+/blasphemies name: powers (list of items),
 /agendas name: (list of items)
 /cast: posts a description of what they're casting
 /sin overflow (post sin overflow description and the options to resist or give up)
@@ -45,5 +29,4 @@ cull user-specifics from the list if feb no like in the end
 /severe attack (shows severe attack description
 /severe attack, sin (shows a description of a severe attack from a specific sin
 /team work (team work description)
-/set up (set up description)
-
+/set up (set up description

@@ -35,6 +35,7 @@ blasphemy_choices = (
     "Jaunt",
     "Sympathy",
 )
+blasphemy_abilities: dict[str, list[str]] = dict()
 
 blasphemy_colors = (0xFF0000, 0xFFC800, 0x0974F3, 0xF600FF)
 
@@ -44,3 +45,10 @@ global data
 
 with open("./assets/data.toml", "rb") as f:
     data = tomllib.load(f)
+
+
+for name, _data in data["blasphemy"].items():
+    blasphemy_abilities[name] = []
+
+    for ability in _data["abilities"]:
+        blasphemy_abilities[name].append(ability[0])

@@ -1,9 +1,17 @@
+from functools import cache, lru_cache
 from typing import Collection, List, Optional
 from discord import Embed, Emoji, Interaction, PartialEmoji
 from discord.app_commands import Choice
 from fuzzywuzzy import process
 
-from globals import ICON_URL, data, agenda_choices, blasphemy_choices, blasphemy_colors
+from globals import (
+    ICON_URL,
+    data,
+    agenda_choices,
+    blasphemy_choices,
+    blasphemy_colors,
+    blasphemy_abilities,
+)
 
 
 def emote(name: str, d: dict):
@@ -14,6 +22,16 @@ def emote_link(id) -> str:
     return f"https://cdn.discordapp.com/emojis/{id}.png"
 
 
+@cache
+def name_from_ability(ability: str) -> str | None:
+    for name, _data in data["blasphemy"].items():
+        for a in _data["abilities"]:
+            if ability.title() == a[0]:
+                return name
+    return None
+
+
+@lru_cache(maxsize=len(agenda_choices))
 def agenda(name: Optional[str]):
     d = data["agenda"]
     if name == None:
@@ -44,9 +62,12 @@ def agenda(name: Optional[str]):
 # TODO:
 # add views
 # make it shit out info of the ability itself
+@cache
 def blasphemy(name: Optional[str], ability: Optional[str]) -> Embed:
     d = data["blasphemy"]
-    if name == None:
+
+    # all blasphemies
+    if name == None and ability == None:
         e = Embed()
         e.set_author(name="Blasphemies", icon_url=ICON_URL)
 
@@ -56,11 +77,12 @@ def blasphemy(name: Optional[str], ability: Optional[str]) -> Embed:
             e.add_field(name=title, value=desc)
         return e
 
-    color = blasphemy_colors[(blasphemy_choices.index(name)) // 3]
-    name = name.lower().strip()
-    d = d[name]
+    # specific blasphemy
+    if name is not None and ability == None:
+        name = name.lower().strip()
+        color = blasphemy_colors[(blasphemy_choices.index(name)) // 3]
+        d = d[name]
 
-    if ability == None:
         passive = d["passive"]
         abilities = [a[0] for a in d["abilities"]]
         extra = d.get("extra")
@@ -79,7 +101,10 @@ def blasphemy(name: Optional[str], ability: Optional[str]) -> Embed:
 
         return e
 
+    # specific ability
     else:
+        name = str(name_from_ability(ability))
+        color = blasphemy_colors[(blasphemy_choices.index(name)) // 3]
         e = Embed(color=color)
         e.set_author(name=name.upper())
         e.set_thumbnail(url=emote_link(d["emoji_id"]))
@@ -103,14 +128,18 @@ def autocomplete(choices: Collection[str]):
 async def blasphemy_autocomplete(
     interaction: Interaction, current: str
 ) -> List[Choice[str]]:
-    name: str = interaction.namespace["name"]
+    try:
+        name: str = interaction.namespace["name"]
+    except KeyError:
+        name = ""
 
-    if len(name) <= 0 and name.title() not in blasphemy_choices:
-        return []
+    print("name - " + name)
+    if len(name) == 0 or name.title() not in blasphemy_choices:
+        choices = [a[0] for a in blasphemy_abilities.values()]
 
-    choices = [a[0] for a in data["blasphemy"][name.lower()]["abilities"]]
+        return [Choice(name=a, value=a) for a in choices]
 
     return [
         Choice(name=n[0], value=n[0])
-        for n in process.extract(current, choices, limit=8)
+        for n in process.extract(current, blasphemy_abilities[name.lower()], limit=8)
     ]
