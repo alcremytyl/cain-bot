@@ -1,3 +1,8 @@
+# key parsing
+# `-` -> `: `
+# `_` -> ` `, left is upper() right is title()
+
+
 # --- Agendas ---
 [agenda.beast]
 emoji_id = 1353597630474879097
@@ -847,3 +852,260 @@ Allies have to be able to interact with it or use the object to gain its benefit
 ],
 ]
 
+# --- descriptions --- 
+[description]
+rest = """
+Exorcists that rest are recovering and letting time pass. The exorcists must decide to rest as a group. If they do, pressure always increases by 1. Each exorcist rolls 2d3, then takes each die and assigns it to an item from the following list. They are able to make the same choice twice. Regain that many psyche bursts. Recover stress equal to the d3- Erase slashes on a hook equal to the d3Resting also ends the effects of some powers and abilities, or resets others.
+"""
+advances = """
+ Any time your experience bar is full (4 segments), you cash it out for an advance. You can bank these advances and spend an advance after a session in the following ways: - Gain a new agenda ability, 
+- Gain a new blasphemy power or a new, blasphemy,  
+- Evolve a sin mark and roll for a new ability for that sin mark. On duplicate, choose,  
+- Gain 3 scrip,
+- Improve a skill by 1. You can do this six times,  total, and have only two skills at 3 maximum
+"""
+sin_overflow = """
+If an exorcist would exceed their sin overflow limit, which is normally 10, they go into sin overflow at the end of the scene. They lose control of the psychic energies in their body, which start to run wild and begin their transformation into a new sin. A character in Sin Overflow has two choices: give up or resist.
+
+## Give Up
+A character that gives up effectively ceases to be a player character and may work with the Admin to determine the Sin they become. They become an antagonist and control is handed over to the Admin.
+
+They make one final choice, which is to flee or fight. Fighting immediately forces a conflict scene with an Imago. The new Sin may become a target of a later hunt, or a greater antagonist. If the group feels like it is a good time to break and reassess the situation, CAIN may also call the mission, ending it early. An emergence of a new Sin is a disaster that drastically changes the parameters of the mission.
+
+## Resist
+A character that makes this choice must make a resistance check.  They must roll a d6, adding their number of sin marks. If they have no sin marks, they automatically pass this test. If a character has no sin boxes left, they fail this test on a total result of 6 or less, they pass and can keep control on a total result of 7 or higher, they fail and must give up. A result of ‘1’ on the die always passes. A character that keeps control clears all sin, permanently ticks off two sin boxes, and gains a sin mark.
+
+## Sin Marks
+A sin mark is a physical manifestation of wild power overflow on your body, evidence of your partial transformation into a sin. You can find descriptions regarding sin marks by doing `/describe sin mark`. A sin mark is a new, permanent part of your character. It grants new, beneficial power, and grants you new abilities.
+"""
+
+sin_mark = """
+Roll 1d6 for mark, then 1d6 on that mark for ability. If you gain a mark from a source other than sin overflow,you must still randomly roll for the ability.
+- If you have a mark already and roll it again, the mark evolves, granting it a new ability (re-roll duplicates).
+- If you roll a ‘6’ for a mark, you can choose which one, then roll for the ability as normal.
+- You increase your resistance rolls and lower your sin overflow cap by 1 for each sin mark you have.
+- Sin marks can affect whether rolls are hard or risky,and some grant bonus die or special abilities.
+"""
+
+sin_mark-eyes = """
+Typical Appearance or Manifestation: Black or altered sclera, white iris, split, slit, or duplicate pupil.
+
+1. You can see clearly up to extreme distance, as if you could ‘zoom in’ your vision
+2. You can see through walls and nonliving matter in short distance
+3. When closed, you can sense the ambient emotional state of nearby humans or exorcists. Once a mission, gain +1D or power when acting on this.
+4. Once a mission, you can momentarily paralyze a human by merely looking at them. The effect lasts until you break eye contact, a minute passes, or either of you suffer stress.
+5. You can see clearly in the dark and are unaffected by darkness, weather, or obscurement.
+6. Gain +1D to Surveillance. This could put you up to 4D.
+"""
+
+sin_mark-jaw = """
+1. You can spit black venom up to short distance. It’s a mundane ranged weapon with about the same effectiveness as a pistol.
+2. You can gain 1d3 sin to re-roll any roll requiring speech, taking the second result as final.
+3. You can whisper short messages into the wind of 6 words or less that a target of your choice can hear in their ear within long distance. The target cannot reply.
+4. You gain +1D when negotiating with, commanding, or convincing humans
+5. Once a mission, you can give a short, one word command to a human, who then immediately attempts to follow it to the best of their ability. Humans will not obey obviously harmful commands.
+6. Gain +1D to Authority. This could put you up to 4D.
+"""
+
+sin_mark-chest_or_back = """
+1. You can roll an extra resting die while resting. If you do, gain the same amount of sin.
+2. You no longer need to breathe. You are no longer affected by mundane toxin or poison. You cannot become intoxicated by alcohol.
+3. Gain +1 max KP.
+4. You have a chance of ignoring any injury (roll a d6, ignore on a 6)
+5. Automatically erase 1 stress when pressure increases.
+6. Gain +1D to Conditioning. This could put you up to 4D.
+"""
+
+sin_mark-arms_or_hands = """
+1. You can gain 1d3 sin when performing a feat of mundane physical strength to increase the CAT up that feat up to CAT 3.
+2. Once a mission, you may merge any single mundane weapon or item you could hold into your flesh, able to conceal or produce it at will.
+3. Once a mission, you can dissolve all non-living matter in a cube about the size of a room into a black sludge with a touch of your third (ring) finger.
+4. Once a mission, you can gain 1d3+1 sin to morph your arm or hand into a melee weapon for a scene. It is a supernatural melee weapon and has normal effectiveness against sins.
+5. You can re-roll any force or interfacing roll, taking the second result as final. If you do, gain 1d3 sin.
+6. Gain +1D to Force. This could put you up to 4D
+"""
+
+sin_mark-skin_hair_or_legs = """
+1. You can gain 1d3 sin to leap up to an object CAT size in height without rolling. You can do this as part of an action roll.
+2. While touching them with your bare flesh, you can can climb or walk on walls as though they were flat surfaces
+3. You have +1D when running or sprinting on open ground, such as a road
+4. You can gain 1 sin during an action roll to glide a short distance through the air as part of the action. You have to start at height to gain this benefit.
+5. You can gain 1d3 sin to go completely invisible to mundane perception for the duration of an action roll.
+6. Gain +1D to Covert. This could put you up to 4D.
+"""
+
+complications = """
+Reactions can also create new obstacles, hazards, or change the parameters of the fight, making a change in the conditions until dealt with through the actions of the exorcists. These are called complications. Complications can:
+- make something hard,
+- deal 1 stress at the end of the round to all exorcists,
+- make the sin take 1 less slash on its talisman under certain circumstances,
+- make the sin deal 1 more stress under certain circumstances,
+- change the parameters of the fight. 
+
+The same effect cannot stack with itself. 
+
+Complications are worse and take more effort to deal with the worse the reaction die (5-6): 2 talisman, (2-4): 4 talisman. (1): 6 talisman. A sin can add a complication up to three times per conflict scene total. 
+
+The circumstances of a complication should be specific and not apply all the time. For example: the floor is on fire, dealing 1 stress to all exorcists who touch it, the sin’s fangs drip with poison, dealing +1 stress to unarmored exorcists.
+"""
+
+attack = """
+Direct harm to the opponents, with straightforward parameters (1: 5 slashes , 2-3: 3 slashes, 4+: 2 slashes). The Admin can improvise the descriptions on these based on the suggestions. They can also split the stress inflicted up amongst any number of targets in range.
+""""
+
+severe_attack = """
+A severe attack is a limited but much more powerful attack that typically inflicts more harm, conditions, or even injuries or hooks on exorcists. When a sin makes a severe attack, it immediately initiates a challenge that anyone can participate in, interrupting the normal round order. The challenge is described in the attack. It can only be used once a hunt!
+"""
+
+hooks="""
+During your missions you will be forced to make hard choices or trade offs, or be exposed to situations or harm that will come back to bite you later (sometimes literally). 
+
+As complications or consequences of your actions, the Admin can choose to give you a hook instead of immediately applying consequences. A hook is a very simple 3 slash talisman that starts empty. You track them on your sheet.
+
+You slash a hook under the following situations:
+- the tension talisman fills out during a hunt
+- When you roll a ‘1’ on the risk die.
+- If you would gain that hook again
+
+Whenever you would slash a hook a 3rd time and fill it up, the Admin may ‘cash it in’ at any time to erase it and apply its consequences, which are always worse than they would be up front.
+When you create a hook, write it as its consequences, for example: 
+- an exorcist is fighting a sin, and takes a nasty hit. The Admin decides to give them a hook instead of filling up their stress, giving them a ‘festering wound’ hook.
+- an exorcist decides to steal a key from a hotel owner, but rolls badly on the risk die. Rather than apply consequences right away, the Admin writes ‘wanted by police’ as a hook.
+- an exorcist decides to push themselves while performing a seance. The Admin writes ‘pass out from exhaustion’ as a hook.
+
+Additionally:
+- a character’s own abilities can also give them hooks.
+- hooks always inflict more severe consequences than the alternative 
+
+To deal with hooks, abide by the following rules:
+- hooks reset after each mission, so a character should start a mission with no hooks 
+- when an exorcist rests during a hunt, they can remove slashes on a hook
+"""
+
+fate_rolls = """
+If the Admin does want to leave something up to chance, they can make a fate roll, rolling a 1d6.
+- 1: Poorest result
+- 2-3: Poor result
+- 4-5: Good result
+- 6: Best result
+
+For example:
+- Is this cultist armed? 
+- Is this person alive when the players reach the scene?
+- How much time is left before the fire collapses the building supports?
+- What’s this person’s attitude towards the exorcists?
+- Will the cultists’ morale break and will they flee?
+
+And so on
+"""
+
+straight_rolls = """
+Not all action rolls are risky. If there is no clear and present consequence or danger, there’s no risk involved and the roll is a straight roll without the risk die being rolled at all. A player might make straight rolls when:
+- making general tests of ability, knowledge, or skill
+- investigating, surveying, or exploring
+- persuading someone who has a receptive attitude
+- working on a project
+- taking action where the result is unclear but the outcome isn’t necessarily dangerous, like trying to hotwire a car or pick a lock.
+"""
+
+threat_rolls = """
+The Admin may have a sin threaten to do something more severe than an immediate reaction, giving the exorcists a chance to react. 
+- A sin can threaten exorcists once a round.
+- Threats can deal more severe consequences than simple reactions 
+
+When a threat is deployed, one exorcist immediately has a chance to make an action roll to negate the threat. This doesn’t take their action for the round, and any exorcist can act, even one that has already acted. The action roll has no other result other than negating the threat, and negates it on at least one success. This roll is otherwise a normal roll (it can incur consequences, be set up, or gain bonus dice as normal).
+Threats can, if executed:
+- Inflict harm: (1): An injury, (2-3) 5 stress. (4-6) 3 stress
+- Separate an exorcist completely, or
+- Afflict an exorcist, or
+- Cause collateral damage, or
+- Massively change the parameters of the fight
+
+For example, a sin can threaten to:
+- Crush an exorcist in claws (stress)
+- Psychically afflict an exorcist
+- Collapse a building (change the fight, cause collateral damage, deal stress to all exorcists)
+- massacre bystanders
+- trap an exorcist behind a psychic wall (separate an exorcist)
+- hurl an exorcist into traffic (stress, separate exorcist)
+
+As always, the admin can refer to the risk die for the severity of these outcomes.
+""""
+
+hard_rolls = """
+Hard is very simple. If an action is judged to be hard, a character only scores successes on a 6. The Admin may judge a task to be hard if it the approach is beyond a character’s typical capabilities, if they are under duress or in a bad situation, or they don’t have the appropriate resources (tools, information, etc) to tackle a task.
+Situations that might be hard:
+- trying to fight blind
+- rushing someone with a gun and trying to disarm them unarmed
+- jumping an especially large gap between buildings
+- trying to talk your way out of an active arrest
+- sneaking past a security guard in broad daylight
+- conducting research on a blood sample without appropriate tools
+- trying to fight while hanging off the side of a building
+"""
+
+impossible_rolls = """
+The Admin is always able to say a roll is impossible given the circumstances. Players can always change this by changing these circumstances - using tools, abilities, or resources they have available to them. Exorcist capabilities are about that of an average well trained human - but their powers are not, and can push far beyond what is possible for a person to accomplish.
+"""
+
+teamwork = """
+When rolling, if multiple characters are able and willing to work together, you can choose a leader, then combine the highest of advantages, skills, kit and abilities among those characters. The leader then makes the roll, and the consequences and outcomes of the roll then apply to all characters involved.
+
+For example: three characters are trying to climb a wall. One character has 3 in conditioning, and another has only 1 in conditioning but owns a grappling hook. The combined dice pool would be 3, and the grappling hook could help bring the roll down from a hard roll to a regular roll, or perhaps make it so there’s no roll at all!
+
+Teamwork allows characters to pool their resources and make one roll or take one action to move a large number of people through a situation without having each individually roll. However, everyone takes the same consequences from an action (including stress suffered) which could make teamwork rolls a risky venture.
+"""
+
+setup="""
+A character can always take action to set up another character, including themselves.
+Examples of this:
+- causing a distraction so another exorcist can slip by a guard
+- giving a character a boost to get to a high vantage point
+- carefully preparing a ritual site for your own use
+- providing covering fire
+
+Setup rolls can be hard or risky as normal. The action must always be taken with the intent and outcome of setting up another character, and has no other effect by itself. Characters can still suffer consequences from it.
+
+On success, setup can give one of the following on the target’s next action that follows the opening made for them:
+- +1D
+- Decrease difficulty (hard > normal)
+- Decrease risk (risky > straight)
+
+A character can only benefit from setup once per action.
+"""
+
+afflictions = """
+Fighting a sin is mentally and physically taxing, and often supernaturally corrupting. Many sin abilities, including those that inflict hooks (see below), inflict afflictions. An affliction is an ongoing, usually negative effect on your exorcist, such as an infection or something more supernatural, such as psychic trauma, corruption, or influence. Afflictions are permanent for the duration of the hunt once acquired, but can be cleared after the mission is over. 
+
+Each sin has a list of unique afflictions it can inflict, or the admin can improvise based on simple parameters.
+"""
+
+bargaining = """
+Characters are always free to suggest hooks to the Admin as consequences for their own or another’s actions. They are even able to suggest hooks as a payment or tradeoff for the following:
+- +1D advantage
+- make an action less hard or risky
+- use a free psyche burst as part of the action
+- Slash a talisman an extra time
+
+They can only try for these bargains when they or one of their allies is taking action, and it’s up to the Admin whether to take them or not, and whether to modify the consequences or severity of the hook. Either way, the terms of the bargain must be clear before rolling.
+"""
+
+consequences = """
+When player characters fail a roll or take a risky action the Admin can impose consequences or complications. These can never take away success (for example, rolling low on the risk die if the action was a success), but can add complications or costs to an otherwise successful roll. Admins can:
+- **Force the the exorcists to pay a cost:**
+  - in attention (an exorcist is preoccupied for a while, or misses something important)
+  - effectiveness (someone else needs to follow up to finish the job, slash a talisman one less time)
+  - gear (tools or weapons break or jam, supplies or ammo are used up)
+  - safety (the situation gets more risky)
+  - time (miss opportunities, degrade situations)
+- Threaten an exorcist with more severe consequences unless further action is taken
+- Cut off an opportunity: a door closes, an NPC isn’t cooperative, someone gets away
+- Separate an exorcist
+- Force an exorcist to make a hard choice (dropping their ally off a building or saving their own skin).
+- Hinder an exorcist - make something harder for them until they can change the situation 
+- Give a hook: Give a hook to an exorcist
+- Start a ticking clock - Set out a talisman with negative consequences, or slash an existing talisman this way.
+- Look to the characters, the Sin, or the hunt.
+
+Many of them have existing abilities or details on their sheets that can be used as inspiration to inflict consequences. Sins even have a reaction list they can use in conflict scenes that give explicit outcomes.
+"""

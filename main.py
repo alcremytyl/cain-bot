@@ -1,5 +1,5 @@
-import sys,os
+from src.bot import client as cainridge
+from os import environ
 
-sys.path.append(os.path.join(os.path.dirname(__file__), 'src'))
 
-from src import main
+cainridge.run(environ["discord_token"])

@@ -2,7 +2,7 @@ import traceback
 from discord.ui import Modal, Select, TextInput, View
 from discord import SelectOption, TextStyle, Interaction
 
-from blasphemies import Blasphemy
+from .blasphemies import Blasphemy
 
 
 class ExorcistModal(Modal, title="GamesForFREAKS"):

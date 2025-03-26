@@ -3,13 +3,14 @@ from os import environ
 from pprint import pprint
 from discord import Attachment, Client, File, Intents, app_commands, Interaction, guild
 
-from globals import TEST_GUILD, blasphemy_choices, agenda_choices, blasphemy_abilities
-from helpers import (
+from .globals import TEST_GUILD, blasphemy_choices, agenda_choices, blasphemy_abilities
+from .helpers import (
+    ac_blashemy_ability,
+    ac_describe,
     autocomplete,
     blasphemy,
     agenda,
-    blasphemy_autocomplete,
-    name_from_ability,
+    describe,
 )
 
 
@@ -33,12 +34,11 @@ client = CainClient(owner_ids=[409745317114937346, 406243848554151937])
 
 @client.tree.command(name="blasphemy", guild=TEST_GUILD)
 @app_commands.autocomplete(name=autocomplete(blasphemy_choices))
-@app_commands.autocomplete(ability=blasphemy_autocomplete)
+@app_commands.autocomplete(ability=ac_blashemy_ability)
 async def cmd_blasphemy(
     interaction: Interaction, name: Optional[str], ability: Optional[str]
 ):
-    e = blasphemy(name, ability)
-    await interaction.response.send_message(embed=e, ephemeral=True)
+    await blasphemy(interaction, name, ability)
 
 
 @client.tree.command(name="agenda", guild=TEST_GUILD)
@@ -48,4 +48,7 @@ async def cmd_agenda(interaction: Interaction, name: Optional[str]):
     await interaction.response.send_message(embed=e)
 
 
-client.run(environ["discord_token"])
+@client.tree.command(name="describe", guild=TEST_GUILD)
+@app_commands.autocomplete(what=ac_describe)
+async def cmd_describe(interaction: Interaction, what: str):
+    await describe(interaction, what)

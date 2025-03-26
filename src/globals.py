@@ -1,8 +1,9 @@
 from os import environ
 import tomllib
-from typing import Literal, Optional
 import discord
 
+
+# TODO: pull from toml
 agenda_choices = (
     "Beast",
     "Doomed",
@@ -52,3 +53,8 @@ for name, _data in data["blasphemy"].items():
 
     for ability in _data["abilities"]:
         blasphemy_abilities[name].append(ability[0])
+
+
+describe_choices = [
+    k.replace("-", ": ").replace("_", " ") for k in data["description"].keys()
+]
