@@ -7,6 +7,8 @@ name = "pypi"
 discord = "*"
 fuzzywuzzy = "*"
 python-levenshtein = "*"
+pillow = "*"
+numpy = "*"
 
 [dev-packages]
 
