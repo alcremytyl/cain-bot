@@ -100,6 +100,7 @@ async def agenda(ctx: Interaction, name: str | None):
 # TODO:
 # add views
 # make it shit out info of the ability itself
+# split into subcommands for name and ability versions
 @cache
 async def blasphemy(ctx: Interaction, name: str | None, ability: str | None):
     payload = {}
@@ -211,3 +212,7 @@ async def __ac_describe(current: str) -> AutoCompletion:
         Choice(name=n[0], value=n[0])
         for n in process.extract(current, describe_choices, limit=25)
     ]
+
+
+async def talisman_create(ctx: Interaction):
+    pass

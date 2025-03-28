@@ -20,6 +20,9 @@ class CainClient(Client):
         super().__init__(intents=intents)
         self.owner_ids = owner_ids
         self.tree = app_commands.CommandTree(self)
+        
+        with open("")
+        self.talisman_config
 
     async def on_ready(self):
         print(f"Logged in as {self.user} (ID: {self.user.id})")  # type:ignore
@@ -61,4 +64,9 @@ async def __talisman_create(ctx: Interaction):
 
 @__talisman.command(name="delete")
 async def __talisman_delete(ctx: Interaction):
+    pass
+
+
+@__talisman.command(name="set_channel")
+async def __talisman_set_channel(ctx: Interaction):
     pass
