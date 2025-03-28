@@ -1,9 +1,9 @@
 from typing import List, Optional
-from os import environ
-from pprint import pprint
-from discord import Attachment, Client, File, Intents, app_commands, Interaction, guild
+from discord import Client, Intents, Interaction, app_commands
 
-from .globals import TEST_GUILD, blasphemy_choices, agenda_choices, blasphemy_abilities
+from src.transformers import StringArg
+
+from .globals import TEST_GUILD, blasphemy_choices, agenda_choices
 from .helpers import (
     ac_blashemy_ability,
     ac_describe,
@@ -30,25 +30,35 @@ class CainClient(Client):
 
 
 client = CainClient(owner_ids=[409745317114937346, 406243848554151937])
+__talisman = app_commands.Group(
+    name="talisman", description="collect my rupture", guild_ids=[TEST_GUILD.id]
+)
 
 
 @client.tree.command(name="blasphemy", guild=TEST_GUILD)
 @app_commands.autocomplete(name=autocomplete(blasphemy_choices))
 @app_commands.autocomplete(ability=ac_blashemy_ability)
-async def cmd_blasphemy(
-    interaction: Interaction, name: Optional[str], ability: Optional[str]
-):
-    await blasphemy(interaction, name, ability)
+async def __blasphemy(ctx: Interaction, name: StringArg, ability: StringArg):
+    await blasphemy(ctx, name, ability)
 
 
 @client.tree.command(name="agenda", guild=TEST_GUILD)
 @app_commands.autocomplete(name=autocomplete(agenda_choices))
-async def cmd_agenda(interaction: Interaction, name: Optional[str]):
-    e = agenda(name)
-    await interaction.response.send_message(embed=e)
+async def __agenda(ctx: Interaction, name: StringArg):
+    await agenda(ctx, name)
 
 
 @client.tree.command(name="describe", guild=TEST_GUILD)
 @app_commands.autocomplete(what=ac_describe)
-async def cmd_describe(interaction: Interaction, what: str):
-    await describe(interaction, what)
+async def __describe(ctx: Interaction, what: StringArg):
+    await describe(ctx, what)
+
+
+@__talisman.command(name="create")
+async def __talisman_create(ctx: Interaction):
+    pass
+
+
+@__talisman.command(name="delete")
+async def __talisman_delete(ctx: Interaction):
+    pass
