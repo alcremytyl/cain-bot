@@ -1,2 +1,4 @@
 assets/icons/*
 .env
+data.csv
+tmp/*
