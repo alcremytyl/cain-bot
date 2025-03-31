@@ -1,21 +1,15 @@
-from PIL import Image, ImageFont
-import numpy as np
+from pprint import pprint
 
-DECAL_DIMENSIONS = (110, 112)
-TEXT_DIMENSIONS = (570, 112)
+from src.talisman import Talisman, TalismansManager
+from src.cogs.wiki import *
 
-img = Image.open("./assets/talisman.png")
-decal = Image.open("./assets/decals/wormy.png")
-font = ImageFont.truetype("./assets/Apex-Black.ttf")
 
-decal.thumbnail(DECAL_DIMENSIONS, Image.Resampling.LANCZOS)
-d = decal.copy()
-d.putalpha(20)
-
-img.dra
-
-img.paste(d, (0, 0), decal)
-img.show()
-
-decal.close()
-img.close()
+print(
+    agenda_choices,
+    blasphemy_abilities,
+    blasphemy_abilities,
+    blasphemy_choices,
+    blasphemy_colors,
+    describe_choices,
+    sep="\n\n",
+)

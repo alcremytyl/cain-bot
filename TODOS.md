@@ -1,6 +1,13 @@
 # todo
 
 ## talismans
+[> [!IMPORTANT]
+> PROBABLY USE CONTEXT MANAGER INSTEAD OF RAWDOG SAVING TO FILE
+
+GET THAT JSON SHIT WORKING
+
+
+
 single message with an attachment
     each talisman is horizontal
         image facing left
