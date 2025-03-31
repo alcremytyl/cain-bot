@@ -6,7 +6,23 @@ import csv
 
 from PIL import Image as image, ImageDraw, ImageFont
 from PIL.Image import Image
-from discord import Message
+from discord import Message, ui
+from discord.ui.view import View
+
+"""
+slash-left-max = 220
+slash-right-max = 765
+
+offset ~= (right - left)/capacity
+
+
+increase size of talisman image by 20 vertical pad
+place slashes 10px above
+max rot of 15deg
+
+
+also render the slash capacity
+"""
 
 TALISMAN_DIMENSIONS = (785, 112)
 DECAL_DIMENSIONS = (112, 112)
@@ -45,6 +61,9 @@ class Talisman:
 
     def unslash(self, count: int = 1):
         self.count -= count
+
+    def set(self, value: int):
+        self.count = value
 
     def get_decal_fp(self) -> str:
         return f"{DECAL_DIR}{self.decal_path}.png"
@@ -100,6 +119,18 @@ class TalismansManager(Dict[int, Talisman]):
     def __init__(self):
         self.messages: List[Message] = []
 
+    def __contains__(self, key: object, /) -> bool:
+        match key:
+            case int(x):
+                return x in self.keys()
+            case str(x):
+                if x.isdigit():
+                    return int(x) in self.keys()
+                else:
+                    return False
+            case _:
+                return False
+
     @classmethod
     def load(cls) -> Self:
         t = cls()
@@ -154,3 +185,10 @@ class TalismansManager(Dict[int, Talisman]):
     # TODO:
     def reset(self):
         pass
+
+
+# class TalismanMenu(View):
+#     def __init__(self, *_):
+#         super().__init__(timeout=None)
+#
+#     @ui.button(label="")

@@ -4,6 +4,7 @@ from discord.ext import commands
 from discord.ext.commands import Cog
 
 from src.bot import CainClient
+from src.globals import COGS
 
 
 class MaintenanceCog(Cog, name="maintenance"):
@@ -15,8 +16,20 @@ class MaintenanceCog(Cog, name="maintenance"):
     @commands.is_owner()
     async def sync(self, ctx: Interaction):
         await ctx.response.send_message("Syncing...", ephemeral=True)
+
+        for cog in COGS:
+            await self.bot.reload_extension("src.cogs." + cog)
+
         await self.bot.tree.sync()
         await ctx.edit_original_response(content="Done!")
+
+    @command(name="cog-reload")
+    @commands.is_owner()
+    async def reload(self, ctx: Interaction):
+        for cog in COGS:
+            await self.bot.reload_extension("src.cogs." + cog)
+
+        await ctx.response.send_message("done", ephemeral=True)
 
 
 async def setup(bot: CainClient):

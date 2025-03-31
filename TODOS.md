@@ -1,12 +1,6 @@
 # todo
 
 ## talismans
-[> [!IMPORTANT]
-> PROBABLY USE CONTEXT MANAGER INSTEAD OF RAWDOG SAVING TO FILE
-
-GET THAT JSON SHIT WORKING
-
-
 
 single message with an attachment
     each talisman is horizontal
@@ -18,9 +12,8 @@ single message with an attachment
 
 randomly chosen images for the slashes, slight rotation probably  ± ~10 degrees
 
-methods to tick, untick, and raw edit their values them
 
-ways to create and delete them
+ways to delete them
 
 name going across them in the image or the text, most likely former
 
