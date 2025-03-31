@@ -1,12 +1,12 @@
 from collections.abc import Collection
 from functools import cache, lru_cache
-import tomllib
 from typing import Dict, List
 from discord.utils import MISSING
 from fuzzywuzzy import process
 from discord import Embed, Interaction
 from discord.app_commands import Choice, autocomplete, command
 from discord.ext.commands import Cog
+import yaml
 
 from src.bot import CainClient
 from src.globals import CACHE_SIZE, CAIN_EMOTE
@@ -21,8 +21,8 @@ blasphemy_choices: List[str] = []
 blasphemy_colors = (0xFF0000, 0xFFC800, 0x0974F3, 0xF600FF)
 describe_choices = []
 
-with open("./assets/data.toml", "rb") as f:
-    data = tomllib.load(f)
+with open("./data/description.yaml", "r") as f:
+    data = yaml.safe_load(f)
 
     agenda_choices = list(data["agenda"].keys())
 
@@ -192,15 +192,15 @@ async def describe(ctx: Interaction, target: str):
     t = target.replace(": ", "-").replace(" ", "_").lower()
 
     if (desc := d.get(t)) is not None:
-        embed = Embed(title=t.upper(), description=desc)
+        embed = Embed(title=f"{CAIN_EMOTE}{t.upper()}", description=desc)
     else:
         content = f"No description found for `{target}`"
 
-    await ctx.response.send_message(content=content, embed=embed)
+    await ctx.response.send_message(content=content, embed=embed, ephemeral=True)
 
 
 @lru_cache(maxsize=CACHE_SIZE)
-async def _ac_describe(current: str) -> AutoCompletion:
+def _ac_describe(current: str) -> AutoCompletion:
     return [
         Choice(name=n[0], value=n[0])
         for n in process.extract(current, describe_choices, limit=25)
@@ -208,16 +208,13 @@ async def _ac_describe(current: str) -> AutoCompletion:
 
 
 async def ac_describe(_: Interaction, current: str) -> AutoCompletion:
-    return await _ac_describe(current)
+    return _ac_describe(current)
 
 
 class WikiCog(Cog, name="wiki"):
     def __init__(self, bot: CainClient) -> None:
         super().__init__()
         self.bot = bot
-
-        with open("./assets/data.toml", "rb") as f:
-            self.data = tomllib.load(f)
 
     @command(name="blasphemy")
     @autocomplete(name=autocomplete_generator(blasphemy_choices))

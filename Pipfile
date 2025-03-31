@@ -9,6 +9,7 @@ fuzzywuzzy = "*"
 python-levenshtein = "*"
 pillow = "*"
 numpy = "*"
+pyyaml = "*"
 
 [dev-packages]
 

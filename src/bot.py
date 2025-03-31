@@ -3,16 +3,14 @@ from os import environ
 from discord import Intents
 from discord.ext.commands import Bot
 
-
-from .globals import TEST_GUILD
+from src.globals import OWNER_IDS, TEST_GUILD
 
 
 class CainClient(Bot):
 
     def __init__(self) -> None:
         super().__init__(intents=Intents.default(), command_prefix="/")
-        self.owner_ids = [int(i) for i in environ["owner_ids"].split(" ")]
-        self.talisman_channel = int(environ["talisman_channel_id"])
+        self.owner_ids = OWNER_IDS
 
     async def on_ready(self):
         print(f"Logged in as {self.user} (ID: {self.user.id})")  # type:ignore

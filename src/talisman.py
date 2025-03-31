@@ -1,11 +1,12 @@
 from dataclasses import dataclass, field
 from glob import glob
 from random import choice as rand_choice
-from typing import Dict, Self
+from typing import Dict, List, Self
 import csv
 
 from PIL import Image as image, ImageDraw, ImageFont
 from PIL.Image import Image
+from discord import Message
 
 TALISMAN_DIMENSIONS = (785, 112)
 DECAL_DIMENSIONS = (112, 112)
@@ -96,11 +97,14 @@ class Talisman:
 
 
 class TalismansManager(Dict[int, Talisman]):
+    def __init__(self):
+        self.messages: List[Message] = []
+
     @classmethod
     def load(cls) -> Self:
         t = cls()
 
-        with open("data.csv", "r") as f:
+        with open("./data/talismans.csv", "r") as f:
             data = csv.DictReader(f)
 
             for d in data:
@@ -111,6 +115,7 @@ class TalismansManager(Dict[int, Talisman]):
                     "max": int(d["max"]),
                     "id": int(d["id"]),
                 }
+                t.messages.append(d["id"])
                 t.add(Talisman(**d))
 
         return t
@@ -133,7 +138,7 @@ class TalismansManager(Dict[int, Talisman]):
 
     def sync_csv(self):
         """syncs csv content to TalismanManager state"""
-        with open("data.csv", "r") as f:
+        with open("./data/talismans.csv", "r") as f:
             read = csv.DictReader(f)
             data = [t.to_dict() for t in self.values()]
             fields = read.fieldnames
@@ -141,7 +146,7 @@ class TalismansManager(Dict[int, Talisman]):
             if fields is None:
                 raise ValueError("No header for Talisman CSV")
 
-        with open("data.csv", "w") as f:
+        with open("./data/talismans.csv", "w") as f:
             write = csv.DictWriter(f, fields)
             write.writeheader()
             write.writerows(data)

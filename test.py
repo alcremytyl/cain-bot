@@ -1,15 +1,7 @@
 from pprint import pprint
 
-from src.talisman import Talisman, TalismansManager
-from src.cogs.wiki import *
+from src.cogs.wiki import agenda_choices
+import yaml
 
 
-print(
-    agenda_choices,
-    blasphemy_abilities,
-    blasphemy_abilities,
-    blasphemy_choices,
-    blasphemy_colors,
-    describe_choices,
-    sep="\n\n",
-)
+print(agenda_choices)
