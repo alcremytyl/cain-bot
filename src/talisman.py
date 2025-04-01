@@ -1,12 +1,14 @@
 from dataclasses import dataclass, field
 from glob import glob
-from random import choice as rand_choice
+import random
 from typing import Dict, List, Self
 import csv
 
 from PIL import Image as image, ImageDraw, ImageFont
-from PIL.Image import Image
-from discord import Message, ui
+from PIL import ImageFilter
+from PIL.Image import Image, Resampling
+from PIL.ImageFilter import BoxBlur, GaussianBlur
+from discord import File, Message, ui
 from discord.ui.view import View
 
 """
@@ -22,6 +24,16 @@ max rot of 15deg
 
 
 also render the slash capacity
+
+
+
+
+circle
+- left_x = 130 
+- left_right = 23 -> 83
+- d = 68
+
+
 """
 
 TALISMAN_DIMENSIONS = (785, 112)
@@ -33,7 +45,23 @@ DECAL_CHOICES = tuple(
 TALISMAN_TEMPLATE_PATH = "./assets/talisman.png"
 TALISMAN_FONT_PATH = "./assets/Apex-Black.ttf"
 TALISMAN_DIR = "./tmp/"
+SLASH_CHOICES = glob("./assets/slashes/*.png")
 FONT = ImageFont.truetype(TALISMAN_FONT_PATH, size=50)
+SLASH_TEXT_CENTER = (161, 54)
+SLASH_TEXT_ARGS = {
+    "xy": SLASH_TEXT_CENTER,
+    "fill": (255, 255, 255, 255),
+    "font": FONT,
+    "anchor": "mm",
+    "stroke_fill": (12, 6, 24, 255),
+    "stroke_width": 4,
+}
+NAME_TEXT_ARGS = {
+    "xy": (TALISMAN_DIMENSIONS[0] - FONT.size / 4, TALISMAN_DIMENSIONS[1] - FONT.size),
+    "fill": (0, 0, 0, 204),
+    "font": FONT,
+    "anchor": "rm",
+}
 
 decal_pool = set(DECAL_CHOICES) - {"execution", "pressure", "wormy"}
 
@@ -50,26 +78,75 @@ class Talisman:
     @staticmethod
     def get_random_decal() -> str:
         global decal_pool
-        choice = rand_choice(list(decal_pool))
+        choice = random.choice(list(decal_pool))
         decal_pool -= {choice}
         return choice
 
     def slash(self, count: int = 1) -> bool:
         """If true, resolve"""
-        self.count += count
+        self.current += count
+        self.sync_image()
         return self.current >= self.max
 
     def unslash(self, count: int = 1):
-        self.count -= count
+        self.current = max(0, self.current - count)
+        self.sync_image()
 
     def set(self, value: int):
-        self.count = value
+        self.current = max(0, value)
+        self.sync_image()
 
     def get_decal_fp(self) -> str:
         return f"{DECAL_DIR}{self.decal_path}.png"
 
-    def get_image_fp(self) -> str:
-        return f"{TALISMAN_DIR}{self.name}.png"
+    def get_image(self) -> File:
+        fp = f"./tmp/{self.name}.png"
+        self.sync_image()
+        self._image.save(fp, format="PNG")
+        return File(fp, "talisman.png")
+
+    def sync_image(self):
+        img = image.open(TALISMAN_TEMPLATE_PATH).convert("RGBA")
+
+        txt = image.new("RGBA", img.size, (255, 255, 255, 0))
+        txt_draw = ImageDraw.Draw(txt)
+
+        decal = image.open(f"{DECAL_DIR}{self.decal_path}.png")
+
+        decal.thumbnail(DECAL_DIMENSIONS, Resampling.LANCZOS)
+        mask = decal.copy()
+        decal.putalpha(50)
+        img.paste(decal, mask)
+
+        for n in range(self.current):
+            slash = image.open(random.choice(SLASH_CHOICES))
+
+            # s = self.max
+            # d = (img.width - 20) // s * 2  # n-based padding
+            # l = 190 + d  # left bound
+            # r = img.width - 20 - d  # right bound
+
+            new_offset = random.randrange(-5, 5)
+
+            size = (slash.width + (new_offset * slash.width < 20), slash.height)
+            slash = (
+                slash.rotate(random.randrange(-2, 10), expand=True)
+                .resize(size)
+                .filter(GaussianBlur((0.2, 1.5)))
+            )
+
+            # x = l + n * (r - l) // (s - 1)
+            x = 24 * n + 190
+            y = (img.height - slash.height) // 2
+            slash_pos = (x, y)
+            img.paste(slash, slash_pos, slash)
+
+        txt_draw.text(text=str(self.name), **NAME_TEXT_ARGS)
+        txt_draw.text(text=str(self.max), **SLASH_TEXT_ARGS)
+        img.paste(txt, txt)
+
+        img.save(f"./tmp/{self.name}.png", format="PNG")
+        self._image = img
 
     def to_dict(self) -> dict[str, str | int]:
         return {
@@ -97,22 +174,7 @@ class Talisman:
         if self.decal_path == "USERANDOM":
             self.decal_path = Talisman.get_random_decal()
 
-        img = image.open(TALISMAN_TEMPLATE_PATH)
-        draw = ImageDraw.Draw(img, mode="RGBA")
-        decal = image.open(f"{DECAL_DIR}{self.decal_path}.png")
-        text_size = (
-            TALISMAN_DIMENSIONS[0] - FONT.size / 4,
-            TALISMAN_DIMENSIONS[1] - FONT.size,
-        )
-
-        decal.thumbnail(DECAL_DIMENSIONS, image.Resampling.LANCZOS)
-        mask = decal.copy()
-        decal.putalpha(50)
-        img.paste(decal, mask)
-        draw.text(text_size, self.name.upper(), (0, 0, 0, 56), FONT, "rm")
-        img.save(f"./tmp/{self.name}.png", format="PNG")
-
-        self._image = img
+        self.sync_image()
 
 
 class TalismansManager(Dict[int, Talisman]):

@@ -38,8 +38,7 @@ class TalismanCog(GroupCog, name="talisman"):
         talisman = Talisman(name, 0, slashes, msg.id, decal)
         self.manager.add(talisman)
 
-        with open(talisman.get_image_fp(), "rb") as f:
-            await msg.edit(content="_ _", attachments=[File(f, "talisman.png")])
+        await msg.edit(content="_ _", attachments=[talisman.get_image()])
 
         await ctx.response.send_message(content="Talisman created", ephemeral=True)
 
