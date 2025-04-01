@@ -8,8 +8,8 @@ discord = "*"
 fuzzywuzzy = "*"
 python-levenshtein = "*"
 pillow = "*"
-numpy = "*"
 pyyaml = "*"
+jishaku = "*"
 
 [dev-packages]
 

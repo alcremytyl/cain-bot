@@ -8,18 +8,16 @@ import csv
 from PIL import Image as image, ImageDraw, ImageFont
 from PIL.Image import Image, Resampling
 from PIL.ImageFilter import GaussianBlur
-from discord import ButtonStyle, File, Interaction, Message, ui
+from discord import ButtonStyle, File, Interaction, Message
 from discord.ui.button import button, Button
 from discord.ui.view import View
-from discord.utils import sleep_until
 
 
 TALISMAN_DIMENSIONS = (785, 112)
 DECAL_DIMENSIONS = (112, 112)
 DECAL_DIR = "./assets/decals/"
-DECAL_CHOICES = tuple(
-    map(lambda x: x[len(DECAL_DIR) : -4], glob("./assets/decals/*.png"))
-)
+DECAL_CHOICES = glob("./assets/decals/*.png")
+DECAL_RESERVED = {"execution", "pressure", "wormy", "resolved"}
 TALISMAN_TEMPLATE_PATH = "./assets/talisman.png"
 TALISMAN_FONT_PATH = "./assets/Apex-Black.ttf"
 TALISMAN_DIR = "./tmp/"
@@ -41,7 +39,7 @@ NAME_TEXT_ARGS = {
     "anchor": "rm",
 }
 
-decal_pool = set(DECAL_CHOICES) - {"execution", "pressure", "wormy"}
+decal_pool = {d[len(DECAL_DIR) : -4] for d in DECAL_CHOICES} - DECAL_RESERVED
 
 
 @dataclass
@@ -92,20 +90,11 @@ class Talisman:
         decal = image.open(f"{DECAL_DIR}{self.decal_path}.png")
 
         decal.thumbnail(DECAL_DIMENSIONS, Resampling.LANCZOS)
-        mask = decal.copy()
-        decal.putalpha(50)
-        img.paste(decal, mask)
+        img.paste(decal, decal)
 
         for n in range(self.current):
             slash = image.open(random.choice(SLASH_CHOICES))
-
-            # s = self.max
-            # d = (img.width - 20) // s * 2  # n-based padding
-            # l = 190 + d  # left bound
-            # r = img.width - 20 - d  # right bound
-
             new_offset = random.randrange(-5, 5)
-
             size = (slash.width + (new_offset * slash.width < 20), slash.height)
             slash = (
                 slash.rotate(random.randrange(-2, 10), expand=True)
@@ -113,10 +102,7 @@ class Talisman:
                 .filter(GaussianBlur((0.2, 1.5)))
             )
 
-            # x = l + n * (r - l) // (s - 1)
-            x = 24 * n + 190
-            y = (img.height - slash.height) // 2
-            slash_pos = (x, y)
+            slash_pos = (24 * n + 190, (img.height - slash.height) // 2)
             img.paste(slash, slash_pos, slash)
 
         txt_draw.text(text=str(self.name), **NAME_TEXT_ARGS)
@@ -257,7 +243,6 @@ class TalismanMenu(View):
         t = self.manager[msg.id]
         if t.slash():
             await msg.channel.send("resolve that hoe")
-            await asyncio.sleep
 
         self.manager.sync_csv()
         await msg.edit(attachments=t.get_image())
