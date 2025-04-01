@@ -8,7 +8,7 @@ from discord.app_commands.commands import guild_only, command
 from discord.ext.commands import GroupCog
 
 from src.bot import CainClient
-from src.talisman import Talisman, TalismansManager
+from src.talisman import Talisman, TalismanMenu, TalismansManager
 from src.transformers import StringArg
 
 
@@ -38,7 +38,11 @@ class TalismanCog(GroupCog, name="talisman"):
         talisman = Talisman(name, 0, slashes, msg.id, decal)
         self.manager.add(talisman)
 
-        await msg.edit(content="_ _", attachments=[talisman.get_image()])
+        await msg.edit(
+            content="_ _",
+            attachments=talisman.get_image(),
+            view=TalismanMenu(self.manager),
+        )
 
         await ctx.response.send_message(content="Talisman created", ephemeral=True)
 

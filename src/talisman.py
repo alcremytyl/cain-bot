@@ -1,40 +1,18 @@
 from dataclasses import dataclass, field
 from glob import glob
 import random
+import asyncio
 from typing import Dict, List, Self
 import csv
 
 from PIL import Image as image, ImageDraw, ImageFont
-from PIL import ImageFilter
 from PIL.Image import Image, Resampling
-from PIL.ImageFilter import BoxBlur, GaussianBlur
-from discord import File, Message, ui
+from PIL.ImageFilter import GaussianBlur
+from discord import ButtonStyle, File, Interaction, Message, ui
+from discord.ui.button import button, Button
 from discord.ui.view import View
+from discord.utils import sleep_until
 
-"""
-slash-left-max = 220
-slash-right-max = 765
-
-offset ~= (right - left)/capacity
-
-
-increase size of talisman image by 20 vertical pad
-place slashes 10px above
-max rot of 15deg
-
-
-also render the slash capacity
-
-
-
-
-circle
-- left_x = 130 
-- left_right = 23 -> 83
-- d = 68
-
-
-"""
 
 TALISMAN_DIMENSIONS = (785, 112)
 DECAL_DIMENSIONS = (112, 112)
@@ -99,11 +77,11 @@ class Talisman:
     def get_decal_fp(self) -> str:
         return f"{DECAL_DIR}{self.decal_path}.png"
 
-    def get_image(self) -> File:
+    def get_image(self) -> List[File]:
         fp = f"./tmp/{self.name}.png"
         self.sync_image()
         self._image.save(fp, format="PNG")
-        return File(fp, "talisman.png")
+        return [File(fp, "talisman.png")]
 
     def sync_image(self):
         img = image.open(TALISMAN_TEMPLATE_PATH).convert("RGBA")
@@ -249,8 +227,41 @@ class TalismansManager(Dict[int, Talisman]):
         pass
 
 
-# class TalismanMenu(View):
-#     def __init__(self, *_):
-#         super().__init__(timeout=None)
-#
-#     @ui.button(label="")
+class TalismanMenu(View):
+    def __init__(self, manager: TalismansManager):
+        super().__init__(timeout=None)
+        self.manager = manager
+
+    @button(label="<", style=ButtonStyle.secondary)
+    async def unslash(self, ctx: Interaction, _: Button):
+        if (msg := ctx.message) is None:
+            await ctx.response.send_message("uh oh")
+            return
+
+        t = self.manager[msg.id]
+        t.unslash()
+        self.manager.sync_csv()
+
+        await msg.edit(attachments=t.get_image())
+        await ctx.response.send_message(
+            f"Talisman `{t.name}` unslashed. *( {t.current} / {t.max} )*",
+            ephemeral=True,
+        )
+
+    @button(label=">", style=ButtonStyle.primary)
+    async def slash(self, ctx: Interaction, _: Button):
+        if (msg := ctx.message) is None:
+            await ctx.response.send_message("uh oh")
+            return
+
+        t = self.manager[msg.id]
+        if t.slash():
+            await msg.channel.send("resolve that hoe")
+            await asyncio.sleep
+
+        self.manager.sync_csv()
+        await msg.edit(attachments=t.get_image())
+
+        await ctx.response.send_message(
+            f"Talisman `{t.name}` slashed. *( {t.current} / {t.max} )*", ephemeral=True
+        )
