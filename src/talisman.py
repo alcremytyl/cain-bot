@@ -8,10 +8,9 @@ import csv
 from PIL import Image as image, ImageDraw, ImageFont
 from PIL.Image import Image, Resampling
 from PIL.ImageFilter import GaussianBlur
-from discord import ButtonStyle, File, Interaction, Message, TextInput, ui
+from discord import ButtonStyle, File, Interaction, Message, ui
 from discord.ui.button import button, Button
 from discord.ui.view import View
-from numpy import place
 
 
 TALISMAN_DIMENSIONS = (785, 112)
@@ -109,10 +108,7 @@ class Talisman:
                 .filter(GaussianBlur((0.2, 1.5)))
             )
 
-            x = 24 * n + 190
-            y = (img.height - slash.height) // 2
-            slash_pos = (x, y)
-            img.paste(slash, slash_pos, slash)
+            img.paste(slash, Talisman.centered_coords(slash), slash)
 
         # text
         txt = image.new("RGBA", img.size, (255, 255, 255, 0))

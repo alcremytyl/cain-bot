@@ -26,6 +26,8 @@ class CainClient(Bot):
         for cog in COGS:
             await self.load_extension("src.cogs." + cog)
 
+        await self.load_extension("jishaku")
+
         await self.tree.sync(guild=TEST_GUILD)
         return await super().setup_hook()
 
