@@ -8,7 +8,15 @@ import csv
 from PIL import Image as image, ImageDraw, ImageFont
 from PIL.Image import Image, Resampling
 from PIL.ImageFilter import GaussianBlur
-from discord import ButtonStyle, File, Interaction, Message, ui
+from discord import (
+    ButtonStyle,
+    File,
+    Interaction,
+    InteractionMessage,
+    Message,
+    TextStyle,
+    ui,
+)
 from discord.ui.button import button, Button
 from discord.ui.view import View
 
@@ -71,7 +79,6 @@ class Talisman:
 
     def set(self, value: int):
         self.current = max(0, value)
-        self.sync_image()
 
     def get_decal_fp(self) -> str:
         return f"{DECAL_DIR}{self.decal_path}.png"
@@ -227,9 +234,45 @@ class TalismansManager(Dict[int, Talisman]):
 
 # TODO: do that shit here breh
 class TalismanModal(ui.Modal):
-    value = ui.TextInput(label="Slashes", placeholder="...")
-    decal = ui.TextInput(label="Decal", placeholder="...")
-    name = ui.TextInput(label="Name", placeholder="...")
+    def __init__(self, manager: TalismansManager) -> None:
+        self.manager = manager
+        super().__init__(title="Talisman Editor", timeout=180)
+
+    value, decal, name = (
+        ui.TextInput(label=label, placeholder="...", required=False)
+        for label in ["Slashes", "Decal", "Name"]
+    )
+
+    #
+    async def on_submit(self, interaction: Interaction, /) -> None:
+        content = str()
+        talisman = self.manager[interaction.message.id]  # type:ignore
+
+        if (v := self.value.value).isdigit():
+            content += f"Set talisman to {v}"
+            talisman.set(int(v))
+        elif len(self.value.value) > 0:
+            content += f"Cannot set talisman to a non-number."
+
+        if (v := self.decal.value.lower().strip()) in DECAL_CHOICES:
+            content += f"Set decal to {v}"
+            talisman.decal_path = v
+
+        if len(v := self.name.value) > 0:
+            content += f"Set name to {v}"
+            talisman.name = v
+
+        talisman.sync_image()
+
+        await interaction.response.send_message(content=content, ephemeral=True)
+        return await super().on_submit(interaction)
+
+    async def on_error(self, interaction: Interaction, error: Exception, /) -> None:
+        print(f"[ERROR] {error}")
+        await interaction.response.send_message(
+            "Make sure to set value to a number", ephemeral=True
+        )
+        return await super().on_error(interaction, error)
 
 
 class TalismanMenu(View):
@@ -273,6 +316,14 @@ class TalismanMenu(View):
 
     @button(label=":gear:", style=ButtonStyle.secondary)
     async def set(self, ctx: Interaction, _: Button):
+        # TODO: check if admin
         if (msg := ctx.message) is None:
             await ctx.response.send_message("uh oh")
             return
+
+        await ctx.response.send_message(view=TalismanModal(self.manager))
+
+    @button(label=":x:", style=ButtonStyle.danger)
+    async def delete(self, ctx: Interaction, *_):
+        # TODO: ownre check
+        pass
