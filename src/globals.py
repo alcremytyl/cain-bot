@@ -1,6 +1,7 @@
 from glob import glob
 from typing import List
 import discord
+from discord.app_commands import Choice
 import yaml
 
 
@@ -20,3 +21,5 @@ COG_DIR = "./src/cogs/"
 COGS = [g[len(COG_DIR) : -3] for g in glob(COG_DIR + "*.py")]
 
 TEST_GUILD = discord.Object(TALISMAN_CHANNEL[0])
+
+AutoCompletion = List[Choice[str]]

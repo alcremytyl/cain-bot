@@ -12,13 +12,11 @@ from discord import (
     ButtonStyle,
     File,
     Interaction,
-    InteractionMessage,
     Message,
-    TextStyle,
-    ui,
 )
 from discord.ui.button import button, Button
 from discord.ui.view import View
+import yaml
 
 
 TALISMAN_DIMENSIONS = (785, 112)
@@ -90,10 +88,10 @@ class Talisman:
         return [File(fp, "talisman.png")]
 
     @staticmethod
-    def centered_coords(obj: Image, x=0, y=0) -> Tuple[int, int]:
+    def centered_coords(obj: Image, x, y, n=0) -> Tuple[int, int]:
         return (
-            (DECAL_OFFSET[0] - obj.width + x) // 2,
-            (DECAL_OFFSET[1] - obj.height + y) // 2,
+            (x - obj.width) // 2 + (n * obj.width + 10),
+            (y - obj.height) // 2,
         )
 
     def sync_image(self):
@@ -102,7 +100,7 @@ class Talisman:
         # decal
         decal = image.open(f"{DECAL_DIR}{self.decal_path}.png")
         decal.thumbnail(DECAL_DIMENSIONS, Resampling.LANCZOS)
-        img.paste(decal, Talisman.centered_coords(decal), decal)
+        img.paste(decal, Talisman.centered_coords(decal, *DECAL_OFFSET), decal)
 
         # slashes
         for n in range(self.current):
@@ -115,7 +113,9 @@ class Talisman:
                 .filter(GaussianBlur((0.2, 1.5)))
             )
 
-            img.paste(slash, Talisman.centered_coords(slash), slash)
+            img.paste(
+                slash, Talisman.centered_coords(slash, 400, slash.height, n), slash
+            )
 
         # text
         txt = image.new("RGBA", img.size, (255, 255, 255, 0))
@@ -125,8 +125,11 @@ class Talisman:
         img.paste(txt, txt)
 
         # resolve
-        resolve = image.open(f"{DECAL_DIR}resolved.png")
-        img.paste(resolve, Talisman.centered_coords(resolve), resolve)
+        if self.current >= self.max:
+            resolve = image.open(f"{DECAL_DIR}resolved.png")
+            img.paste(
+                resolve, Talisman.centered_coords(resolve, *DECAL_OFFSET), resolve
+            )
 
         img.save(f"./tmp/{self.name}.png", format="PNG")
         self._image = img
@@ -201,7 +204,7 @@ class TalismansManager(Dict[int, Talisman]):
         self.sync_csv()
 
     def add(self, new: Talisman) -> bool:
-        """returns if already existed"""
+        """true if already existed"""
 
         exists = new.id in self.keys()
 
@@ -210,7 +213,25 @@ class TalismansManager(Dict[int, Talisman]):
             self[new.id] = new
             self.sync_csv()
 
+            with open("./data/state.yaml", "r") as f:
+                state = yaml.safe_load(f)
+                state['talisman']['message_ids'].append(new.id) 
+            with open("./data/state.yaml", "w") as f:
+                print(state)
+                yaml.dump(state, f)
+
         return exists
+
+    def remove(self, t: Talisman):
+        del self[t.id]
+
+        self.sync_csv()
+
+        with open("./data/state.yaml", "r") as f:
+            state = yaml.safe_load(f)
+            state['talisman']['message_ids'].remove(t.id)
+        with open("./data/state.yaml", "w") as f:
+            yaml.dump(state, f)
 
     def sync_csv(self):
         """syncs csv content to TalismanManager state"""
@@ -227,52 +248,8 @@ class TalismansManager(Dict[int, Talisman]):
             write.writeheader()
             write.writerows(data)
 
-    # TODO:
     def reset(self):
         pass
-
-
-# TODO: do that shit here breh
-class TalismanModal(ui.Modal):
-    def __init__(self, manager: TalismansManager) -> None:
-        self.manager = manager
-        super().__init__(title="Talisman Editor", timeout=180)
-
-    value, decal, name = (
-        ui.TextInput(label=label, placeholder="...", required=False)
-        for label in ["Slashes", "Decal", "Name"]
-    )
-
-    #
-    async def on_submit(self, interaction: Interaction, /) -> None:
-        content = str()
-        talisman = self.manager[interaction.message.id]  # type:ignore
-
-        if (v := self.value.value).isdigit():
-            content += f"Set talisman to {v}"
-            talisman.set(int(v))
-        elif len(self.value.value) > 0:
-            content += f"Cannot set talisman to a non-number."
-
-        if (v := self.decal.value.lower().strip()) in DECAL_CHOICES:
-            content += f"Set decal to {v}"
-            talisman.decal_path = v
-
-        if len(v := self.name.value) > 0:
-            content += f"Set name to {v}"
-            talisman.name = v
-
-        talisman.sync_image()
-
-        await interaction.response.send_message(content=content, ephemeral=True)
-        return await super().on_submit(interaction)
-
-    async def on_error(self, interaction: Interaction, error: Exception, /) -> None:
-        print(f"[ERROR] {error}")
-        await interaction.response.send_message(
-            "Make sure to set value to a number", ephemeral=True
-        )
-        return await super().on_error(interaction, error)
 
 
 class TalismanMenu(View):
@@ -288,7 +265,6 @@ class TalismanMenu(View):
 
         t = self.manager[msg.id]
         t.unslash()
-        self.manager.sync_csv()
 
         await msg.edit(attachments=t.get_image())
         await ctx.response.send_message(
@@ -304,26 +280,13 @@ class TalismanMenu(View):
 
         t = self.manager[msg.id]
         if t.slash():
-            # TODO: talisman resolution logic
-            await msg.channel.send("resolve that hoe")
+            await msg.edit(attachments=t.get_image(), view=None)
+            await msg.add_reaction("🔒")
+            self.manager.r
 
-        self.manager.sync_csv()
-        await msg.edit(attachments=t.get_image())
+        else:
+            await msg.edit(attachments=t.get_image())
 
         await ctx.response.send_message(
             f"Talisman `{t.name}` slashed. *( {t.current} / {t.max} )*", ephemeral=True
         )
-
-    @button(label=":gear:", style=ButtonStyle.secondary)
-    async def set(self, ctx: Interaction, _: Button):
-        # TODO: check if admin
-        if (msg := ctx.message) is None:
-            await ctx.response.send_message("uh oh")
-            return
-
-        await ctx.response.send_message(view=TalismanModal(self.manager))
-
-    @button(label=":x:", style=ButtonStyle.danger)
-    async def delete(self, ctx: Interaction, *_):
-        # TODO: ownre check
-        pass

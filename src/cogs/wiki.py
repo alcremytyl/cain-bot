@@ -1,5 +1,6 @@
 from collections.abc import Collection
 from functools import cache, lru_cache
+from random import randrange
 from typing import Dict, List
 from discord.utils import MISSING
 from fuzzywuzzy import process
@@ -9,11 +10,10 @@ from discord.ext.commands import Cog
 import yaml
 
 from src.bot import CainClient
-from src.globals import CACHE_SIZE, CAIN_EMOTE
+from src.globals import CACHE_SIZE, CAIN_EMOTE, CAIN_EMOTE_LINK, AutoCompletion
 from src.helpers import emote, emote_link
 from src.transformers import StringArg
 
-AutoCompletion = List[Choice[str]]
 
 agenda_choices: List[str] = []
 blasphemy_abilities: Dict[str, List[str]] = dict()

@@ -1382,9 +1382,9 @@ description:
 
     - Sin marks can affect whether rolls are hard or risky,and some grant bonus die or special abilities.
   sin_mark-eyes: >
-    Typical Appearance or Manifestation: Black or altered sclera, white iris,
-    split, slit, or duplicate pupil.
-
+    Typical Appearance or Manifestation
+    
+    Black or altered sclera, white iris, split, slit, or duplicate pupil.
 
     1. You can see clearly up to extreme distance, as if you could ‘zoom in’ your vision
 
@@ -1398,6 +1398,10 @@ description:
 
     6. Gain +1D to Surveillance. This could put you up to 4D.
   sin_mark-jaw: >
+    Typical Appearance or Manifestation:
+    
+    Split or extended jaw, pharyngeal jaw, fangs, black tongue, viscous saliva.
+    
     1. You can spit black venom up to short distance. It’s a mundane ranged
     weapon with about the same effectiveness as a pistol.
 
@@ -1411,6 +1415,10 @@ description:
 
     6. Gain +1D to Authority. This could put you up to 4D.
   sin_mark-chest_or_back: >
+    Typical Appearance or Manifestation:
+
+    Spines, lesions, skin discoloration or warping, rapid regeneration, hardened or loose skin or scales, vestigial wings, extra ribs.
+
     1. You can roll an extra resting die while resting. If you do, gain the same
     amount of sin.
 
@@ -1424,6 +1432,10 @@ description:
 
     6. Gain +1D to Conditioning. This could put you up to 4D.
   sin_mark-arms_or_hands: >
+    Typical Appearance or Manifestation: 
+    
+    Claws, split hand or harm, extra arm, twisting skin or muscles, discoloration, extra fingers.
+
     1. You can gain 1d3 sin when performing a feat of mundane physical strength
     to increase the CAT up that feat up to CAT 3.
 
@@ -1437,6 +1449,10 @@ description:
 
     6. Gain +1D to Force. This could put you up to 4D
   sin_mark-skin_hair_or_legs: >
+    Typical Appearance or Manifestation:
+
+    Major discoloration or bleaching, transparent skin, warping of gait, digitigrade or multiple legs, patchiness, change in hair color.
+
     1. You can gain 1d3 sin to leap up to an object CAT size in height without
     rolling. You can do this as part of an action roll.
 

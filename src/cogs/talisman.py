@@ -1,15 +1,21 @@
 from typing import List
+import yaml
 from discord import (
     File,
     Interaction,
     Message,
+    TextChannel,
+    Thread,
+    VoiceChannel,
 )
 from discord.app_commands.commands import guild_only, command
 from discord.ext.commands import GroupCog
+from numpy import isin
 
 from src.bot import CainClient
 from src.talisman import Talisman, TalismanMenu, TalismansManager
 from src.transformers import StringArg
+from src.globals import AutoCompletion
 
 
 @guild_only()
@@ -18,18 +24,16 @@ class TalismanCog(GroupCog, name="talisman"):
         super().__init__()
         self.bot = bot
         self.manager = TalismansManager.load()
-        # TODO: some on_ready load
-        self.messages: List[Message] = []
+        self.messages = []
 
-    async def talisman_create(
-        self,
-        ctx: Interaction,
-        name: str,
-        slashes: int,
-        decal: StringArg,
+    async def ac_talisman_delete(self, current: str) -> AutoCompletion:
+        return []
+
+    @command(name="create")
+    async def create(
+        self, ctx: Interaction, name: str, decal: StringArg, slashes: int = 3
     ):
-        ch = self.bot.talisman_channel
-        msg = await ch.send("*Creating talisman...*")
+        msg = await self.bot.talisman_channel.send("*Creating talisman...*")
         self.messages.append(msg)
 
         if decal is None:
@@ -46,19 +50,26 @@ class TalismanCog(GroupCog, name="talisman"):
 
         await ctx.response.send_message(content="Talisman created", ephemeral=True)
 
-    @command(name="create")
-    async def create(
-        self, ctx: Interaction, name: str, decal: StringArg, slashes: int = 3
-    ):
-        await self.talisman_create(ctx, name, slashes, decal)
-
     @command(name="delete")
-    async def delete(self, ctx: Interaction):
+    async def delete(self, ctx: Interaction, choice: str):
         pass
 
     @command(name="set_channel")
     async def set_channel(self, ctx: Interaction):
-        pass
+        content = str()
+
+        if isinstance(ctx.channel, TextChannel | VoiceChannel):
+            self.bot.talisman_channel = ctx.channel
+            with open("./data/state.yaml", "r+") as f:
+                state = yaml.safe_load(f)
+                state["talisman"]["channel_id"] = ctx.channel_id
+                f.seek(0)
+                yaml.dump(state, f)
+            content = f"Set channel to <#{ctx.channel_id}"
+        else:
+            content = f"Must be a text or voice channel"
+
+        await ctx.response.send_message(content=content)
 
 
 async def setup(bot: CainClient):
