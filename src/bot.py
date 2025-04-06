@@ -31,7 +31,7 @@ class CainClient(Bot):
         await self.load_extension("jishaku")
 
         # HACK: load config file correctly
-        await self.tree.sync(guild=discord.Object(715015385531023430))
+        # await self.tree.sync(guild=discord.Object(715015385531023430))
         return await super().setup_hook()
 
 

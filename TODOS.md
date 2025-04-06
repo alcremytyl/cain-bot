@@ -44,29 +44,3 @@ combat log should show talisman creation, deletion, and progress on every update
 possible combat log
 polishing (descriptions for the commands n shit)
 
-# partial
-/blasphemies name: powers (list of items),
-    - add fancy shit
-/agendas name: (list of items)
-    - this one too, maybe
-
-
-# done
-/describe advancement (shows the advancement description)
-/describe rest (shows rest description)
-/describe sin overflow (post sin overflow description and the options to resist or give up)
-/describe complications (shows complication description)
-/describe hooks (show hook description)
-/describe risky (shows the description of risky rolls)
-/describe fate rolls (shows the description of fate rolls)
-/describe straight rolls (shows the description of straight rolls)
-/describe threats (shows threat description)
-/describe describe severe attack (shows severe attack description
-/describe hard (shows the description of hard rolls)
-/describe impossible (shows the description of impossible rolls)
-/describe team work (team work description)
-/describe set up (set up description
-/describe bargain (beggars described)
-/describe affliction (show affliction description
-/consequences (shows consequences description)
-/attacks (shows attacks description

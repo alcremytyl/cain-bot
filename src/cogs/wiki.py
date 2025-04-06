@@ -1,25 +1,40 @@
 from collections.abc import Collection
 from functools import cache, lru_cache
-from random import randrange
-from typing import Dict, List
+from typing import Dict, List, Sequence, Tuple
+from discord.ui import View, button
 from discord.utils import MISSING
 from fuzzywuzzy import process
-from discord import Embed, Interaction
+from discord import ButtonStyle, Embed, Interaction
 from discord.app_commands import Choice, autocomplete, command
 from discord.ext.commands import Cog
 import yaml
 
 from src.bot import CainClient
-from src.globals import CACHE_SIZE, CAIN_EMOTE, CAIN_EMOTE_LINK, AutoCompletion
+from src.globals import CACHE_SIZE, CAIN_EMOTE, AutoCompletion
 from src.helpers import emote, emote_link
 from src.transformers import StringArg
 
 
+CATEGORY_MAGNITUDE_CHART = "https://github.com/alcremytyl/cain-bot/blob/master/assets/icons/~catchart.png?raw=true"
 agenda_choices: List[str] = []
 blasphemy_abilities: Dict[str, List[str]] = dict()
 blasphemy_choices: List[str] = []
 blasphemy_colors = (0xFF0000, 0xFFC800, 0x0974F3, 0xF600FF)
 describe_choices = []
+catchart_data: Tuple = (
+    (
+        "Category Overview",
+        "Sins are powerful supernatural forces, and Exorcists the weapons used to combat them. Sins may easily surpass human limits. Unfortunately, exorcists are limited by the general limits of human capabilities.\nHowever their powers, Blasphemies, are not. Much like natural disasters, both sins and exorcists are rated by Category, generally indicating their power, usually written as CAT. As each increase in category, the speed, scale, and strength of their capabilities increase drastically.\n- Category goes from 0-7, with Category 0 being general human capabilities. Anything mundane an exorcist does is usually at CAT 0.\n- Exorcists’ themselves are raed from category 1 to 5, but can sometimes push past CAT 5. This describes the capabilities of their powers.\n",
+    ),
+    (
+        "Mundane vs supernatural",
+        "Anything mundane an exorcist does to try and harm or subdue a supernatural force such as a sin is hard by default. Their capabilities and equipment are the general capabilities of a (well trained) human, usually rated at CAT 0.\nHowever, their supernatural powers are able to surpass this limit: an exorcists’s blasphemies increase in category with them.",
+    ),
+    (
+        "Using Category",
+        "Category determines the general size, strength, and scale of things in fictional terms. For example:\n- A car versus a 16 wheeler freight truck\n- A couple humans versus a whole crowd of humans\n- A shack versus a skyscraper\n- A handgun versus a bazooka\nThe Admin can use the category of something to figure out whether:\n- a roll is hard or risky for a character. A roll is typically hard or risky if the target of a power is higher category. Conversely, a roll can be less risky or hard if the target of a power is of a lower category.\n- a roll is impossible for a character given their current capabilities. For example, a character that can lift objects with their powers and is Category 4 could easily lift a car (CAT 3), but would probably find it impossible to lift a skyscraper (CAT 7). Generally tasks that are three or more categories higher than an actor are impossible for them- A roll is even required for a task, typically if it’s three or more categories lower. For example, an exorcist throwing a building at a single mundane human probably wouldn’t have to roll at all to crush them like an insect.\n- a character can do something beyond human capabilities, and to what extent These capabilities are usually listed out in short form in each power entry.\n",
+    ),
+)
 
 with open("./data/description.yaml", "r") as f:
     data = yaml.safe_load(f)
@@ -36,6 +51,34 @@ with open("./data/description.yaml", "r") as f:
     describe_choices = [
         k.replace("-", ": ").replace("_", " ") for k in data["description"].keys()
     ]
+
+
+class Paginator(View):
+    def __init__(
+        self, pages: Sequence[Tuple[str, str]], *, timeout: float | None = 180
+    ):
+        super().__init__(timeout=timeout)
+        self.pages = pages
+        self.current = 0
+
+    @button(label="<", style=ButtonStyle.primary)
+    async def prev(self, ctx: Interaction, *_):
+        self.current -= 1
+        await self.update(ctx)
+
+    @button(label=">", style=ButtonStyle.primary)
+    async def next(self, ctx: Interaction, *_):
+        self.current += 1
+        await self.update(ctx)
+
+    async def update(self, ctx: Interaction):
+        i = self.current % len(self.pages)
+        content = "\n".join(catchart_data[i])
+        await ctx.response.edit_message(
+            embed=Embed(description=f"### {content}").set_image(
+                url=CATEGORY_MAGNITUDE_CHART
+            ),
+        )
 
 
 def autocomplete_generator(choices: Collection[str]):
@@ -231,6 +274,13 @@ class WikiCog(Cog, name="wiki"):
     @autocomplete(what=ac_describe)
     async def describe(self, ctx: Interaction, what: StringArg):
         await describe(ctx, what)
+
+    @command(name="category")
+    async def catchart(self, ctx: Interaction):
+        view = Paginator(catchart_data)
+        content = "\n".join(catchart_data[0])
+        e = Embed(description=f"### {content}").set_image(url=CATEGORY_MAGNITUDE_CHART)
+        await ctx.response.send_message(embed=e, view=view)
 
 
 async def setup(bot: CainClient):
