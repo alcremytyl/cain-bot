@@ -21,7 +21,7 @@ class MaintenanceCog(Cog, name="maintenance"):
         for cog in COGS:
             await self.bot.reload_extension("src.cogs." + cog)
 
-        await self.bot.tree.sync(guild=discord.Object(715015385531023430))
+        await self.bot.tree.sync()
         await ctx.edit_original_response(content="Done!")
 
     @command(name="cog-reload")

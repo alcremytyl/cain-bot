@@ -215,7 +215,7 @@ class TalismansManager(Dict[int, Talisman]):
 
             with open("./data/state.yaml", "r") as f:
                 state = yaml.safe_load(f)
-                state['talisman']['message_ids'].append(new.id) 
+                state["talisman"]["message_ids"].append(new.id)
             with open("./data/state.yaml", "w") as f:
                 print(state)
                 yaml.dump(state, f)
@@ -229,7 +229,7 @@ class TalismansManager(Dict[int, Talisman]):
 
         with open("./data/state.yaml", "r") as f:
             state = yaml.safe_load(f)
-            state['talisman']['message_ids'].remove(t.id)
+            state["talisman"]["message_ids"].remove(t.id)
         with open("./data/state.yaml", "w") as f:
             yaml.dump(state, f)
 
@@ -282,7 +282,7 @@ class TalismanMenu(View):
         if t.slash():
             await msg.edit(attachments=t.get_image(), view=None)
             await msg.add_reaction("🔒")
-            self.manager.r
+            # self.manager.r
 
         else:
             await msg.edit(attachments=t.get_image())
