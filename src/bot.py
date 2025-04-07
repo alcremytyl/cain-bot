@@ -8,9 +8,10 @@ from src.globals import COGS, OWNER_IDS, TALISMAN_CHANNEL, TEST_GUILD
 class CainClient(Bot):
 
     def __init__(self) -> None:
-        super().__init__(
-            intents=Intents.default(), command_prefix=when_mentioned_or("/")
-        )
+        intents = Intents.default()
+        intents.messages = True
+
+        super().__init__(intents=intents, command_prefix=when_mentioned_or("/"))
         self.owner_ids = OWNER_IDS
         self.talisman_channel: TextChannel | VoiceChannel = None  # type:ignore
 

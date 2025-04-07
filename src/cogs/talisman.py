@@ -9,10 +9,11 @@ from glob import glob
 import os
 from dataclasses import dataclass, field
 import random
-from typing import Dict, List
 
 from PIL import ImageDraw, ImageFont
 from PIL.Image import Image, new as pil_new, Resampling, open as pil_open
+
+from src.helpers import is_me
 
 DECAL_RANDRANGE = 14
 TALISMAN_TEMPLATE_PATH = "./assets/talisman.png"
@@ -26,6 +27,7 @@ FONT = ImageFont.truetype(TALISMAN_FONT_PATH, size=50)
 - context menu
 - setup
 - make sure it's all good with the yaml
+- ADD MESSAGE INTENT
 """
 
 
@@ -56,7 +58,7 @@ class Talisman:
         with open("./data/talismans.yaml", "w") as f:
             yaml.safe_dump(_data, f)
 
-    def as_dict(self) -> Dict:
+    def as_dict(self) -> dict:
         return {
             "current": self.current,
             "decal": self.decal,
@@ -126,7 +128,6 @@ class TalismanView(View):
         self.unslash.disabled = self.talisman.current < 1
 
         await ctx.response.defer()
-
         await ctx.followup.edit_message(
             ctx.message.id,  # type:ignore
             attachments=[self.talisman.get_image()],
@@ -151,21 +152,23 @@ class TalismanView(View):
         label="🔪", custom_id="talisman:setup", style=ButtonStyle.danger
     )  # <- label is bloody's suggestion
     async def delete(self, ctx: Interaction, _):
-        pass
+        await ctx.message.delete()  # type:ignore
+        await ctx.response.defer()
 
 
 class TalismanCog(GroupCog, name="talisman"):
     def __init__(self, bot: CainClient) -> None:
         super().__init__()
         self.bot = bot
+        self.message_ids = list[tuple[int, str]]()
 
         with open("./data/talismans.yaml", "r") as f:
             _data = yaml.safe_load(f)
             self.pressure = _data["pressure"]
             self.tension = _data["tension"]
-            self.talismans: List[Talisman] = [
+            self.talismans = list[Talisman](
                 Talisman(**d) for d in _data["talismans"].values()
-            ]
+            )
 
     @command(name="create")
     async def create(self, ctx: Interaction, name: str, max: int, decal: str = ""):
@@ -174,15 +177,29 @@ class TalismanCog(GroupCog, name="talisman"):
                 "Must have at least one and at most 24 slashes.", ephemeral=True
             )
 
+        await ctx.response.defer()
+
         t = Talisman(name, max, decal=decal)
-        await self.bot.talisman_channel.send(file=t.get_image(), view=TalismanView(t))
+        m = await self.bot.talisman_channel.send(
+            file=t.get_image(), view=TalismanView(t)
+        )
+        self.message_ids.append((m.id, t.name))
         self.talismans.append(t)
 
-        await ctx.response.send_message("Talisman created", ephemeral=True)
+        await ctx.followup.send("Talisman created", ephemeral=True)
 
     @command(name="setup")
     async def setup(self, ctx: Interaction):
-        pass
+        await ctx.channel.purge(check=is_me)  # type:ignore
+
+        for t in self.talismans:
+            await self.bot.talisman_channel.send(
+                file=t.get_image(), view=TalismanView(t)
+            )
+
+        await ctx.response.defer()
+
+        # TODO: check if setup works now after changing message perms
 
 
 async def setup(bot: CainClient):

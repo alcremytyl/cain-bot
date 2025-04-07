@@ -10,6 +10,8 @@ with open("./data/config.yaml") as f:
 with open("./data/state.yaml") as f:
     _state = yaml.safe_load(f)
 
+BOT_ID: int = _config["bot_id"]
+
 CACHE_SIZE: int = _config["cache_size"]
 CAIN_EMOTE: str = _config["cain_emote"]
 CAIN_EMOTE_LINK: str = _config["cain_emote_link"]
