@@ -163,7 +163,9 @@ class TalismanCog(GroupCog, name="talisman"):
             _data = yaml.safe_load(f)
             self.pressure = _data["pressure"]
             self.tension = _data["tension"]
-            self.talismans: List[Talisman] = [Talisman(**d) for d in _data["talismans"]]
+            self.talismans: List[Talisman] = [
+                Talisman(**d) for d in _data["talismans"].values()
+            ]
 
     @command(name="create")
     async def create(self, ctx: Interaction, name: str, max: int, decal: str = ""):

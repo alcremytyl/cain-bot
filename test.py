@@ -1,7 +1,13 @@
+from typing import List
+import yaml
 from src.cogs.talisman import Talisman
 from pprint import pprint
 
+with open("./data/talismans.yaml", "r") as f:
+    _data = yaml.safe_load(f)
 
-Talisman("crack judith", 10)
-Talisman("slime michael", 5)
-Talisman("annihilate john doe", 24)
+pressure = _data["pressure"]
+tension = _data["tension"]
+talismans: List[Talisman] = []
+
+pprint(_data["talismans"].values())
