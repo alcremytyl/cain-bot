@@ -1,4 +1,6 @@
+from contextlib import contextmanager
 from discord import Message
+import yaml
 
 from src.globals import BOT_ID
 
@@ -13,3 +15,12 @@ def emote_link(id) -> str:
 
 def is_me(m: Message):
     return m.author.id == BOT_ID  # type:ignore
+
+
+@contextmanager
+def open_yaml(fp: str):
+    with open(fp, "r") as f:
+        data = yaml.safe_load(f)
+    yield data
+    with open(fp, "w") as f:
+        yaml.safe_dump(data, f)

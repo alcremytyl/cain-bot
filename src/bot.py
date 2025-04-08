@@ -1,6 +1,7 @@
-from discord import Intents, TextChannel, VoiceChannel
-import discord
+from discord import Intents, Interaction, Message, TextChannel, TextInput, VoiceChannel
+from discord.app_commands import context_menu
 from discord.ext.commands import Bot, when_mentioned_or
+from discord.ui import Modal, TextInput
 
 from src.globals import COGS, OWNER_IDS, TALISMAN_CHANNEL, TEST_GUILD
 
@@ -31,9 +32,34 @@ class CainClient(Bot):
 
         await self.load_extension("jishaku")
 
-        # HACK: load config file correctly
-        # await self.tree.sync(guild=discord.Object(715015385531023430))
         return await super().setup_hook()
 
 
 client = CainClient()
+
+
+class TestModal(Modal, title="yearn for the mines"):
+    text = TextInput(label="testing")
+
+    async def on_submit(self, interaction: Interaction):
+        await interaction.response.send_message("yeah", ephemeral=True)
+        return await super().on_submit(interaction)
+
+
+@client.tree.context_menu(name="set talisman")
+async def set_talisman(ctx: Interaction, m: Message):
+    if len(m.attachments) != 1:
+        return await ctx.response.send_message("No >:[")
+    if not m.attachments[0].filename.endswith("talisman.png"):
+        return await ctx.response.send_message("also no >:]")
+
+    key = m.attachments[0].filename.rsplit("--")[-1].replace("_", " ")
+
+    a = await ctx.response.send_modal(TestModal())
+
+    # TODO talismanize this
+    # NOTE: gives you a message id to work with, HUGE!!!
+    print(a)
+    print(a.__slots__)
+
+    # await ctx.response.defer(thinking=False)

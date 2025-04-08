@@ -1,6 +1,6 @@
 from discord import ButtonStyle, File, Interaction
 from discord.app_commands import command
-from discord.ext.commands import GroupCog
+from discord.ext.commands import GroupCog, is_owner
 from discord.ui import Button, View, button
 import yaml
 from src.bot import CainClient
@@ -13,9 +13,10 @@ import random
 from PIL import ImageDraw, ImageFont
 from PIL.Image import Image, new as pil_new, Resampling, open as pil_open
 
-from src.helpers import is_me
+from src.helpers import is_me, open_yaml
 
 DECAL_RANDRANGE = 14
+TALISMAN_PATH = "./data/talismans.yaml"
 TALISMAN_TEMPLATE_PATH = "./assets/talisman.png"
 TALISMAN_FONT_PATH = "./assets/Apex-Black.ttf"
 SLASH_CHOICES = glob("./assets/slashes/*.png")
@@ -25,10 +26,11 @@ FONT = ImageFont.truetype(TALISMAN_FONT_PATH, size=50)
 # TODO
 """
 - context menu
-- setup
 - make sure it's all good with the yaml
-- ADD MESSAGE INTENT
 """
+# NOTE: manually opening and closing the yaml each time is a design decision
+#       in case I want to edit the file directly without needing some command
+#       to synchronize state
 
 
 @dataclass
@@ -51,12 +53,8 @@ class Talisman:
         if self.generate_images:
             self.generate()
 
-        with open("./data/talismans.yaml", "r") as f:
-            _data = yaml.safe_load(f)
-            _data["talismans"][self.name] = self.as_dict()
-
-        with open("./data/talismans.yaml", "w") as f:
-            yaml.safe_dump(_data, f)
+        with open_yaml(TALISMAN_PATH) as data:
+            data["talismans"][self.name] = self.as_dict()
 
     def as_dict(self) -> dict:
         return {
@@ -113,7 +111,7 @@ class Talisman:
         if not os.path.isfile(fp):
             raise ValueError(f"No such file {fp}")
 
-        return File(fp=fp, filename="talisman.png")
+        return File(fp=fp, filename=f"{self.name}--talisman.png")
 
 
 class TalismanView(View):
@@ -122,7 +120,7 @@ class TalismanView(View):
         self.talisman = t
 
     @button(label="<", custom_id="talisman:unslash", disabled=True)
-    async def unslash(self, ctx: Interaction, b: Button):
+    async def unslash(self, ctx: Interaction, _):
         self.talisman.current = max(0, self.talisman.current - 1)
         self.slash.disabled = False
         self.unslash.disabled = self.talisman.current < 1
@@ -134,11 +132,17 @@ class TalismanView(View):
             view=self,
         )
 
+        with open_yaml(TALISMAN_PATH) as data:
+            data["talismans"][self.talisman.name] = self.talisman.as_dict()
+
     @button(label=">", custom_id="talisman:slash")
     async def slash(self, ctx: Interaction, _):
         self.talisman.current = min(self.talisman.slashes, self.talisman.current + 1)
         self.slash.disabled = self.talisman.current == self.talisman.slashes
         self.unslash.disabled = False
+
+        with open_yaml(TALISMAN_PATH) as data:
+            data["talismans"][self.talisman.name] = self.talisman.as_dict()
 
         await ctx.response.defer()
 
@@ -152,10 +156,14 @@ class TalismanView(View):
         label="🔪", custom_id="talisman:setup", style=ButtonStyle.danger
     )  # <- label is bloody's suggestion
     async def delete(self, ctx: Interaction, _):
+        with open_yaml(TALISMAN_PATH) as data:
+            del data["talismans"][self.talisman.name]
+
         await ctx.message.delete()  # type:ignore
         await ctx.response.defer()
 
 
+@is_owner()
 class TalismanCog(GroupCog, name="talisman"):
     def __init__(self, bot: CainClient) -> None:
         super().__init__()
@@ -190,6 +198,8 @@ class TalismanCog(GroupCog, name="talisman"):
 
     @command(name="setup")
     async def setup(self, ctx: Interaction):
+        await ctx.response.defer(ephemeral=True)
+
         await ctx.channel.purge(check=is_me)  # type:ignore
 
         for t in self.talismans:
@@ -197,9 +207,11 @@ class TalismanCog(GroupCog, name="talisman"):
                 file=t.get_image(), view=TalismanView(t)
             )
 
-        await ctx.response.defer()
+        await ctx.followup.send("Finished setup", ephemeral=True)
 
-        # TODO: check if setup works now after changing message perms
+    @command(name="open")
+    async def open(self, ctx: Interaction, name: str):
+        pass
 
 
 async def setup(bot: CainClient):

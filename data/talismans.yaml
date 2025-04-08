@@ -1,27 +1,17 @@
 pressure: 0
 talismans:
-  Annihilate John Doe:
-    current: 0
-    decal: '12'
-    name: Annihilate John Doe
-    slashes: 24
   Crack Judith:
-    current: 0
-    decal: '0'
+    current: 2
+    decal: wormy
     name: Crack Judith
-    slashes: 10
-  Eschaton:
-    current: 0
+    slashes: 4
+  Duel Eschaton:
+    current: 1
     decal: '4'
-    name: Eschaton
+    name: Duel Eschaton
     slashes: 13
-  Maximum Meteor:
-    current: 0
-    decal: '10'
-    name: Maximum Meteor
-    slashes: 10
   Slime Michael:
-    current: 0
+    current: 4
     decal: '11'
     name: Slime Michael
     slashes: 5

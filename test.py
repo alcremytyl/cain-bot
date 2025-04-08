@@ -1,13 +1,9 @@
-from typing import List
+from contextlib import contextmanager
 import yaml
-from src.cogs.talisman import Talisman
 from pprint import pprint
 
-with open("./data/talismans.yaml", "r") as f:
-    _data = yaml.safe_load(f)
+from src.cogs.talisman import Talisman
+from src.helpers import open_yaml
 
-pressure = _data["pressure"]
-tension = _data["tension"]
-talismans: List[Talisman] = []
-
-pprint(_data["talismans"].values())
+Talisman("Pressure", 6, decal="pressure")
+Talisman("Tension", 6, decal="tension")
