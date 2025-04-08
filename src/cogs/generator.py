@@ -29,7 +29,6 @@ class GeneratorCog(Cog, name="generator"):
 
     @command(name="sinmark")
     async def sinmark(self, ctx: Interaction):
-        # TODO: this shit right here
         embed: Embed
 
         if (k := randrange(6)) == 5:

@@ -49,9 +49,9 @@ class TestModal(Modal, title="yearn for the mines"):
 @client.tree.context_menu(name="set talisman")
 async def set_talisman(ctx: Interaction, m: Message):
     if len(m.attachments) != 1:
-        return await ctx.response.send_message("No >:[")
+        return await ctx.response.send_message("Not a talisman")
     if not m.attachments[0].filename.endswith("talisman.png"):
-        return await ctx.response.send_message("also no >:]")
+        return await ctx.response.send_message("Not a talisman")
 
     key = m.attachments[0].filename.rsplit("--")[-1].replace("_", " ")
 

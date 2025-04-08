@@ -1,3 +1,4 @@
+from logging import disable
 from discord import ButtonStyle, File, Interaction
 from discord.app_commands import command
 from discord.ext.commands import GroupCog, is_owner
@@ -119,42 +120,55 @@ class TalismanView(View):
         super().__init__()
         self.talisman = t
 
-    @button(label="<", custom_id="talisman:unslash", disabled=True)
-    async def unslash(self, ctx: Interaction, _):
-        self.talisman.current = max(0, self.talisman.current - 1)
-        self.slash.disabled = False
-        self.unslash.disabled = self.talisman.current < 1
-
+    async def update_talisman_message(self, ctx: Interaction):
         await ctx.response.defer()
+
+        with open_yaml(TALISMAN_PATH) as data:
+            data["talismans"][self.talisman.name] = self.talisman.as_dict()
+
         await ctx.followup.edit_message(
             ctx.message.id,  # type:ignore
             attachments=[self.talisman.get_image()],
             view=self,
         )
 
-        with open_yaml(TALISMAN_PATH) as data:
-            data["talismans"][self.talisman.name] = self.talisman.as_dict()
+    @button(label="<<", custom_id="talisman:reset", disabled=True)
+    async def reset(self, ctx: Interaction, _):
+        self.talisman.current = 0
+        self.reset.disabled = True
+        self.unslash.disabled = True
+        self.slash.disabled = False
+        self.resolve.disabled = False
+        await self.update_talisman_message(ctx)
+
+    @button(label="<", custom_id="talisman:unslash", disabled=True)
+    async def unslash(self, ctx: Interaction, _):
+        self.talisman.current = max(0, self.talisman.current - 1)
+        self.reset.disabled = self.talisman.current < 1
+        self.unslash.disabled = self.talisman.current < 1
+        self.slash.disabled = False
+        self.resolve.disabled = False
+        await self.update_talisman_message(ctx)
 
     @button(label=">", custom_id="talisman:slash")
     async def slash(self, ctx: Interaction, _):
         self.talisman.current = min(self.talisman.slashes, self.talisman.current + 1)
-        self.slash.disabled = self.talisman.current == self.talisman.slashes
+        self.reset.disabled = False
         self.unslash.disabled = False
+        self.slash.disabled = self.talisman.current == self.talisman.slashes
+        self.resolve.disabled = self.talisman.current == self.talisman.slashes
+        await self.update_talisman_message(ctx)
 
-        with open_yaml(TALISMAN_PATH) as data:
-            data["talismans"][self.talisman.name] = self.talisman.as_dict()
+    @button(label=">>", custom_id="talisman:resolve")
+    async def resolve(self, ctx: Interaction, _):
+        self.talisman.current = self.talisman.slashes
+        self.reset.disabled = False
+        self.unslash.disabled = False
+        self.slash.disabled = True
+        self.resolve.disabled = True
+        await self.update_talisman_message(ctx)
 
-        await ctx.response.defer()
-
-        await ctx.followup.edit_message(
-            ctx.message.id,  # type:ignore
-            attachments=[self.talisman.get_image()],
-            view=self,
-        )
-
-    @button(
-        label="🔪", custom_id="talisman:setup", style=ButtonStyle.danger
-    )  # <- label is bloody's suggestion
+    @button(label="🔪", custom_id="talisman:setup", style=ButtonStyle.danger)
     async def delete(self, ctx: Interaction, _):
         with open_yaml(TALISMAN_PATH) as data:
             del data["talismans"][self.talisman.name]
@@ -168,7 +182,6 @@ class TalismanCog(GroupCog, name="talisman"):
     def __init__(self, bot: CainClient) -> None:
         super().__init__()
         self.bot = bot
-        self.message_ids = list[tuple[int, str]]()
 
         with open("./data/talismans.yaml", "r") as f:
             _data = yaml.safe_load(f)
@@ -191,14 +204,13 @@ class TalismanCog(GroupCog, name="talisman"):
         m = await self.bot.talisman_channel.send(
             file=t.get_image(), view=TalismanView(t)
         )
-        self.message_ids.append((m.id, t.name))
         self.talismans.append(t)
 
         await ctx.followup.send("Talisman created", ephemeral=True)
 
     @command(name="setup")
     async def setup(self, ctx: Interaction):
-        await ctx.response.defer(ephemeral=True)
+        await ctx.response.defer(thinking=True, ephemeral=True)
 
         await ctx.channel.purge(check=is_me)  # type:ignore
 
