@@ -1,18 +1,18 @@
 pressure: 0
 talismans:
   Crack Judith:
-    current: 4
+    current: 2
     decal: wormy
     name: Crack Judith
     slashes: 5
   Duel Eschaton:
-    current: 12
+    current: 10
     decal: '4'
     name: Duel Eschaton
     slashes: 13
   Slime Michael:
-    current: 4
-    decal: '11'
+    current: 0
+    decal: '8'
     name: Slime Michael
-    slashes: 5
+    slashes: 3
 tension: 0

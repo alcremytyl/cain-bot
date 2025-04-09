@@ -29,13 +29,14 @@ async def set_talisman(ctx: Interaction, m: Message):
     n = int(str(mo.text))
 
     with open_yaml(TALISMAN_PATH) as data:
-        t = Talisman(**desc_data, sync_to_yaml=False)
+        if n in range(0, desc_data["slashes"] + 1):
+            t = Talisman(**desc_data, sync_to_yaml=False)
+            t.current = n
 
-        if n in range(0, t.slashes + 1):
-            data["talismans"][t.name]["current"] = int(str(mo.text))
+            data["talismans"][t.name]["current"] = n
         else:
             return await ctx.followup.send(
-                f"Needs to be within 0 - {t.slashes}", ephemeral=True
+                f"Needs to be within 0 - {desc_data['slashes']}", ephemeral=True
             )
 
     view = TalismanView(t)

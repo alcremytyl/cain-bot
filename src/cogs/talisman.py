@@ -125,6 +125,12 @@ class TalismanView(View):
         super().__init__()
         self.talisman = t
 
+        c, s = self.talisman.current, self.talisman.slashes
+        self.reset.disabled = c < 1
+        self.unslash.disabled = c < 1
+        self.slash.disabled = c >= s
+        self.resolve.disabled = c >= s
+
     async def update_talisman_message(self, ctx: Interaction):
         await ctx.response.defer()
 
@@ -137,7 +143,7 @@ class TalismanView(View):
             view=self,
         )
 
-    @button(label="<<", custom_id="talisman:reset", disabled=True)
+    @button(label="<<", custom_id="talisman:reset")
     async def reset(self, ctx: Interaction, _):
         self.talisman.current = 0
         self.reset.disabled = True
@@ -146,7 +152,7 @@ class TalismanView(View):
         self.resolve.disabled = False
         await self.update_talisman_message(ctx)
 
-    @button(label="<", custom_id="talisman:unslash", disabled=True)
+    @button(label="<", custom_id="talisman:unslash")
     async def unslash(self, ctx: Interaction, _):
         self.talisman.current = max(0, self.talisman.current - 1)
         self.reset.disabled = self.talisman.current < 1
@@ -223,7 +229,10 @@ class TalismanCog(GroupCog, name="talisman"):
 
         await ctx.channel.purge(check=is_me)  # type:ignore
 
-        for t in self.talismans:
+        with open(TALISMAN_PATH, "r") as f:
+            data = [Talisman(**d) for d in yaml.safe_load(f)["talismans"].values()]
+
+        for t in data:
             await self.bot.talisman_channel.send(
                 file=t.get_image(), view=TalismanView(t)
             )
