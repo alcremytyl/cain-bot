@@ -108,8 +108,8 @@ def name_from_ability(ability: str | None) -> str | None:
 
 
 @lru_cache(maxsize=len(agenda_choices))
-async def agenda(self, ctx: Interaction, name: str | None):
-    d = self.data["agenda"]
+async def agenda(ctx: Interaction, name: str | None = None):
+    d = data["agenda"]
     e: Embed
 
     if name == None:

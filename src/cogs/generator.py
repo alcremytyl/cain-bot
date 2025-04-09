@@ -1,9 +1,7 @@
 from random import randrange
-from typing import Sequence, Tuple
-from discord import ButtonStyle, Embed, Interaction
+from discord import Embed, Interaction
 from discord.app_commands import command
 from discord.ext.commands import Cog
-from discord.ui import View, button
 import yaml
 
 from src.bot import CainClient

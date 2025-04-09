@@ -1,4 +1,4 @@
-from discord import ButtonStyle, File, Interaction, Message
+from discord import ButtonStyle, File, Interaction
 from discord.app_commands import command
 from discord.ext.commands import GroupCog, is_owner
 from discord.ui import Modal, TextInput, View, button
@@ -23,11 +23,6 @@ SLASH_CHOICES = glob("./assets/slashes/*.png")
 FONT = ImageFont.truetype(TALISMAN_FONT_PATH, size=50)
 
 
-# TODO
-"""
-- context menu
-- make sure it's all good with the yaml
-"""
 # NOTE: manually opening and closing the yaml each time is a design decision
 #       in case I want to edit the file directly without needing some command
 #       to synchronize state
@@ -202,9 +197,6 @@ class TalismanCog(GroupCog, name="talisman"):
             _data = yaml.safe_load(f)
             self.pressure = _data["pressure"]
             self.tension = _data["tension"]
-            self.talismans = list[Talisman](
-                Talisman(**d) for d in _data["talismans"].values()
-            )
 
     @command(name="create")
     async def create(self, ctx: Interaction, name: str, max: int, decal: str = ""):
@@ -216,11 +208,8 @@ class TalismanCog(GroupCog, name="talisman"):
         await ctx.response.defer()
 
         t = Talisman(name, max, decal=decal)
-        m = await self.bot.talisman_channel.send(
-            file=t.get_image(), view=TalismanView(t)
-        )
-        self.talismans.append(t)
 
+        await self.bot.talisman_channel.send(file=t.get_image(), view=TalismanView(t))
         await ctx.followup.send("Talisman created", ephemeral=True)
 
     @command(name="setup")
@@ -239,6 +228,7 @@ class TalismanCog(GroupCog, name="talisman"):
 
         await ctx.followup.send("Finished setup", ephemeral=True)
 
+    # TODO  impl + autocomplete
     @command(name="open")
     async def open(self, ctx: Interaction, name: str):
         pass
