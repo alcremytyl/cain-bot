@@ -38,5 +38,3 @@ client = CainClient()
 
 # TODO talismanize this
 # NOTE: gives you a message id to work with, HUGE!!!
-
-# await ctx.response.defer(thinking=False)
