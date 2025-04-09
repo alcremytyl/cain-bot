@@ -1,7 +1,7 @@
-from discord import ButtonStyle, File, Interaction
+from discord import ButtonStyle, File, Interaction, Message
 from discord.app_commands import command
 from discord.ext.commands import GroupCog, is_owner
-from discord.ui import Button, View, button
+from discord.ui import Modal, TextInput, View, button
 import yaml
 from src.bot import CainClient
 
@@ -40,6 +40,7 @@ class Talisman:
     current: int = field(default=0)
     decal: str = field(default="")
     generate_images: bool = field(default=True)
+    sync_to_yaml: bool = field(default=True)
 
     def __post_init__(self):
         if self.decal == "":
@@ -53,8 +54,9 @@ class Talisman:
         if self.generate_images:
             self.generate()
 
-        with open_yaml(TALISMAN_PATH) as data:
-            data["talismans"][self.name] = self.as_dict()
+        if self.sync_to_yaml:
+            with open_yaml(TALISMAN_PATH) as data:
+                data["talismans"][self.name] = self.as_dict()
 
     def as_dict(self) -> dict:
         return {
@@ -111,7 +113,11 @@ class Talisman:
         if not os.path.isfile(fp):
             raise ValueError(f"No such file {fp}")
 
-        return File(fp=fp, filename=f"{self.name}--talisman.png")
+        return File(
+            fp=fp,
+            description=f"{self.as_dict()}",
+            filename=f"talisman.png",
+        )
 
 
 class TalismanView(View):
@@ -161,6 +167,10 @@ class TalismanView(View):
 
         await ctx.message.delete()  # type:ignore
         await ctx.response.defer()
+
+
+class TalismanEditModal(Modal, title="yearn for the mines"):
+    text = TextInput(label="testing", max_length=2)
 
 
 @is_owner()

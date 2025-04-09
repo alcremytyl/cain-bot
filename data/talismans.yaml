@@ -1,12 +1,12 @@
 pressure: 0
 talismans:
   Crack Judith:
-    current: 2
+    current: 4
     decal: wormy
     name: Crack Judith
     slashes: 4
   Duel Eschaton:
-    current: 1
+    current: 12
     decal: '4'
     name: Duel Eschaton
     slashes: 13
