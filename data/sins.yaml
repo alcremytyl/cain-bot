@@ -1,0 +1,140 @@
+ogre:
+  afflictions: '1. White Mold: Spreading white veins and coughing indicate mold infection.
+    Subtract 1 from all resting rolls while afflicted and cannot eat, drink, or use
+    consumables. 2. Frozen Limbs: Physical activity or fine motor skill is hard if
+    it requires more than one limb. 3. Circling the Drain: Cannot benefit from teamwork
+    or setup. Permanently add to your agenda: give up on something.  4. Black Lungs:
+    Speaking spews out black sludge. All communication that requires speaking is hard
+    5. Rotting: Black rot has taken in the body. Take 1 stress each time pressure
+    fills up. If this inflicts an injury, it inflicts instant death. 6. The Weight:
+    Permanently add to your agenda: die. Or improvise: make a skill or activity hard
+    or risky'
+  combat: "Execution: 7 + PRESSURE + CAT\nATTACKS WITH: Teeth, claws, fetid water,\
+    \ black spew (1) 5 stress, (2/3): 3 stress, (4+): 2 stress. \nCOMPLICATIONS: Kill\
+    \ lights, summon mist, spew ceaselessly on someone, bury an exorcist in mud, slime,\
+    \ or vomit, pin down an exorcist, release acrid stench, smash walls, floor, or\
+    \ ceilings, retreat into darkness, add a bystander, use a domain. \nTHREATS: Grab\
+    \ an exorcist and squeeze the life out of them. Hurl exorcist through a wall.\
+    \ Collapse architecture. Summon minions. Kill bystanders. Infect with dark pulsing\
+    \ veins. Cause a flash flood or freeze. Blind someone in a miasmatic cloud. Use\
+    \ a domain. Do something dark, crushing, or vile.\n"
+  domains:
+  - description: 'The world itself begins to turn against the exorcists. As a complication
+      or a tension move, the ogre supernaturally erases entrances, exits, roads, vehicles,
+      or light sources in an area of about a city block. These return when the scene
+      passes or if the complication is dealt with.
+
+      Once a hunt, as a tension move, if an exorcist opens any door, the entire group
+      suddenly finds themself in an area of twisting corridors, pitch black darkness,
+      and distant but troubling noises. The area is both dangerous and hostile to
+      them. Finding an exit and escaping will require playing out a scene or two,
+      and the Admin can set out talismans as needed.'
+    name: Hostile Door Patterns
+  - description: "The miasma becomes permeated with an deep, cloying dark. The ogre\
+      \ is invisible in darkness. It becomes hard to do anything to the ogre unless\
+      \ it is brightly lit or an action doesn\u2019t rely on sight. \nAs a tension\
+      \ move, all electric lights not held by an exorcist sputter out and cease functioning\
+      \ for the next scene. The Admin picks an exorcist and asks them \u2018What do\
+      \ you see in the dark?\u2019. They must answer truthfully and gain 1 stress\
+      \ after answering.\n"
+    name: The Unseeing of Things
+  - description: 'The ogre can force exorcists to experience some of the crushing
+      trauma that caused its birth.As a tension move, the ogre can pick an exorcist.
+      That exorcist is afflicted by the Despair affliction.
+
+      DESPAIR: This special affliction can only affect one exorcist at once. They
+      gain the agenda item push people away even if losing this affliction. At the
+      end of the mission, roll a 1d6. On a 1 or 2, keep this agenda item, on a 3+
+      may get rid of it. Ask that exorcist the question who in this group will let
+      you down? Any time the chosen person fails an action roll, the afflicted exorcist
+      gains 1 stress. However, if this triggered at least once during a session, at
+      the end of that session also gain 1 xp.'
+    name: The Grinding of Wheels
+  - description: 'The ogre can regenerate rapidly from injuries.
+
+      - It regenerates 1 segment of the execution talisman every time a risk result
+      of 1 is rolled in a conflict scene where it is present.
+
+      - The ogre takes -1 slash on its execution talisman unless damage by fire, acid,
+      or some other strong chemical or solvent in the same scene.'
+    name: That Awful Flesh
+  - description: 'The ogre can temporarily cause the miasma to accelerate its effects.
+
+      - The touch of the ogre can rapidly rot and decay objects, plant matter, and
+      constructions, destroying them and dissolving them into mud and slime.
+
+      - Exorcists inside the miasma start to superficially rot if they spend scenes
+      there - hair falling out, sunken skin, dead skin cells, nails falling out, etc.
+      They recover from this damage after the mission.
+
+      - As a tension move the ogre can cause an exorcist inside the miasma to start
+      decaying. They gain a hook with the Rotting affliction.
+
+      - Exorcists subtract 1 from all their healing rolls.'
+    name: The Inevitable Place of Meat
+  - description: "At the start of a mission, the Ogre chooses an exorcist and creates\
+      \ a creature formed from the guilt and shame of that exorcist. The Admin secretly\
+      \ asks the targeted exorcist the following questions:\n- Which ally are you\
+      \ embarrassed to be around? - What's the worst thing you ever did? - What do\
+      \ you hate the most about yourself?\nThe creature takes a form that plays off\
+      \ these answers. It is a trace with the following execution talisman.\n\n**CRUSHER**\
+      \ Execution talisman 6. If defeated, is destroyed permanently. It has the following\
+      \ features:\n- Deals +1 stress against the exorcist it is formed from - That\
+      \ exorcist\u2019s actions are hard against it. - Attempts to harm only its target\
+      \ in a fight.\nReactions:\nInflict stress. Attacks with: decaying, oversized\
+      \ weaponry, mutated flesh. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.\n\
+      Or: create a complication or threat: Grab by the throat, Pin down someone, raise\
+      \ weapon to cleave, charge someone through a wall, floor, or door, swing wildly,\
+      \ cause collateral damage.\nOr: Force confession (1-3): Force the exorcist to\
+      \ confess aloud the answer to one of the questions they answered, or else take\
+      \ 1d6 stress. Works once per question.\n"
+    name: The Lash Calls you Brother
+  overview: WORK IN PROGRESS!!
+  palace: "Tracking an ogre down is often a matter of finding its host, or where its\
+    \ host is currently residing. Once influenced by an ogre, a host usually withdraws\
+    \ from society and cuts off its connections, making this harder than it would\
+    \ usually be.\nAn ogre\u2019s palace typically resembles a mirror of a space significant\
+    \ to the ogre\u2019s host, but long decayed and significantly expanded in size\
+    \ into a warren or maze-like space. Interspersed in the area is garbage, junk,\
+    \ and things the ogre has collected. The ogre typically barely fits inside and\
+    \ may have to painfully squeeze or crouch to move around, although this doesn\u2019\
+    t seem to slow it down at all.\nTypical palaces resemble:\n- Abandoned or derelict\
+    \ buildings\n- Filthy high rise apartments\n- Closed or shuttered schools\n- Empty,\
+    \ dead workplaces or offices\nOgre palaces are: Dark/Wet/Cold/Musty/Reeking/Filthy\n"
+  pressure:
+    description: "The very presence of an ogre begins to infect an area with a dark\
+      \ Miasma. When an ogre appears, the weather will typically sour in the local\
+      \ area over the next few days and remain that way until the ogre reaches critical\
+      \ mass and undergoes a sin event or is executed. This miasma typically manifests\
+      \ the following way:\n- buildings, objects, roads, and other constructions in\
+      \ the area begin to degrade as though they have suffered from poor maintenance\
+      \ for years - clouds shroud the sun and fog rolls in. Over time, the fog becomes\
+      \ thicker and thicker and eventually acquires a sour smell\n- a thick white\
+      \ mold begins to grow over surfaces\n- technology, phone lines, electricity,\
+      \ and internet stop working reliably, and eventually stops working all together\n\
+      - architecture stops conforming to sense and becomes maze-like or nonsensical\n\
+      - Humans spending time inside the miasmatic area begin to share in the ogre\u2019\
+      s outlook and become more and more hostile\nWhen the exorcists arrive, the miasma\
+      \ should cover only part of the area the exorcists are trying to investigate,\
+      \ like a few blocks. Each time pressure increases, the miasma spreads to a new\
+      \ area. When pressure fills up completely, the situation gets out of control.\
+      \ The Ogre increases in CAT by +1, and the miasma covers the entire area of\
+      \ the investigation - no matter where the exorcists go, the miasma follows them\
+      \ for the duration of the mission - even if they leave the investigation area.\n"
+    name: Miasma
+  traces:
+    description: "Stumblers are bulbous and misshapen humanoids formed from the shame\
+      \ and guilt of the ogre and drawn to sources of warmth, such as humans. They\
+      \ start to appear in greater and greater numbers inside the miasma area and\
+      \ are partly visible to graceless humans, who can be driven catatonic by merely\
+      \ looking at one for longer than a glance. Though they don\u2019t need to eat,\
+      \ they will rip apart living beings they come across and devour them. \nStumblers\
+      \ (sins): Execution talisman 2 (solo), 4 (group), 6 (massive group). The have\
+      \ the following features:\n- Disintegrate rapidly outside of the miasma.\n-\
+      \ Slow and uncoordinated. Actions that can take advantage of this roll +1D against\
+      \ them.\n- Take -1 slash from physical harm\n**Reactions**:\nInflict stress.\
+      \ Attacks with: misshapen body, rusted metal, spurts of fluid. (1) 4 stress,\
+      \ (2/3): 3 stress, (4+): 2 stress.\nOr: create a complication or threat: Grab\
+      \ someone, smother in flesh, infected bite, rupture and threaten to explode,\
+      \ fuse to wall, ear-splitting screaming, devour humans. \n"
+    name: Stumblers

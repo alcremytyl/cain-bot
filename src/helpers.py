@@ -18,9 +18,12 @@ def is_me(m: Message):
 
 
 @contextmanager
-def open_yaml(fp: str):
+def open_yaml(fp: str, and_write=True):
     with open(fp, "r") as f:
         data = yaml.safe_load(f)
+
     yield data
-    with open(fp, "w") as f:
-        yaml.safe_dump(data, f)
+
+    if and_write:
+        with open(fp, "w") as f:
+            yaml.safe_dump(data, f)

@@ -108,7 +108,7 @@ def name_from_ability(ability: str | None) -> str | None:
 
 
 @lru_cache(maxsize=len(agenda_choices))
-async def agenda(ctx: Interaction, name: str | None = None):
+async def agenda(ctx: Interaction, name: str | None = None, hidden=True):
     d = data["agenda"]
     e: Embed
 
@@ -137,11 +137,13 @@ async def agenda(ctx: Interaction, name: str | None = None):
             title="Error!", description=f"No such agenda `{name}` in this campaign."
         )
 
-    await ctx.response.send_message(embed=e, ephemeral=True)
+    await ctx.response.send_message(embed=e, ephemeral=hidden)
 
 
 @cache
-async def blasphemy(ctx: Interaction, name: str | None, ability: str | None):
+async def blasphemy(
+    ctx: Interaction, name: str | None, ability: str | None, hidden: bool
+):
     payload = {}
     d = data["blasphemy"]
 
@@ -202,7 +204,7 @@ async def blasphemy(ctx: Interaction, name: str | None, ability: str | None):
     else:
         payload["content"] = "No such ability/blasphemy. Check your spelling."
 
-    await ctx.response.send_message(**payload, ephemeral=True)
+    await ctx.response.send_message(**payload, ephemeral=hidden)
 
 
 @lru_cache(maxsize=CACHE_SIZE)
@@ -228,7 +230,7 @@ async def ac_blashemy_ability(ctx: Interaction, current: str) -> AutoCompletion:
 
 
 @cache
-async def describe(ctx: Interaction, target: str):
+async def describe(ctx: Interaction, target: str, hidden: bool):
     d = data["description"]
     embed = MISSING
     content = None
@@ -239,7 +241,7 @@ async def describe(ctx: Interaction, target: str):
     else:
         content = f"No description found for `{target}`"
 
-    await ctx.response.send_message(content=content, embed=embed, ephemeral=True)
+    await ctx.response.send_message(content=content, embed=embed, ephemeral=hidden)
 
 
 @lru_cache(maxsize=CACHE_SIZE)
@@ -262,25 +264,27 @@ class WikiCog(Cog, name="wiki"):
     @command(name="blasphemy")
     @autocomplete(name=autocomplete_generator(blasphemy_choices))
     @autocomplete(ability=ac_blashemy_ability)
-    async def blasphemy(self, ctx: Interaction, name: StringArg, ability: StringArg):
-        await blasphemy(ctx, name, ability)
+    async def blasphemy(
+        self, ctx: Interaction, name: StringArg, ability: StringArg, hidden: bool = True
+    ):
+        await blasphemy(ctx, name, ability, hidden=hidden)
 
     @command(name="agenda")
     @autocomplete(name=autocomplete_generator(agenda_choices))
-    async def agenda(self, ctx: Interaction, name: StringArg):
-        await agenda(ctx, name)
+    async def agenda(self, ctx: Interaction, name: StringArg, hidden: bool = True):
+        await agenda(ctx, name, hidden=hidden)
 
     @command(name="describe")
     @autocomplete(what=ac_describe)
-    async def describe(self, ctx: Interaction, what: StringArg):
-        await describe(ctx, what)
+    async def describe(self, ctx: Interaction, what: StringArg, hidden: bool = True):
+        await describe(ctx, what, hidden=hidden)
 
     @command(name="category")
-    async def catchart(self, ctx: Interaction):
+    async def catchart(self, ctx: Interaction, hidden: bool = True):
         view = Paginator(catchart_data)
         content = "\n".join(catchart_data[0])
         e = Embed(description=f"### {content}").set_image(url=CATEGORY_MAGNITUDE_CHART)
-        await ctx.response.send_message(embed=e, view=view)
+        await ctx.response.send_message(embed=e, view=view, ephemeral=hidden)
 
 
 async def setup(bot: CainClient):

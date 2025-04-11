@@ -6,10 +6,12 @@ combat log should show talisman creation, deletion, and progress on every update
         TALISMAN {name} SLASHED\n(CURRENT / MAX)
 
 
-## the rest
-
-/cast: posts a description of what they're casting
 /sin (select menu with cool sin facts)
+    - [x] severe atk
+    - [ ] afflictions
+    - [ ] traces
+    - [ ] ...
+    - [ ] the rest
 
 possible combat log
 polishing (descriptions for the commands n shit)

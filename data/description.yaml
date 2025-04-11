@@ -1336,8 +1336,8 @@ description:
     many psyche bursts. Recover stress equal to the d3- Erase slashes on a hook
     equal to the d3Resting also ends the effects of some powers and abilities,
     or resets others.
-  advances: >2
-     Any time your experience bar is full (4 segments), you cash it out for an advance. You can bank these advances and spend an advance after a session in the following ways: - Gain a new agenda ability, 
+  advances: >
+    Any time your experience bar is full (4 segments), you cash it out for an advance. You can bank these advances and spend an advance after a session in the following ways: - Gain a new agenda ability, 
     - Gain a new blasphemy power or a new, blasphemy,  
 
     - Evolve a sin mark and roll for a new ability for that sin mark. On duplicate, choose,  
@@ -1750,4 +1750,3 @@ description:
 
 
     Many of them have existing abilities or details on their sheets that can be used as inspiration to inflict consequences. Sins even have a reaction list they can use in conflict scenes that give explicit outcomes.
-
