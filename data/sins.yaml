@@ -9,6 +9,7 @@ ogre:
     fills up. If this inflicts an injury, it inflicts instant death. 6. The Weight:
     Permanently add to your agenda: die. Or improvise: make a skill or activity hard
     or risky'
+  url: "https://i.imgur.com/V0GoKJp.png"
   combat: "Execution: 7 + PRESSURE + CAT\nATTACKS WITH: Teeth, claws, fetid water,\
     \ black spew (1) 5 stress, (2/3): 3 stress, (4+): 2 stress. \nCOMPLICATIONS: Kill\
     \ lights, summon mist, spew ceaselessly on someone, bury an exorcist in mud, slime,\
@@ -90,6 +91,10 @@ ogre:
       \ 1d6 stress. Works once per question.\n"
     name: The Lash Calls you Brother
   overview: WORK IN PROGRESS!!
+  trauma:
+  - Who or what pushed you into this hole?
+  - Who or what is keeping you from going over the edge?
+  - What are you most ashamed of?
   palace: "Tracking an ogre down is often a matter of finding its host, or where its\
     \ host is currently residing. Once influenced by an ogre, a host usually withdraws\
     \ from society and cuts off its connections, making this harder than it would\

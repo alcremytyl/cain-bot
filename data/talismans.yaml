@@ -31,7 +31,7 @@ talismans:
     name: Ogre2
     slashes: 11
   Slime Michael:
-    current: 0
+    current: 3
     decal: '8'
     name: Slime Michael
     slashes: 3

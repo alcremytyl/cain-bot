@@ -216,7 +216,7 @@ class TalismanCog(GroupCog, name="talisman"):
     async def setup(self, ctx: Interaction):
         await ctx.response.defer(thinking=True, ephemeral=True)
 
-        await ctx.channel.purge(check=is_me)  # type:ignore
+        await self.bot.talisman_channel.purge(check=is_me)  # type:ignore
 
         with open(TALISMAN_PATH, "r") as f:
             data = [Talisman(**d) for d in yaml.safe_load(f)["talismans"].values()]

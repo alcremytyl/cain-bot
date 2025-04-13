@@ -18,7 +18,8 @@ class CainClient(Bot):
         print(f"Logged in as {self.user} (ID: {self.user.id})")  # type:ignore
         print("------")
 
-        channel = await self.fetch_channel(TALISMAN_CHANNEL[1])
+        # channel = await self.fetch_channel(TALISMAN_CHANNEL[1])
+        channel = await self.fetch_channel(1360292276521144411)
         if isinstance(channel, TextChannel):
             self.talisman_channel = channel
         else:

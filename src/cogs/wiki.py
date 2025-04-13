@@ -11,7 +11,7 @@ import yaml
 
 from src.bot import CainClient
 from src.globals import CACHE_SIZE, CAIN_EMOTE, AutoCompletion
-from src.helpers import emote, emote_link
+from src.helpers import Paginator, emote, emote_link
 from src.transformers import StringArg
 
 
@@ -53,34 +53,6 @@ with open("./data/description.yaml", "r") as f:
     ]
 
 
-class Paginator(View):
-    def __init__(
-        self, pages: Sequence[Tuple[str, str]], *, timeout: float | None = 180
-    ):
-        super().__init__(timeout=timeout)
-        self.pages = pages
-        self.current = 0
-
-    @button(label="<", style=ButtonStyle.primary)
-    async def prev(self, ctx: Interaction, *_):
-        self.current -= 1
-        await self.update(ctx)
-
-    @button(label=">", style=ButtonStyle.primary)
-    async def next(self, ctx: Interaction, *_):
-        self.current += 1
-        await self.update(ctx)
-
-    async def update(self, ctx: Interaction):
-        i = self.current % len(self.pages)
-        content = "\n".join(catchart_data[i])
-        await ctx.response.edit_message(
-            embed=Embed(description=f"### {content}").set_image(
-                url=CATEGORY_MAGNITUDE_CHART
-            ),
-        )
-
-
 def autocomplete_generator(choices: Collection[str]):
     async def inner(_: Interaction, current: str) -> AutoCompletion:
         return __inner(current)
@@ -108,7 +80,7 @@ def name_from_ability(ability: str | None) -> str | None:
 
 
 @lru_cache(maxsize=len(agenda_choices))
-async def agenda(ctx: Interaction, name: str | None = None, hidden=True):
+async def agenda(ctx: Interaction, name: str | None = None, ephemeral=True):
     d = data["agenda"]
     e: Embed
 
@@ -137,12 +109,12 @@ async def agenda(ctx: Interaction, name: str | None = None, hidden=True):
             title="Error!", description=f"No such agenda `{name}` in this campaign."
         )
 
-    await ctx.response.send_message(embed=e, ephemeral=hidden)
+    await ctx.response.send_message(embed=e, ephemeral=ephemeral)
 
 
 @cache
 async def blasphemy(
-    ctx: Interaction, name: str | None, ability: str | None, hidden: bool
+    ctx: Interaction, name: str | None, ability: str | None, ephemeral: bool
 ):
     payload = {}
     d = data["blasphemy"]
@@ -204,7 +176,7 @@ async def blasphemy(
     else:
         payload["content"] = "No such ability/blasphemy. Check your spelling."
 
-    await ctx.response.send_message(**payload, ephemeral=hidden)
+    await ctx.response.send_message(**payload, ephemeral=ephemeral)
 
 
 @lru_cache(maxsize=CACHE_SIZE)
@@ -230,7 +202,7 @@ async def ac_blashemy_ability(ctx: Interaction, current: str) -> AutoCompletion:
 
 
 @cache
-async def describe(ctx: Interaction, target: str, hidden: bool):
+async def describe(ctx: Interaction, target: str, ephemeral: bool):
     d = data["description"]
     embed = MISSING
     content = None
@@ -241,7 +213,7 @@ async def describe(ctx: Interaction, target: str, hidden: bool):
     else:
         content = f"No description found for `{target}`"
 
-    await ctx.response.send_message(content=content, embed=embed, ephemeral=hidden)
+    await ctx.response.send_message(content=content, embed=embed, ephemeral=ephemeral)
 
 
 @lru_cache(maxsize=CACHE_SIZE)
@@ -265,26 +237,29 @@ class WikiCog(Cog, name="wiki"):
     @autocomplete(name=autocomplete_generator(blasphemy_choices))
     @autocomplete(ability=ac_blashemy_ability)
     async def blasphemy(
-        self, ctx: Interaction, name: StringArg, ability: StringArg, hidden: bool = True
+        self,
+        ctx: Interaction,
+        name: StringArg,
+        ability: StringArg,
+        ephemeral: bool = True,
     ):
-        await blasphemy(ctx, name, ability, hidden=hidden)
+        await blasphemy(ctx, name, ability, ephemeral=ephemeral)
 
     @command(name="agenda")
     @autocomplete(name=autocomplete_generator(agenda_choices))
-    async def agenda(self, ctx: Interaction, name: StringArg, hidden: bool = True):
-        await agenda(ctx, name, hidden=hidden)
+    async def agenda(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+        await agenda(ctx, name, ephemeral=ephemeral)
 
     @command(name="describe")
     @autocomplete(what=ac_describe)
-    async def describe(self, ctx: Interaction, what: StringArg, hidden: bool = True):
-        await describe(ctx, what, hidden=hidden)
+    async def describe(self, ctx: Interaction, what: StringArg, ephemeral: bool = True):
+        await describe(ctx, what, ephemeral=ephemeral)
 
     @command(name="category")
-    async def catchart(self, ctx: Interaction, hidden: bool = True):
-        view = Paginator(catchart_data)
-        content = "\n".join(catchart_data[0])
-        e = Embed(description=f"### {content}").set_image(url=CATEGORY_MAGNITUDE_CHART)
-        await ctx.response.send_message(embed=e, view=view, ephemeral=hidden)
+    async def catchart(self, ctx: Interaction, ephemeral: bool = True):
+        await Paginator(catchart_data, CATEGORY_MAGNITUDE_CHART, False).setup(
+            ctx, ephemeral=ephemeral
+        )
 
 
 async def setup(bot: CainClient):
