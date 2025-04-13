@@ -90,7 +90,23 @@ ogre:
       \ confess aloud the answer to one of the questions they answered, or else take\
       \ 1d6 stress. Works once per question.\n"
     name: The Lash Calls you Brother
-  overview: WORK IN PROGRESS!!
+  overview: 
+    - |
+      Enormous, misshapen, and hideously powerful, ogres are a common sin type that is nonetheless quite dangerous compared to others.
+
+      Ogres are born out of people’s sense of inadequacy and failure, shame, and self-hatred, or just a deep desire for misery. When someone psychically sensitive falls into a deep hole of loathing and hopelessness, an ogre begins to form in their psyche and take root. 
+
+      Ogres commonly manifest in:
+      - people ground down to a pulp by life-bullying, traffic, debt, overwork, etc
+      - people who suffer from a deep, existential self-loathing
+      - people dealing with extreme grief
+
+      Primary emotion: Despair
+    - |
+      Appearance and Psychophysiology: Ogres are almost always extremely large, strong, and bulky and manifest a typical malformed, monstrous appearance, often due to the low self worth of their hosts. When fused with a host, the host may appear to be a worse, ‘uglier’ version, as they judge themselves. An ogre’s mere presence sucks the energy and life out of a room, even if mundane humans cannot see it, lowering the temperature. They are associated with frost, mist, mud, and ill weather. When pressed in a fight they are enormously strong and durable, able to rapidly regenerate from their wounds, tear a human in half, and ignore even extreme punishment. Behavior: Ogres are unusual in that they are extremely anti-social, self deprecating, and conflict averse for sins, and usually just want to be left alone. It is extremely rare for ogres to manifest post mortem and they are typically very emotionally attached to their hosts. They are often co-dependent and may spend their time tormenting or comforting their host, sometimes both, preferring to push them and those around them into self destructive behavior or a deep laconic haze.
+
+      Behavior: Ogres are unusual in that they are extremely anti-social, self deprecating, and conflict averse for sins, and usually just want to be left alone. It is extremely rare for ogres to manifest post mortem and they are typically very emotionally attached to their hosts. They are often co-dependent and may spend their time tormenting or comforting their host, sometimes both, preferring to push them and those around them into self destructive behavior or a deep laconic haze.
+
   trauma:
   - Who or what pushed you into this hole?
   - Who or what is keeping you from going over the edge?

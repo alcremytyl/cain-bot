@@ -1,10 +1,11 @@
-from discord import Embed, Interaction
+from discord import Embed, Interaction, SelectOption
 from discord.app_commands import (
     Choice,
     choices,
     command,
 )
-from discord.ext.commands import GroupCog
+from discord.ext.commands import Cog, GroupCog
+from discord.ui import Select, View, select
 
 from src.bot import CainClient
 from src.helpers import Paginator, open_yaml
@@ -21,10 +22,6 @@ with open_yaml("./data/sins.yaml", False) as _data:
 - impl the shits
 - write overviews
 - idol, hound, centipede, toad, lord
-
-
-append proper thumbnail
-added icons 
 """
 
 
@@ -33,7 +30,30 @@ class SinCog(GroupCog, name="sin"):
         super().__init__()
         self.bot = bot
 
-    blasphemies = [Choice(name=k.title(), value=k) for k in severe.keys()]
+    @property
+    def view(self):
+        # very dumb idea that works
+        class SinView(View):
+            def __init__(self, cog: Cog, *, timeout: float | None = 180):
+                super().__init__(timeout=timeout)
+                self.cog = cog
+
+            options = [
+                SelectOption(label=c.name, description=c.description)
+                for c in self.walk_app_commands()
+            ]
+
+            @select(options=options)
+            async def select_sin(self, ctx: Interaction, select: Select):
+                # TODO: generate mapping of embeds for every sin on startup and use them for this mf
+                return await ctx.response.send_message("ya")
+
+        return SinView(self)
+
+    @command()
+    @choices(name=sin_autocomplete)
+    async def overview(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+        await ctx.response.send_message("canard so awesome", view=self.view)
 
     @command()
     @choices(name=sin_autocomplete)
@@ -122,14 +142,20 @@ class SinCog(GroupCog, name="sin"):
     async def trauma(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
         if (desc := blasphemies.get(name)) is None:
             return await ctx.response.send_message("Unknown sin", ephemeral=True)
+        t = "\n".join([f"{i+1}. {_t}" for (i, _t) in enumerate(desc["trauma"])])
 
-        "The Admin, as the ogre, answers the following questions, then establishes a trauma based on the truthful answers."
-
-        "For every question the exorcists answer, they can counter a sin’s reaction, rolling 1d3 after the sin acts. Reduce any stress sufffered by all targets by the amount on the die, and the sin immediately takes that many slashes on its execution clock from the psychic trauma, which cannot reduce it below 1."
+        content = (
+            "The Admin, as the ogre, answers the following questions, then establishes a trauma based on the truthful answers.\n\n"
+            f"**{t}**\n\n"
+            "-# *For every question the exorcists answer, they can counter a sin’s reaction, rolling 1d3 after the sin acts. Reduce any stress sufffered by all targets by the amount on the die, and the sin immediately takes that many slashes on its execution clock from the psychic trauma, which cannot reduce it below 1.*"
+        )
         await ctx.response.send_message(
-            embed=Embed(description=desc["combat"]).set_thumbnail(url=desc["url"]),
+            embed=Embed(description=content).set_thumbnail(url=desc["url"]),
             ephemeral=ephemeral,
         )
+
+
+SinCog.walk_app_commands
 
 
 async def setup(bot: CainClient):
