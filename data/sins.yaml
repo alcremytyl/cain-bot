@@ -166,7 +166,7 @@ ogre:
       \ and internet stop working reliably, and eventually stops working all together\n\
       - architecture stops conforming to sense and becomes maze-like or nonsensical\n\
       - Humans spending time inside the miasmatic area begin to share in the ogre\u2019\
-      s outlook and become more and more hostile\nWhen the exorcists arrive, the miasma\
+     a s outlook and become more and more hostile\nWhen the exorcists arrive, the miasma\
       \ should cover only part of the area the exorcists are trying to investigate,\
       \ like a few blocks. Each time pressure increases, the miasma spreads to a new\
       \ area. When pressure fills up completely, the situation gets out of control.\
@@ -233,7 +233,7 @@ idol:
 
     - name: Hold My Darlings
       description: > 
-      The idol cultivates a special, insidious bond to its cult members. Once a scene, when the idol would takes lashes on its execution talisman from an exorcist’s action, it can supernaturally transfer the harm to any cultist or group of cultists present in the scene instead. This includes any NPCs added the idol’s cult. The idol can see through the eyes of any cult member as if they were its own, and can speak through the mouths of cult members with its voice.
+        The idol cultivates a special, insidious bond to its cult members. Once a scene, when the idol would takes lashes on its execution talisman from an exorcist’s action, it can supernaturally transfer the harm to any cultist or group of cultists present in the scene instead. This includes any NPCs added the idol’s cult. The idol can see through the eyes of any cult member as if they were its own, and can speak through the mouths of cult members with its voice.
 
     - name: That Pliable Flesh
       description: >
@@ -280,7 +280,7 @@ idol:
         • If the talisman is 3 or more, local authorities will start to attempt to arrest the exorcists. If it’s 6 or more, the response becomes more severe in scale.
 
         Exorcists can attempt to untick this talisman with their actions. If the talisman fills up before the idol is dealt with, cleanup becomes catastrophic as the news spreads beyond CAIN control. The exorcists will receive no scrip pay for the mission.
-  overview:
+  overview: []
   trauma:
     - What is your dream?
     - Why did you give up on your dream?
@@ -403,7 +403,7 @@ hound:
         Infectious Grudge: While afflicted, the exorcist gains +1D on all actions that inflict physical violence, but also takes +1 stress when they take stress from an external source.
 
         Any exorcist can voluntarily take this affliction if they are harmed by the hound.
-  overview:
+  overview: []
   trauma:
     - Who wronged you?
     - How were you wronged?
@@ -421,17 +421,17 @@ hound:
 
     If pressure goes to maximum, the hound gains +1 CAT and adds all NPCs and the exorcists to its grudge.
   traces:
-    - name: Myrmidons
-    - description: >
-        Some Hounds produce echoes of themselves, violent creatures arising from the dripping bodily fluids of the Hound or its victims. They shudder uncontrollably and give off a bloody acidic steam when enraged, making them incredibly tough opponents. Fortunately, they are short lived, disintegrating in just a few hours.
+    name: Myrmidons
+    description: >
+      Some Hounds produce echoes of themselves, violent creatures arising from the dripping bodily fluids of the Hound or its victims. They shudder uncontrollably and give off a bloody acidic steam when enraged, making them incredibly tough opponents. Fortunately, they are short lived, disintegrating in just a few hours.
 
-        Myrmidons (sins): Execution talisman 2 (solo), 4 (group), 6 (massive group). The have the following features:
+      Myrmidons (sins): Execution talisman 2 (solo), 4 (group), 6 (massive group). The have the following features:
 
-        - Deal +1 stress to exorcists who already have an injury
+      - Deal +1 stress to exorcists who already have an injury
 
-        - Rip exorcists in half when inflicting injuries if it’s the last injury, inflicting instant death instead of putting them on the brink of death.
+      - Rip exorcists in half when inflicting injuries if it’s the last injury, inflicting instant death instead of putting them on the brink of death.
 
-        Reactions: Inflict stress. Attacks with: Teeth, claws, ear splitting screaming. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress. Or: create a complication or threat: Grow spines, rake with claws, snap bones in jaws, grow a new limb or head. Or: Bloody Steam (1-2): Complication. Steam gets in the lungs of nearby exorcists, making impossible to take an action to speak or perfrom strenuous activity (running, climbing, etc) without taking 1 stress first.`
+      Reactions: Inflict stress. Attacks with: Teeth, claws, ear splitting screaming. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress. Or: create a complication or threat: Grow spines, rake with claws, snap bones in jaws, grow a new limb or head. Or: Bloody Steam (1-2): Complication. Steam gets in the lungs of nearby exorcists, making impossible to take an action to speak or perfrom strenuous activity (running, climbing, etc) without taking 1 stress first.`
 
 centipde:
   afflictions: >
@@ -537,7 +537,7 @@ centipde:
 
         - Once a scene, when it or its minions is able to slaughter an innocent person or bystander in view of the exorcists, permanently increase the centipede’s execution clock by 1, to a maximum of four times total.
         - Once a hunt, as a tension move, the centipede can reveal a group of human survivors under threat from its forces. If the exorcists rest without aiding the survivors, they are slaughtered and the centipede permanently adds +3 segments to its execution clock.
-  overview:
+  overview: []
   trauma:
     - What are you trying to escape?
     - What do you hate the most about humanity?
@@ -549,8 +549,8 @@ centipde:
 
     Centipede palaces are typically: hostile, resentful, grotesque, gory, prison-like, chthonic
   pressure: 
-    - name: Infestation
-    - description: >
+    name: Infestation
+    description: >
       A centipede’s venom, when injected into the human bloodstream, causes a catalyzing psychobiotic reaction that within the space of about an hour mutates that human into an extremely strong, aggressive, and violent monster, a mindless drone that is under the centipede’s control as a queen controls a colony of ants. These infested are able to produce their own centipede venom that they can inject into bitten humans, creating a catalyzing exponential reaction that rapidly creates a horde of these monsters.
 
       - A human infected with centipede venom will chrysalize, transform, and mutate within exactly 44 minutes. An exorcist gains the centipede bite affliction instead.
@@ -568,8 +568,8 @@ centipde:
 
       - Exorcists, if they have the Centipede Bite hook, can erase all segments on it. This doesn’t remove the hook, as normal.
   traces: 
-    - name: Infested
-    - description: >
+    name: Infested
+    description: >
       These mutated humans are essentially minor type II sins, who have been affected by the psycho-biotic poison in their bloodstream. They form into large, animalistic, hive swarms that the centipede can mentally control. Though starting off relatively human in appearance, over time they become more and more mutated and insect like.They typically roam around affected areas in large hordes.
 
       Infested (sins/humans): Execution talisman 1 (solo), 3 (group), 5 (large group), 7 (full horde). Only appear in large group or horde size at pressure 4+.
@@ -660,34 +660,34 @@ toad:
         The Toad is able to transform matter into material wealth, such as precious gemstones or gold.
         By touching any surface or living matter, it can transform it into gemstone or gold. It can use this as a threat or complication to inflict stress, block the exorcists, or inflict the below affliction.
         Midan Touch: Inflict this on the exorcists with a threat or a hook. The skin of an arm or leg of the afflicted exorcist slowly becomes turning into gemstone or rock, usually starting from the contact area. Actions that require speed or dexterity from them become hard. When the exorcists finish a rest, they take 3 stress. If this stress would inflict an injury, they instead suffer instant death and turn into a jeweled statue
-  overview:
+  overview: []
   trauma:
     - What do you deserve that was denied to you?
     - While you were starving, who was feasting?
     - Where do you draw the line?
-  palace:
+  palace: >
     A toad’s palace represents a monument to wealth, often as envisioned by its host. On the outside it may be located inside a cramped building or in a tiny apartment block, but on the inside it is typically an opulent, sprawling extravaganza.
     Toad palaces typically take the form of summer mansions, luxury residences, resorts, casinos, or other places that mix pleasure and commerce. The host may reside at least part time inside the palace due to its space and comfort. Over time the space becomes crammed almost to bursting with the wealth that the toad accumulates, transforming partly into treasure vaults or galleries to either protect or display their largesse.
     Toad palaces are typically: Opulent, gaudy, glitzy, spacious, extravagant, luxurious, comfortable
   pressure:
-    - name: Hoard
-      description: >
-        A toad’s main driving desire is to acquire as much material wealth as possible for its host. It steals as much as it can, by various means, based on its host’s desires, storing its prizes inside of its expansive gullet and regurgitating them later inside its palace.
-        A toad’s larceny can start small, but as time goes on its appetites, both literal and figurative, become more expansive. A host that wanted a faster car in the past, for example, will eventually draw a toad to find the fastest car in town and swallow it, then the next fastest car too, and so on. As time goes on, the amount of material the toad swallows and its avarice inevitably starts to grow out of control, to unreal proportions. Instead of stealing food for its host, for example, it may swallow an entire restaurant, staff and all. In theory a high enough category toad would swallow an entire town, given time.
-        The toad gains power from its hoard. Every time pressure increases, its greed increases too, describing the kind of things it can steal:
-        • 0-2: High worth but mundane items. Money, cars, guns, medicine, food, fashion, high art.
-        • 3-4: Unreal amounts of the above.
-        • 5+: Entire stores, shops, restaurants, yachts, buses, celebrities.
-        At 6+, the toad’s CAT increase by 1 and it gains the ability to steal conceptual or intangible items like abstract wealth, stocks in a company, light, artistic skill, or happiness.
+    name: Hoard
+    description: >
+      A toad’s main driving desire is to acquire as much material wealth as possible for its host. It steals as much as it can, by various means, based on its host’s desires, storing its prizes inside of its expansive gullet and regurgitating them later inside its palace.
+      A toad’s larceny can start small, but as time goes on its appetites, both literal and figurative, become more expansive. A host that wanted a faster car in the past, for example, will eventually draw a toad to find the fastest car in town and swallow it, then the next fastest car too, and so on. As time goes on, the amount of material the toad swallows and its avarice inevitably starts to grow out of control, to unreal proportions. Instead of stealing food for its host, for example, it may swallow an entire restaurant, staff and all. In theory a high enough category toad would swallow an entire town, given time.
+      The toad gains power from its hoard. Every time pressure increases, its greed increases too, describing the kind of things it can steal:
+      • 0-2: High worth but mundane items. Money, cars, guns, medicine, food, fashion, high art.
+      • 3-4: Unreal amounts of the above.
+      • 5+: Entire stores, shops, restaurants, yachts, buses, celebrities.
+      At 6+, the toad’s CAT increase by 1 and it gains the ability to steal conceptual or intangible items like abstract wealth, stocks in a company, light, artistic skill, or happiness.
   traces:
-    - name: Toadspawn
-      description: >
-        These humans follow the toad or its host through the (very real) promise of the incredible wealth that it accumulates. They can range in anything from regular gangsters to privately hired security. They are often oblivious, brainwashed, or simply willfully ignorant of their paymaster’s true nature.
-        Toadspawn (humans): Execution talisman 1 (solo) 3 (Group) 5 (large group). Mundane humans armed with mundane weaponry - no less deadly. Often has access to cars or security vans.
-        Reactions:
-        Inflict stress. Attacks with: Firearms, close quarters combat techniques. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.
-        Or: create a complication or threat: Fire a stun gun, charge an exorcist, get in a martial arts hold, pin down with a barrage of gunfire, get in a vehicle, throw a grenade.
-        Or: Threat: call reinforcements (1). Someone gets on the radio or punches an alarm. Add 1d3 to the execution clock if allowed to follow through.
+    name: Toadspawn
+    description: >
+      These humans follow the toad or its host through the (very real) promise of the incredible wealth that it accumulates. They can range in anything from regular gangsters to privately hired security. They are often oblivious, brainwashed, or simply willfully ignorant of their paymaster’s true nature.
+      Toadspawn (humans): Execution talisman 1 (solo) 3 (Group) 5 (large group). Mundane humans armed with mundane weaponry - no less deadly. Often has access to cars or security vans.
+      Reactions:
+      Inflict stress. Attacks with: Firearms, close quarters combat techniques. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.
+      Or: create a complication or threat: Fire a stun gun, charge an exorcist, get in a martial arts hold, pin down with a barrage of gunfire, get in a vehicle, throw a grenade.
+      Or: Threat: call reinforcements (1). Someone gets on the radio or punches an alarm. Add 1d3 to the execution clock if allowed to follow through.
 
 lord:
   afflictions: >
@@ -699,7 +699,7 @@ lord:
     6. Justiciar: Permanently add to your agenda punish wickedness.
     Or improvise: make a skill hard or risky.
   url: 'https://i.imgur.com/4MH7dXh.png'
-  combat:
+  combat: >
     ATTACKS WITH: Shimmering blades, armored gauntlets, shining medieval weaponry, beams of fire (long range). (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.
 
     COMPLICATIONS: Twist the world or landscape, extend the Kingdom, throw false accusations, bind an exorcist in chains, blind with scorching light, extend shining armor plating, raise a glittering shield, add a bystander, use a domain.
@@ -774,12 +774,12 @@ lord:
         Inflict stress. Attacks with: Long ranged weapon (extreme range), brutal melee strikes. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.
         Or: create a complication or threat: Imprison someone in a cage of light, blind with glaring beams, swoop high into the air, summon
 
-  overview:
+  overview: []
   trauma:
     - What did you lose?
     - What is the main thing you would fix about the world?
     - Who did you regret leaving behind when you ascended to your Kingdom?
-  palace:
+  palace: >
     A lord’s palace is always nestled in the center of their kingdom, and therefore always requires traversing the kingdom itself to reach. More often than not, it resembles an actual palace in size and form - or something similarly important and imposing, such as a high rise skyscraper, corporate headquarters, government office, or temple.
     The palace of a lord is typically a bustling place full of servants or subsidiaries going about their business - minor sins, figments of the host’s imagination, or captive humans that have been absorbed into the narrative of the kingdom. Lord’s palaces are typically: Imposing, grandiose, august, monumental, stony, hallow
 
@@ -793,16 +793,17 @@ lord:
       Each time pressure increases, the kingdom expands to a new area of the real world, increasingly rapidly in size. Humans consumed by it are unaware of the change. If pressure is 6+, the kingdom consumes the whole investigation area, and the Lord’s CAT increases by +1. A kingdom collapses when the host or the Lord is defeated, ejecting anything brought into it, including humans - who typically have no memory of their time inside.
 
   traces:
-    - name: Guards
-      description: >
-        A lord’s kingdom always has guards patrolling it. These guards are sins that typically take the form of authority figures or soldiers. They are completely subservient to the Lord and their appearance and behavior is shaped at their whim. Some kingdoms may have guards that are imposing human soldiers with their face shaded under security caps or helms, while others may have beast-like demons wielding medieval weaponry that punish unbelievers.
+    name: Guards
+    description: >
+      A lord’s kingdom always has guards patrolling it. These guards are sins that typically take the form of authority figures or soldiers. They are completely subservient to the Lord and their appearance and behavior is shaped at their whim. Some kingdoms may have guards that are imposing human soldiers with their face shaded under security caps or helms, while others may have beast-like demons wielding medieval weaponry that punish unbelievers.
 
-        Guards (sins): Execution talisman 2 (solo), 4 (squad), 6 (small army)
-        • Armed with cruel weaponry and outstanding senses.
-        • Incapable of existing outside the kingdom
+      Guards (sins): Execution talisman 2 (solo), 4 (squad), 6 (small army)
+      • Armed with cruel weaponry and outstanding senses.
+      • Incapable of existing outside the kingdom
 
-        Reactions:
-        Inflict stress. Attacks with: Cruel close combat weaponry, fists and kicks. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.
-        Or: create a complication or threat: Trap an exorcist and pile on, pull an exorcist away in chains, disable an exorcist with a painful strike, threaten bystanders as collaborators, call in a prison vehicle, produce a heavy weapon
-        Or: Sound the Alarm (threat, 1-2): Alert the Lord or any other nearby guards to the exorcists’ current position. If more guards show up, refresh the execution talisman by 1d3.
+      Reactions:
+      Inflict stress. Attacks with: Cruel close combat weaponry, fists and kicks. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.
+      Or: create a complication or threat: Trap an exorcist and pile on, pull an exorcist away in chains, disable an exorcist with a painful strike, threaten bystanders as collaborators, call in a prison vehicle, produce a heavy weapon
+      Or: Sound the Alarm (threat, 1-2): Alert the Lord or any other nearby guards to the exorcists’ current position. If more guards show up, refresh the execution talisman by 1d3.
+
 
