@@ -583,34 +583,7 @@ centipde:
       Or: Endless (1): More infested arrive on the scene, adding to the execution talisman by 1d3.
       Or: Infected bite (1): Inflict the Centipede Bite affliction on an exorcist.
 
-sin:
-  afflictions: 
-    - name: 
-    - description: >
-
-  url:
-  combat: >
-
-  domains: 
-    - name: 
-    - description: >
-
-  overview:
-  trauma:
-    -
-    -
-    -
-  palace: >
-
-  pressure:
-    - name: 
-    - description: >
-
-  traces:
-    - name: 
-    - description: >
-
-sin:
+toad:
   afflictions: 
   url:
   combat:
@@ -621,7 +594,7 @@ sin:
   pressure:
   traces:
 
-sin:
+lord:
   afflictions: 
   url:
   combat:
