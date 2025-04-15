@@ -165,10 +165,15 @@ ogre:
 idol:
   afflictions: >
     1. Infatuated: Pick an ally. If you act without their setup or teamwork, you take 1 stress. 
+
     2. Solipsism: Take 2 stress if participating in teamwork or setup. 
+
     3. Violet Somnia: You can roll a resting die any time. However, if you do, you fall asleep until pressure increases and can’t be woken. 
+
     4. Violent Jealousy: Pick an ally. Gain 1stress if they roll any ‘6’. Permanently add to your agenda: let nobody else outshine you.
+
     5. Narcissi: Powers that target only yourself gain +1 CAT. Powers that target at least one ally get -1 CAT. 
+
     6. The Want: Permanently add to your agenda: show someone you are worthy of their attention. Or make something hard or risky
   url: 'https://i.imgur.com/HkswQ5o.png'
   combat: >
@@ -275,16 +280,129 @@ idol:
       Inflict stress. Attacks with: Bare hands, improvised melee weaponry. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.
       Or: create a complication or threat: Draw unwanted attention, choke someone out, pull out a gun, draw in bystanders, making a shocking reveal. 
 
-sin:
-  afflictions: ''
-  url:
-  combat:
+hound:
+  afflictions: >
+    1. Blood Rage: Afflicted exorcists roll +1D when inflicting harm, violence, or physical force, but must take 1 stress to take any other type of action.
+
+    2. Bleeding Eyes: While afflicted, the exorcist may gain a psyche burst by taking 1d3 stress.
+
+    3. Ganglia Fever: Afflicted exorcists are feverish, hot, and roll one less resting die.
+    
+    4. Boiling Resentment: At the end of the mission, if you inflicted physical violence on a human, you may erase 2d3 sin. If you do, permanently add to your agenda: make a human pay for their crimes. 
+
+    5. Blood Scent: When any exorcist suffers an injury, you may gain a psyche burst. If you did this at least once during a mission, permanently add to your agenda: taste blood.
+
+    6. The Urge: Permanently add to your agenda: kill
+    Or improvise: make something hard or risky
+  url: 'https://i.imgur.com/xiUZsR8.png'
+  combat: >
+    ATTACKS WITH: Needle like teeth, razor claws, bone spurs, sickle-like blades, blood soaked weaponry. (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.
+
+    COMPLICATIONS: Move faster than the eye can see, set everything on fire, give off massive steam or heat, become enraged, expand with additional blades, increase in size and strength, add a bystander, use a domain.
+
+    THREATS: Cause massive collateral damage. Attempt to tear someone in half. Rip apart humans. Spit torrents of boiling blood. Hurl someone through a roof or wall. Cut everything into ribbons. Inflict a hook. Use a domain. Do something violent, obliterating, or manic.
   domains:
+    - name: A Shuddering Thing Through a Dark Hall
+      description: >
+        The hound feeds on fear, growing physically larger and stronger from the terror of weaker wills. Once a scene, if there are mundane humans within the local area, as a complication, the hound can manifest for them and start feeding off their fear. Until the exorcists calm the humans down or remove them from the situation, the hound takes -1 slash on its execution talisman from all sources and deals +1 more stress with reactions.
+
+        Exorcists that attempt to harm the hound in any way must first spend 1 stress to suppress their fear. They can suppress this effect permanently as part of any action against the hound by answering the question, asked by the admin: What is it you are most afraid of? However, if they choose to answer, the Admin also rolls two risk dice and picks the lowest result for the triggering action.
+
+    - name: Turning Blades, I Laughed at their Brittleness
+      description: >
+        The hound’s hide becomes incredibly tough and durable, like a beast’s.
+
+        - Each time an action would slash the hound’s execution talisman, roll a 1d6 fortune roll. If the roll is a 1 or 2, reduce all slashes suffered to 1. The hound’s armor has weak spots, however, and any action that is set up or part of teamwork can ignore this effect.
+
+        - Mundane weapons are completely incapable of harming the hound unless they are extremely strong, like a tank cannon or a missile.
+
+    - name: The Catching of the Doe
+      description: >
+        The hound suppresses its nature and becomes a stealthy hunter, able to stalk its prey.
+
+        At the start of the hunt, pick an exorcist. Once a scene, during any scene, the Admin may declare that the exorcist gets a glimpse of the hound following them (though it may or may not be real), giving them 1 stress, which cannot inflict an injury. The Admin can trigger this three times total a hunt.
+
+        In any conflict scene, the Hound gets a free reaction at the start (roll the risk die as normal), targeting the exorcist it is stalking if possible.
+
+    - name: The Annihilation of the Wicked
+      description: >
+        The hound gains a special affinity for firearms. It can attack at range with guns that it wields or, more often, are fused to its form, emerging when needed.
+
+        - The hound’s attacks gain long range.
+        - As a complication, the hound pins an exorcist down by bullets, bathes them in napalm, concusses them with grenades, etc. That exorcist takes 1 stress after acting until the complication is dealt with, or takes 2 stress if acting requires moving from their current position.
+
+        - As a reaction (1) the hound can permanently absorb all firearms in the same immediate area as it, immediately disarming anyone wielding one, and healing 1 tick on the execution talisman if it absorbed at least one firearm.
+
+    - name: The Fattening of Rage
+      description: >
+        The hound feeds on the power of its Grudge, strengthening it.
+
+        - Once a scene, if the hound slays any mundane human as part of a reaction, it can heal 1 segment on its execution talisman.
+
+        - If the hound has slain at least one of its grudge targets, it increases its execution clock by +2 segments.
+
+        - If the hound has slain all its original grudge targets, it also inflicts +1 stress with all reactions.
+
+    - name: Rile Against Heaven
+      description: >
+        The mere presence of the hound exacerbates the rifts between human and exorcist alike. Humans during this mission never start friendly to the exorcists and are often outwardly hostile.
+
+        The Admin may make a fortune roll if they like (hostile on a 1-2, indifferent or annoyed otherwise).
+
+        They may still become friendly through the exorcist’s actions.
+
+        Any two exorcists that have a disagreement, no matter how minor, may declare it has boiled over into a fight. For the remainder of the hunt they cannot participate in teamwork with other and cannot set each other up. Any feuding exorcists regain a psyche burst if the other takes an injury or affliction, and both gain +1 xp at the end of the mission.
+
+    - name: The Measured Weight of Death
+      description: >
+        The hound gains a supernatural resilience that can only be bypassed by specific methods.
+
+        Often this draws on the superstitions of its host, often along mythological lines, and doesn’t have to conform to any real logic.
+
+        - The hound takes -1 slash on its execution talisman.
+
+        - This effect can be removed for a scene by the exorcists taking action to expose the hound to a specific weakness. The Admin can choose or roll from the list below:
+
+        Silver, Iron, Extreme Heat / Cold, Water, Sunlight
+
+    - name: Bloodying the Steel
+      description: >
+        The rage of the Hound is infectious and can drive its victims into a vicious obsessive cycle. 
+
+        The hound gains the Infectious Grudge affliction.
+
+        Infectious Grudge: While afflicted, the exorcist gains +1D on all actions that inflict physical violence, but also takes +1 stress when they take stress from an external source.
+
+        Any exorcist can voluntarily take this affliction if they are harmed by the hound.
   overview:
   trauma:
-  palace:
-  pressure:
+    - Who wronged you?
+    - How were you wronged?
+    - What are you unwilling to sacrifice?
+  palace: >
+    A hound’s palace is usually an extremely simple, barely coherent and indistinct landscape of whipping winds, boiling rain, unreal heat, and licking flames. Unlike other palaces, it can often change locations as the hound moves around on its hunt. The entrance is usually located somewhere derelict or wild like in abandoned buildings, drainage canals, junk yards, burnt out cars, or in tree hollows. Hound palaces are typically: Hellish, gory, barren, inhospitable, ferocious, chaotic.
+  pressure: >
+    A hound harbors a grudge against a specific person or group of people. While its targets are alive, it does its best to track them down and kill them violently and messily.
+
+    When setting up the mission, the Admin should designate three specific people to be the hound’s grudge targets (which could have expanded from its original target, or could be examples from a group it has a grudge against). A grudge can easily expand to innocent people, such as family members, friends, or co-workers of the perpetrators.
+
+    - When pressure increases, the hound will track down and attempt to kill one of its targets. If the exorcists are present, they can attempt to prevent this with a conflict scene. If not, the target is (brutally) slain!
+
+    - If all targets are killed, the hound picks an NPC the exorcists have met and adds them to its grudge as a new target.
+
+    If pressure goes to maximum, the hound gains +1 CAT and adds all NPCs and the exorcists to its grudge.
   traces:
+    - name: Myrmidons
+    - description: >
+        Some Hounds produce echoes of themselves, violent creatures arising from the dripping bodily fluids of the Hound or its victims. They shudder uncontrollably and give off a bloody acidic steam when enraged, making them incredibly tough opponents. Fortunately, they are short lived, disintegrating in just a few hours.
+
+        Myrmidons (sins): Execution talisman 2 (solo), 4 (group), 6 (massive group). The have the following features:
+
+        - Deal +1 stress to exorcists who already have an injury
+
+        - Rip exorcists in half when inflicting injuries if it’s the last injury, inflicting instant death instead of putting them on the brink of death.
+
+        Reactions: Inflict stress. Attacks with: Teeth, claws, ear splitting screaming. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress. Or: create a complication or threat: Grow spines, rake with claws, snap bones in jaws, grow a new limb or head. Or: Bloody Steam (1-2): Complication. Steam gets in the lungs of nearby exorcists, making impossible to take an action to speak or perfrom strenuous activity (running, climbing, etc) without taking 1 stress first.`
 
 sin:
   afflictions: ''
