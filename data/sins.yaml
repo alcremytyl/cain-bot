@@ -1,14 +1,17 @@
 ogre:
-  afflictions: '1. White Mold: Spreading white veins and coughing indicate mold infection.
-    Subtract 1 from all resting rolls while afflicted and cannot eat, drink, or use
-    consumables. 2. Frozen Limbs: Physical activity or fine motor skill is hard if
-    it requires more than one limb. 3. Circling the Drain: Cannot benefit from teamwork
-    or setup. Permanently add to your agenda: give up on something.  4. Black Lungs:
-    Speaking spews out black sludge. All communication that requires speaking is hard
-    5. Rotting: Black rot has taken in the body. Take 1 stress each time pressure
-    fills up. If this inflicts an injury, it inflicts instant death. 6. The Weight:
-    Permanently add to your agenda: die. Or improvise: make a skill or activity hard
-    or risky'
+  afflictions: >
+    1. White Mold: Spreading white veins and coughing indicate mold infection. 
+    Subtract 1 from all resting rolls while afflicted and cannot eat, drink, or use consumables.
+
+    2. Frozen Limbs: Physical activity or fine motor skill is hard if it requires more than one limb. 
+
+    3. Circling the Drain: Cannot benefit from teamwork or setup. Permanently add to your agenda: give up on something.
+
+    4. Black Lungs: Speaking spews out black sludge. All communication that requires speaking is hard
+
+    5. Rotting: Black rot has taken in the body. Take 1 stress each time pressure fills up. If this inflicts an injury, it inflicts instant death. 
+
+    6. The Weight: Permanently add to your agenda: die.  Or improvise: make a skill or activity hard     or risky'
   url: "https://i.imgur.com/V0GoKJp.png"
   combat: "Execution: 7 + PRESSURE + CAT\nATTACKS WITH: Teeth, claws, fetid water,\
     \ black spew (1) 5 stress, (2/3): 3 stress, (4+): 2 stress. \nCOMPLICATIONS: Kill\
@@ -20,76 +23,76 @@ ogre:
     \ veins. Cause a flash flood or freeze. Blind someone in a miasmatic cloud. Use\
     \ a domain. Do something dark, crushing, or vile.\n"
   domains:
-  - description: 'The world itself begins to turn against the exorcists. As a complication
-      or a tension move, the ogre supernaturally erases entrances, exits, roads, vehicles,
-      or light sources in an area of about a city block. These return when the scene
-      passes or if the complication is dealt with.
+    - description: 'The world itself begins to turn against the exorcists. As a complication
+        or a tension move, the ogre supernaturally erases entrances, exits, roads, vehicles,
+        or light sources in an area of about a city block. These return when the scene
+        passes or if the complication is dealt with.
 
-      Once a hunt, as a tension move, if an exorcist opens any door, the entire group
-      suddenly finds themself in an area of twisting corridors, pitch black darkness,
-      and distant but troubling noises. The area is both dangerous and hostile to
-      them. Finding an exit and escaping will require playing out a scene or two,
-      and the Admin can set out talismans as needed.'
-    name: Hostile Door Patterns
-  - description: "The miasma becomes permeated with an deep, cloying dark. The ogre\
-      \ is invisible in darkness. It becomes hard to do anything to the ogre unless\
-      \ it is brightly lit or an action doesn\u2019t rely on sight. \nAs a tension\
-      \ move, all electric lights not held by an exorcist sputter out and cease functioning\
-      \ for the next scene. The Admin picks an exorcist and asks them \u2018What do\
-      \ you see in the dark?\u2019. They must answer truthfully and gain 1 stress\
-      \ after answering.\n"
-    name: The Unseeing of Things
-  - description: 'The ogre can force exorcists to experience some of the crushing
-      trauma that caused its birth.As a tension move, the ogre can pick an exorcist.
-      That exorcist is afflicted by the Despair affliction.
+        Once a hunt, as a tension move, if an exorcist opens any door, the entire group
+        suddenly finds themself in an area of twisting corridors, pitch black darkness,
+        and distant but troubling noises. The area is both dangerous and hostile to
+        them. Finding an exit and escaping will require playing out a scene or two,
+        and the Admin can set out talismans as needed.'
+      name: Hostile Door Patterns
+    - description: "The miasma becomes permeated with an deep, cloying dark. The ogre\
+        \ is invisible in darkness. It becomes hard to do anything to the ogre unless\
+        \ it is brightly lit or an action doesn\u2019t rely on sight. \nAs a tension\
+        \ move, all electric lights not held by an exorcist sputter out and cease functioning\
+        \ for the next scene. The Admin picks an exorcist and asks them \u2018What do\
+        \ you see in the dark?\u2019. They must answer truthfully and gain 1 stress\
+        \ after answering.\n"
+      name: The Unseeing of Things
+    - description: 'The ogre can force exorcists to experience some of the crushing
+        trauma that caused its birth.As a tension move, the ogre can pick an exorcist.
+        That exorcist is afflicted by the Despair affliction.
 
-      DESPAIR: This special affliction can only affect one exorcist at once. They
-      gain the agenda item push people away even if losing this affliction. At the
-      end of the mission, roll a 1d6. On a 1 or 2, keep this agenda item, on a 3+
-      may get rid of it. Ask that exorcist the question who in this group will let
-      you down? Any time the chosen person fails an action roll, the afflicted exorcist
-      gains 1 stress. However, if this triggered at least once during a session, at
-      the end of that session also gain 1 xp.'
-    name: The Grinding of Wheels
-  - description: 'The ogre can regenerate rapidly from injuries.
+        DESPAIR: This special affliction can only affect one exorcist at once. They
+        gain the agenda item push people away even if losing this affliction. At the
+        end of the mission, roll a 1d6. On a 1 or 2, keep this agenda item, on a 3+
+        may get rid of it. Ask that exorcist the question who in this group will let
+        you down? Any time the chosen person fails an action roll, the afflicted exorcist
+        gains 1 stress. However, if this triggered at least once during a session, at
+        the end of that session also gain 1 xp.'
+      name: The Grinding of Wheels
+    - description: 'The ogre can regenerate rapidly from injuries.
 
-      - It regenerates 1 segment of the execution talisman every time a risk result
-      of 1 is rolled in a conflict scene where it is present.
+        - It regenerates 1 segment of the execution talisman every time a risk result
+        of 1 is rolled in a conflict scene where it is present.
 
-      - The ogre takes -1 slash on its execution talisman unless damage by fire, acid,
-      or some other strong chemical or solvent in the same scene.'
-    name: That Awful Flesh
-  - description: 'The ogre can temporarily cause the miasma to accelerate its effects.
+        - The ogre takes -1 slash on its execution talisman unless damage by fire, acid,
+        or some other strong chemical or solvent in the same scene.'
+      name: That Awful Flesh
+    - description: 'The ogre can temporarily cause the miasma to accelerate its effects.
 
-      - The touch of the ogre can rapidly rot and decay objects, plant matter, and
-      constructions, destroying them and dissolving them into mud and slime.
+        - The touch of the ogre can rapidly rot and decay objects, plant matter, and
+        constructions, destroying them and dissolving them into mud and slime.
 
-      - Exorcists inside the miasma start to superficially rot if they spend scenes
-      there - hair falling out, sunken skin, dead skin cells, nails falling out, etc.
-      They recover from this damage after the mission.
+        - Exorcists inside the miasma start to superficially rot if they spend scenes
+        there - hair falling out, sunken skin, dead skin cells, nails falling out, etc.
+        They recover from this damage after the mission.
 
-      - As a tension move the ogre can cause an exorcist inside the miasma to start
-      decaying. They gain a hook with the Rotting affliction.
+        - As a tension move the ogre can cause an exorcist inside the miasma to start
+        decaying. They gain a hook with the Rotting affliction.
 
-      - Exorcists subtract 1 from all their healing rolls.'
-    name: The Inevitable Place of Meat
-  - description: "At the start of a mission, the Ogre chooses an exorcist and creates\
-      \ a creature formed from the guilt and shame of that exorcist. The Admin secretly\
-      \ asks the targeted exorcist the following questions:\n- Which ally are you\
-      \ embarrassed to be around? - What's the worst thing you ever did? - What do\
-      \ you hate the most about yourself?\nThe creature takes a form that plays off\
-      \ these answers. It is a trace with the following execution talisman.\n\n**CRUSHER**\
-      \ Execution talisman 6. If defeated, is destroyed permanently. It has the following\
-      \ features:\n- Deals +1 stress against the exorcist it is formed from - That\
-      \ exorcist\u2019s actions are hard against it. - Attempts to harm only its target\
-      \ in a fight.\nReactions:\nInflict stress. Attacks with: decaying, oversized\
-      \ weaponry, mutated flesh. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.\n\
-      Or: create a complication or threat: Grab by the throat, Pin down someone, raise\
-      \ weapon to cleave, charge someone through a wall, floor, or door, swing wildly,\
-      \ cause collateral damage.\nOr: Force confession (1-3): Force the exorcist to\
-      \ confess aloud the answer to one of the questions they answered, or else take\
-      \ 1d6 stress. Works once per question.\n"
-    name: The Lash Calls you Brother
+        - Exorcists subtract 1 from all their healing rolls.'
+      name: The Inevitable Place of Meat
+    - description: "At the start of a mission, the Ogre chooses an exorcist and creates\
+        \ a creature formed from the guilt and shame of that exorcist. The Admin secretly\
+        \ asks the targeted exorcist the following questions:\n- Which ally are you\
+        \ embarrassed to be around? - What's the worst thing you ever did? - What do\
+        \ you hate the most about yourself?\nThe creature takes a form that plays off\
+        \ these answers. It is a trace with the following execution talisman.\n\n**CRUSHER**\
+        \ Execution talisman 6. If defeated, is destroyed permanently. It has the following\
+        \ features:\n- Deals +1 stress against the exorcist it is formed from - That\
+        \ exorcist\u2019s actions are hard against it. - Attempts to harm only its target\
+        \ in a fight.\nReactions:\nInflict stress. Attacks with: decaying, oversized\
+        \ weaponry, mutated flesh. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.\n\
+        Or: create a complication or threat: Grab by the throat, Pin down someone, raise\
+        \ weapon to cleave, charge someone through a wall, floor, or door, swing wildly,\
+        \ cause collateral damage.\nOr: Force confession (1-3): Force the exorcist to\
+        \ confess aloud the answer to one of the questions they answered, or else take\
+        \ 1d6 stress. Works once per question.\n"
+      name: The Lash Calls you Brother
   overview: 
     - |
       Enormous, misshapen, and hideously powerful, ogres are a common sin type that is nonetheless quite dangerous compared to others.
@@ -106,11 +109,10 @@ ogre:
       Appearance and Psychophysiology: Ogres are almost always extremely large, strong, and bulky and manifest a typical malformed, monstrous appearance, often due to the low self worth of their hosts. When fused with a host, the host may appear to be a worse, ‘uglier’ version, as they judge themselves. An ogre’s mere presence sucks the energy and life out of a room, even if mundane humans cannot see it, lowering the temperature. They are associated with frost, mist, mud, and ill weather. When pressed in a fight they are enormously strong and durable, able to rapidly regenerate from their wounds, tear a human in half, and ignore even extreme punishment. Behavior: Ogres are unusual in that they are extremely anti-social, self deprecating, and conflict averse for sins, and usually just want to be left alone. It is extremely rare for ogres to manifest post mortem and they are typically very emotionally attached to their hosts. They are often co-dependent and may spend their time tormenting or comforting their host, sometimes both, preferring to push them and those around them into self destructive behavior or a deep laconic haze.
 
       Behavior: Ogres are unusual in that they are extremely anti-social, self deprecating, and conflict averse for sins, and usually just want to be left alone. It is extremely rare for ogres to manifest post mortem and they are typically very emotionally attached to their hosts. They are often co-dependent and may spend their time tormenting or comforting their host, sometimes both, preferring to push them and those around them into self destructive behavior or a deep laconic haze.
-
   trauma:
-  - Who or what pushed you into this hole?
-  - Who or what is keeping you from going over the edge?
-  - What are you most ashamed of?
+    - Who or what pushed you into this hole?
+    - Who or what is keeping you from going over the edge?
+    - What are you most ashamed of?
   palace: "Tracking an ogre down is often a matter of finding its host, or where its\
     \ host is currently residing. Once influenced by an ogre, a host usually withdraws\
     \ from society and cuts off its connections, making this harder than it would\
@@ -159,3 +161,149 @@ ogre:
       \ someone, smother in flesh, infected bite, rupture and threaten to explode,\
       \ fuse to wall, ear-splitting screaming, devour humans. \n"
     name: Stumblers
+
+idol:
+  afflictions: >
+    1. Infatuated: Pick an ally. If you act without their setup or teamwork, you take 1 stress. 
+    2. Solipsism: Take 2 stress if participating in teamwork or setup. 
+    3. Violet Somnia: You can roll a resting die any time. However, if you do, you fall asleep until pressure increases and can’t be woken. 
+    4. Violent Jealousy: Pick an ally. Gain 1stress if they roll any ‘6’. Permanently add to your agenda: let nobody else outshine you.
+    5. Narcissi: Powers that target only yourself gain +1 CAT. Powers that target at least one ally get -1 CAT. 
+    6. The Want: Permanently add to your agenda: show someone you are worthy of their attention. Or make something hard or risky
+  url: 'https://i.imgur.com/HkswQ5o.png'
+  combat: >
+    ATTACKS WITH: Well honed blades, mundane firearms, thin and flexible claws, psychic voice commands. (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.
+
+    COMPLICATIONS: Rile up a crowd, enthrall someone, blind with glory, overwhelm with emotion, force out secrets, disarm someone, spew out hallucinations, add a bystander, use a domain. 
+
+    THREATS: Summon cultists. Cause crippling pain. Overwhelm the senses. Force exorcists to sarifice something. Expose a weakness. Enthrall an exorcist. Take captives. Inflict a hook. Use a domain. Do something emotionally crushing, manipulative, or shocking.
+  domains:
+    - name: Toys for Men
+      description: >
+        The idol gains the ability to play with the flesh of others like marionettes. Cultists gain +1 segment on their execution talisman (so a lone cultist would have 3) as they can keep moving even while their body is broken, jerked by invisible strings.
+
+        The idol gains a new affliction: COLLECT DOLL: When afflicted, the exorcist loses control of one of their arms. It becomes doll-like in texture and appearance. Once a scene, the idol can interfere with an action the exorcist is performing as the hand interferes, forcing them to either take 1 stress or make the action hard.
+
+    - name: Elevation of the Innumerable Mass
+      description: >
+        The idol gains the ability to elevate members of its cult into minor sins. One of these can appear a scene when fighting the idol or its cult.
+
+
+        APOSTLE: Apostle (Sin). Execution talisman 4. Armed with supernatural strength and mutated blades.
+
+        Reactions:
+        Inflict stress. Attacks with: Mutated body, mundane firearms or blades. (1) 4 stress, (2/3): 3 stress, (4+):2 stress.
+        Or: create a complication or threat: Create a Fleshy clone of itself, unleash a flurry of attacks, mutate further, move impossibly fast
+
+        Or: Exort (1-3): An ally of the apostle heals slashes on their execution clock depending on the risk die (1: 2 ticks, 2-3: 1 tick). The next time that ally inflicts stress on an exorcist, they inflict +1 stress.
+
+    - name: Hold My Darlings
+      description: > 
+      The idol cultivates a special, insidious bond to its cult members. Once a scene, when the idol would takes lashes on its execution talisman from an exorcist’s action, it can supernaturally transfer the harm to any cultist or group of cultists present in the scene instead. This includes any NPCs added the idol’s cult. The idol can see through the eyes of any cult member as if they were its own, and can speak through the mouths of cult members with its voice.
+
+    - name: That Pliable Flesh
+      description: >
+        The idol can twist its form rapidly and shape shift.
+
+        - As a tension move, reveal in a scene at any point that someone the exorcists are talking to is actually the idol. All exorcists that witness this take 1 stress. This can force a conversation or a conflict scene.
+
+        - As a complication in a conflict scene, the idol can rapidly shape shift into an exact copy of one of the exorcists. Until the complication is dealt with, when the idol would take slashes on its execution talisman, roll a d6. On a 1-2, reduce the slashes to 0 and the doubled exorcist takes 2 stress as it becomes impossible to distinguish between the two.
+
+    - name: Slumbering, I Saw a Shape in the Door
+      description: >
+        The idol can enter the minds of the exorcists when they let their guard down.
+
+        - When the exorcists rest, each makes a 1d6 fortune roll. On a 1, they immediately gain an idol affliction.
+
+        - Once a hunt, as a tension move, the idol may immediately force the exorcists to rest for the next scene. This doesn’t tick tension, cannot progress pressure past 4, and the results of all their resting rolls are ‘1’ no matter what. During their rest they have disturbing daydreams. One exorcist may describe these to the group.
+
+    - name: Taking the Ears
+      description: >
+        The idol’s voice and psychic presence is overwhelming, like an ocean battering down a rickety door.
+
+        • As a threat or a tension move, the Idol can speak to to a group of mundane humans. If successful, they are immediately added to the cult and become a group of cultists. If cultists are already present, increase their execution talisman by 2 instead.
+
+        • As a threat, the idol can begin to speak an unspeakable word. If the threat is successful, one exorcist that hears it takes 2 stress and the deafened affliction for the rest of the mission (can’t hear, may make activities reliant on hearing hard or impossible). Characters that are already deaf are immune to this. At the end of the mission, roll a 1d6 fortune. On a 1 or 2, the character is permanently deafened but has time to adjust before the next mission, making it have no further deleterious effects.
+
+    - name: The Glory
+      description: >
+        The idol is capable of taking a form that overwhelms the senses.
+
+        • Once a scene, the Idol can take a glorious form as a complication. Non-cultist humans witnessing the form instantly become unconscious. Exorcists witnessing the form can either take 1 stress when acting against the idol and ignore it, or avert their gaze. If they avert their gaze, it becomes hard to do anything that relies on sight.
+
+        • Cultists present in the scene are motivated by the idol and may re-roll the risk die when acting, taking the second result as final.
+
+        • One exorcist sees this form as someone dear to them and must describe who to the group. They take 1 stress when harming the idol while the form is active.
+
+        • This complication can be dealt with as normal
+
+    - name: The Strong Scented Lips of a Whispering God
+      description: >
+        The idol has major connections with the human world: fans, businessmen, or politicians. This presents an expanding problem for CAIN cleanup. Cultists are now armed with short ranged firearms and body armor, dealing +1 stress with reactions. Increase their execution talisman by +1.
+
+        • Set out an exposure talisman, of 10 length. Whenever the exorcists engage in a conflict scene, tick it up by 1d3. If the exorcists do something else loud, violent, or with high exposure, tick it up by 1, but no more than once a scene.
+
+        • If the talisman is 3 or more, local authorities will start to attempt to arrest the exorcists. If it’s 6 or more, the response becomes more severe in scale.
+
+        Exorcists can attempt to untick this talisman with their actions. If the talisman fills up before the idol is dealt with, cleanup becomes catastrophic as the news spreads beyond CAIN control. The exorcists will receive no scrip pay for the mission.
+  overview:
+  trauma:
+    - What is your dream?
+    - Why did you give up on your dream?
+    - Why do you think you are you incapable of being loved?
+  palace: >
+    Idols tend to manifest their palace where their cult is located, typically in populated locations. They may have a front operation that covers the entrance to their palace and their cult in general - a news or internet program, a band, a concert hall, a religious gathering, etc. The true headquarters of their cult is typically more concealed and harder to access. At the center is usually an entrance to their palace, which the idol may invite select cult members in to visit in order to win them over. Depending on the aspiration of the sin, the interior of typical palaces is usually a monument to selfobsession and resembles:
+    - Palatial estates
+    - Nightclubs or concert halls
+    - Beautiful high rise penthouse apartments
+    - Religious halls or places of worship
+    Idol palaces are typically: Luxurious, Gilded, Airy, Captivating, Impressive, Gaudy, Holy
+  pressure:
+    name: "Cult"
+    description: >
+      Idols gather cults around them, adding steadily to them over time. This varies from mundane admirers of the idol to people totally pulled under their spell. A lower category idol tends to pull people into a cult of a few dozen people, whereas a higher category one can pull in a cult that numbers in the hundreds or thousands.
+      While the idol still lives, cultists are completely and unflinchingly loyal to them and their host, and will follow the commands and inclinations of their higher-ups in the cult without questioning. The idol is able to secretly add npcs to its cult. Every time pressure increases, the Admin chooses an NPC the players have met on the mission and adds them to the cult. They don’t have to reveal this to the players.
+      The NPC now follow the psychic commands and directives of the idol and abandon their former priorities and loyalties. When pressure fills up, the situation goes out of control. The Idol gains +1 Category and adds every single NPC in the mission area to its cult, including any NPCs the exorcists encounter in the future.
+  traces:
+    name: "Cultists"
+    description: >
+      Cultists are mundane humans pulled under the supernatural influence of the Idol. They can behave normally when required but are functionally puppets, having their feeble will suppressed by the extremely powerful Grace of the sin. The idol will often deploy them for missions of importance or to infiltrate groups.
+      Defeating the idol will pull any cultists out of their brainwashing. They have no memory of their time when brainwashed.
+
+      Cultists (humans): Execution talisman 2 (solo), 4 (group), 6 (large group)
+      Reactions:
+      Inflict stress. Attacks with: Bare hands, improvised melee weaponry. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress.
+      Or: create a complication or threat: Draw unwanted attention, choke someone out, pull out a gun, draw in bystanders, making a shocking reveal. 
+
+sin:
+  afflictions: ''
+  url:
+  combat:
+  domains:
+  overview:
+  trauma:
+  palace:
+  pressure:
+  traces:
+
+sin:
+  afflictions: ''
+  url:
+  combat:
+  domains:
+  overview:
+  trauma:
+  palace:
+  pressure:
+  traces:
+
+sin:
+  afflictions: ''
+  url:
+  combat:
+  domains:
+  overview:
+  trauma:
+  palace:
+  pressure:
+  traces:
