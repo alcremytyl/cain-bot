@@ -20,8 +20,6 @@ with open_yaml("./data/sins.yaml", False) as _data:
 # TODO:
 """
 - impl the shits
-- write overviews
-- idol, hound, centipede, toad, lord
 """
 
 
@@ -108,8 +106,10 @@ class SinCog(GroupCog, name="sin"):
         if (desc := blasphemies.get(name)) is None:
             return await ctx.response.send_message("Unknown sin", ephemeral=True)
 
+        a = "\n".join([f"{i+1}. {_t}" for (i, _t) in enumerate(desc["afflictions"])])
+
         await ctx.response.send_message(
-            embed=Embed(description=desc["afflictions"]).set_thumbnail(url=desc["url"]),
+            embed=Embed(description=a),
             ephemeral=ephemeral,
         )
 
@@ -120,9 +120,9 @@ class SinCog(GroupCog, name="sin"):
             return await ctx.response.send_message("Unknown sin", ephemeral=True)
 
         await ctx.response.send_message(
-            embed=Embed(
-                title=desc["traces"]["name"], description=desc["traces"]["description"]
-            ).set_thumbnail(url=desc["url"]),
+            embed=Embed(title=desc["traces"]["name"], description=desc).set_thumbnail(
+                url=desc["url"]
+            ),
             ephemeral=ephemeral,
         )
 
@@ -142,12 +142,14 @@ class SinCog(GroupCog, name="sin"):
     async def trauma(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
         if (desc := blasphemies.get(name)) is None:
             return await ctx.response.send_message("Unknown sin", ephemeral=True)
+
         t = "\n".join([f"{i+1}. {_t}" for (i, _t) in enumerate(desc["trauma"])])
 
         content = (
             "The Admin, as the ogre, answers the following questions, then establishes a trauma based on the truthful answers.\n\n"
             f"**{t}**\n\n"
-            "-# *For every question the exorcists answer, they can counter a sin’s reaction, rolling 1d3 after the sin acts. Reduce any stress sufffered by all targets by the amount on the die, and the sin immediately takes that many slashes on its execution clock from the psychic trauma, which cannot reduce it below 1.*"
+            "-# *For every question the exorcists answer, they can counter a sin’s "
+            "reaction, rolling 1d3 after the sin acts. Reduce any stress sufffered by all targets by the amount on the die, and the sin immediately takes that many slashes on its execution clock from the psychic trauma, which cannot reduce it below 1.*"
         )
         await ctx.response.send_message(
             embed=Embed(description=content).set_thumbnail(url=desc["url"]),
