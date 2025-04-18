@@ -1,3 +1,4 @@
+from dataclasses import dataclass
 from discord import Embed, Interaction, SelectOption
 from discord.app_commands import (
     Choice,
@@ -11,10 +12,10 @@ from src.bot import CainClient
 from src.helpers import Paginator, open_yaml
 from src.transformers import StringArg
 
+# TODO: move to sins.yaml
 with open_yaml("./data/assets.yaml", False) as _data:
     severe = _data["severe"]
-with open_yaml("./data/sins.yaml", False) as _data:
-    blasphemies: dict = _data
+with open_yaml("./data/sins.yaml", False) as blasphemies:
     sin_autocomplete = [Choice(name=k.title(), value=k) for k in blasphemies.keys()]
 
 # TODO:
@@ -23,10 +24,23 @@ with open_yaml("./data/sins.yaml", False) as _data:
 """
 
 
+@dataclass
+class Sin:
+    afflictions: list[str]
+    combat: str
+    domains: dict[str, str]
+    palace: str
+    pressure: dict[str, str]
+    traces: dict[str, str]
+    trauma: list[str]
+    url: str
+
+
 class SinCog(GroupCog, name="sin"):
     def __init__(self, bot: CainClient) -> None:
         super().__init__()
         self.bot = bot
+        self.embed_map = {k: Sin(**v) for k, v in blasphemies.items()}
 
     @property
     def view(self):
@@ -155,9 +169,6 @@ class SinCog(GroupCog, name="sin"):
             embed=Embed(description=content).set_thumbnail(url=desc["url"]),
             ephemeral=ephemeral,
         )
-
-
-SinCog.walk_app_commands
 
 
 async def setup(bot: CainClient):

@@ -228,11 +228,6 @@ class TalismanCog(GroupCog, name="talisman"):
 
         await ctx.followup.send("Finished setup", ephemeral=True)
 
-    # TODO  impl + autocomplete
-    @command(name="open")
-    async def open(self, ctx: Interaction, name: str):
-        pass
-
 
 async def setup(bot: CainClient):
     await bot.add_cog(TalismanCog(bot))

@@ -1,9 +1,7 @@
-from contextlib import contextmanager
 from discord.app_commands import Choice
-import yaml
 from pprint import pprint
 
-from src.cogs.talisman import TALISMAN_PATH, Talisman
+from src.cogs.sin import Sin
 from src.helpers import open_yaml
 
 
@@ -15,7 +13,4 @@ with open_yaml("./data/sins.yaml") as _data:
         Choice(name=k.title(), value=k) for k in blasphemies.keys()
     ]
 
-
-pprint(severe)
-pprint(blasphemy_autocomplete)
-Talisman("OGRE2", 7 + 4, decal="aa")
+pprint({k: Sin(**v) for k, v in blasphemies.items()})

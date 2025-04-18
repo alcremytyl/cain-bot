@@ -1,121 +1,863 @@
-#   TODO:
-#   await feb's instruction on the codeblock lists
+centipde:
+  afflictions:
+  - "Seethe: Pick another exorcist. For every \u20186\u2019 that exorcist rolls on\
+    \ an action, gain 1 stress."
+  - 'Limb Necrosis: Limb starts swelling and rotting from the inside (1-2: Arm, 3-4:
+    leg, 6: hand or foot). Activity that would require it is hard.'
+  - 'Acid Degradation: Mark off 1d3 KP immediately, then mark off 1 more when you
+    rest.'
+  - 'Alienation: Permanently add to your agenda: ignore a plea for aid.'
+  - 'Hive Brain: Hallucination from aerosol poison. Performing complicated mental
+    activity such as research or investigation is hard.'
+  - '**[Special Hook::CENTIPEDE  BITE]**: This hook counts  as an affliction that
+    you can never remove. It ticks up and down all the same ways a normal hook  does.
+    If the hook ticks up to full, you gain 1d3 sin and stress immediately, and again
+    whenever pressure increases while the hook  is full. The hook can also be ticked
+    down with centipede anti-venom.'
+  combat: '**[ATTACKS WITH]**: Dripping fangs, numerous claws, sinuous body, pressurized
+    spit (short range). **(1)** 5 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.
 
-#   afflictions: 
-#     - name: 
-#     - description: >
-#
-#   url:
-#   combat: >
-#
-#   domains: 
-#     - name: 
-#     - description: >
-#
-#   trauma:
-#     -
-#     -
-#     -
-#   palace: >
-#
-#   pressure:
-#     - name: 
-#     - description: >
-#
-#   traces:
-#     - name: 
-#     - description: >
+    **[COMPLICATIONS]**: Burrow into the ground or walls, spit poisonous webbing,
+    release swarms of flies, spray pools of poison, reveal hidden burrows, collapse
+    the floor, scuttle hidden into darkness, add a bystander, use a domain.
+
+    **[THREATS]**: Summon the horde. Rip into an exorcist. Unveil rows of hypnotic
+    eyespots. Explode a caustic bubo. Dissolve something with acid. Commit a massacre.
+    Inflict a hook. Use a domain. Do something messy, spiteful, or dripping with venom.
+
+    '
+  domains:
+  - description: "The venom in the centipede and its horde becomes boiling and pressurized.\n\
+      - The horde can spit venom at short range when inflicting stress. The centipede\
+      \ can spit it at extreme range, like a sniper rifle.\n- The centipede gains\
+      \ a new affliction:\n**BLINDING AGUE**: Can be inflicted as a threat or from\
+      \ a hook. When filled up, eyes become milky white and exorcist becomes unable\
+      \ to see, making activities that rely on sight hard. At the end of mission,\
+      \ roll 1d6, on a \u20181\u2019 this becomes permanent, but exorcist has time\
+      \ to adjust to disability at the start of next mission and it has no further\
+      \ effect.\nBlind exorcists are immune to this affliction.\n"
+    name: The Heralds of Venom
+  - description: 'The venom exuded by the centipede becomes an environmental aerosol
+      that starts to degrade everything in the investigation area.
+
+      - Traversing normally safe structures in the area becomes risky or hard as floors
+      start to fall apart, windows melt, and walls collapse
+
+      - Any mundane item the exorcists have pulled out from their kit degrades and
+      becomes unusable when they rest.
+
+      - When pressure increases, 10% of the structures in the area are destroyed.
+      If pressure fills up, 90% of the structures in the area are destroyed.
+
+      '
+    name: Crumbling Into the Darkling Womb
+  - description: 'The horde gains dangerous, armored infested. When the infested appear
+      in a scene, one of these usually appear.\n
+
+      **Juggernaut**: Sin/human. Execution talisman 3. At 4+ pressure, increase to
+      5.
+
+      - Practically immune to mundane weapons unless its armor is exposed.
+
+      - Blind and easily distracted
+
+      **Reactions**:\n Inflict stress. Attacks with: Armored bulk, spines, mandibles.
+      **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)** 2 stress.\n **Or**: create a
+      **complication** or **threat**: Grab someone with a mutated claw, charge someone
+      through a wall or floor, knock someone out or daze someone.\n **Or**: **Hive
+      shroud (1/2)**: **Complication**. Start releasing acidic clouds that obscure
+      and burn. All its allies take -1 slash on execution talismans until the Juggernaut
+      is dealt with. Does not stack.
+
+      '
+    name: The Knights of Decay
+  - description: "The Centipede\u2019s venom is so potent and fast spreading that\
+      \ it begins to cause catastrophic spread.\n- Double the casualties per pressure\
+      \ (to 20%). At full segments (6), the spread begins to go outside of the quarantine\
+      \ zone, requiring cleanup from CAIN and docking the exorcists 2 scrip.\n- When\
+      \ the players meet an NPC, the Admin makes a 1d6 fortune roll. On a \u20181-3\u2019\
+      , they have already been bitten but are trying to hide it.\n- As a **tension\
+      \ move**, the Admin can choose an uninfected exorcist or NPC who has fought\
+      \ the infested at least once this mission. The Admin reveals they have been\
+      \ bitten, giving them a Centipede Bite.\n"
+    name: Gently Rolling Down the Slope of the Abyss
+  - description: 'The horde gains dangerous, stealthy infested with chameleonic skin.
+      When the infested appear, these appear, always in pairs.
+
+      **Stalkers**: Sin/human. Appear as a pair. Execution talisman 3 in a scene between
+      the two of them. At 4+ pressure, increase to 5.
+
+      - Deal +1 stress to exorcists who are alone or afraid
+
+      - Focus on one target to the exclusion of all others
+
+      Reactions:\n - **Inflict stress**. Attacks with: Scythe claws, venomous spines.
+      (1) 4 stress, (2/3): 3 stress, (4+) 2 stress.\n - **Or:** create a **complication**
+      or **threat**: Kidnap someone, drag someone into darkness, start jumping or
+      flying on locust-like wings - **Or**: Chameleonic Scales (1/2): Becomes nearly
+      invisible, making it **hard** to fight or find them when relying on sight. Next
+      reaction deals +1 stress and ends this effect.
+
+      '
+    name: My Children Crawl Quietly
+  - description: "The Centipede is so fueled by spite it refuses to die and instead\
+      \ takes a momentarily more powerful form. When the centipede\u2019s execution\
+      \ clock is filled up, it instead reduces by 4. The centipede then takes on a\
+      \ terrifying final form.\n- End the current round and start a new round\n- In\
+      \ this form, roll the risk die twice and choose the lower result, the centipede\
+      \ takes -1 slash on its talisman and deals +1 stress with all its actions.\n\
+      - However, this form is extremely unstable. At the end of the round, after all\
+      \ exorcists have acted, no matter what, the centipede\u2019s form destabilizes,\
+      \ instantly defeating it and allowing the exorcists the opportunity to finish\
+      \ it off.\n"
+    name: At the Core, My Rot Unfurls
+  - description: "The Centipede is able to set festering traps for the exorcists,\
+      \ extruding parts of its body or using the transformed flesh of its infested\
+      \ horde.\nAs a **tension move**, the Admin can declare that for the next scene,\
+      \ the exorcists are about to enter a trapped area (even if they have already\
+      \ explored it). Moving through the area becomes risky by default. Traps can:\
+      \ inflict 1 stress to one or two exorcists, make an area dangerous or hard to\
+      \ move through, afflict an exorcist, inflict a hook. In addition, in any conflict\
+      \ scene with the Centipede, on a \u20181\u2019 risk result a trap also goes\
+      \ off, with the above effects, in addition to any other reactions.\n"
+    name: I Hide My Knife in the Soft Supple Walls
+  - description: "The Centipede gains power from spite, gaining the following benefits:\n\
+      - **Once a scene**, when it or its minions is able to slaughter an innocent\
+      \ person or bystander in view of the exorcists, permanently increase the centipede\u2019\
+      s execution clock by 1, to a maximum of four times total.\n- **Once a hunt**,\
+      \ as a tension move, the centipede can reveal a group of human survivors under\
+      \ threat from its forces. If the exorcists rest without aiding the survivors,\
+      \ they are slaughtered and the centipede permanently adds +3 segments to its\
+      \ execution clock.\n"
+    name: Making Friends With the Abattoir
+  palace: "A centipede\u2019s palace is usually located in a protected location at\
+    \ the center of horde activity, usually somewhere significant to the host or close\
+    \ to the inciting incident.\nThe interior of a centipede\u2019s palace often resembles\
+    \ a prison or a dungeon, built to capture the centipede\u2019s host and force\
+    \ them to remain witness to the horrors they have unwittingly (or otherwise) unleashed.\
+    \ This prison can be sterile, cold, or laboratory-like, or medieval and full of\
+    \ barbed hooks and rusted chains. It often manifests horrors or traps to drive\
+    \ out, capture, or kill invaders.\nCentipede palaces are typically: hostile, resentful,\
+    \ grotesque, gory, prison-like, chthonic\n"
+  pressure:
+    description: "A centipede\u2019s venom, when injected into the human bloodstream,\
+      \ causes a catalyzing psychobiotic reaction that within the space of about an\
+      \ hour mutates that human into an extremely strong, aggressive, and violent\
+      \ monster, a mindless drone that is under the centipede\u2019s control as a\
+      \ queen controls a colony of ants. These infested are able to produce their\
+      \ own centipede venom that they can inject into bitten humans, creating a catalyzing\
+      \ exponential reaction that rapidly creates a horde of these monsters.\n- A\
+      \ human infected with centipede venom will chrysalize, transform, and mutate\
+      \ within exactly 44 minutes. An exorcist gains the centipede bite **affliction**\
+      \ instead.\n- **There is no cure** to centipede venom, but it can be delayed.\n\
+      - The only reliable way to end an infestation is to **kill the centipede**.\
+      \ Executing a centipede causes its venom to lose its transformative effect and\
+      \ evaporate. This saves any infected exorcists and any infected but untransformed\
+      \ victims, who can typically recover in a few weeks. Remaining infested victims\
+      \ are dealt with in cleanup and should be considered deceased.\n**Each time\
+      \ pressure increases**, 10% of the local population in the affected area is\
+      \ infected and transformed (so at 3 ticks, 30% of the population is affected).\
+      \ If pressure reaches maximum, the centipede increases in CAT by +1 and this\
+      \ goes up to 90% population loss.\n**Delaying Centipede Venom**:\\n Exorcists\
+      \ that are dispatched to Centipede missions are each automatically given one\
+      \ dose of Centipede Antivenom. An exorcist can mark 1 KP to pull out their dose\
+      \ and inject it into someone in hand\u2019s reach.\n\n  - NPCS have their venom\
+      \ suppressed until the exorcists rest, at which time they will need another\
+      \ dose.\n\n- Exorcists, if they have the Centipede Bite hook, can erase all\
+      \ segments on it. This doesn\u2019t remove the hook, as normal.\n"
+    name: Infestation
+  traces:
+    description: 'These mutated humans are essentially minor type II sins, who have
+      been affected by the psycho-biotic poison in their bloodstream. They form into
+      large, animalistic, hive swarms that the centipede can mentally control. Though
+      starting off relatively human in appearance, over time they become more and
+      more mutated and insect like.They typically roam around affected areas in large
+      hordes.
+
+      Infested (sins/humans): Execution talisman 1 (solo), 3 (group), 5 (large group),
+      7 (full horde). Only appear in large group or horde size at pressure 4+.
+
+      - Slow, clumsy, and unintelligent, but extremely numerous and resilient.
+
+      - Powers that can hit a large area gain +1D against groups of infested.
+
+      Reactions: Inflict stress. Attacks with: Mutated claws, teeth, mandibles. (1)
+      4 stress, (2/3): 3 stress, (4+): 2 stress. Or: create a complication or threat:
+      Eject venomous spines, knock someone down, alert a bigger horde, explode with
+      caustic bile, jump out from somewhere surprising. Or: Endless (1): More infested
+      arrive on the scene, adding to the execution talisman by 1d3. Or: Infected bite
+      (1): Inflict the Centipede Bite affliction on an exorcist.
+
+      '
+    name: Infested
+  trauma:
+  - What are you trying to escape?
+  - What do you hate the most about humanity?
+  - What do you regret the most?
+  url: https://i.imgur.com/LJFxzUl.png
+hound:
+  afflictions:
+  - 'Blood Rage: Afflicted exorcists roll +1D when inflicting harm, violence, or physical
+    force, but must take 1 stress to take any other type of action.'
+  - 'Bleeding Eyes: While afflicted, the exorcist may gain a psyche burst by taking
+    1d3 stress.'
+  - 'Ganglia Fever: Afflicted exorcists are feverish, hot, and roll one less resting
+    die.'
+  - 'Boiling Resentment: At the end of the mission, if you inflicted physical violence
+    on a human, you may erase 2d3 sin. If you do, permanently add to your agenda:
+    make a human pay for their crimes. '
+  - 'Blood Scent: When any exorcist suffers an injury, you may gain a psyche burst.
+    If you did this at least once during a mission, permanently add to your agenda:
+    taste blood.'
+  - 'The Urge: Permanently add to your agenda: kill'
+  combat: '**ATTACKS WITH**: Needle like teeth, razor claws, bone spurs, sickle-like
+    blades, blood soaked weaponry. (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.\n
+
+    **COMPLICATIONS**: Move faster than the eye can see, set everything on fire, give
+    off massive steam or heat, become enraged, expand with additional blades, increase
+    in size and strength, add a bystander, use a domain.\n
+
+    **THREATS**: Cause massive collateral damage. Attempt to tear someone in half.
+    Rip apart humans. Spit torrents of boiling blood. Hurl someone through a roof
+    or wall. Cut everything into ribbons. Inflict a hook. Use a domain. Do something
+    violent, obliterating, or manic.
+
+    '
+  domains:
+  - description: 'The hound feeds on fear, growing physically larger and stronger
+      from the terror of weaker wills. Once a scene, if there are mundane humans within
+      the local area, as a complication, the hound can manifest for them and start
+      feeding off their fear. Until the exorcists calm the humans down or remove them
+      from the situation, the hound takes -1 slash on its execution talisman from
+      all sources and deals +1 more stress with reactions.
+
+      Exorcists that attempt to harm the hound in any way must first spend 1 stress
+      to suppress their fear. They can suppress this effect permanently as part of
+      any action against the hound by answering the question, asked by the admin:
+      What is it you are most afraid of? However, if they choose to answer, the Admin
+      also rolls two risk dice and picks the lowest result for the triggering action.
+
+      '
+    name: A Shuddering Thing Through a Dark Hall
+  - description: "The hound\u2019s hide becomes incredibly tough and durable, like\
+      \ a beast\u2019s.\n- Each time an action would slash the hound\u2019s execution\
+      \ talisman, roll a 1d6 fortune roll. If the roll is a 1 or 2, reduce all slashes\
+      \ suffered to 1. The hound\u2019s armor has weak spots, however, and any action\
+      \ that is set up or part of teamwork can ignore this effect.\n- Mundane weapons\
+      \ are completely incapable of harming the hound unless they are extremely strong,\
+      \ like a tank cannon or a missile.\n"
+    name: Turning Blades, I Laughed at their Brittleness
+  - description: 'The hound suppresses its nature and becomes a stealthy hunter, able
+      to stalk its prey.
+
+      At the **start of the hunt**, pick an exorcist. Once a scene, during any scene,
+      the Admin may declare that the exorcist gets a glimpse of the hound following
+      them (though it may or may not be real), giving them 1 stress, which cannot
+      inflict an injury. The Admin can trigger this **three times** total a hunt.
+
+      In any conflict scene, the Hound gets a free reaction at the start (roll the
+      risk die as normal), targeting the exorcist it is stalking if possible.
+
+      '
+    name: The Catching of the Doe
+  - description: "The hound gains a special affinity for firearms. It can attack at\
+      \ range with guns that it wields or, more often, are fused to its form, emerging\
+      \ when needed.\n- The hound\u2019s attacks gain long range. - As a complication,\
+      \ the hound pins an exorcist down by bullets, bathes them in napalm, concusses\
+      \ them with grenades, etc. That exorcist takes 1 stress after acting until the\
+      \ complication is dealt with, or takes 2 stress if acting requires moving from\
+      \ their current position.\n- As a reaction (1) the hound can permanently absorb\
+      \ all firearms in the same immediate area as it, immediately disarming anyone\
+      \ wielding one, and healing 1 tick on the execution talisman if it absorbed\
+      \ at least one firearm.\n"
+    name: The Annihilation of the Wicked
+  - description: 'The hound feeds on the power of its Grudge, strengthening it.
+
+      - Once a scene, if the hound slays any mundane human as part of a reaction,
+      it can heal 1 segment on its execution talisman.
+
+      - If the hound has slain at least one of its grudge targets, it increases its
+      execution clock by +2 segments.
+
+      - If the hound has slain all its original grudge targets, it also inflicts +1
+      stress with all reactions.
+
+      '
+    name: The Fattening of Rage
+  - description: "The mere presence of the hound exacerbates the rifts between human\
+      \ and exorcist alike. Humans during this mission never start friendly to the\
+      \ exorcists and are often outwardly hostile.\nThe Admin may make a fortune roll\
+      \ if they like (hostile on a 1-2, indifferent or annoyed otherwise).\nThey may\
+      \ still become friendly through the exorcist\u2019s actions.\nAny two exorcists\
+      \ that have a disagreement, no matter how minor, may declare it has boiled over\
+      \ into a fight. For the remainder of the hunt they cannot participate in teamwork\
+      \ with other and cannot set each other up. Any feuding exorcists regain a psyche\
+      \ burst if the other takes an injury or affliction, and both gain +1 xp at the\
+      \ end of the mission.\n"
+    name: Rile Against Heaven
+  - description: "The hound gains a supernatural resilience that can only be bypassed\
+      \ by specific methods.\nOften this draws on the superstitions of its host, often\
+      \ along mythological lines, and doesn\u2019t have to conform to any real logic.\n\
+      - The hound takes -1 slash on its execution talisman.\n- This effect can be\
+      \ removed for a scene by the exorcists taking action to expose the hound to\
+      \ a specific weakness. The Admin can choose or roll from the list below:\nSilver,\
+      \ Iron, Extreme Heat / Cold, Water, Sunlight\n"
+    name: The Measured Weight of Death
+  - description: "The rage of the Hound is infectious and can drive its victims into\
+      \ a vicious obsessive cycle. \nThe hound gains the Infectious Grudge affliction.\n\
+      Infectious Grudge: While afflicted, the exorcist gains +1D on all actions that\
+      \ inflict physical violence, but also takes +1 stress when they take stress\
+      \ from an external source.\nAny exorcist can voluntarily take this affliction\
+      \ if they are harmed by the hound.\n"
+    name: Bloodying the Steel
+  palace: "A hound\u2019s palace is usually an extremely simple, barely coherent and\
+    \ indistinct landscape of whipping winds, boiling rain, unreal heat, and licking\
+    \ flames. Unlike other palaces, it can often change locations as the hound moves\
+    \ around on its hunt. The entrance is usually located somewhere derelict or wild\
+    \ like in abandoned buildings, drainage canals, junk yards, burnt out cars, or\
+    \ in tree hollows. **Hound palaces are typically**: Hellish, gory, barren, inhospitable,\
+    \ ferocious, chaotic.\n"
+  pressure: "A hound harbors a **grudge** against a specific person or group of people.\
+    \ While its targets are alive, it does its best to track them down and kill them\
+    \ **violently and messily**.\nWhen setting up the mission, the Admin should designate\
+    \ **three specific people** to be the hound\u2019s grudge targets (which could\
+    \ have expanded from its original target, or could be examples from a group it\
+    \ has a grudge against). A grudge can easily expand to innocent people, such as\
+    \ family members, friends, or co-workers of the perpetrators.\n- When pressure\
+    \ increases, the hound will track down and attempt to kill one of its targets.\
+    \ If the exorcists are present, they can attempt to prevent this with a conflict\
+    \ scene. If not, the target is (brutally) slain!\n- If all targets are killed,\
+    \ the hound picks an NPC the exorcists have met and adds them to its grudge as\
+    \ a new target.\nIf pressure goes to maximum, the hound gains +1 CAT and adds\
+    \ **all NPCs and the exorcists to its grudge**.\n"
+  traces:
+    description: "Some Hounds produce echoes of themselves, violent creatures arising\
+      \ from the dripping bodily fluids of the Hound or its victims. They shudder\
+      \ uncontrollably and give off a bloody acidic steam when enraged, making them\
+      \ incredibly tough opponents. Fortunately, they are short lived, disintegrating\
+      \ in just a few hours.\n**Myrmidons (sins)**: Execution talisman 2 (solo), 4\
+      \ (group), 6 (massive group). The have the following features:\n- Deal +1 stress\
+      \ to exorcists who already have an injury\n- Rip exorcists in half when inflicting\
+      \ injuries if it\u2019s the last injury, inflicting instant death instead of\
+      \ putting them on the brink of death.\n**Reactions**:\\n  **Inflict stress**.\
+      \ Attacks with: Teeth, claws, ear splitting screaming. **(1)** 4 stress, **(2/3)**:\
+      \ 3 stress, **(4+)**: 2 stress.\\n **Or**: create a complication or threat:\
+      \ Grow spines, rake with claws, snap bones in jaws, grow a new limb or head.\\\
+      n **Or**: Bloody Steam (1-2): Complication. Steam gets in the lungs of nearby\
+      \ exorcists, making impossible to take an action to speak or perfrom strenuous\
+      \ activity (running, climbing, etc) without taking 1 stress first.`\n"
+    name: Myrmidons
+  trauma:
+  - Who wronged you?
+  - How were you wronged?
+  - What are you unwilling to sacrifice?
+  url: https://i.imgur.com/xiUZsR8.png
+idol:
+  afflictions:
+  - 'Infatuated: Pick an ally. If you act without their setup or teamwork, you take
+    1 stress. '
+  - 'Solipsism: Take 2 stress if participating in teamwork or setup. '
+  - "Violet Somnia: You can roll a resting die any time. However, if you do, you fall\
+    \ asleep until pressure increases and can\u2019t be woken. "
+  - "Violent Jealousy: Pick an ally. Gain 1stress if they roll any \u20186\u2019.\
+    \ Permanently add to your agenda: **let nobody else outshine you.**"
+  - 'Narcissi: Powers that target only yourself gain +1 CAT. Powers that target at
+    least one ally get -1 CAT. '
+  - 'The Want: Permanently add to your agenda: **show someone you are worthy of their
+    attention.'
+  combat: '**[ATTACKS WITH]**: Well honed blades, mundane firearms, thin and flexible
+    claws, psychic voice commands. **(1)**: 5 stress, **(2/3)**: 3 stress, **(4+)**:
+    2 stress.
 
 
+    **[COMPLICATIONS]**: Rile up a crowd, enthrall someone, blind with glory, overwhelm
+    with emotion, force out secrets, disarm someone, spew out hallucinations, add
+    a bystander, use a domain.
+
+
+    **[THREATS]**: Summon cultists. Cause crippling pain. Overwhelm the senses. Force
+    exorcists to sarifice something. Expose a weakness. Enthrall an exorcist. Take
+    captives. Inflict a hook. Use a domain. Do something emotionally crushing, manipulative,
+    or shocking.'
+  domains:
+  - description: 'The idol gains the ability to play with the flesh of others like
+      marionettes. Cultists gain +1 segment on their execution talisman (so a lone
+      cultist would have 3) as they can keep moving even while their body is broken,
+      jerked by invisible strings.
+
+      The idol gains a new affliction:  \n\n**COLLECT DOLL**: When afflicted, the
+      exorcist loses control of one of their arms. It becomes doll-like in texture
+      and appearance. Once a scene, the idol can interfere with an action the exorcist
+      is performing as the hand interferes, forcing them to either take 1 stress or
+      make the action hard.
+
+      '
+    name: Toys for Men
+  - description: 'The idol gains the ability to elevate members of its cult into minor
+      sins. One of these can appear a scene when fighting the idol or its cult.\n\n
+      **APOSTLE**: Execution talisman 4. Armed with supernatural strength and mutated
+      blades.
+
+      **Reactions:**\n **Inflict stress**. Attacks with: Mutated body, mundane firearms
+      or blades. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**:2 stress.\n **Or**:
+      create a **complication** or **threat**: Create a Fleshy clone of itself, unleash
+      a flurry of attacks, mutate further, move impossibly fast
+
+      **Or**: Exort (1-3): An ally of the apostle heals slashes on their execution
+      clock depending on the risk die (1: 2 ticks, 2-3: 1 tick). The next time that
+      ally inflicts stress on an exorcist, they inflict +1 stress.
+
+      '
+    name: Elevation of the Innumerable Mass
+  - description: "The idol cultivates a special, insidious bond to its cult members.\\\
+      n- **Once a scene**, when the idol would takes lashes on its execution talisman\
+      \ from an exorcist\u2019s action, it can supernaturally transfer the harm to\
+      \ any cultist or group of cultists present in the scene instead. This includes\
+      \ any NPCs added the idol\u2019s cult.\\n- The idol can see through the eyes\
+      \ of any cult member as if they were its own, and can speak through the mouths\
+      \ of cult members with its voice.\n"
+    name: Hold My Darlings
+  - description: 'The idol can twist its form rapidly and shape shift.
+
+      - As a **tension move**, reveal in a scene at any point that someone the exorcists
+      are talking to is actually the idol. All exorcists that witness this take 1
+      stress. This can force a conversation or a conflict scene.
+
+      - As a **complication** in a conflict scene, the idol can rapidly shape shift
+      into an exact copy of one of the exorcists. Until the complication is dealt
+      with, when the idol would take slashes on its execution talisman, roll a d6.
+      On a 1-2, reduce the slashes to 0 and the doubled exorcist takes 2 stress as
+      it becomes impossible to distinguish between the two.
+
+      '
+    name: That Pliable Flesh
+  - description: "The idol can enter the minds of the exorcists when they let their\
+      \ guard down.\n- When the exorcists **rest**, each makes a 1d6 fortune roll.\
+      \ On a 1, they immediately gain an idol affliction.\n- **Once a hunt**, as a\
+      \ **tension move**, the idol may immediately force the exorcists to rest for\
+      \ the next scene. This doesn\u2019t tick tension, cannot progress pressure past\
+      \ 4, and the results of all their resting rolls are \u20181\u2019 no matter\
+      \ what. During their rest they have disturbing daydreams. One exorcist may describe\
+      \ these to the group.\n"
+    name: Slumbering, I Saw a Shape in the Door
+  - description: "The idol\u2019s voice and psychic presence is overwhelming, like\
+      \ an ocean battering down a rickety door.\n- As a **threat** or a **tension\
+      \ move**, the Idol can speak to to a group of mundane humans. If successful,\
+      \ they are immediately added to the cult and become a group of cultists. If\
+      \ cultists are already present, increase their execution talisman by 2 instead.\n\
+      - As a **threat**, the idol can begin to speak an unspeakable word. If the threat\
+      \ is successful, one exorcist that hears it takes 2 stress and the **deafened**\
+      \ affliction for the rest of the mission (can\u2019t hear, may make activities\
+      \ reliant on hearing hard or impossible). Characters that are already deaf are\
+      \ immune to this. At the end of the mission, roll a 1d6 fortune. On a 1 or 2,\
+      \ the character is **permanently deafened** but has time to adjust before the\
+      \ next mission, making it have no further deleterious effects.\n"
+    name: Taking the Ears
+  - description: 'The idol is capable of taking a form that overwhelms the senses.
+
+      - Once a scene, the Idol can take a glorious form as a **complication**. Non-cultist
+      humans witnessing the form instantly become unconscious. Exorcists witnessing
+      the form can either take 1 stress when acting against the idol and ignore it,
+      or avert their gaze. If they avert their gaze, it becomes hard to do anything
+      that relies on sight.
+
+      - Cultists present in the scene are motivated by the idol and may re-roll the
+      risk die when acting, taking the second result as final.
+
+      - One exorcist sees this form as someone dear to them and must describe who
+      to the group. They take 1 stress when harming the idol while the form is active.
+
+      - This complication can be dealt with as normal
+
+      '
+    name: The Glory
+  - description: "The idol has major connections with the human world: fans, businessmen,\
+      \ or politicians. This presents an expanding problem for CAIN cleanup. Cultists\
+      \ are now armed with short ranged firearms and body armor, dealing +1 stress\
+      \ with reactions. Increase their execution talisman by +1.\n- Set out an **exposure\
+      \ talisman**, of 10 length. Whenever the exorcists engage in a conflict scene,\
+      \ tick it up by 1d3. If the exorcists do something else loud, violent, or with\
+      \ high exposure, tick it up by 1, but no more than once a scene.\n- If the talisman\
+      \ is 3 or more, local authorities will start to attempt to arrest the exorcists.\
+      \ If it\u2019s 6 or more, the response becomes more severe in scale.\nExorcists\
+      \ can attempt to untick this talisman with their actions. If the talisman fills\
+      \ up before the idol is dealt with, cleanup becomes catastrophic as the news\
+      \ spreads beyond CAIN control. The exorcists will receive **no scrip pay** for\
+      \ the mission.\n"
+    name: The Strong Scented Lips of a Whispering God
+  palace: 'Idols tend to manifest their palace where their cult is located, typically
+    in populated locations. They may have a front operation that covers the entrance
+    to their palace and their cult in general - a news or internet program, a band,
+    a concert hall, a religious gathering, etc. The true headquarters of their cult
+    is typically more concealed and harder to access. At the center is usually an
+    entrance to their palace, which the idol may invite select cult members in to
+    visit in order to win them over. Depending on the aspiration of the sin, the interior
+    of typical palaces is usually a monument to selfobsession and resembles: - Palatial
+    estates - Nightclubs or concert halls - Beautiful high rise penthouse apartments
+    - Religious halls or places of worship **Idol palaces are typically**: Luxurious,
+    Gilded, Airy, Captivating, Impressive, Gaudy, Holy
+
+    '
+  pressure:
+    description: "Idols gather **cults** around them, adding steadily to them over\
+      \ time. This varies from mundane admirers of the idol to people totally pulled\
+      \ under their spell. A lower category idol tends to pull people into a cult\
+      \ of a few dozen people, whereas a higher category one can pull in a cult that\
+      \ numbers in the hundreds or thousands.\\n While the idol still lives, **cultists\
+      \ are completely and unflinchingly loyal to them and their host**, and will\
+      \ follow the commands and inclinations of their higher-ups in the cult without\
+      \ questioning. The idol is able to secretly add npcs to its cult. Every time\
+      \ pressure increases, the Admin chooses an NPC the players have met on the mission\
+      \ and adds them to the cult. They don\u2019t have to reveal this to the players.\\\
+      n The NPC now follow the psychic commands and directives of the idol and abandon\
+      \ their former priorities and loyalties. When pressure fills up, the situation\
+      \ goes out of control. The Idol gains +1 Category and adds every single NPC\
+      \ in the mission area to its cult, including any NPCs the exorcists encounter\
+      \ in the future.\n"
+    name: Cult
+  traces:
+    description: 'Cultists are mundane humans pulled under the supernatural influence
+      of the Idol. They can behave normally when required but are functionally puppets,
+      having their feeble will suppressed by the extremely powerful Grace of the sin.
+      The idol will often deploy them for missions of importance or to infiltrate
+      groups. Defeating the idol will pull any cultists out of their brainwashing.
+      They have no memory of their time when brainwashed.
+
+      Cultists (humans): Execution talisman **2** (solo), **4** (group), **6** (large
+      group)
+
+      **Reactions**:\n **Inflict stress**. Attacks with: Bare hands, improvised melee
+      weaponry. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.\n **Or**:
+      create a complication or threat: Draw unwanted attention, choke someone out,
+      pull out a gun, draw in bystanders, making a shocking reveal.
+
+      '
+    name: Cultists
+  trauma:
+  - What is your dream?
+  - Why did you give up on your dream?
+  - Why do you think you are you incapable of being loved?
+  url: https://i.imgur.com/HkswQ5o.png
+lord:
+  afflictions:
+  - 'Reality Control: Must spend 1 stress to spend any amount of KP in the kingdom.'
+  - "Pain of Loss: Forced to psychically experience the same catastrophe as the Lord\u2019\
+    s host. When the lord or its host is harmed, also take 1 stress. Ends if exorcist\
+    \ takes an injury."
+  - 'Kingdom infection: Mark off 1 KP when pressure increases, then manifest something
+    comforting and small for your exorcist, like a treat or book.'
+  - "Hitchhiker: Always count as in the Kingdom for the purposes of the Lord\u2019\
+    s powers."
+  - 'Welcome Home: Gain +1 max psyche burst in the kingdom, regain max psyche burst
+    when resting in the kingdom, but become unable to use blasphemies outside.'
+  - 'Justiciar: Permanently add to your agenda **punish wickedness**.'
+  combat: '**[ATTACKS WITH]**: Shimmering blades, armored gauntlets, shining medieval
+    weaponry, beams of fire (long range). (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.
+
+    **[COMPLICATIONS]**: Twist the world or landscape, extend the Kingdom, throw false
+    accusations, bind an exorcist in chains, blind with scorching light, extend shining
+    armor plating, raise a glittering shield, add a bystander, use a domain.
+
+    **[THREATS]**: Smite with fire, pass judgement from the heavens, hurl into a psychic
+    prison, force an exorcist to confront their own crimes, grasp with an armored
+    fist, impale with holy spikes, Inflict a hook. Use a domain. Do something righteous,
+    scathing, or dominating.
+
+    '
+  domains:
+  - description: 'The Lord or its host gain increased control over reality inside
+      its Kingdom, granting them the following powers. It can use these as **threat**s
+      or **complication**s:
+
+      - Cause any object up to the size of a small building to coalesce and appear
+      in a few moments.
+
+      - Invert or choose the direction and strength of gravity, or even make space
+      curved
+
+      - Change the weather or change the biome of an area, such as from sunny to snowy
+
+      - Rearrange the interiors and layouts of buildings, streets, or corridors In
+      addition, as a **threat** or a tension move, the Lord can dismiss any psychic
+      power caused by the exorcists that has a sustained effect (like a summon or
+      curse). This only works inside the kingdom.
+
+      '
+    name: Stricture of Manifestation
+  - description: "The Lord fights more fiercely the less exorcists play by the rules\
+      \ of the Kingdom. At the start of the round in a conflict scene, the Lord can\
+      \ take one of the following stances. Exorcists that don\u2019t fulfill the requirements\
+      \ are punished. It must switch to a different stance each round.\n- **Honorable\
+      \ Fighting**: Exorcists that participate in teamwork or setup take 1 stress.\n\
+      - **Grand Melee**: Exorcists acting without benefiting from teamwork or setup\
+      \ find it hard.\n- **Duel**: The Lord chooses an exorcist. That exorcist deals\
+      \ +2 more slashes on the Lord\u2019s execution talisman, but all other exorcists\
+      \ deal 1 less slash to the Lord this round.\n"
+    name: Stricture of Superiority
+  - description: 'The lord can banish exorcists, making them gradually phase out of
+      reality while inside the kingdom. **as a tension move** or a **threat**, the
+      Lord can give an exorcist the following affliction: \n
+
+      **BANISHED**: Starting to fade from reality, with the following effects:
+
+      - Interacting with the physical world inside the kingdom without using psychic
+      powers becomes hard. However, can also slip through walls and objects like a
+      ghost.
+
+      - When pressure increases, take 1 stress. If this stress inflicts an injury,
+      suffer instant death instead and disappear completely.
+
+      '
+    name: Stricture of Banishment
+  - description: "The lord\u2019s power is intense and bleeds out over the investigation\
+      \ area like an iron net. On this mission, the Admin, choosing for the Lord can\
+      \ forbid three items from the following list:\n- Swearing\n- Speaking the name\
+      \ of the Lord or its host (in vain or otherwise)\n- Uncovering skin between\
+      \ the ankles, wrists, and neck in view of the opposite sex\n- Drinking, eating,\
+      \ or smoking anything not blessed by the Lord\n- Touching another person skin\
+      \ to skin without consent of the Lord\n- Entering the palace of the Lord without\
+      \ praying first\nThese rules become known instantly to anyone upon entering\
+      \ the kingdom. Once a scene, when an exorcist would break one of these rules,\
+      \ they take 1d3 stress. If the Admin misses an occurrence of one of these rules\
+      \ being broken but an exorcist reminds them, that exorcist can gain 1 xp. This\
+      \ can only trigger once a session per exorcist.\n"
+    name: Stricture of Control
+  - description: "The lord\u2019s power is regressive and nostalgic. Inside its Kingdom,\
+      \ it returns everything to a **previous era** (real or imagined) desirable to\
+      \ its host, such as the European middle ages, Edo Japan, 1950s America, or 1st\
+      \ century Judea. Weapons, gear, and technology that would not exist in that\
+      \ era are converted into similar equivalents inside the Kingdom, or simply do\
+      \ not exist while inside the Kingdom. For example firearms becoming crossbows,\
+      \ or a GPS system becoming a hand drawn map. If the Admin judges this would\
+      \ affect a roll, they can make it hard. All clothing, hairstyles, etc also changes\
+      \ to fit. They revert upon exiting.\n"
+    name: Stricture of Memory
+  - description: "**as a tension move**, the Lord can give a randomly rolled role\
+      \ **affliction** to one of the exorcists inside its kingdom, as the kingdom\
+      \ attempts to absorb them. A role, once given, gives a new (temporary) agenda\
+      \ item to the afflicted exorcist until the end of the mission, as well as forbidden\
+      \ activities, which become hard for the afflicted inside the kingdom. An exorcist\
+      \ can only have one role at once.\n1. **Peasant**: Agenda: Act in extreme deference\
+      \ to others. Forbidden: Acting in defiance of an order.\n2. **Priest**: Agenda:\
+      \ Obey the Lord. Forbidden: Lying, Cheating, taking the Lord\u2019s name in\
+      \ vain. \n3. **Bandit**: Agenda: Steal something. Forbidden: Setup actions or\
+      \ teamwork.\n4. **Sage**: Agenda: Demonstrate your erudition and knowledge.\
+      \ Forbidden: Any physically demanding activity.\n5. **Knight**: Agenda: Protect\
+      \ the residents of the kingdom. Forbidden: Striking a woman. Lying, cheating,\
+      \ or dirty fighting.\n6. **Noble**: Agenda: Humiliate your inferiors. Forbidden:\
+      \ Deferring to an inferior. Dirtying your hands\n"
+    name: Stricture of Alignment
+  - description: 'The lord and its host gain control over reality to the point of
+      being able to reverse causality.
+
+      - **Three times a hunt**, when an exorcist rolls an action roll and sees the
+      final result, the lord or its host can declare that events did not actually
+      play out that way, as though they were narrating a story. This completely un-does
+      the outcome of the roll.
+
+      - The targeted exorcist gains 1 psyche burst. They can then either re-roll the
+      action, taking the second result as final, or lose the outcome and gain an additional
+      1d3 psyche burst.
+
+      '
+    name: Stricture of Narrative
+  - description: "The Lord has a **Guardian**, a sin-construct that patrols the Kingdom\
+      \ with a careful eye and an iron fist. It may take the form of an officer of\
+      \ the law, a winged, beautiful humanoid, or a metallic, geometric construct.\
+      \ If destroyed, it reforms in the Lord\u2019s palace when pressure increases.\n\
+      **Guardian** (sin). Execution talisman 3+CAT.\n- Heavily armored and immune\
+      \ to mundane weaponry\n- The guardian can move around rapidly while inside the\
+      \ kingdom. It can\u2019t exist outside the kingdom.\n- The guardian is axiomatic\
+      \ and is incapable of deceit or lying. It always knows when someone is lying\
+      \ in its presence.\n**Reactions**:\\n **Inflict stress**. Attacks with: Long\
+      \ ranged weapon (extreme range), brutal melee strikes. **(1)** 4 stress, **(2/3)**:\
+      \ 3 stress, **(4+)**: 2 stress.\n**Or**: create a **complication** or **threat**:\
+      \ Imprison someone in a cage of light, blind with glaring beams, swoop high\
+      \ into the air, summon\n"
+    name: Stricture of The Flaming Sword
+  palace: "A lord\u2019s palace is always nestled in the center of their kingdom,\
+    \ and therefore always requires traversing the kingdom itself to reach. More often\
+    \ than not, it resembles an actual palace in size and form - or something similarly\
+    \ important and imposing, such as a high rise skyscraper, corporate headquarters,\
+    \ government office, or temple.\n**The palace of a lord** is typically a bustling\
+    \ place full of servants or subsidiaries going about their business - minor sins,\
+    \ figments of the host\u2019s imagination, or captive humans that have been absorbed\
+    \ into the narrative of the kingdom. Lord\u2019s palaces are typically: Imposing,\
+    \ grandiose, august, monumental, stony, hallow\n"
+  pressure:
+    description: "The archetypical Lord creates a Kingdom, an alternate parasite reality\
+      \ growing outward from its palace that overlaps our own. The kingdom can be\
+      \ accessed freely by the lord and its host, and can be squirreled away in impossible\
+      \ spaces - accessible through closet doors, hallways, restaurant back alleys,\
+      \ etc. Eventually it starts to bleed over and pull parts of the real world into\
+      \ it, consuming space and the unwitting humans inside. From the outside, humans\
+      \ cannot see the kingdom even as it consumes the real world, and may merely\
+      \ walk down a street and unwittingly pass into an alternate reality.\nInside\
+      \ the Kingdom, the world may appear as the world currently does, or a historical\
+      \ or even fantastical version of the world, such as a futuristic city, a glittering\
+      \ heaven, or a medieval castle - dependent on the latent desires of the host.\
+      \ In this world, all that the host has lost is returned to them and more. It\
+      \ presents an alternate reality that is both more convenient and fulfilling\
+      \ to the host and also conforms to their beliefs and outlook, coddling and supporting\
+      \ them.\nEvents, history, and even humans may be altered drastically inside.\
+      \ Therefore humans that on the outside of the kingdom may be hostile to the\
+      \ host might be their friends inside, mistakes the host has made in the past\
+      \ or their own failings might be papered over or made whole - or even celebrated.\
+      \ In this world, the host is the absolute ruler (or the Lord as their regent\
+      \ if they are unwilling) and may change the laws of reality as they wish. These\
+      \ strictures completely consume mundane humans and are strong enough to even\
+      \ effect exorcists.\n**Each time pressure increases**, the kingdom expands to\
+      \ a new area of the real world, increasingly rapidly in size. Humans consumed\
+      \ by it are unaware of the change. If pressure is 6+, the **kingdom consumes\
+      \ the whole investigation area**, and the Lord\u2019s CAT increases by +1. \n\
+      A kingdom collapses when the host or the Lord is defeated, ejecting anything\
+      \ brought into it, including humans - who typically have no memory of their\
+      \ time inside.\n"
+    name: Kingdom
+  traces:
+    description: "A lord\u2019s kingdom always has guards patrolling it. These guards\
+      \ are sins that typically take the form of authority figures or soldiers. They\
+      \ are completely subservient to the Lord and their appearance and behavior is\
+      \ shaped at their whim. Some kingdoms may have guards that are imposing human\
+      \ soldiers with their face shaded under security caps or helms, while others\
+      \ may have beast-like demons wielding medieval weaponry that punish unbelievers.\n\
+      **Guards** (sins): Execution talisman **2** (solo), **4** (squad), **6** (small\
+      \ army)\n- Armed with cruel weaponry and outstanding senses.\n- Incapable of\
+      \ existing outside the kingdom\\n\n**Reactions**:\\m **Inflict stress**. Attacks\
+      \ with: Cruel close combat weaponry, fists and kicks. **(1)** 4 stress, **(2/3)**:\
+      \ 3 stress, **(4+)**: 2 stress.\n**Or**: create a **complication** or **threat**:\
+      \ Trap an exorcist and pile on, pull an exorcist away in chains, disable an\
+      \ exorcist with a painful strike, threaten bystanders as collaborators, call\
+      \ in a prison vehicle, produce a heavy weapon.\n**Or**: **Sound the Alarm (threat,\
+      \ 1-2)**: Alert the Lord or any other nearby guards to the exorcists\u2019 current\
+      \ position. If more guards show up, refresh the execution talisman by 1d3.\n"
+    name: Guards
+  trauma:
+  - What did you lose?
+  - What is the main thing you would fix about the world?
+  - Who did you regret leaving behind when you ascended to your Kingdom?
+  url: https://i.imgur.com/4MH7dXh.png
 ogre:
   afflictions:
-    - "White Mold: Spreading white veins and coughing indicate mold infection. Subtract 1 from all resting rolls while afflicted and cannot eat, drink, or use consumables."
-    - "Frozen Limbs: Physical activity or fine motor skill is hard if it requires more than one limb."
-    - "Circling the Drain: Cannot benefit from teamwork or setup. Permanently add to your agenda: **give up on something.**"
-    - "Black Lungs: Speaking spews out black sludge. All communication that requires speaking is hard"
-    - "Rotting: Black rot has taken in the body. Take 1 stress each time pressure fills up. If this inflicts an injury, it inflicts instant death. "
-    - "The Weight: Permanently add to your agenda: **die**."
-  url: "https://i.imgur.com/V0GoKJp.png"
-  combat: "**[ATTACKS WITH]**: Teeth, claws, fetid water, black spew **(1):** 5 stress, **(2/3):** 3 stress, **(4+)**: 2 stress.\n\n**[COMPLICATIONS]**: Kill lights, summon mist, spew ceaselessly on someone, bury an exorcist in mud, slime, or vomit, pin down an exorcist, release acrid stench, smash walls, floor, or ceilings, retreat into darkness, add a bystander, use a domain.\n\n**[THREATS]**: Grab an exorcist and squeeze the life out of them. Hurl exorcist through a wall. Collapse architecture. Summon minions. Kill bystanders. Infect with dark pulsing veins. Cause a flash flood or freeze. Blind someone in a miasmatic cloud. Use a domain. Do something dark, crushing, or vile."
+  - 'White Mold: Spreading white veins and coughing indicate mold infection. Subtract
+    1 from all resting rolls while afflicted and cannot eat, drink, or use consumables.'
+  - 'Frozen Limbs: Physical activity or fine motor skill is hard if it requires more
+    than one limb.'
+  - 'Circling the Drain: Cannot benefit from teamwork or setup. Permanently add to
+    your agenda: **give up on something.**'
+  - 'Black Lungs: Speaking spews out black sludge. All communication that requires
+    speaking is hard'
+  - 'Rotting: Black rot has taken in the body. Take 1 stress each time pressure fills
+    up. If this inflicts an injury, it inflicts instant death. '
+  - 'The Weight: Permanently add to your agenda: **die**.'
+  combat: '**[ATTACKS WITH]**: Teeth, claws, fetid water, black spew **(1):** 5 stress,
+    **(2/3):** 3 stress, **(4+)**: 2 stress.
+
+
+    **[COMPLICATIONS]**: Kill lights, summon mist, spew ceaselessly on someone, bury
+    an exorcist in mud, slime, or vomit, pin down an exorcist, release acrid stench,
+    smash walls, floor, or ceilings, retreat into darkness, add a bystander, use a
+    domain.
+
+
+    **[THREATS]**: Grab an exorcist and squeeze the life out of them. Hurl exorcist
+    through a wall. Collapse architecture. Summon minions. Kill bystanders. Infect
+    with dark pulsing veins. Cause a flash flood or freeze. Blind someone in a miasmatic
+    cloud. Use a domain. Do something dark, crushing, or vile.'
   domains:
-    - description: 'The world itself begins to turn against the exorcists. As a **complication**
-        or a **tension move**, the ogre supernaturally erases entrances, exits, roads, vehicles,
-        or light sources in an area of about a city block. These return when the scene
-        passes or if the complication is dealt with.
+  - description: 'The world itself begins to turn against the exorcists. As a **complication**
+      or a **tension move**, the ogre supernaturally erases entrances, exits, roads,
+      vehicles, or light sources in an area of about a city block. These return when
+      the scene passes or if the complication is dealt with.
 
-        Once a hunt, as a **tension move**, if an exorcist opens any door, the entire group
-        suddenly finds themself in an area of twisting corridors, pitch black darkness,
-        and distant but troubling noises. The area is both dangerous and hostile to
-        them. Finding an exit and escaping will require playing out a scene or two,
-        and the Admin can set out talismans as needed.'
-      name: Hostile Door Patterns
-    - description: "The miasma becomes permeated with an deep, cloying dark. The ogre\
-        \ is invisible in darkness. It becomes hard to do anything to the ogre unless\
-        \ it is brightly lit or an action doesn\u2019t rely on sight. \nAs a **tension**\
-        \ move, all electric lights not held by an exorcist sputter out and cease functioning\
-        \ for the next scene. The Admin picks an exorcist and asks them \u2018What do\
-        \ you see in the dark?\u2019. They must answer truthfully and gain 1 stress\
-        \ after answering.\n"
-      name: The Unseeing of Things
-    - description: 'The ogre can force exorcists to experience some of the crushing
-        trauma that caused its birth.As a **tension move**, the ogre can pick an exorcist.
-        That exorcist is afflicted by the Despair affliction.
+      Once a hunt, as a **tension move**, if an exorcist opens any door, the entire
+      group suddenly finds themself in an area of twisting corridors, pitch black
+      darkness, and distant but troubling noises. The area is both dangerous and hostile
+      to them. Finding an exit and escaping will require playing out a scene or two,
+      and the Admin can set out talismans as needed.'
+    name: Hostile Door Patterns
+  - description: "The miasma becomes permeated with an deep, cloying dark. The ogre\
+      \ is invisible in darkness. It becomes hard to do anything to the ogre unless\
+      \ it is brightly lit or an action doesn\u2019t rely on sight. \nAs a **tension**\
+      \ move, all electric lights not held by an exorcist sputter out and cease functioning\
+      \ for the next scene. The Admin picks an exorcist and asks them \u2018What do\
+      \ you see in the dark?\u2019. They must answer truthfully and gain 1 stress\
+      \ after answering.\n"
+    name: The Unseeing of Things
+  - description: 'The ogre can force exorcists to experience some of the crushing
+      trauma that caused its birth.As a **tension move**, the ogre can pick an exorcist.
+      That exorcist is afflicted by the Despair affliction.
 
-        **DESPAIR**: This special affliction can only affect one exorcist at once. They
-        gain the agenda item **push people away** even if losing this affliction. At the
-        end of the mission, roll a 1d6. On a 1 or 2, keep this agenda item, on a 3+
-        may get rid of it.\nAsk that exorcist the question **who in this group will let
-        you down**? Any time the chosen person fails an action roll, the afflicted exorcist
-        gains 1 stress. However, if this triggered at least once during a session, at
-        the end of that session also gain 1 xp.'
-      name: The Grinding of Wheels
-    - description: 'The ogre can regenerate rapidly from injuries.
+      **DESPAIR**: This special affliction can only affect one exorcist at once. They
+      gain the agenda item **push people away** even if losing this affliction. At
+      the end of the mission, roll a 1d6. On a 1 or 2, keep this agenda item, on a
+      3+ may get rid of it.\nAsk that exorcist the question **who in this group will
+      let you down**? Any time the chosen person fails an action roll, the afflicted
+      exorcist gains 1 stress. However, if this triggered at least once during a session,
+      at the end of that session also gain 1 xp.'
+    name: The Grinding of Wheels
+  - description: 'The ogre can regenerate rapidly from injuries.
 
-        - It regenerates 1 segment of the execution talisman every time a risk result
-        of 1 is rolled in a conflict scene where it is present.
+      - It regenerates 1 segment of the execution talisman every time a risk result
+      of 1 is rolled in a conflict scene where it is present.
 
-        - The ogre takes -1 slash on its execution talisman unless damage by fire, acid,
-        or some other strong chemical or solvent in the same scene.'
-      name: That Awful Flesh
-    - description: 'The ogre can temporarily cause the miasma to accelerate its effects.
+      - The ogre takes -1 slash on its execution talisman unless damage by fire, acid,
+      or some other strong chemical or solvent in the same scene.'
+    name: That Awful Flesh
+  - description: 'The ogre can temporarily cause the miasma to accelerate its effects.
 
-        - The touch of the ogre can rapidly rot and decay objects, plant matter, and
-        constructions, destroying them and dissolving them into mud and slime.
+      - The touch of the ogre can rapidly rot and decay objects, plant matter, and
+      constructions, destroying them and dissolving them into mud and slime.
 
-        - Exorcists inside the miasma start to superficially rot if they spend scenes
-        there - hair falling out, sunken skin, dead skin cells, nails falling out, etc.
-        They recover from this damage after the mission.
+      - Exorcists inside the miasma start to superficially rot if they spend scenes
+      there - hair falling out, sunken skin, dead skin cells, nails falling out, etc.
+      They recover from this damage after the mission.
 
-        - As a **tension move** the ogre can cause an exorcist inside the miasma to start
-        decaying. They gain a hook with the Rotting affliction.
+      - As a **tension move** the ogre can cause an exorcist inside the miasma to
+      start decaying. They gain a hook with the Rotting affliction.
 
-        - Exorcists **subtract 1 from all their healing rolls**.'
-      name: The Inevitable Place of Meat
-    - description: "At the start of a mission, the Ogre chooses an exorcist and creates
-        a creature formed from the guilt and shame of that exorcist. The Admin secretly
-        asks the targeted exorcist the following questions:\n- Which ally are you
-        embarrassed to be around? - What's the worst thing you ever did? - What do
-        you hate the most about yourself?\nThe creature takes a form that plays off
-        these answers. It is a trace with the following execution talisman.\n\n**CRUSHER**: 
-        Execution talisman 6. If defeated, is destroyed permanently. It has the following
-        features:\n- Deals +1 stress against the exorcist it is formed from - That
-        exorcist\u2019s actions are hard against it. - Attempts to harm only its target
-        in a fight.\n**Reactions**:\n**Inflict stress**. Attacks with: decaying, oversized
-        weaponry, mutated flesh. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.\n
-        **Or**: create a **complication** or **threat**: Grab by the throat, Pin down someone, raise
-        weapon to cleave, charge someone through a wall, floor, or door, swing wildly,
-        cause collateral damage.\n**Or: Force confession (1-3)**: Force the exorcist to
-        confess aloud the answer to one of the questions they answered, or else take
-        1d6 stress. Works once per question.\n"
-      name: The Lash Calls you Brother
-    - name: Where You Belong
-      description: "The ogre can control mud, water, and ambient temperature to killing effect.\nThe ogre can sink into any sufficiently large pool of mud and reappear in short distance as a part of any reaction it takes.\nAs a **tension move**, the ogre can change the weather in its miasma zone until the exorcists rest, making it extremely hostile (freezing cold, rain, etc). It becomes **hard** or **risky** (or both) to perform any activity outside that requires concentration, focus, or manual dexterity without sufficient protection from the weather."
-    - name: The Agony
-      description: "Once a hunt, when pressure increases, the ogre can pick an exorcist. That exorcist gains the Sunken **affliction** for the rest of the mission.\n\n**Sunken**:While afflicted, up to three times a mission, when you take an action, the Admin may ask them a question: Is your heart really in this?\n- If you answer yes, gain +1D on the action but also take 1d3+1 stress.\nIf the answer is no, you roll a 0D no matter what, but recover 1 psyche burst."
-  trauma:
-    - Who or what pushed you into this hole?
-    - Who or what is keeping you from going over the edge?
-    - What are you most ashamed of?
+      - Exorcists **subtract 1 from all their healing rolls**.'
+    name: The Inevitable Place of Meat
+  - description: "At the start of a mission, the Ogre chooses an exorcist and creates\
+      \ a creature formed from the guilt and shame of that exorcist. The Admin secretly\
+      \ asks the targeted exorcist the following questions:\n- Which ally are you\
+      \ embarrassed to be around? - What's the worst thing you ever did? - What do\
+      \ you hate the most about yourself?\nThe creature takes a form that plays off\
+      \ these answers. It is a trace with the following execution talisman.\n\n**CRUSHER**:\
+      \ Execution talisman 6. If defeated, is destroyed permanently. It has the following\
+      \ features:\n- Deals +1 stress against the exorcist it is formed from - That\
+      \ exorcist\u2019s actions are hard against it. - Attempts to harm only its target\
+      \ in a fight.\n**Reactions**:\n**Inflict stress**. Attacks with: decaying, oversized\
+      \ weaponry, mutated flesh. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**:\
+      \ 2 stress.\n **Or**: create a **complication** or **threat**: Grab by the throat,\
+      \ Pin down someone, raise weapon to cleave, charge someone through a wall, floor,\
+      \ or door, swing wildly, cause collateral damage.\n**Or: Force confession (1-3)**:\
+      \ Force the exorcist to confess aloud the answer to one of the questions they\
+      \ answered, or else take 1d6 stress. Works once per question.\n"
+    name: The Lash Calls you Brother
+  - description: 'The ogre can control mud, water, and ambient temperature to killing
+      effect.
+
+      The ogre can sink into any sufficiently large pool of mud and reappear in short
+      distance as a part of any reaction it takes.
+
+      As a **tension move**, the ogre can change the weather in its miasma zone until
+      the exorcists rest, making it extremely hostile (freezing cold, rain, etc).
+      It becomes **hard** or **risky** (or both) to perform any activity outside that
+      requires concentration, focus, or manual dexterity without sufficient protection
+      from the weather.'
+    name: Where You Belong
+  - description: 'Once a hunt, when pressure increases, the ogre can pick an exorcist.
+      That exorcist gains the Sunken **affliction** for the rest of the mission.
+
+
+      **Sunken**:While afflicted, up to three times a mission, when you take an action,
+      the Admin may ask them a question: Is your heart really in this?
+
+      - If you answer yes, gain +1D on the action but also take 1d3+1 stress.
+
+      If the answer is no, you roll a 0D no matter what, but recover 1 psyche burst.'
+    name: The Agony
   palace: "Tracking an ogre down is often a matter of finding its host, or where its\
     \ host is currently residing. Once influenced by an ogre, a host usually withdraws\
     \ from society and cuts off its connections, making this harder than it would\
@@ -124,9 +866,9 @@ ogre:
     \ into a warren or maze-like space. Interspersed in the area is garbage, junk,\
     \ and things the ogre has collected. The ogre typically barely fits inside and\
     \ may have to painfully squeeze or crouch to move around, although this doesn\u2019\
-    t seem to slow it down at all.\n**Typical palaces resemble**:\n- Abandoned or derelict\
-    \ buildings\n- Filthy high rise apartments\n- Closed or shuttered schools\n- Empty,\
-    \ dead workplaces or offices\nOgre palaces are: Dark/Wet/Cold/Musty/Reeking/Filthy\n"
+    t seem to slow it down at all.\n**Typical palaces resemble**:\n- Abandoned or\
+    \ derelict buildings\n- Filthy high rise apartments\n- Closed or shuttered schools\n\
+    - Empty, dead workplaces or offices\nOgre palaces are: Dark/Wet/Cold/Musty/Reeking/Filthy\n"
   pressure:
     description: "The very presence of an ogre begins to infect an area with a dark\
       \ Miasma. When an ogre appears, the weather will typically sour in the local\
@@ -140,8 +882,8 @@ ogre:
       \ and internet stop working reliably, and eventually stops working all together\n\
       - architecture stops conforming to sense and becomes maze-like or nonsensical\n\
       - Humans spending time inside the miasmatic area begin to share in the ogre\u2019\
-     a s outlook and become more and more hostile\nWhen the exorcists arrive, the miasma\
-      \ should cover only part of the area the exorcists are trying to investigate,\
+      a s outlook and become more and more hostile\nWhen the exorcists arrive, the\
+      \ miasma should cover only part of the area the exorcists are trying to investigate,\
       \ like a few blocks. Each time pressure increases, the miasma spreads to a new\
       \ area. When pressure fills up completely, the situation gets out of control.\
       \ The Ogre increases in CAT by +1, and the miasma covers the entire area of\
@@ -164,658 +906,194 @@ ogre:
       \ someone, smother in flesh, infected bite, rupture and threaten to explode,\
       \ fuse to wall, ear-splitting screaming, devour humans. \n"
     name: Stumblers
-
-idol:
-  afflictions: 
-    - "Infatuated: Pick an ally. If you act without their setup or teamwork, you take 1 stress. "
-    - "Solipsism: Take 2 stress if participating in teamwork or setup. "
-    - "Violet Somnia: You can roll a resting die any time. However, if you do, you fall asleep until pressure increases and can’t be woken. "
-    - "Violent Jealousy: Pick an ally. Gain 1stress if they roll any ‘6’. Permanently add to your agenda: **let nobody else outshine you.**"
-    - "Narcissi: Powers that target only yourself gain +1 CAT. Powers that target at least one ally get -1 CAT. "
-    - "The Want: Permanently add to your agenda: **show someone you are worthy of their attention."
-  url: 'https://i.imgur.com/HkswQ5o.png'
-  combat: "**[ATTACKS WITH]**: Well honed blades, mundane firearms, thin and flexible claws, psychic voice commands. **(1)**: 5 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.\n\n**[COMPLICATIONS]**: Rile up a crowd, enthrall someone, blind with glory, overwhelm with emotion, force out secrets, disarm someone, spew out hallucinations, add a bystander, use a domain.\n\n**[THREATS]**: Summon cultists. Cause crippling pain. Overwhelm the senses. Force exorcists to sarifice something. Expose a weakness. Enthrall an exorcist. Take captives. Inflict a hook. Use a domain. Do something emotionally crushing, manipulative, or shocking."
-  domains:
-    - name: Toys for Men
-      description: >
-        The idol gains the ability to play with the flesh of others like marionettes. Cultists gain +1 segment on their execution talisman (so a lone cultist would have 3) as they can keep moving even while their body is broken, jerked by invisible strings.
-
-        The idol gains a new affliction: 
-        \n\n**COLLECT DOLL**: When afflicted, the exorcist loses control of one of their arms. It becomes doll-like in texture and appearance. Once a scene, the idol can interfere with an action the exorcist is performing as the hand interferes, forcing them to either take 1 stress or make the action hard.
-
-    - name: Elevation of the Innumerable Mass
-      description: >
-        The idol gains the ability to elevate members of its cult into minor sins. One of these can appear a scene when fighting the idol or its cult.\n\n
-        **APOSTLE**: Execution talisman 4. Armed with supernatural strength and mutated blades.
-
-        **Reactions:**\n
-        **Inflict stress**. Attacks with: Mutated body, mundane firearms or blades. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**:2 stress.\n
-        **Or**: create a **complication** or **threat**: Create a Fleshy clone of itself, unleash a flurry of attacks, mutate further, move impossibly fast
-
-        **Or**: Exort (1-3): An ally of the apostle heals slashes on their execution clock depending on the risk die (1: 2 ticks, 2-3: 1 tick). The next time that ally inflicts stress on an exorcist, they inflict +1 stress.
-
-    - name: Hold My Darlings
-      description: > 
-        The idol cultivates a special, insidious bond to its cult members.\n- **Once a scene**, when the idol would takes lashes on its execution talisman from an exorcist’s action, it can supernaturally transfer the harm to any cultist or group of cultists present in the scene instead. This includes any NPCs added the idol’s cult.\n- The idol can see through the eyes of any cult member as if they were its own, and can speak through the mouths of cult members with its voice.
-
-    - name: That Pliable Flesh
-      description: >
-        The idol can twist its form rapidly and shape shift.
-
-        - As a **tension move**, reveal in a scene at any point that someone the exorcists are talking to is actually the idol. All exorcists that witness this take 1 stress. This can force a conversation or a conflict scene.
-
-        - As a **complication** in a conflict scene, the idol can rapidly shape shift into an exact copy of one of the exorcists. Until the complication is dealt with, when the idol would take slashes on its execution talisman, roll a d6. On a 1-2, reduce the slashes to 0 and the doubled exorcist takes 2 stress as it becomes impossible to distinguish between the two.
-
-    - name: Slumbering, I Saw a Shape in the Door
-      description: >
-        The idol can enter the minds of the exorcists when they let their guard down.
-
-        - When the exorcists **rest**, each makes a 1d6 fortune roll. On a 1, they immediately gain an idol affliction.
-
-        - **Once a hunt**, as a **tension move**, the idol may immediately force the exorcists to rest for the next scene. This doesn’t tick tension, cannot progress pressure past 4, and the results of all their resting rolls are ‘1’ no matter what. During their rest they have disturbing daydreams. One exorcist may describe these to the group.
-
-    - name: Taking the Ears
-      description: >
-        The idol’s voice and psychic presence is overwhelming, like an ocean battering down a rickety door.
-
-        - As a **threat** or a **tension move**, the Idol can speak to to a group of mundane humans. If successful, they are immediately added to the cult and become a group of cultists. If cultists are already present, increase their execution talisman by 2 instead.
-
-        - As a **threat**, the idol can begin to speak an unspeakable word. If the threat is successful, one exorcist that hears it takes 2 stress and the **deafened** affliction for the rest of the mission (can’t hear, may make activities reliant on hearing hard or impossible). Characters that are already deaf are immune to this. At the end of the mission, roll a 1d6 fortune. On a 1 or 2, the character is **permanently deafened** but has time to adjust before the next mission, making it have no further deleterious effects.
-
-    - name: The Glory
-      description: >
-        The idol is capable of taking a form that overwhelms the senses.
-
-        - Once a scene, the Idol can take a glorious form as a **complication**. Non-cultist humans witnessing the form instantly become unconscious. Exorcists witnessing the form can either take 1 stress when acting against the idol and ignore it, or avert their gaze. If they avert their gaze, it becomes hard to do anything that relies on sight.
-
-        - Cultists present in the scene are motivated by the idol and may re-roll the risk die when acting, taking the second result as final.
-
-        - One exorcist sees this form as someone dear to them and must describe who to the group. They take 1 stress when harming the idol while the form is active.
-
-        - This complication can be dealt with as normal
-
-    - name: The Strong Scented Lips of a Whispering God
-      description: >
-        The idol has major connections with the human world: fans, businessmen, or politicians. This presents an expanding problem for CAIN cleanup. Cultists are now armed with short ranged firearms and body armor, dealing +1 stress with reactions. Increase their execution talisman by +1.
-
-        - Set out an **exposure talisman**, of 10 length. Whenever the exorcists engage in a conflict scene, tick it up by 1d3. If the exorcists do something else loud, violent, or with high exposure, tick it up by 1, but no more than once a scene.
-
-        - If the talisman is 3 or more, local authorities will start to attempt to arrest the exorcists. If it’s 6 or more, the response becomes more severe in scale.
-
-        Exorcists can attempt to untick this talisman with their actions. If the talisman fills up before the idol is dealt with, cleanup becomes catastrophic as the news spreads beyond CAIN control. The exorcists will receive **no scrip pay** for the mission.
   trauma:
-    - What is your dream?
-    - Why did you give up on your dream?
-    - Why do you think you are you incapable of being loved?
-  palace: >
-    Idols tend to manifest their palace where their cult is located, typically in populated locations. They may have a front operation that covers the entrance to their palace and their cult in general - a news or internet program, a band, a concert hall, a religious gathering, etc. The true headquarters of their cult is typically more concealed and harder to access. At the center is usually an entrance to their palace, which the idol may invite select cult members in to visit in order to win them over. Depending on the aspiration of the sin, the interior of typical palaces is usually a monument to selfobsession and resembles:
-    - Palatial estates
-    - Nightclubs or concert halls
-    - Beautiful high rise penthouse apartments
-    - Religious halls or places of worship
-    **Idol palaces are typically**: Luxurious, Gilded, Airy, Captivating, Impressive, Gaudy, Holy
-  pressure:
-    name: "Cult"
-    description: >
-      Idols gather **cults** around them, adding steadily to them over time. This varies from mundane admirers of the idol to people totally pulled under their spell. A lower category idol tends to pull people into a cult of a few dozen people, whereas a higher category one can pull in a cult that numbers in the hundreds or thousands.\n
-      While the idol still lives, **cultists are completely and unflinchingly loyal to them and their host**, and will follow the commands and inclinations of their higher-ups in the cult without questioning. The idol is able to secretly add npcs to its cult. Every time pressure increases, the Admin chooses an NPC the players have met on the mission and adds them to the cult. They don’t have to reveal this to the players.\n
-      The NPC now follow the psychic commands and directives of the idol and abandon their former priorities and loyalties. When pressure fills up, the situation goes out of control. The Idol gains +1 Category and adds every single NPC in the mission area to its cult, including any NPCs the exorcists encounter in the future.
-  traces:
-    name: "Cultists"
-    description: >
-      Cultists are mundane humans pulled under the supernatural influence of the Idol. They can behave normally when required but are functionally puppets, having their feeble will suppressed by the extremely powerful Grace of the sin. The idol will often deploy them for missions of importance or to infiltrate groups.
-      Defeating the idol will pull any cultists out of their brainwashing. They have no memory of their time when brainwashed.
-
-      Cultists (humans): Execution talisman **2** (solo), **4** (group), **6** (large group)
-
-      **Reactions**:\n
-      **Inflict stress**. Attacks with: Bare hands, improvised melee weaponry. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.\n
-      **Or**: create a complication or threat: Draw unwanted attention, choke someone out, pull out a gun, draw in bystanders, making a shocking reveal. 
-
-hound:
-  afflictions:
-    - "Blood Rage: Afflicted exorcists roll +1D when inflicting harm, violence, or physical force, but must take 1 stress to take any other type of action."
-    - "Bleeding Eyes: While afflicted, the exorcist may gain a psyche burst by taking 1d3 stress."
-    - "Ganglia Fever: Afflicted exorcists are feverish, hot, and roll one less resting die."
-    - "Boiling Resentment: At the end of the mission, if you inflicted physical violence on a human, you may erase 2d3 sin. If you do, permanently add to your agenda: make a human pay for their crimes. "
-    - "Blood Scent: When any exorcist suffers an injury, you may gain a psyche burst. If you did this at least once during a mission, permanently add to your agenda: taste blood."
-    - "The Urge: Permanently add to your agenda: kill"
-  url: 'https://i.imgur.com/xiUZsR8.png'
-  combat: >
-    **ATTACKS WITH**: Needle like teeth, razor claws, bone spurs, sickle-like blades, blood soaked weaponry. (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.\n
-
-    **COMPLICATIONS**: Move faster than the eye can see, set everything on fire, give off massive steam or heat, become enraged, expand with additional blades, increase in size and strength, add a bystander, use a domain.\n
-
-    **THREATS**: Cause massive collateral damage. Attempt to tear someone in half. Rip apart humans. Spit torrents of boiling blood. Hurl someone through a roof or wall. Cut everything into ribbons. Inflict a hook. Use a domain. Do something violent, obliterating, or manic.
-  domains:
-    - name: A Shuddering Thing Through a Dark Hall
-      description: >
-        The hound feeds on fear, growing physically larger and stronger from the terror of weaker wills. Once a scene, if there are mundane humans within the local area, as a complication, the hound can manifest for them and start feeding off their fear. Until the exorcists calm the humans down or remove them from the situation, the hound takes -1 slash on its execution talisman from all sources and deals +1 more stress with reactions.
-
-        Exorcists that attempt to harm the hound in any way must first spend 1 stress to suppress their fear. They can suppress this effect permanently as part of any action against the hound by answering the question, asked by the admin: What is it you are most afraid of? However, if they choose to answer, the Admin also rolls two risk dice and picks the lowest result for the triggering action.
-
-    - name: Turning Blades, I Laughed at their Brittleness
-      description: >
-        The hound’s hide becomes incredibly tough and durable, like a beast’s.
-
-        - Each time an action would slash the hound’s execution talisman, roll a 1d6 fortune roll. If the roll is a 1 or 2, reduce all slashes suffered to 1. The hound’s armor has weak spots, however, and any action that is set up or part of teamwork can ignore this effect.
-
-        - Mundane weapons are completely incapable of harming the hound unless they are extremely strong, like a tank cannon or a missile.
-
-    - name: The Catching of the Doe
-      description: >
-        The hound suppresses its nature and becomes a stealthy hunter, able to stalk its prey.
-
-        At the **start of the hunt**, pick an exorcist. Once a scene, during any scene, the Admin may declare that the exorcist gets a glimpse of the hound following them (though it may or may not be real), giving them 1 stress, which cannot inflict an injury. The Admin can trigger this **three times** total a hunt.
-
-        In any conflict scene, the Hound gets a free reaction at the start (roll the risk die as normal), targeting the exorcist it is stalking if possible.
-
-    - name: The Annihilation of the Wicked
-      description: >
-        The hound gains a special affinity for firearms. It can attack at range with guns that it wields or, more often, are fused to its form, emerging when needed.
-
-        - The hound’s attacks gain long range.
-        - As a complication, the hound pins an exorcist down by bullets, bathes them in napalm, concusses them with grenades, etc. That exorcist takes 1 stress after acting until the complication is dealt with, or takes 2 stress if acting requires moving from their current position.
-
-        - As a reaction (1) the hound can permanently absorb all firearms in the same immediate area as it, immediately disarming anyone wielding one, and healing 1 tick on the execution talisman if it absorbed at least one firearm.
-
-    - name: The Fattening of Rage
-      description: >
-        The hound feeds on the power of its Grudge, strengthening it.
-
-        - Once a scene, if the hound slays any mundane human as part of a reaction, it can heal 1 segment on its execution talisman.
-
-        - If the hound has slain at least one of its grudge targets, it increases its execution clock by +2 segments.
-
-        - If the hound has slain all its original grudge targets, it also inflicts +1 stress with all reactions.
-
-    - name: Rile Against Heaven
-      description: >
-        The mere presence of the hound exacerbates the rifts between human and exorcist alike. Humans during this mission never start friendly to the exorcists and are often outwardly hostile.
-
-        The Admin may make a fortune roll if they like (hostile on a 1-2, indifferent or annoyed otherwise).
-
-        They may still become friendly through the exorcist’s actions.
-
-        Any two exorcists that have a disagreement, no matter how minor, may declare it has boiled over into a fight. For the remainder of the hunt they cannot participate in teamwork with other and cannot set each other up. Any feuding exorcists regain a psyche burst if the other takes an injury or affliction, and both gain +1 xp at the end of the mission.
-
-    - name: The Measured Weight of Death
-      description: >
-        The hound gains a supernatural resilience that can only be bypassed by specific methods.
-
-        Often this draws on the superstitions of its host, often along mythological lines, and doesn’t have to conform to any real logic.
-
-        - The hound takes -1 slash on its execution talisman.
-
-        - This effect can be removed for a scene by the exorcists taking action to expose the hound to a specific weakness. The Admin can choose or roll from the list below:
-
-        Silver, Iron, Extreme Heat / Cold, Water, Sunlight
-
-    - name: Bloodying the Steel
-      description: >
-        The rage of the Hound is infectious and can drive its victims into a vicious obsessive cycle. 
-
-        The hound gains the Infectious Grudge affliction.
-
-        Infectious Grudge: While afflicted, the exorcist gains +1D on all actions that inflict physical violence, but also takes +1 stress when they take stress from an external source.
-
-        Any exorcist can voluntarily take this affliction if they are harmed by the hound.
-  trauma:
-    - Who wronged you?
-    - How were you wronged?
-    - What are you unwilling to sacrifice?
-  palace: >
-    A hound’s palace is usually an extremely simple, barely coherent and indistinct landscape of whipping winds, boiling rain, unreal heat, and licking flames. Unlike other palaces, it can often change locations as the hound moves around on its hunt. The entrance is usually located somewhere derelict or wild like in abandoned buildings, drainage canals, junk yards, burnt out cars, or in tree hollows. **Hound palaces are typically**: Hellish, gory, barren, inhospitable, ferocious, chaotic.
-  pressure: >
-    A hound harbors a **grudge** against a specific person or group of people. While its targets are alive, it does its best to track them down and kill them **violently and messily**.
-
-    When setting up the mission, the Admin should designate **three specific people** to be the hound’s grudge targets (which could have expanded from its original target, or could be examples from a group it has a grudge against). A grudge can easily expand to innocent people, such as family members, friends, or co-workers of the perpetrators.
-
-    - When pressure increases, the hound will track down and attempt to kill one of its targets. If the exorcists are present, they can attempt to prevent this with a conflict scene. If not, the target is (brutally) slain!
-
-    - If all targets are killed, the hound picks an NPC the exorcists have met and adds them to its grudge as a new target.
-
-    If pressure goes to maximum, the hound gains +1 CAT and adds **all NPCs and the exorcists to its grudge**.
-  traces:
-    name: Myrmidons
-    description: >
-      Some Hounds produce echoes of themselves, violent creatures arising from the dripping bodily fluids of the Hound or its victims. They shudder uncontrollably and give off a bloody acidic steam when enraged, making them incredibly tough opponents. Fortunately, they are short lived, disintegrating in just a few hours.
-
-      **Myrmidons (sins)**: Execution talisman 2 (solo), 4 (group), 6 (massive group). The have the following features:
-
-      - Deal +1 stress to exorcists who already have an injury
-
-      - Rip exorcists in half when inflicting injuries if it’s the last injury, inflicting instant death instead of putting them on the brink of death.
-
-      **Reactions**:\n 
-      **Inflict stress**. Attacks with: Teeth, claws, ear splitting screaming. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.\n
-      **Or**: create a complication or threat: Grow spines, rake with claws, snap bones in jaws, grow a new limb or head.\n
-      **Or**: Bloody Steam (1-2): Complication. Steam gets in the lungs of nearby exorcists, making impossible to take an action to speak or perfrom strenuous activity (running, climbing, etc) without taking 1 stress first.`
-
-centipde:
-  afflictions:
-    - "Seethe: Pick another exorcist. For every ‘6’ that exorcist rolls on an action, gain 1 stress."
-    - "Limb Necrosis: Limb starts swelling and rotting from the inside (1-2: Arm, 3-4: leg, 6: hand or foot). Activity that would require it is hard."
-    - "Acid Degradation: Mark off 1d3 KP immediately, then mark off 1 more when you rest."
-    - "Alienation: Permanently add to your agenda: ignore a plea for aid."
-    - "Hive Brain: Hallucination from aerosol poison. Performing complicated mental activity such as research or investigation is hard."
-    - "**[Special Hook::CENTIPEDE  BITE]**: This hook counts  as an affliction that you can never remove. It ticks up and down all the same ways a normal hook  does. If the hook ticks up to full, you gain 1d3 sin and stress immediately, and again whenever pressure increases while the hook  is full. The hook can also be ticked down with centipede anti-venom."
-  url: 'https://i.imgur.com/LJFxzUl.png'
-  combat: >
-    **[ATTACKS WITH]**: Dripping fangs, numerous claws, sinuous body, pressurized spit (short range). **(1)** 5 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.
-
-    **[COMPLICATIONS]**: Burrow into the ground or walls, spit poisonous webbing, release swarms of flies, spray pools of poison, reveal hidden burrows, collapse the floor, scuttle hidden into darkness, add a bystander, use a domain.
-
-    **[THREATS]**: Summon the horde. Rip into an exorcist. Unveil rows of hypnotic eyespots. Explode a caustic bubo. Dissolve something with acid. Commit a massacre. Inflict a hook. Use a domain. Do something messy, spiteful, or dripping with venom.
-  domains:
-    - name: The Heralds of Venom
-      description: >
-        The venom in the centipede and its horde becomes boiling and pressurized.
-
-        - The horde can spit venom at short range when inflicting stress. The centipede can spit it at extreme range, like a sniper rifle.
-
-        - The centipede gains a new affliction:
-
-        **BLINDING AGUE**: Can be inflicted as a threat or from a hook. When filled up, eyes become milky white and exorcist becomes unable to see, making activities that rely on sight hard. At the end of mission, roll 1d6, on a ‘1’ this becomes permanent, but exorcist has time to adjust to disability at the start of next mission and it has no further effect.
-
-        Blind exorcists are immune to this affliction.
-    - name: Crumbling Into the Darkling Womb
-      description: >
-        The venom exuded by the centipede becomes an environmental aerosol that starts to degrade everything in the investigation area.
-
-        - Traversing normally safe structures in the area becomes risky or hard as floors start to fall apart, windows melt, and walls collapse
-
-        - Any mundane item the exorcists have pulled out from their kit degrades and becomes unusable when they rest.
-
-        - When pressure increases, 10% of the structures in the area are destroyed. If pressure fills up, 90% of the structures in the area are destroyed.
-    - name: The Knights of Decay 
-      description: >
-        The horde gains dangerous, armored infested. When the infested appear in a scene, one of these usually appear.\n
-
-        **Juggernaut**: Sin/human. Execution talisman 3. At 4+ pressure, increase to 5.
-
-        - Practically immune to mundane weapons unless its armor is exposed.
-
-        - Blind and easily distracted
-
-        **Reactions**:\n
-        Inflict stress. Attacks with: Armored bulk, spines, mandibles. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)** 2 stress.\n
-        **Or**: create a **complication** or **threat**: Grab someone with a mutated claw, charge someone through a wall or floor, knock someone out or daze someone.\n
-        **Or**: **Hive shroud (1/2)**: **Complication**. Start releasing acidic clouds that obscure and burn. All its allies take -1 slash on execution talismans until the Juggernaut is dealt with. Does not stack.
-
-    - name: Gently Rolling Down the Slope of the Abyss
-      description: >
-        The Centipede’s venom is so potent and fast spreading that it begins to cause catastrophic spread.
-
-        - Double the casualties per pressure (to 20%). At full segments (6), the spread begins to go outside of the quarantine zone, requiring cleanup from CAIN and docking the exorcists 2 scrip.
-
-        - When the players meet an NPC, the Admin makes a 1d6 fortune roll. On a ‘1-3’, they have already been bitten but are trying to hide it.
-
-        - As a **tension move**, the Admin can choose an uninfected exorcist or NPC who has fought the infested at least once this mission. The Admin reveals they have been bitten, giving them a Centipede Bite.
-
-    - name: My Children Crawl Quietly
-      description: >
-        The horde gains dangerous, stealthy infested with chameleonic skin. When the infested appear, these appear, always in pairs.
-
-        **Stalkers**: Sin/human. Appear as a pair. Execution talisman 3 in a scene between the two of them. At 4+ pressure, increase to 5.
-
-        - Deal +1 stress to exorcists who are alone or afraid
-
-        - Focus on one target to the exclusion of all others
-
-        Reactions:\n
-        - **Inflict stress**. Attacks with: Scythe claws, venomous spines. (1) 4 stress, (2/3): 3 stress, (4+) 2 stress.\n
-        - **Or:** create a **complication** or **threat**: Kidnap someone, drag someone into darkness, start jumping or flying on locust-like wings
-        - **Or**: Chameleonic Scales (1/2): Becomes nearly invisible, making it **hard** to fight or find them when relying on sight. Next reaction deals +1 stress and ends this effect.
-
-    - name: At the Core, My Rot Unfurls
-      description: >
-        The Centipede is so fueled by spite it refuses to die and instead takes a momentarily more powerful form. When the centipede’s execution clock is filled up, it instead reduces by 4. The centipede then takes on a terrifying final form.
-
-        - End the current round and start a new round
-
-        - In this form, roll the risk die twice and choose the lower result, the centipede takes -1 slash on its talisman and deals +1 stress with all its actions.
-
-        - However, this form is extremely unstable. At the end of the round, after all exorcists have acted, no matter what, the centipede’s form destabilizes, instantly defeating it and allowing the exorcists the opportunity to finish it off.
-
-    - name: I Hide My Knife in the Soft Supple Walls
-      description: >
-        The Centipede is able to set festering traps for the exorcists, extruding parts of its body or using the transformed flesh of its infested horde.
-
-        As a **tension move**, the Admin can declare that for the next scene, the exorcists are about to enter a trapped area (even if they have already explored it). Moving through the area becomes risky by default. Traps can: inflict 1 stress to one or two exorcists, make an area dangerous or hard to move through, afflict an exorcist, inflict a hook. In addition, in any conflict scene with the Centipede, on a ‘1’ risk result a trap also goes off, with the above effects, in addition to any other reactions.
-
-    - name: Making Friends With the Abattoir
-      description: >
-        The Centipede gains power from spite, gaining the following benefits:
-
-        - **Once a scene**, when it or its minions is able to slaughter an innocent person or bystander in view of the exorcists, permanently increase the centipede’s execution clock by 1, to a maximum of four times total.
-
-        - **Once a hunt**, as a tension move, the centipede can reveal a group of human survivors under threat from its forces. If the exorcists rest without aiding the survivors, they are slaughtered and the centipede permanently adds +3 segments to its execution clock.
-  trauma:
-    - What are you trying to escape?
-    - What do you hate the most about humanity?
-    - What do you regret the most?
-  palace: >
-    A centipede’s palace is usually located in a protected location at the center of horde activity, usually somewhere significant to the host or close to the inciting incident.
-
-    The interior of a centipede’s palace often resembles a prison or a dungeon, built to capture the centipede’s host and force them to remain witness to the horrors they have unwittingly (or otherwise) unleashed. This prison can be sterile, cold, or laboratory-like, or medieval and full of barbed hooks and rusted chains. It often manifests horrors or traps to drive out, capture, or kill invaders.
-
-    Centipede palaces are typically: hostile, resentful, grotesque, gory, prison-like, chthonic
-  pressure: 
-    name: Infestation
-    description: >
-      A centipede’s venom, when injected into the human bloodstream, causes a catalyzing psychobiotic reaction that within the space of about an hour mutates that human into an extremely strong, aggressive, and violent monster, a mindless drone that is under the centipede’s control as a queen controls a colony of ants. These infested are able to produce their own centipede venom that they can inject into bitten humans, creating a catalyzing exponential reaction that rapidly creates a horde of these monsters.
-
-      - A human infected with centipede venom will chrysalize, transform, and mutate within exactly 44 minutes. An exorcist gains the centipede bite **affliction** instead.
-
-      - **There is no cure** to centipede venom, but it can be delayed.
-
-      - The only reliable way to end an infestation is to **kill the centipede**. Executing a centipede causes its venom to lose its transformative effect and evaporate. This saves any infected exorcists and any infected but untransformed victims, who can typically recover in a few weeks. Remaining infested victims are dealt with in cleanup and should be considered deceased.
-
-      **Each time pressure increases**, 10% of the local population in the affected area is infected and transformed (so at 3 ticks, 30% of the population is affected). If pressure reaches maximum, the centipede increases in CAT by +1 and this goes up to 90% population loss.
-
-      **Delaying Centipede Venom**:\n
-      Exorcists that are dispatched to Centipede missions are each automatically given one dose of Centipede Antivenom. An exorcist can mark 1 KP to pull out their dose and inject it into someone in hand’s reach.
-
-        - NPCS have their venom suppressed until the exorcists rest, at which time they will need another dose.
-
-      - Exorcists, if they have the Centipede Bite hook, can erase all segments on it. This doesn’t remove the hook, as normal.
-  traces: 
-    name: Infested
-    description: >
-      These mutated humans are essentially minor type II sins, who have been affected by the psycho-biotic poison in their bloodstream. They form into large, animalistic, hive swarms that the centipede can mentally control. Though starting off relatively human in appearance, over time they become more and more mutated and insect like.They typically roam around affected areas in large hordes.
-
-      Infested (sins/humans): Execution talisman 1 (solo), 3 (group), 5 (large group), 7 (full horde). Only appear in large group or horde size at pressure 4+.
-
-      - Slow, clumsy, and unintelligent, but extremely numerous and resilient.
-
-      - Powers that can hit a large area gain +1D against groups of infested.
-
-      Reactions:
-      Inflict stress. Attacks with: Mutated claws, teeth, mandibles. (1) 4 stress, (2/3): 3 stress, (4+): 2 stress. Or: create a complication or threat: Eject venomous spines, knock someone down, alert a bigger horde, explode with caustic bile, jump out from somewhere surprising.
-      Or: Endless (1): More infested arrive on the scene, adding to the execution talisman by 1d3.
-      Or: Infected bite (1): Inflict the Centipede Bite affliction on an exorcist.
-
+  - Who or what pushed you into this hole?
+  - Who or what is keeping you from going over the edge?
+  - What are you most ashamed of?
+  url: https://i.imgur.com/V0GoKJp.png
 toad:
   afflictions:
-    - "Absent Minded: Whenever you roll a ‘1’ on risk, erase 1 KP."
-    - "Wasting Sickness: Reduce max stress by 1 each time you rest. If reduced to 0, you suffer instant death."
-    - "Starvation: All actions are hard until you or an ally mark 1 KP and allow you to eat something. This effect resets and you must eat again after you rest."
-    - "Itchy Fingers: Once a scene, stealing something (anything) gives you 1 psyche burst and 1d3 sin. Permanently add to your agenda: steal."
-    - "Dreaming Desire: When pressure increases, spend 1 psyche burst to daydream about things you want or take 2 stress."
-    - "The Want: Permanently add to your agenda: **take more than you need**."
-  url: 'https://i.imgur.com/nf2usi7.png'
-  combat: >
-    **[ATTACKS WITH]**: Crushing punches and kicks, muscular tongue, pressurized blood spray from eyes (short ranged). (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.
+  - "Absent Minded: Whenever you roll a \u20181\u2019 on risk, erase 1 KP."
+  - 'Wasting Sickness: Reduce max stress by 1 each time you rest. If reduced to 0,
+    you suffer instant death.'
+  - 'Starvation: All actions are hard until you or an ally mark 1 KP and allow you
+    to eat something. This effect resets and you must eat again after you rest.'
+  - 'Itchy Fingers: Once a scene, stealing something (anything) gives you 1 psyche
+    burst and 1d3 sin. Permanently add to your agenda: steal.'
+  - 'Dreaming Desire: When pressure increases, spend 1 psyche burst to daydream about
+    things you want or take 2 stress.'
+  - 'The Want: Permanently add to your agenda: **take more than you need**.'
+  combat: '**[ATTACKS WITH]**: Crushing punches and kicks, muscular tongue, pressurized
+    blood spray from eyes (short ranged). (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.
 
-    **[COMPLICATIONS]**: Leap out of reach on muscular legs or squeeze into a tight space. Entangle in traps. Reveal hidden explosives. Trigger security, or alarms. Vomit slime or disgorge stomach contents. Add a bystander, use a domain.
+    **[COMPLICATIONS]**: Leap out of reach on muscular legs or squeeze into a tight
+    space. Entangle in traps. Reveal hidden explosives. Trigger security, or alarms.
+    Vomit slime or disgorge stomach contents. Add a bystander, use a domain.
 
-    **[THREATS]**: Summon bodyguards. Steal something from the exorcists, collapse or throw something from the environment. Set off a bomb. Kick someone with powerful legs. Swallow something or someone whole. Inflict a hook. Use a domain. Do something crafty, flashy, or shocking.
+    **[THREATS]**: Summon bodyguards. Steal something from the exorcists, collapse
+    or throw something from the environment. Set off a bomb. Kick someone with powerful
+    legs. Swallow something or someone whole. Inflict a hook. Use a domain. Do something
+    crafty, flashy, or shocking.
+
+    '
   domains:
-    - name: Hotel for One
-      description: >
-        The toad is able to use its powerful lungs to suck people into its maw, where they are shunted into a tiny prison-space inside its gullet.
+  - description: 'The toad is able to use its powerful lungs to suck people into its
+      maw, where they are shunted into a tiny prison-space inside its gullet.
 
-        As a **complication** the Toad can suck in an exorcist it is fighting. That exorcist is trapped inside a tiny cage-like extra-dimensional room inside the toad and takes 1 stress before acting while imprisoned until they can escape or their allies can help them escape (set out a talisman for the complication as normal). They are vomited out when they are able to break out of their cage.
+      As a **complication** the Toad can suck in an exorcist it is fighting. That
+      exorcist is trapped inside a tiny cage-like extra-dimensional room inside the
+      toad and takes 1 stress before acting while imprisoned until they can escape
+      or their allies can help them escape (set out a talisman for the complication
+      as normal). They are vomited out when they are able to break out of their cage.
 
-        As a **tension move**, the Toad can kidnap any NPC the exorcists have met off-screen and imprison them in its oubliette, mostly unharmed. Freeing them requires fighting the Toad and may take a talisman.
+      As a **tension move**, the Toad can kidnap any NPC the exorcists have met off-screen
+      and imprison them in its oubliette, mostly unharmed. Freeing them requires fighting
+      the Toad and may take a talisman.
 
-    - name: Greasing the Palms
-      description: >
-        A vile alchemy churns in the toad’s gut.
+      '
+    name: Hotel for One
+  - description: "A vile alchemy churns in the toad\u2019s gut.\nAs a **complication**\
+      \ or **threat**, the toad is able to vomit up a thick, nauseating slime that\
+      \ reeks of expensive perfume. It can be incredibly sticky, incredibly slippery\
+      \ (the toad chooses), and carpets the area of about a large room.\n- Actions\
+      \ that require concentration, quick movement, or manual dexterity become hard\
+      \ in the area.\n- It becomes incredibly hard to keep your footing in the area.\
+      \ Any action that requires moving around by the exorcists rolls two risk dice\
+      \ and picks the lowest.\n"
+    name: Greasing the Palms
+  - description: 'The toad is an especially powerful hoarder, and keeps quantitites
+      of strange items to regurgitate in an emergency.
 
-        As a **complication** or **threat**, the toad is able to vomit up a thick, nauseating slime that reeks of expensive perfume. It can be incredibly sticky, incredibly slippery (the toad chooses), and carpets the area of about a large room.
+      As a **reaction** (1-3), the Toad can forcibly regurgitate items from its gullet.
+      This can inflict stress, cause a **threat** or cause a **complication** as normal.
+      However, roll randomly for the category of item it produces, which may affect
+      the outcome:
 
-        - Actions that require concentration, quick movement, or manual dexterity become hard in the area.
+      1. Vehicle, drivable.
 
-        - It becomes incredibly hard to keep your footing in the area. Any action that requires moving around by the exorcists rolls two risk dice and picks the lowest.
+      2. Explosives
 
-    - name: The Granting of Gifts
-      description: >
-        The toad is an especially powerful hoarder, and keeps quantitites of strange items to regurgitate in an emergency.
+      3. Weapons, ammunition
 
-        As a **reaction** (1-3), the Toad can forcibly regurgitate items from its gullet. This can inflict stress, cause a **threat** or cause a **complication** as normal. However, roll randomly for the category of item it produces, which may affect the outcome:
+      4. Narcotics
 
-        1. Vehicle, drivable.
+      5. Material wealth (gold bars, jewels, etc)
 
-        2. Explosives
+      6. Alcohol (in liquid or bottle form)
 
-        3. Weapons, ammunition
+      Then roll randomly for the size or volume (1d3). Adjust stress suffered by the
+      amount shown if dealing stress.
 
-        4. Narcotics
+      1. Comically smaller than expected (-1 stress)
 
-        5. Material wealth (gold bars, jewels, etc)
+      2. Expected
 
-        6. Alcohol (in liquid or bottle form)
+      3. Unbelievably larger than expected (+1 stress)
 
-        Then roll randomly for the size or volume (1d3). Adjust stress suffered by the amount shown if dealing stress.
+      '
+    name: The Granting of Gifts
+  - description: "The Toad is able to unhinge its jaw to a void-like space and swallow\
+      \ huge chunks of the scenery.\n- It can burrow through solid rock when moving\
+      \ around.\n- The toad inflicts +1 more stress to its target if it is slowed,\
+      \ off balance, immobile, or entangled in some way.\n- **Once a scene**, as a\
+      \ **threat**, it can attempt to devour an area close to it, obliterating all\
+      \ inanimate matter, no matter its toughness. The size of this area depends on\
+      \ the Toad\u2019s CAT.\nOne or two exorcists caught in the area take 2d3 stress\
+      \ if the toad is allowed to execute on the **threat**.\n"
+    name: Wolf Down the Earth
+  - description: "The Toad is artful at lifting items from the exorcists. When an\
+      \ exorcist takes stress from the Toad, they also (the Toad chooses 1): - tick\
+      \ 1 KP. If they don\u2019t have KP to spend, they take +1 more stress - lose\
+      \ a piece of gear instead of taking stress. The KP of the item must equal the\
+      \ stress suffered or less.\n"
+    name: Sticky Fingers
+  - description: 'The Toad is especially careful and crafty, setting up contingency
+      plans.
 
-        1. Comically smaller than expected (-1 stress)
+      **Three times a hunt**, when the exorcists take action, the Admin can narrate
+      a flashback of the Toad setting up a contingency plan, fallback, or trap that
+      it is able to spring. Roll a 3d6 fortune roll. For every 3+, the toad may either
+      inflict 1 stress on the exorcist triggering this domain or reduce any stress
+      suffered from the triggering action by 1.
 
-        2. Expected
+      '
+    name: The Artful Dodger
+  - description: "The Toad stores brainwashed humans inside its gullet, and pulls\
+      \ them out as needed. Humans stored this way are freed when the toad is defeated\
+      \ and have no memory of the incident.\n- The Toad can pull out a human to perform\
+      \ any mundane servile task for it, such as cooking, cleaning, driving, etc.\
+      \ They are completely obedient to the toad and always come out with something\
+      \ convenient to the current situation, such as a guard with a door key, a taxi\
+      \ driver, etc.\n- It can pull out a goon as a **(1-3)** **reaction** in a conflict\
+      \ scene. This creates a **toadspawn** trace with an execution talisman of 1,\
+      \ or adds +1 to an existing trace\u2019s execution talisman.\n- As a **threat**\
+      \ in any conflict scene, the toad can kidnap a mundane human or NPC present,\
+      \ brainwashing them and adding to its collection\n"
+    name: Keeper of the Ludic Menagerie
+  - description: 'The Toad is able to transform matter into material wealth, such
+      as precious gemstones or gold.
 
-        3. Unbelievably larger than expected (+1 stress)
+      By touching any surface or living matter, it can transform it into gemstone
+      or gold. It can use this as a **threat** or **complication** to inflict stress,
+      block the exorcists, or inflict the below affliction.
 
-    - name: Wolf Down the Earth
-      description: >
-        The Toad is able to unhinge its jaw to a void-like space and swallow huge chunks of the scenery.
+      **Midan Touch**: Inflict this on the exorcists with a **threat** or a **hook**.
+      The skin of an arm or leg of the afflicted exorcist slowly becomes turning into
+      gemstone or rock, usually starting from the contact area. Actions that require
+      speed or dexterity from them become hard. When the exorcists finish a rest,
+      they take 3 stress. If this stress would inflict an injury, they instead suffer
+      instant death and turn into a jeweled statue
 
-        - It can burrow through solid rock when moving around.
-
-        - The toad inflicts +1 more stress to its target if it is slowed, off balance, immobile, or entangled in some way.
-
-        - **Once a scene**, as a **threat**, it can attempt to devour an area close to it, obliterating all inanimate matter, no matter its toughness. The size of this area depends on the Toad’s CAT.
-
-        One or two exorcists caught in the area take 2d3 stress if the toad is allowed to execute on the **threat**.
-
-    - name: Sticky Fingers
-      description: >
-        The Toad is artful at lifting items from the exorcists. When an exorcist takes stress from the Toad, they also (the Toad chooses 1):
-        - tick 1 KP. If they don’t have KP to spend, they take +1 more stress
-        - lose a piece of gear instead of taking stress.
-        The KP of the item must equal the stress suffered or less.
-
-    - name: The Artful Dodger
-      description: >
-        The Toad is especially careful and crafty, setting up contingency plans.
-
-        **Three times a hunt**, when the exorcists take action, the Admin can narrate a flashback of the Toad setting up a contingency plan, fallback, or trap that it is able to spring. Roll a 3d6 fortune roll. For every 3+, the toad may either inflict 1 stress on the exorcist triggering this domain or reduce any stress suffered from the triggering action by 1.
-
-    - name: Keeper of the Ludic Menagerie
-      description: >
-        The Toad stores brainwashed humans inside its gullet, and pulls them out as needed. Humans stored this way are freed when the toad is defeated and have no memory of the incident.
-
-        - The Toad can pull out a human to perform any mundane servile task for it, such as cooking, cleaning, driving, etc. They are completely obedient to the toad and always come out with something convenient to the current situation, such as a guard with a door key, a taxi driver, etc.
-
-        - It can pull out a goon as a **(1-3)** **reaction** in a conflict scene. This creates a **toadspawn** trace with an execution talisman of 1, or adds +1 to an existing trace’s execution talisman.
-
-        - As a **threat** in any conflict scene, the toad can kidnap a mundane human or NPC present, brainwashing them and adding to its collection
-
-    - name: The Great Glittering Adversary
-      description: >
-        The Toad is able to transform matter into material wealth, such as precious gemstones or gold.
-
-        By touching any surface or living matter, it can transform it into gemstone or gold. It can use this as a **threat** or **complication** to inflict stress, block the exorcists, or inflict the below affliction.
-
-        **Midan Touch**: Inflict this on the exorcists with a **threat** or a **hook**. The skin of an arm or leg of the afflicted exorcist slowly becomes turning into gemstone or rock, usually starting from the contact area. Actions that require speed or dexterity from them become hard. When the exorcists finish a rest, they take 3 stress. If this stress would inflict an injury, they instead suffer instant death and turn into a jeweled statue
-  trauma:
-    - What do you deserve that was denied to you?
-    - While you were starving, who was feasting?
-    - Where do you draw the line?
-  palace: >
-    A toad’s palace represents a monument to wealth, often as envisioned by its host. On the outside it may be located inside a cramped building or in a tiny apartment block, but on the inside it is typically an opulent, sprawling extravaganza.
-    Toad palaces typically take the form of summer mansions, luxury residences, resorts, casinos, or other places that mix pleasure and commerce. The host may reside at least part time inside the palace due to its space and comfort. Over time the space becomes crammed almost to bursting with the wealth that the toad accumulates, transforming partly into treasure vaults or galleries to either protect or display their largesse.
-    **Toad palaces are typically**: Opulent, gaudy, glitzy, spacious, extravagant, luxurious, comfortable
+      '
+    name: The Great Glittering Adversary
+  palace: "A toad\u2019s palace represents a monument to wealth, often as envisioned\
+    \ by its host. On the outside it may be located inside a cramped building or in\
+    \ a tiny apartment block, but on the inside it is typically an opulent, sprawling\
+    \ extravaganza. Toad palaces typically take the form of summer mansions, luxury\
+    \ residences, resorts, casinos, or other places that mix pleasure and commerce.\
+    \ The host may reside at least part time inside the palace due to its space and\
+    \ comfort. Over time the space becomes crammed almost to bursting with the wealth\
+    \ that the toad accumulates, transforming partly into treasure vaults or galleries\
+    \ to either protect or display their largesse. **Toad palaces are typically**:\
+    \ Opulent, gaudy, glitzy, spacious, extravagant, luxurious, comfortable\n"
   pressure:
+    description: "A toad\u2019s main driving desire is to **acquire as much material\
+      \ wealth as possible** for its host. It steals as much as it can, by various\
+      \ means, based on its host\u2019s desires, storing its prizes inside of its\
+      \ expansive gullet and regurgitating them later inside its palace. A toad\u2019\
+      s larceny can start small, but as time goes on its appetites, both literal and\
+      \ figurative, become more expansive. A host that wanted a faster car in the\
+      \ past, for example, will eventually draw a toad to find the fastest car in\
+      \ town and swallow it, then the next fastest car too, and so on. As time goes\
+      \ on, the amount of material the toad swallows and its avarice inevitably starts\
+      \ to grow out of control, to unreal proportions. Instead of stealing food for\
+      \ its host, for example, it may swallow an entire restaurant, staff and all.\
+      \ In theory a high enough category toad would swallow an entire town, given\
+      \ time. The toad gains power from its hoard. Every time pressure increases,\
+      \ its greed increases too, describing the kind of things it can steal: - 0-2:\
+      \ High worth but mundane items. Money, cars, guns, medicine, food, fashion,\
+      \ high art. - 3-4: Unreal amounts of the above. - 5+: Entire stores, shops,\
+      \ restaurants, yachts, buses, celebrities. At 6+, the toad\u2019s CAT increase\
+      \ by 1 and it gains the ability to steal conceptual or intangible items like\
+      \ abstract wealth, stocks in a company, light, artistic skill, or happiness.\n"
     name: Hoard
-    description: >
-      A toad’s main driving desire is to **acquire as much material wealth as possible** for its host. It steals as much as it can, by various means, based on its host’s desires, storing its prizes inside of its expansive gullet and regurgitating them later inside its palace.
-      A toad’s larceny can start small, but as time goes on its appetites, both literal and figurative, become more expansive. A host that wanted a faster car in the past, for example, will eventually draw a toad to find the fastest car in town and swallow it, then the next fastest car too, and so on. As time goes on, the amount of material the toad swallows and its avarice inevitably starts to grow out of control, to unreal proportions. Instead of stealing food for its host, for example, it may swallow an entire restaurant, staff and all. In theory a high enough category toad would swallow an entire town, given time.
-      The toad gains power from its hoard. Every time pressure increases, its greed increases too, describing the kind of things it can steal:
-      - 0-2: High worth but mundane items. Money, cars, guns, medicine, food, fashion, high art.
-      - 3-4: Unreal amounts of the above.
-      - 5+: Entire stores, shops, restaurants, yachts, buses, celebrities.
-      At 6+, the toad’s CAT increase by 1 and it gains the ability to steal conceptual or intangible items like abstract wealth, stocks in a company, light, artistic skill, or happiness.
   traces:
+    description: "These humans follow the toad or its host through the (very real)\
+      \ promise of the incredible wealth that it accumulates. They can range in anything\
+      \ from regular gangsters to privately hired security. They are often oblivious,\
+      \ brainwashed, or simply willfully ignorant of their paymaster\u2019s true nature.\n\
+      Toadspawn (humans): Execution talisman 1 (solo) 3 (Group) 5 (large group). Mundane\
+      \ humans armed with mundane weaponry - no less deadly. Often has access to cars\
+      \ or security vans.\n**Reactions**:\\n **Inflict stress**: Attacks with: Firearms,\
+      \ close quarters combat techniques. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**:\
+      \ 2 stress.\\n **Or**: create a **complication** or **threat**: Fire a stun\
+      \ gun, charge an exorcist, get in a martial arts hold, pin down with a barrage\
+      \ of gunfire, get in a vehicle, throw a grenade.\\n **Or**: **Threat**: call\
+      \ reinforcements **(1)**. Someone gets on the radio or punches an alarm. Add\
+      \ 1d3 to the execution clock if allowed to follow through.\n"
     name: Toadspawn
-    description: >
-      These humans follow the toad or its host through the (very real) promise of the incredible wealth that it accumulates. They can range in anything from regular gangsters to privately hired security. They are often oblivious, brainwashed, or simply willfully ignorant of their paymaster’s true nature.
-
-      Toadspawn (humans): Execution talisman 1 (solo) 3 (Group) 5 (large group). Mundane humans armed with mundane weaponry - no less deadly. Often has access to cars or security vans.
-
-      **Reactions**:\n
-      **Inflict stress**: Attacks with: Firearms, close quarters combat techniques. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.\n
-      **Or**: create a **complication** or **threat**: Fire a stun gun, charge an exorcist, get in a martial arts hold, pin down with a barrage of gunfire, get in a vehicle, throw a grenade.\n
-      **Or**: **Threat**: call reinforcements **(1)**. Someone gets on the radio or punches an alarm. Add 1d3 to the execution clock if allowed to follow through.
-
-lord:
-  afflictions:
-    - "Reality Control: Must spend 1 stress to spend any amount of KP in the kingdom."
-    - "Pain of Loss: Forced to psychically experience the same catastrophe as the Lord’s host. When the lord or its host is harmed, also take 1 stress. Ends if exorcist takes an injury."
-    - "Kingdom infection: Mark off 1 KP when pressure increases, then manifest something comforting and small for your exorcist, like a treat or book."
-    - "Hitchhiker: Always count as in the Kingdom for the purposes of the Lord’s powers."
-    - "Welcome Home: Gain +1 max psyche burst in the kingdom, regain max psyche burst when resting in the kingdom, but become unable to use blasphemies outside."
-    - "Justiciar: Permanently add to your agenda **punish wickedness**."
-  url: 'https://i.imgur.com/4MH7dXh.png'
-  combat: >
-    **[ATTACKS WITH]**: Shimmering blades, armored gauntlets, shining medieval weaponry, beams of fire (long range). (1) 5 stress, (2/3): 3 stress, (4+): 2 stress.
-
-    **[COMPLICATIONS]**: Twist the world or landscape, extend the Kingdom, throw false accusations, bind an exorcist in chains, blind with scorching light, extend shining armor plating, raise a glittering shield, add a bystander, use a domain.
-
-    **[THREATS]**: Smite with fire, pass judgement from the heavens, hurl into a psychic prison, force an exorcist to confront their own crimes, grasp with an armored fist, impale with holy spikes, Inflict a hook. Use a domain. Do something righteous, scathing, or dominating.
-  domains:
-    - name: Stricture of Manifestation
-      description: >
-        The Lord or its host gain increased control over reality inside its Kingdom, granting them the following powers. It can use these as **threat**s or **complication**s:
-
-        - Cause any object up to the size of a small building to coalesce and appear in a few moments.
-
-        - Invert or choose the direction and strength of gravity, or even make space curved
-
-        - Change the weather or change the biome of an area, such as from sunny to snowy
-
-        - Rearrange the interiors and layouts of buildings, streets, or corridors In addition, as a **threat** or a tension move, the Lord can dismiss any psychic power caused by the exorcists that has a sustained effect (like a summon or curse). This only works inside the kingdom.
-
-    - name: Stricture of Superiority
-      description: >
-        The Lord fights more fiercely the less exorcists play by the rules of the Kingdom. At the start of the round in a conflict scene, the Lord can take one of the following stances. Exorcists that don’t fulfill the requirements are punished. It must switch to a different stance each round.
-
-        - **Honorable Fighting**: Exorcists that participate in teamwork or setup take 1 stress.
-
-        - **Grand Melee**: Exorcists acting without benefiting from teamwork or setup find it hard.
-
-        - **Duel**: The Lord chooses an exorcist. That exorcist deals +2 more slashes on the Lord’s execution talisman, but all other exorcists deal 1 less slash to the Lord this round.
-
-    - name: Stricture of Banishment
-      description: >
-        The lord can banish exorcists, making them gradually phase out of reality while inside the kingdom. **as a tension move** or a **threat**, the Lord can give an exorcist the following affliction: \n
-
-        **BANISHED**: Starting to fade from reality, with the following effects:
-
-        - Interacting with the physical world inside the kingdom without using psychic powers becomes hard. However, can also slip through walls and objects like a ghost.
-
-        - When pressure increases, take 1 stress. If this stress inflicts an injury, suffer instant death instead and disappear completely.
-
-    - name: Stricture of Control
-      description: >
-        The lord’s power is intense and bleeds out over the investigation area like an iron net. On this mission, the Admin, choosing for the Lord can forbid three items from the following list:
-
-        - Swearing
-
-        - Speaking the name of the Lord or its host (in vain or otherwise)
-
-        - Uncovering skin between the ankles, wrists, and neck in view of the opposite sex
-
-        - Drinking, eating, or smoking anything not blessed by the Lord
-
-        - Touching another person skin to skin without consent of the Lord
-
-        - Entering the palace of the Lord without praying first
-
-        These rules become known instantly to anyone upon entering the kingdom. Once a scene, when an exorcist would break one of these rules, they take 1d3 stress. If the Admin misses an occurrence of one of these rules being broken but an exorcist reminds them, that exorcist can gain 1 xp. This can only trigger once a session per exorcist.
-
-    - name: Stricture of Memory
-      description: >
-        The lord’s power is regressive and nostalgic. Inside its Kingdom, it returns everything to a **previous era** (real or imagined) desirable to its host, such as the European middle ages, Edo Japan, 1950s America, or 1st century Judea.
-        Weapons, gear, and technology that would not exist in that era are converted into similar equivalents inside the Kingdom, or simply do not exist while inside the Kingdom. For example firearms becoming crossbows, or a GPS system becoming a hand drawn map. If the Admin judges this would affect a roll, they can make it hard. All clothing, hairstyles, etc also changes to fit. They revert upon exiting.
-
-    - name: Stricture of Alignment
-      description: >
-        **as a tension move**, the Lord can give a randomly rolled role **affliction** to one of the exorcists inside its kingdom, as the kingdom attempts to absorb them. A role, once given, gives a new (temporary) agenda item to the afflicted exorcist until the end of the mission, as well as forbidden activities, which become hard for the afflicted inside the kingdom. An exorcist can only have one role at once.
-
-        1. **Peasant**: Agenda: Act in extreme deference to others. Forbidden: Acting in defiance of an order.
-
-        2. **Priest**: Agenda: Obey the Lord. Forbidden: Lying, Cheating, taking the Lord’s name in vain. 
-
-        3. **Bandit**: Agenda: Steal something. Forbidden: Setup actions or teamwork.
-
-        4. **Sage**: Agenda: Demonstrate your erudition and knowledge. Forbidden: Any physically demanding activity.
-
-        5. **Knight**: Agenda: Protect the residents of the kingdom. Forbidden: Striking a woman. Lying, cheating, or dirty fighting.
-
-        6. **Noble**: Agenda: Humiliate your inferiors. Forbidden: Deferring to an inferior. Dirtying your hands
-
-    - name: Stricture of Narrative
-      description: >
-        The lord and its host gain control over reality to the point of being able to reverse causality.
-
-        - **Three times a hunt**, when an exorcist rolls an action roll and sees the final result, the lord or its host can declare that events did not actually play out that way, as though they were narrating a story. This completely un-does the outcome of the roll.
-
-        - The targeted exorcist gains 1 psyche burst. They can then either re-roll the action, taking the second result as final, or lose the outcome and gain an additional 1d3 psyche burst.
-
-    - name: Stricture of The Flaming Sword
-      description: >
-        The Lord has a **Guardian**, a sin-construct that patrols the Kingdom with a careful eye and an iron fist. It may take the form of an officer of the law, a winged, beautiful humanoid, or a metallic, geometric construct. If destroyed, it reforms in the Lord’s palace when pressure increases.
-
-        **Guardian** (sin). Execution talisman 3+CAT.
-
-        - Heavily armored and immune to mundane weaponry
-
-        - The guardian can move around rapidly while inside the kingdom. It can’t exist outside the kingdom.
-
-        - The guardian is axiomatic and is incapable of deceit or lying. It always knows when someone is lying in its presence.
-
-        **Reactions**:\n
-        **Inflict stress**. Attacks with: Long ranged weapon (extreme range), brutal melee strikes. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.
-
-        **Or**: create a **complication** or **threat**: Imprison someone in a cage of light, blind with glaring beams, swoop high into the air, summon
   trauma:
-    - What did you lose?
-    - What is the main thing you would fix about the world?
-    - Who did you regret leaving behind when you ascended to your Kingdom?
-  palace: >
-    A lord’s palace is always nestled in the center of their kingdom, and therefore always requires traversing the kingdom itself to reach. More often than not, it resembles an actual palace in size and form - or something similarly important and imposing, such as a high rise skyscraper, corporate headquarters, government office, or temple.
-
-    **The palace of a lord** is typically a bustling place full of servants or subsidiaries going about their business - minor sins, figments of the host’s imagination, or captive humans that have been absorbed into the narrative of the kingdom. Lord’s palaces are typically: Imposing, grandiose, august, monumental, stony, hallow
-  pressure:
-    name: Kingdom
-    description: >
-      The archetypical Lord creates a Kingdom, an alternate parasite reality growing outward from its palace that overlaps our own. The kingdom can be accessed freely by the lord and its host, and can be squirreled away in impossible spaces - accessible through closet doors, hallways, restaurant back alleys, etc. Eventually it starts to bleed over and pull parts of the real world into it, consuming space and the unwitting humans inside. From the outside, humans cannot see the kingdom even as it consumes the real world, and may merely walk down a street and unwittingly pass into an alternate reality.
-
-      Inside the Kingdom, the world may appear as the world currently does, or a historical or even fantastical version of the world, such as a futuristic city, a glittering heaven, or a medieval castle - dependent on the latent desires of the host. In this world, all that the host has lost is returned to them and more. It presents an alternate reality that is both more convenient and fulfilling to the host and also conforms to their beliefs and outlook, coddling and supporting them.
-
-      Events, history, and even humans may be altered drastically inside. Therefore humans that on the outside of the kingdom may be hostile to the host might be their friends inside, mistakes the host has made in the past or their own failings might be papered over or made whole - or even celebrated. In this world, the host is the absolute ruler (or the Lord as their regent if they are unwilling) and may change the laws of reality as they wish. These strictures completely consume mundane humans and are strong enough to even effect exorcists.
-
-      **Each time pressure increases**, the kingdom expands to a new area of the real world, increasingly rapidly in size. Humans consumed by it are unaware of the change. If pressure is 6+, the **kingdom consumes the whole investigation area**, and the Lord’s CAT increases by +1. 
-
-      A kingdom collapses when the host or the Lord is defeated, ejecting anything brought into it, including humans - who typically have no memory of their time inside.
-
-  traces:
-    name: Guards
-    description: >
-      A lord’s kingdom always has guards patrolling it. These guards are sins that typically take the form of authority figures or soldiers. They are completely subservient to the Lord and their appearance and behavior is shaped at their whim. Some kingdoms may have guards that are imposing human soldiers with their face shaded under security caps or helms, while others may have beast-like demons wielding medieval weaponry that punish unbelievers.
-
-      **Guards** (sins): Execution talisman **2** (solo), **4** (squad), **6** (small army)
-
-      - Armed with cruel weaponry and outstanding senses.
-
-      - Incapable of existing outside the kingdom\n
-
-      **Reactions**:\m
-      **Inflict stress**. Attacks with: Cruel close combat weaponry, fists and kicks. **(1)** 4 stress, **(2/3)**: 3 stress, **(4+)**: 2 stress.
-
-      **Or**: create a **complication** or **threat**: Trap an exorcist and pile on, pull an exorcist away in chains, disable an exorcist with a painful strike, threaten bystanders as collaborators, call in a prison vehicle, produce a heavy weapon.
-
-      **Or**: **Sound the Alarm (threat, 1-2)**: Alert the Lord or any other nearby guards to the exorcists’ current position. If more guards show up, refresh the execution talisman by 1d3.
-
-
+  - What do you deserve that was denied to you?
+  - While you were starving, who was feasting?
+  - Where do you draw the line?
+  url: https://i.imgur.com/nf2usi7.png
