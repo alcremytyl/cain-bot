@@ -352,6 +352,7 @@ blasphemy:
   tension:
     description: Project powerful fields of force to block, cut, or entrap.
     emoji_id: 1353597857667616831
+    color: 0xFF0000
     passive:
       - Iron Soul
       - When you would lose your last point of stress, roll 1d6. On a 4+, you
@@ -424,6 +425,7 @@ blasphemy:
   ardence:
     description: Manipulate potential energy into furious destruction
     emoji_id: 1353597616272838686
+    color: 0xFF0000
     passive:
       - Inner Furnace
       - You can take an Unstable Power hook as part of using any Ardence power
@@ -520,6 +522,7 @@ blasphemy:
   flux:
     description: Tap into the ebb and flow of time.
     emoji_id: 1353597739656679424
+    color: 0xFF0000
     passive:
       - Steal Time
       - Once a mission, you can re-roll all your resting dice for yourself or an
@@ -608,6 +611,7 @@ blasphemy:
         6. Your face looks a little different. The changes are permanent.
   vector:
     description: Imbue anything you touch with a strong burst of velocity.
+    color: 0xFFC800
     emoji_id: 1353597860829986896
     passive:
       - Brake
@@ -671,6 +675,7 @@ blasphemy:
           - You can pick up objects and move them around through the air but they cannot be any bigger or heavier than a laptop or a full briefcase.
   gate:
     description: Manipulate space as a sculptor works with clay
+    color: 0xFFC800
     emoji_id: 1353597745700667393
     passive:
       - Pocket
@@ -758,6 +763,7 @@ blasphemy:
           For each choice, the Admin rolls 1d6. If they roll at least one ‘1’ the Admin gains one use of this power against you at your current CAT and can activate it any time they like.
   smother:
     description: Suppress innate properties of things, like friction, sound, or light.
+    color: 0xFFC80
     emoji_id: 1353597816483745792
     passive:
       - Absentia
@@ -862,6 +868,7 @@ blasphemy:
   whisper:
     description: Your shadow talks to you. It knows the future.
     emoji_id: 1353597864026177647
+    color: 0x0974F3
     passive:
       - Shadow
       - You harbor a separate being that follows you everywhere, even when you
@@ -937,8 +944,8 @@ blasphemy:
 
           You may gain or grant +1D when you or any ally next acts to take advantage of this power.
   edit:
-    description: Change yourself, the world, or others by pulling from different
-      possible realities
+    description: Change yourself, the world, or others by pulling from different possible realities
+    color: 0x0974F3
     emoji_id: 1353597721688408064
     passive:
       - Mimic
@@ -1083,6 +1090,7 @@ blasphemy:
   palace:
     description: The contents of your mind are a tangible place you can visit
     emoji_id: 1353597886398468156
+    color:  0xF600FF
     passive:
       - Sanctum
       - >-
@@ -1164,6 +1172,7 @@ blasphemy:
   jaunt:
     description: Separate body and soul, perception and flesh
     emoji_id: 1353597766617530369
+    color:  0xF600FF
     passive:
       - Ghostwire
       - You can join your mind telepathically with one other willing person you
@@ -1249,6 +1258,7 @@ blasphemy:
           Gain or grant +1D when you or an ally next acts on the answers.
   sympathy:
     description: Pull on the innate connections to human tools or objects
+    color:  0xF600FF
     emoji_id: 1353597836721258518
     passive:
       - Resonance
@@ -1329,15 +1339,12 @@ blasphemy:
           Allies have to be able to interact with it or use the object to gain its benefits. The object doesn’t gain the ability to actually move or animate in any way, but fortune simply bends around it.
 description:
   rest: >
-    Exorcists that rest are recovering and letting time pass. The exorcists must
-    decide to rest as a group. If they do, pressure always increases by 1. Each
-    exorcist rolls 2d3, then takes each die and assigns it to an item from the
-    following list. They are able to make the same choice twice. Regain that
-    many psyche bursts. Recover stress equal to the d3- Erase slashes on a hook
-    equal to the d3Resting also ends the effects of some powers and abilities,
-    or resets others.
+    Exorcists that rest are recovering and letting time pass. The exorcists must decide to rest as a group. If they do, pressure always increases by 1. Each exorcist rolls 2d3, then takes each die and assigns it to an item from the following list. They are able to make the same choice twice. Regain that many psyche bursts. Recover stress equal to the d3- Erase slashes on a hook equal to the d3Resting also ends the effects of some powers and abilities, or resets others.
   advances: >
-    Any time your experience bar is full (4 segments), you cash it out for an advance. You can bank these advances and spend an advance after a session in the following ways: - Gain a new agenda ability, 
+    Any time your experience bar is full (4 segments), you cash it out for an advance. You can bank these advances and spend an advance after a session in the following ways: 
+
+    - Gain a new agenda ability, 
+
     - Gain a new blasphemy power or a new, blasphemy,  
 
     - Evolve a sin mark and roll for a new ability for that sin mark. On duplicate, choose,  
@@ -1345,13 +1352,8 @@ description:
     - Gain 3 scrip,
 
     - Improve a skill by 1. You can do this six times,  total, and have only two skills at 3 maximum
-  sin_overflow: >
-    If an exorcist would exceed their sin overflow limit, which is normally 10,
-    they go into sin overflow at the end of the scene. They lose control of the
-    psychic energies in their body, which start to run wild and begin their
-    transformation into a new sin. A character in Sin Overflow has two choices:
-    give up or resist.
-
+  sin overflow: >
+    If an exorcist would exceed their sin overflow limit, which is normally 10, they go into sin overflow at the end of the scene. They lose control of the psychic energies in their body, which start to run wild and begin their transformation into a new sin. A character in Sin Overflow has two choices: give up or resist.
 
     ## Give Up
 
@@ -1369,7 +1371,7 @@ description:
     ## Sin Marks
 
     A sin mark is a physical manifestation of wild power overflow on your body, evidence of your partial transformation into a sin. You can find descriptions regarding sin marks by doing `/describe sin mark`. A sin mark is a new, permanent part of your character. It grants new, beneficial power, and grants you new abilities.
-  sin_mark: >
+  sin mark: >
     Roll 1d6 for mark, then 1d6 on that mark for ability. If you gain a mark
     from a source other than sin overflow,you must still randomly roll for the
     ability.
@@ -1381,7 +1383,7 @@ description:
     - You increase your resistance rolls and lower your sin overflow cap by 1 for each sin mark you have.
 
     - Sin marks can affect whether rolls are hard or risky,and some grant bonus die or special abilities.
-  sin_mark-eyes: >
+  "sin mark: eyes": >
     Typical Appearance or Manifestation
     
     Black or altered sclera, white iris, split, slit, or duplicate pupil.
@@ -1397,7 +1399,7 @@ description:
     5. You can see clearly in the dark and are unaffected by darkness, weather, or obscurement.
 
     6. Gain +1D to Surveillance. This could put you up to 4D.
-  sin_mark-jaw: >
+  "sin mark: jaw": >
     Typical Appearance or Manifestation:
     
     Split or extended jaw, pharyngeal jaw, fangs, black tongue, viscous saliva.
@@ -1414,7 +1416,7 @@ description:
     5. Once a mission, you can give a short, one word command to a human, who then immediately attempts to follow it to the best of their ability. Humans will not obey obviously harmful commands.
 
     6. Gain +1D to Authority. This could put you up to 4D.
-  sin_mark-chest_or_back: >
+  "sin mark: chest or back": >
     Typical Appearance or Manifestation:
 
     Spines, lesions, skin discoloration or warping, rapid regeneration, hardened or loose skin or scales, vestigial wings, extra ribs.
@@ -1431,7 +1433,7 @@ description:
     5. Automatically erase 1 stress when pressure increases.
 
     6. Gain +1D to Conditioning. This could put you up to 4D.
-  sin_mark-arms_or_hands: >
+  "sin mark: arms or hands": >
     Typical Appearance or Manifestation: 
     
     Claws, split hand or harm, extra arm, twisting skin or muscles, discoloration, extra fingers.
@@ -1448,7 +1450,7 @@ description:
     5. You can re-roll any force or interfacing roll, taking the second result as final. If you do, gain 1d3 sin.
 
     6. Gain +1D to Force. This could put you up to 4D
-  sin_mark-skin_hair_or_legs: >
+  "sin mark: skin, hair or legs": >
     Typical Appearance or Manifestation:
 
     Major discoloration or bleaching, transparent skin, warping of gait, digitigrade or multiple legs, patchiness, change in hair color.
@@ -1495,7 +1497,7 @@ description:
     up amongst any number of targets in range.
 
     "
-  severe_attack: >
+  severe attack: >
     A severe attack is a limited but much more powerful attack that typically
     inflicts more harm, conditions, or even injuries or hooks on exorcists. When
     a sin makes a severe attack, it immediately initiates a challenge that
@@ -1542,7 +1544,7 @@ description:
     - hooks reset after each mission, so a character should start a mission with no hooks 
 
     - when an exorcist rests during a hunt, they can remove slashes on a hook
-  fate_rolls: >
+  fate rolls: >
     If the Admin does want to leave something up to chance, they can make a fate
     roll, rolling a 1d6.
 
@@ -1569,7 +1571,7 @@ description:
 
 
     And so on
-  straight_rolls: >
+  straight rolls: >
     Not all action rolls are risky. If there is no clear and present consequence
     or danger, there’s no risk involved and the roll is a straight roll without
     the risk die being rolled at all. A player might make straight rolls when:
@@ -1583,7 +1585,7 @@ description:
     - working on a project
 
     - taking action where the result is unclear but the outcome isn’t necessarily dangerous, like trying to hotwire a car or pick a lock.
-  threat_rolls: >-
+  threat rolls: >-
     The Admin may have a sin threaten to do something more severe than an
     immediate reaction, giving the exorcists a chance to react. 
 
@@ -1625,7 +1627,7 @@ description:
     As always, the admin can refer to the risk die for the severity of these outcomes.
 
     "
-  hard_rolls: >
+  hard rolls: >
     Hard is very simple. If an action is judged to be hard, a character only
     scores successes on a 6. The Admin may judge a task to be hard if it the
     approach is beyond a character’s typical capabilities, if they are under
@@ -1647,7 +1649,7 @@ description:
     - conducting research on a blood sample without appropriate tools
 
     - trying to fight while hanging off the side of a building
-  impossible_rolls: >
+  impossible rolls: >
     The Admin is always able to say a roll is impossible given the
     circumstances. Players can always change this by changing these
     circumstances - using tools, abilities, or resources they have available to
@@ -1750,3 +1752,13 @@ description:
 
 
     Many of them have existing abilities or details on their sheets that can be used as inspiration to inflict consequences. Sins even have a reaction list they can use in conflict scenes that give explicit outcomes.
+category:
+  - - "Category Overview"
+    - "Sins are powerful supernatural forces, and Exorcists the weapons used to combat them. Sins may easily surpass human limits. Unfortunately, exorcists are limited by the general limits of human capabilities.\nHowever their powers, Blasphemies, are not. Much like natural disasters, both sins and exorcists are rated by Category, generally indicating their power, usually written as CAT. As each increase in category, the speed, scale, and strength of their capabilities increase drastically.\n- Category goes from 0-7, with Category 0 being general human capabilities. Anything mundane an exorcist does is usually at CAT 0.\n- Exorcists’ themselves are rated from category 1 to 5, but can sometimes push past CAT 5. This describes the capabilities of their powers.\n"
+  
+  - - "Mundane vs supernatural"
+    - "Anything mundane an exorcist does to try and harm or subdue a supernatural force such as a sin is hard by default. Their capabilities and equipment are the general capabilities of a (well trained) human, usually rated at CAT 0.\nHowever, their supernatural powers are able to surpass this limit: an exorcists’s blasphemies increase in category with them."
+
+  - - "Using Category"
+    - "Category determines the general size, strength, and scale of things in fictional terms. For example:\n- A car versus a 16 wheeler freight truck\n- A couple humans versus a whole crowd of humans\n- A shack versus a skyscraper\n- A handgun versus a bazooka\nThe Admin can use the category of something to figure out whether:\n- a roll is hard or risky for a character. A roll is typically hard or risky if the target of a power is higher category. Conversely, a roll can be less risky or hard if the target of a power is of a lower category.\n- a roll is impossible for a character given their current capabilities. For example, a character that can lift objects with their powers and is Category 4 could easily lift a car (CAT 3), but would probably find it impossible to lift a skyscraper (CAT 7). Generally tasks that are three or more categories higher than an actor are impossible for them- A roll is even required for a task, typically if it’s three or more categories lower. For example, an exorcist throwing a building at a single mundane human probably wouldn’t have to roll at all to crush them like an insect.\n- a character can do something beyond human capabilities, and to what extent These capabilities are usually listed out in short form in each power entry.\n"
+

@@ -55,7 +55,7 @@ class Paginator(View):
             case builtins.dict(p):
                 e = Embed(description=f"### {p['name']}\n{p['description']}")
             case builtins.tuple(p):
-                e = Embed(description="### " "\n".join(self.pages[self.current]))
+                e = Embed(description="### " + "\n".join(self.pages[self.current]))
 
         if self.url_as_thumb:
             return e.set_thumbnail(url=self.url)

@@ -3,6 +3,9 @@ from discord.ext.commands import Bot, when_mentioned_or
 
 from src.globals import COGS, OWNER_IDS, TALISMAN_CHANNEL
 
+# TODO:
+# deprecate state.yaml
+
 
 class CainClient(Bot):
 
@@ -35,7 +38,3 @@ class CainClient(Bot):
 
 
 client = CainClient()
-
-
-# TODO talismanize this
-# NOTE: gives you a message id to work with, HUGE!!!

@@ -1,16 +1,24 @@
-from discord.app_commands import Choice
+import Levenshtein
+import yaml
 from pprint import pprint
 
-from src.cogs.sin import Sin
-from src.helpers import open_yaml
+with open("./data/description.yaml", "r") as f:
+    data = yaml.safe_load(f)
+    agendas: dict = data["agenda"]
+    blasphemies: dict = data["blasphemy"]
+    description: dict[str, str] = data["description"]
+    catchart_data = tuple(tuple(d) for d in data["category"])
 
 
-with open_yaml("./data/assets.yaml") as _data:
-    severe = _data["severe"]
-with open_yaml("./data/sins.yaml") as _data:
-    blasphemies: dict = _data
-    blasphemy_autocomplete = [
-        Choice(name=k.title(), value=k) for k in blasphemies.keys()
-    ]
+def name_from_ability(ability: str | None) -> str | None:
+    if ability is None:
+        return None
 
-pprint({k: Sin(**v) for k, v in blasphemies.items()})
+    for name, _data in data["blasphemy"].items():
+        for a in _data["abilities"]:
+            if ability.title() == a[0]:
+                return name
+    return None
+
+
+print(name_from_ability("sabre"))
