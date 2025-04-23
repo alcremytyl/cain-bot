@@ -29,14 +29,18 @@ class WikiCog(Cog, name="wiki"):
 
     async def _ability_cmp(self, ctx: Interaction, current: str) -> list[Choice]:
         try:
-            name = ctx.namespace["name"]
+            name = ctx.namespace["name"].lower()
         except KeyError:
             name = ""
 
-        if name.lower() in blasphemies.keys():
-            d = [a[0] for a in blasphemies[name.lower()]["abilities"]]
-        else:
-            d = blasphemy_abilities
+        d = (
+            [a[0] for a in blasphemies[name.lower()]["abilities"]]
+            if name in blasphemies.keys()
+            else blasphemy_abilities
+        )
+
+        if len(current) == 0:
+            return [Choice(name=k, value=k) for k in d[:25]]
 
         items = tuple(
             filter(
@@ -62,6 +66,8 @@ class WikiCog(Cog, name="wiki"):
                     return name
         return None
 
+    # TODO: overview command with a view
+
     @command(name="blasphemy")
     @choices(name=[Choice(name=k, value=k) for k in blasphemies.keys()])
     @autocomplete(ability=_ability_cmp)
@@ -72,36 +78,52 @@ class WikiCog(Cog, name="wiki"):
         ability: StringArg,
         ephemeral: bool = True,
     ):
-        e = Embed()
-
+        e: Embed
         if name is None and ability is None:
-            e.title = f"{CAIN_EMOTE} BLASPHEMIES"
+            e = Embed(title=f"{CAIN_EMOTE} BLASPHEMIES")
             for k, v in blasphemies.items():
                 e.add_field(name=f"**{k.upper()}**", value=v["description"])
+
         elif name is not None and ability is None:
             b = blasphemies[name]
             a = [ab[0] for ab in b["abilities"]]
             p = b["passive"]
 
-            e.color = b["color"]
-            e.description = b["description"]
-            e.title = f"{CAIN_EMOTE} {name.upper()}"
+            e = Embed(
+                color=b["color"],
+                description=b["description"],
+                title=f"{CAIN_EMOTE} {name.upper()}",
+            )
             e.set_thumbnail(url=emote_link(b["emoji_id"]))
             e.add_field(name=f"PASSIVE: __{p[0]}__", value=p[1], inline=False)
-            e.add_field(name=f"ABILITIES", value="- " "\n- ".join(a), inline=False)
+            e.add_field(name=f"ABILITIES", value="- " + "\n- ".join(a), inline=False)
 
-            if (e := b.get("extra")) is not None:
-                e.add_field(nam=f"Extra Mechanic: __{e[0]}__", value=e[1], inline=False)
+            if (ex := b.get("extra")) is not None:
+                e.add_field(
+                    name=f"Extra Mechanic: __{ex[0]}__", value=ex[1], inline=False
+                )
+
         elif (name := self.name_from_ability(ability)) is not None:
             ability = str(ability)  # never None
+
             b = blasphemies[name]
-            a = b[ability]
-            e.color = b["color"]
-            e.title = f"{CAIN_EMOTE} {name.upper}"
+
+            tags: str = ""
+            desc: str = ""
+
+            for n, tags, desc in b["abilities"]:
+                if name.title() == n.title():
+                    break
+
+            e = Embed(
+                color=b["color"],
+                title=f"{CAIN_EMOTE} {name.upper()}::{ability.upper()}",
+                description=f"*{tags}*\n\n{desc}",
+            )
             e.set_thumbnail(url=emote_link(b["emoji_id"]))
 
-            # TODO:
-            # for ab in
+        else:
+            e = Embed(description="Dev did a fumble")
 
         await ctx.response.send_message(embed=e, ephemeral=ephemeral)
 

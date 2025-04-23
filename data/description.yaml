@@ -675,7 +675,7 @@ blasphemy:
           - You can pick up objects and move them around through the air but they cannot be any bigger or heavier than a laptop or a full briefcase.
   gate:
     description: Manipulate space as a sculptor works with clay
-    color: 0xFFC800
+    color: 0xFFC7FF
     emoji_id: 1353597745700667393
     passive:
       - Pocket
@@ -763,7 +763,7 @@ blasphemy:
           For each choice, the Admin rolls 1d6. If they roll at least one ‘1’ the Admin gains one use of this power against you at your current CAT and can activate it any time they like.
   smother:
     description: Suppress innate properties of things, like friction, sound, or light.
-    color: 0xFFC80
+    color: 0xFFC800
     emoji_id: 1353597816483745792
     passive:
       - Absentia
