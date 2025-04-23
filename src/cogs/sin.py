@@ -11,7 +11,7 @@ from discord.ext.commands import Cog, GroupCog
 from discord.ui import Select, View, select
 
 from src.bot import CainClient
-from src.helpers import open_yaml
+from src.helpers import emote, open_yaml
 from src.transformers import StringArg
 
 with open_yaml("./data/sins.yaml", False) as blasphemies:
@@ -53,6 +53,7 @@ class Sin:
             [f"{i+1}. {_t}" for (i, _t) in enumerate(self.afflictions)]
         )
 
+        # TODO: use a view
         _domains = ""
 
         _trauma = (
@@ -64,16 +65,31 @@ class Sin:
             "clock from the psychic trauma, which cannot reduce it below 1.*"
         )
 
+        d: dict = {}
+
+        def _edit_embed(e: Embed):
+            setattr(
+                e,
+                "title",
+                f"<:{self.name.lower()}:{self.emoji_id}> {self.name.upper()}",
+            )
+            return e.set_thumbnail(url=self.severe)
+
         self.embed_map = {
-            "afflictions": Embed(description=_afflictions).set_thumbnail(url=self.url),
-            "combat": Embed(description=self.combat).set_thumbnail(url=self.url),
-            "domains": Embed(description=_domains).set_thumbnail(url=self.url),
-            "palace": Embed(description=self.palace).set_thumbnail(url=self.url),
-            "pressure": Embed(**self.pressure).set_thumbnail(url=self.url),
-            "overview": Embed(description=self.overview).set_thumbnail(url=self.url),
-            "severe": Embed().set_thumbnail(url=self.severe),
-            "traces": Embed(**self.traces).set_thumbnail(url=self.url),
-            "trauma": Embed(description=_trauma).set_thumbnail(url=self.url),
+            "severe": Embed().set_image(url=self.severe),
+            **{
+                k: _edit_embed(v)
+                for k, v in {
+                    "afflictions": Embed(description=_afflictions, **d),
+                    "combat": Embed(description=self.combat),
+                    "domains": Embed(description=_domains),
+                    "palace": Embed(description=self.palace),
+                    "pressure": Embed(**self.pressure),
+                    "overview": Embed(description=self.overview),
+                    "traces": Embed(**self.traces),
+                    "trauma": Embed(description=_trauma),
+                }.items()
+            },
         }
 
     @cached_property
@@ -117,20 +133,17 @@ class SinCog(GroupCog, name="sin"):
     async def send_embed(
         self,
         ctx: Interaction,
-        sin_key: str | None,
+        sin_key: str,
         field_key: str,
         ephemeral: bool = True,
     ):
-        if sin_key is None:
-            return await ctx.response.send_message(
-                "Screech at the dev something went awful.", ephemeral=True
-            )
-
+        sin_key = sin_key.lower()
         send = lambda em, eph: ctx.response.send_message(
-            embed=em, ephemeral=eph, view=SinView(self, sin_key, field_key)
+            embed=em,
+            ephemeral=eph,  # view=SinView(self, sin_key, field_key) # TODO: [NEXT] impl views
         )
 
-        if sin_key.lower() not in sins.keys():
+        if sin_key not in sins.keys():
             return await send(
                 Embed(description=f"Sin `{sin_key}` not found."), ephemeral
             )
@@ -147,7 +160,7 @@ class SinCog(GroupCog, name="sin"):
 
     @command()
     @choices(name=sin_autocomplete)
-    async def overview(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def overview(self, ctx: Interaction, name: str, ephemeral: bool = True):
         if (sin := sins.get(name)) is None:
             return await ctx.response.send_message(
                 f"Sin `{str(name).title()}` not implemented", ephemeral=True
@@ -161,44 +174,42 @@ class SinCog(GroupCog, name="sin"):
 
     @command()
     @choices(name=sin_autocomplete)
-    async def severe(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def severe(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "severe", ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
-    async def palace(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def palace(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "palace", ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
-    async def pressure(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def pressure(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "pressure", ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
-    async def domain(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def domain(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "pressure", ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
-    async def afflictions(
-        self, ctx: Interaction, name: StringArg, ephemeral: bool = True
-    ):
+    async def afflictions(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "afflictions", ephemeral=ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
-    async def traces(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def traces(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "traces", ephemeral=ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
-    async def combat(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def combat(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "combat", ephemeral=ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
-    async def trauma(self, ctx: Interaction, name: StringArg, ephemeral: bool = True):
+    async def trauma(self, ctx: Interaction, name: str, ephemeral: bool = True):
         await self.send_embed(ctx, name, "trauma", ephemeral=ephemeral)
 
 

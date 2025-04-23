@@ -66,7 +66,7 @@ class WikiCog(Cog, name="wiki"):
                     return name
         return None
 
-    # TODO: overview command with a view
+    # TODO: [NEXT] overview command with a view
 
     @command(name="blasphemy")
     @choices(name=[Choice(name=k, value=k) for k in blasphemies.keys()])
