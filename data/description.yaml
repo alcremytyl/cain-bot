@@ -355,13 +355,12 @@ blasphemy:
     color: 0xFF0000
     passive:
       - Iron Soul
-      - When you would lose your last point of stress, roll 1d6. On a 4+, you
-        don’t lose any stress and instead remain at 1 stress.
+      - When you would lose your last point of stress, roll 1d6. On a 4+, you don’t lose any stress and instead remain at 1 stress.
     abilities:
       - - Aegis
         - Instant, Short
         - >-
-          Once a scene, when you or a visible ally in short range of you would
+          **Once a scene**, when you or a visible ally in short range of you would
           mark stress from external harm, you can intervene by answering the
           following questions:
 
@@ -369,9 +368,9 @@ blasphemy:
 
           - Is there any part of the environment you can use to shield your target?
 
-          - Is your heart in this?
+          - Is your heart in this?\n
 
-          You create a flash tension force of incredible strength, blocking damage. For each ‘yes’ answer, roll 1d6. For every 2+ rolled reduce stress suffered by 1, and for every 6 rolled reduce it by 2. This could reduce stress suffered to 0.
+          You create a flash tension force of incredible strength, blocking damage. For each ‘yes’ answer, roll 1d6. For every 2+ rolled reduce stress suffered by 1, and for every 6 rolled reduce it by 2. This could reduce stress suffered to 0.\n
 
           If you or an ally gain an injury in the same scene, regain the use of this power.
       - - Stasis
@@ -404,16 +403,17 @@ blasphemy:
           effects, then you may gain or grant +1D when you or any ally next acts
           to take advantage of this power:
 
-          -Rubber: The matter becomes bouncy and springy
+          - **Rubber**: The matter becomes bouncy and springy
 
-          -Mud: The matter melts into a thick mud. It becomes pliable and sticky and difficult to move through
+          - **Mud**: The matter melts into a thick mud. It becomes pliable and sticky and difficult to move through
 
-          -Liquid: The matter melts into liquid
+          - **Liquid**: The matter melts into liquid
 
           This power may easily effect the parameters of rolls, such as difficulty and risk. When the effect expires, the matter slowly reverts to its original state and form.
       - - Fortress
         - Summon, Until rest, Short
-        - Once a scene, you can create a spot tension field with a size
+        - >-
+          **Once a scene**, you can create a spot tension field with a size
           determined by CAT that appears as a large plane of shimmering force,
           invisible to humans. It can only exist as a flat plane (no bends or
           curves), and intersect or overlap any nonliving material, but
@@ -440,12 +440,12 @@ blasphemy:
         - >-
           You can create a fierce blast of destructive energy at a location in
           range with a blast area up to CAT. When you use this power, roll
-          PSYCHE and answer the following questions, gaining +1D for each ‘yes’
+          **PSYCHE** and answer the following questions, gaining +1D for each ‘yes’
           answer, only spending a Psyche Burst on success.
 
           - Are you willing to cause indiscriminate harm, not caring what you destroy, burn, or incinerate?
 
-          -Are you willing to let your anger control the outcome?
+          - Are you willing to let your anger control the outcome?\n
 
           Whatever question you answer ‘yes’ on, it affects the outcome of the action - no matter the roll.
       - - Void
@@ -457,11 +457,11 @@ blasphemy:
           gain or grant +1D when you or any ally next acts to take advantage of
           this power:
 
-          -Weak: Sucks in loose objects not held, worn, or bolted down.
+          - **Weak**: Sucks in loose objects not held, worn, or bolted down.
 
-          - Medium: All humans and exorcists in the area are thrown off their feet and pulled in, excluding you.
+          - **Medium**: All humans and exorcists in the area are thrown off their feet and pulled in, excluding you.
 
-          - Strong: Sins and vehicles up to CAT size are thrown off balance or pulled depending on their size. Glass is shattered. The thunderclap is momentarily deafening.
+          - **Strong**: Sins and vehicles up to CAT size are thrown off balance or pulled depending on their size. Glass is shattered. The thunderclap is momentarily deafening.\n
 
           This power may affect the parameters of rolls, such as difficulty and risk.
       - - Hell
@@ -473,32 +473,32 @@ blasphemy:
           grant +1D when you or any ally next acts to take advantage of this
           power:
 
-          - Simmer: Discomfort for humans, lowered or raised temperature, hot or cold surfaces, etc.
+          - **Simmer**: Discomfort for humans, lowered or raised temperature, hot or cold surfaces, etc.
 
-          - Poach: Major discomfort for humans, who cannot remain in the area, and discomfort for sins and exorcists. Freeze or boil water, pipes, crack glass, etc.
+          - **Poach**: Major discomfort for humans, who cannot remain in the area, and discomfort for sins and exorcists. Freeze or boil water, pipes, crack glass, etc.
 
-          - Boil: Deadly to humans, sins and exorcists take 2 stress if they remain in the area for longer than a scene. Light fires or freeze the air in rooms, melt windows or burn doors, or freeze objects.
+          - **Boil**: Deadly to humans, sins and exorcists take 2 stress if they remain in the area for longer than a scene. Light fires or freeze the air in rooms, melt windows or burn doors, or freeze objects.\n
 
           This power may affect the parameters of rolls, such as difficulty and risk.
       - - Storm
         - Transmute, Extreme, Whole Mission
         - >-
-          You can spend any number of psyche bursts to send potential energy
+          **You can spend any number of psyche bursts** to send potential energy
           into the atmosphere, affecting the a microclimate in an area equal to
           CAT+2, with a maximum of CAT 7. Choose one of the below, plus one more
           per psyche burst spent. The chosen effects last for the whole mission
           or until dismissed. You may gain or grant +1D when you or any ally
           next acts to take advantage of this power:
 
-          - Clear: Clear the skies in the area, canceling any weather (including the below).
+          - **Clear**: Clear the skies in the area, canceling any weather (including the below).
 
-          - Rain: Rain drenches the area for the duration of an intensity you choose (drizzle, pouring, torrential).
+          - **Rain**: Rain drenches the area for the duration of an intensity you choose (drizzle, pouring, torrential).
 
-          - Cold: The air freezes, freezing water and icing over roads and paths. Any precipitation becomes snow.
+          - **Cold**: The air freezes, freezing water and icing over roads and paths. Any precipitation becomes snow.
 
-          - Fog: Thick fog rolls in, limiting visibility.
+          - **Fog**: Thick fog rolls in, limiting visibility.
 
-          - Gale: Whipping wind rolls through the area, blowing away fog, smoke, or dust, and making it hard to hear or be outside.
+          - **Gale**: Whipping wind rolls through the area, blowing away fog, smoke, or dust, and making it hard to hear or be outside.\n
 
           This power may easily affect the parameters of rolls, such as difficulty and risk.
       - - Sabre
@@ -507,13 +507,13 @@ blasphemy:
           Release a blast of energy in a highly destructive beam. The beam goes
           in a straight line a range equal to CAT, piercing through walls,
           doors, and obstructions effortlessly. It is extremely loud and bright.
-          Roll PSYCHE for its effects, only spending a psyche burst on success.
+          Roll **PSYCHE** for its effects, only spending a psyche burst on success.
 
           The very first time you use this power in a mission, it gains +1D for every tick on the pressure clock (it still cannot exceed +3 advantage die). For every ‘6’ result you roll, this ability inflicts 1 extra slash on a talisman, but you also take 1 stress, which could kill you or cause an injury. This stress cannot be reduced or ignored in any way.
     extra:
       - Unstable Power
       - >
-        The Raw power of your  psyche gathers and swells inside of you. Causing
+        The raw power of your  psyche gathers and swells inside of you. Causing
         an unstable flux of energy inside of your body. Treat this hook as a
         normal hook when slashed via normal hook methods or reuses of Inner
         Furnance. If the hook is filled out, gain one injury. If this injury
@@ -525,8 +525,7 @@ blasphemy:
     color: 0xFF0000
     passive:
       - Steal Time
-      - Once a mission, you can re-roll all your resting dice for yourself or an
-        ally, taking the second result as final.
+      - "**Once a mission**, you can re-roll all your resting dice for yourself or an ally, taking the second result as final."
     abilities:
       - - Reversal
         - Adjacent, Instant
@@ -540,13 +539,13 @@ blasphemy:
 
           - If it would cause damage or impact, roll PSYCHE for it
 
-          - It cannot reverse life on non-living matter, such as corpses, but can move them and revert damage.
+          - It cannot reverse life on non-living matter, such as corpses, but can move them and revert damage.\n
 
           You can stop this effect by willing it, but to resume it requires using this power again.
       - - Stop
         - Transmute, Instant, Self
         - >-
-          You spend up to three psyche bursts to stop local time in an area
+          You spend **up to three psyche bursts** to stop local time in an area
           around you equal to CAT.
 
           Roll 1d6 per psyche burst spent and add them together - that is how many seconds you have.
@@ -555,9 +554,9 @@ blasphemy:
 
           - you cannot use psychic powers, but neither can you be affected by them. Any power currently active from you or affecting you other than this one dissipates.
 
-          - you can perform one activity or course of action that fits in the duration. After you would make an action roll for anything, the effect ends no matter what.
+          - you can perform one activity or course of action that fits in the duration. After you would make an action roll for anything, the effect ends no matter what.\n
 
-          Then, gain temporal instability
+          **Then, gain temporal instability**
       - - Schism
         - Transmute, Instant, 1 scene
         - >-
@@ -571,6 +570,8 @@ blasphemy:
           - Supernatural beings, including exorcists, in the present timeline caught in the bubble when it is created are unaffected. Humans and the ‘present’ timeline world caught in the bubble are ‘paused’, cease existing for its duration, and have no memory of the incident.
 
           - Things removed from the bubble from the past or future timeline, including living beings, simply disappear until they move back into the bubble. The bubble represents an ‘alternate’ timeline, so anything altered inside of it will not show up in the present or future timeline (ie leaving an object in a past timeline will not have it show up in the present).
+
+          The bubble represents an ‘alternate’ timeline, so altered inside of it will not show up in the or future timeline (ie leaving an object in a past will not have it show up in the present).
       - - Quickening
         - Instant, Adjacent
         - >-
@@ -579,9 +580,9 @@ blasphemy:
 
           - Immediately heal 1d3 stress on yourself or another target
 
-          - You may heal another dying human or exorcist on the brink of death. Injured humans are stabilized and no longer in danger of expiring and exorcists are brought off the brink of death until they take stress again, even if they have three injuries.
+          - You may heal another dying human or exorcist on the brink of death. Injured humans are stabilized and no longer in danger of expiring and exorcists are brought off the brink of death until they take stress again, even if they have three injuries.\n
 
-          Then, gain temporal instability
+          **Then, gain temporal instability**
       - - Stutter
         - Short
         - >-
@@ -590,7 +591,7 @@ blasphemy:
           instantly after you see the result. Re-roll the action roll
           completely, taking the second result as final.
 
-          When you use this power, gain temporal instability. If you use it again in the same scene, gain 1d3 temporal instability instead.
+          When you use this power, **gain temporal instability**. If you use it again in the same scene, **gain 1d3 temporal instability instead**.
     extra:
       - Temporal Instability
       - >
@@ -636,9 +637,7 @@ blasphemy:
 
           - you can slow your fall at will, and you cannot take harm from falling
 
-          - you can glide a distance equal to CAT range.
-
-          you must start at height to gain this benefit
+          - you can glide a distance equal to CAT range. You must start at height to gain this benefit.\n
 
           This power may easily effect the parameters of rolls, such as difficulty and risk.
       - - Current
@@ -686,7 +685,6 @@ blasphemy:
         - You gain +1 KP
 
         - You can stow or retrieve items inside your pocket, which can hold a combined total of items worth up to 3 KP.
-
         Once inside, the items are stored in an extra-dimensional space and hidden and safe, no matter their size. The pocket is attached to your clothes and if they are destroyed, items inside pop out.
     abilities:
       - - Tear
@@ -737,7 +735,7 @@ blasphemy:
 
           - Can you see where you are going?
 
-          - Are you calm and concentrated?
+          - Are you calm and concentrated?\n
 
           On at least one ‘1’, you end up in a different location nearby your destination, but the Admin chooses where. On a double 1, you end up somewhere else briefly before arriving. Not only are you off target, but you also take 2d3 stress.
       - - Maze
@@ -756,7 +754,7 @@ blasphemy:
 
           - make a room larger or smaller
 
-          - Arrange or remove the furniture inside a room any way you like
+          - Arrange or remove the furniture inside a room any way you like\n
 
           You cannot remove rooms entirely, make any room smaller than a closet or larger than a ballroom, or add anything that does not already exist in a building other than corridors. This could cause a structure to be bigger on the inside than outside.
 
@@ -781,7 +779,7 @@ blasphemy:
 
           - Gain or grant +1D when you or any ally next acts to take advantage of this power.
 
-          - This power ends on its previous target if used again.
+          - This power ends on its previous target if used again.\n
 
           This power may easily effect the parameters of rolls, such as difficulty and risk.
       - - Abstract
@@ -940,7 +938,7 @@ blasphemy:
 
           - You are able to enter your ally’s location without distraction or harm
 
-          - You have a useful tool or object on you for the present situation (a key, a weapon, a wrench, etc)
+          - You have a useful tool or object on you for the present situation (a key, a weapon, a wrench, etc)\n
 
           You may gain or grant +1D when you or any ally next acts to take advantage of this power.
   edit:
@@ -958,7 +956,7 @@ blasphemy:
 
         - aesthetics such as facial features, skin color, hair, gender presentation
 
-        - age, down to 13 and up to 88
+        - age, down to 13 and up to 88\n
 
         You always look faintly similar, like a distant relative of yourself. Your clothes always change to fit you, though you cannot alter them. This doesn’t change anything about your skills or general ability, and also cannot restore missing body parts or hide sin marks or scars.
     abilities:
@@ -968,12 +966,17 @@ blasphemy:
           need privacy, no matter how tenuous). This power makes you officially
           part of any profession or group with more than 5 members, with any
           necessary uniform, equipment, ID cards, memberships, etc, and alters
-          reality to make it so. Even if people don’t particularly remember you
+          reality to make it so.
+
+          Even if people don’t particularly remember you
           being part of a group, they may get a vague sense that you were a
-          member. You don’t actually gain any particular skills and any changes
+          member.
+
+          You don’t actually gain any particular skills and any changes
           you may have to be to your own person must include things you could
-          wear or carry in one or both hands. Gain or grant +1D when you or any
-          ally next acts to take advantage of this power.
+          wear or carry in one or both hands. 
+
+          Gain or grant +1D when you or any ally next acts to take advantage of this power.
       - - Absurd
         - Curse, Short, 1 scene
         - >-
@@ -990,12 +993,18 @@ blasphemy:
           This swap disorients the targets, as their reality adapts to accommodate the changes, which can be unsettling for them. Gain or grant +1D when you or any ally next acts to take advantage of this power.
       - - Utility
         - Until Rest, short
-        - When an item appears dangerous, rare, or mundane, you can alter it to
-          look worn or scuffed. The item can change to appear as if it were a
-          knockoff or poorly made, or it could be an item that is absent,
-          appearing to someone nearby. The item takes on a spongey or cheap look
-          that isn’t representative of its original purpose. After the scene
-          ends or you leave the area, the item disappears.
+        - >-
+          When you need any mundane objct, tool, or vehicle that could fit in a small room, you can cause it to appear in range as though it was always there without spending KP. However if the item is dangerous or rare, the Admin chooses two:
+
+            - The item is used, dented, scuffed, or poor quality.
+
+            - The item is a real item that someone nearby owned and has no disappeared, and they will come looking for it.
+
+            - The item is 'off' somehow and appears as a cheap knockoff made of odd materials that feel spongey or organic.
+
+            - The item is missing some parts and doesn't work as well as it could with them.\n
+
+            The item cannot be a unique item, etc. You cannot create a particular car, key, book, etc, but rather a generic representative of a category. It disappears after a rest. 
       - - Filter
         - Transmute, Adjacent, 1 scene
         - >-
@@ -1008,7 +1017,7 @@ blasphemy:
 
           - causing objects to float or pin them in space
 
-          - safely dissecting or reassembling broken objects as long as parts are present
+          - safely dissecting or reassembling broken objects as long as parts are present\n
 
           This effect expires when the scene ends, or if you leave the area for any reason.
       - - Copy
@@ -1026,6 +1035,7 @@ blasphemy:
   bind:
     description: Bind weak sins to your service and use them as servants or weapons.
     emoji_id: 1353597645603602503
+    color: 0x0974F3
     passive:
       - Sin Binding
       - You have the forbidden ability to bind Sins. You have the obedient
@@ -1752,6 +1762,75 @@ description:
 
 
     Many of them have existing abilities or details on their sheets that can be used as inspiration to inflict consequences. Sins even have a reaction list they can use in conflict scenes that give explicit outcomes.
+virtue:
+  justice:
+    strictures:
+      - You cannot ignore orders from a superior.
+      - Always roll 0d on any action that would break the law.
+    abilities:
+      - "Gain an extra xp trigger: Did you uphold the dogma of CAIN?"
+      - Gain the *Law* blasphemy. You can use it once a mission.
+      - Lower sin by 1 after halving it. If you executed sin rather than sparing it, then lower sin by 1 again. If you spared a sin or failed to execute it, increase sin by 1d3 after halving it instead.
+      - You may choose two different effects for Law.
+    blasphemy:
+      name: law
+      tags: Transmute, Adjacent, 1 Scene
+      description: >-
+        You set a rule of physical reality that affects everything in a circular area around you, called the **Court**, with a radius equal to **CAT**. Any changes that take place instantly and persistent inside the area, but the area itself does not move. This power can eliminate, destroy, or totally change mundane beings, objects, or structures. Strong-willed or supernatural beings such as exorcists or sins can partly resist its effects, but humans are always affected instantly. If you exit the area or the scene ends, the effect ends.
+        
+        To use law, **spend all your remaining psyche bursts (min 1)**, then fill in the sentence:
+
+          **In the court, \_\_\_\_ is/are \_\_\_\_.
+
+          \n
+
+        Then choose **one effect**:
+        
+        - **Grant up to three advantage die** (total) to self or an ally while the court is active. These can be given out one at a time or all at once. 
+
+        - **Instantly kill all humans** in hte area or that enter the area while the court is active
+
+        - **Slash a talisman** by rolling **PSYCHE**. This deals +1 slash on success. This can be performed when first using **Law**, then once more while it is active.
+
+        - **Make something specific less hard, or less risky** while the court is active.
+
+        \n
+
+        This power may easily affect the parameters of rolls while in the area, and may make it so rolls are not even required for certain tasks.
+
+        Additional effects are up to the GM and can be improvised on the fiction.
+    extra: >-
+      ### Terms of Law
+      ```
+       1. Fast            11. Arrows         21. Fire        
+       2. Slow            12. Blades         22. Water       
+       3. Sticks          13. Solid          23. Air         
+       4. Stones          14. Liquid         24. Forbidden   
+       5. Paper           15. Metal          25. Pulled      
+       6. Cloth           16. Soft           26. Repulsed    
+       7. Blood           17. Sharp                         
+       8. Nails           18. Heavy                         
+       9. Skin            19. Light                         
+      10. Slings          20. Earth
+          or bullets
+      ```
+  #
+  # faith:
+  #   strictures: >-
+  #     a
+  #   abilities:
+  #     - 
+  #     - 
+  #     - 
+  #     - 
+  #   extra: >-
+  #     a
+  #
+  #   name: str
+  #   strictures: str
+  #   abilities: tuple[str, str, str, str]
+  #   blasphemy: str
+  #   extra: str | None
 category:
   - - "Category Overview"
     - "Sins are powerful supernatural forces, and Exorcists the weapons used to combat them. Sins may easily surpass human limits. Unfortunately, exorcists are limited by the general limits of human capabilities.\nHowever their powers, Blasphemies, are not. Much like natural disasters, both sins and exorcists are rated by Category, generally indicating their power, usually written as CAT. As each increase in category, the speed, scale, and strength of their capabilities increase drastically.\n- Category goes from 0-7, with Category 0 being general human capabilities. Anything mundane an exorcist does is usually at CAT 0.\n- Exorcists’ themselves are rated from category 1 to 5, but can sometimes push past CAT 5. This describes the capabilities of their powers.\n"

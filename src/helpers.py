@@ -53,7 +53,8 @@ class Paginator(View):
 
         match self.pages[self.current]:
             case builtins.dict(p):
-                e = Embed(description=f"### {p['name']}\n{p['description']}")
+                desc = f"### {p.get('name') or p['title']}\n{p['description']}"
+                e = Embed(description=desc)
             case builtins.tuple(p):
                 e = Embed(description="### " + "\n".join(self.pages[self.current]))
 

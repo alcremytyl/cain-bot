@@ -1,43 +1,8 @@
 pressure: 0
 talismans:
-  Crack Judith:
-    current: 2
-    decal: wormy
-    name: Crack Judith
-    slashes: 5
   Crack Queensland:
     current: 1
     decal: '7'
     name: Crack Queensland
     slashes: 4
-  Draw Judith:
-    current: 2
-    decal: '3'
-    name: Draw Judith
-    slashes: 2
-  Duel Eschaton:
-    current: 10
-    decal: '4'
-    name: Duel Eschaton
-    slashes: 13
-  Ogre:
-    current: 0
-    decal: ogre
-    name: Ogre
-    slashes: 11
-  Ogre2:
-    current: 0
-    decal: aa
-    name: Ogre2
-    slashes: 11
-  Slime Michael:
-    current: 3
-    decal: '8'
-    name: Slime Michael
-    slashes: 3
-  Testing:
-    current: 1
-    decal: '6'
-    name: Testing
-    slashes: 1
 tension: 0

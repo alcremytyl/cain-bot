@@ -11,7 +11,7 @@ from discord.ext.commands import Cog, GroupCog
 from discord.ui import Select, View, select
 
 from src.bot import CainClient
-from src.helpers import emote, open_yaml
+from src.helpers import Paginator, emote, open_yaml
 from src.transformers import StringArg
 
 with open_yaml("./data/sins.yaml", False) as blasphemies:
@@ -34,7 +34,7 @@ _fields = (
 class Sin:
     afflictions: list[str]
     combat: str
-    domains: dict[str, str]
+    domains: list[dict[str, str]]
     overview: str
     palace: str
     pressure: dict[str, Any]
@@ -53,8 +53,7 @@ class Sin:
             [f"{i+1}. {_t}" for (i, _t) in enumerate(self.afflictions)]
         )
 
-        # TODO: use a view
-        _domains = ""
+        _domains = Paginator(self.domains, self.url, True)
 
         _trauma = (
             f"The Admin, as the Sin, answers the following questions, then establishes a trauma based on the truthful answers.\n\n"
@@ -190,7 +189,9 @@ class SinCog(GroupCog, name="sin"):
     @command()
     @choices(name=sin_autocomplete)
     async def domain(self, ctx: Interaction, name: str, ephemeral: bool = True):
-        await self.send_embed(ctx, name, "pressure", ephemeral)
+        # await self.send_embed(ctx, name, "pressure", ephemeral)
+        s = sins[name.lower()]
+        await Paginator(s.domains, s.url, True).setup(ctx, ephemeral=ephemeral)
 
     @command()
     @choices(name=sin_autocomplete)
